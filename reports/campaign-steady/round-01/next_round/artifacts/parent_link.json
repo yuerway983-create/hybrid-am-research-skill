@@ -1,0 +1,7 @@
+{
+  "parent_candidate_sha256": "cd181b951e47d1474f4effdbf028a4803ba0cc20eaa9c49a7e396743fc270f3b",
+  "parent_update_dataset_sha256": "259bc6dbd12a64fd2dfec64a3743b29f3fed77681416a14a5c4ebd00e90ee7ae",
+  "mode": "validated_update",
+  "round_index": 2,
+  "data_kind": "synthetic_demo"
+}

@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "call_id": "r2-12",
+  "tool": "prepare_update",
+  "result": {
+    "status": "update_dataset_prepared_fresh_confirmation_required",
+    "new_fit_rows": 79,
+    "retired_holdout_rows": 0,
+    "excluded_deviation_samples": [
+      "R02-NEW-0-T02-0"
+    ],
+    "original_data_modified": false,
+    "automatic_refit_performed": false,
+    "fresh_independent_validation_required": true,
+    "prior_comparison_sha256": "a8056c95fe37894a2188dae13e1733a626064d3ae7fb0e9d60be96f14aed6c0b",
+    "data_kind": "synthetic_demo",
+    "task": "update/task.json",
+    "dataset": "update/measurements.csv"
+  },
+  "idempotent_replay": false
+}

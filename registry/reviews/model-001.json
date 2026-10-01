@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.2",
+  "decision_id": "model-001",
+  "review_date": "2026-10-01",
+  "stage": "model",
+  "task": "Verify a Gaussian diffusion moment kernel and finite-initial-width extension symbolically, then evaluate conditionally in Python.",
+  "selected": {
+    "id": "kd-sympy",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/sympy/SKILL.md",
+    "blob_sha": "392497a3d5c0972110c85123ba46dc0cb80dc911",
+    "read_scope": "entire SKILL.md",
+    "use_mode": "host followed symbolic assumptions / solve-and-verify workflow; new local script uses installed SymPy"
+  },
+  "alternative": "surrogate ML fitting deferred: no matching calibrated process-response dataset is present",
+  "local_scripts": [
+    "scripts/verify_diffusion_symbolic.py",
+    "scripts/diffusion_model.py"
+  ],
+  "domain_status": "model form supported; coefficients and geometric observation map are not calibrated for user material",
+  "note": "Reading and applying skill guidance is not running an upstream printing simulator; no such simulator is included."
+}

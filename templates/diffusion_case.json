@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.2",
+  "task_id": "REAL-TASK-REQUIRED",
+  "process": "hybrid-vpp-diw",
+  "material_pair": "",
+  "mode": "research",
+  "data_kind": "measured",
+  "observable": "concentration_sigma_um",
+  "time_reference": "elapsed_since_reference_profile",
+  "fixed_conditions": {},
+  "assumptions": {
+    "homogeneous_1d": true,
+    "unbounded_domain": true,
+    "constant_diffusivity": true,
+    "pre_gel_only": true,
+    "advection_ignored": true,
+    "initial_distribution": "gaussian"
+  },
+  "parameters": {
+    "sigma0": {
+      "value": null,
+      "unit": "um",
+      "origin": "user_calibration",
+      "source_ref": ""
+    },
+    "diffusivity": {
+      "value": null,
+      "unit": "um2/s",
+      "origin": "user_calibration",
+      "source_ref": ""
+    }
+  },
+  "evaluation_times": {
+    "values": [],
+    "unit": "s"
+  },
+  "time_domain_s": [
+    null,
+    null
+  ],
+  "allow": {
+    "hardware_commands": false,
+    "dedicated_simulation_software": false
+  },
+  "note": "Intentionally incomplete. Do not invent values to pass validation.",
+  "calibration_file": "calibration.json"
+}

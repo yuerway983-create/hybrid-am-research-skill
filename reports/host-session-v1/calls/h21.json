@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "call_id": "h21",
+  "tool": "finish_report",
+  "result": {
+    "status": "report_written",
+    "phase": "frozen_candidate_needs_fresh_confirmation",
+    "files": [
+      "report.md",
+      "index.html"
+    ],
+    "report_sha256": "af34196fef0d9f50da1372d28630b9c6b591d2a6e4d26e5ca80ae804aef843dd",
+    "data_kind": "synthetic_demo"
+  },
+  "idempotent_replay": false
+}

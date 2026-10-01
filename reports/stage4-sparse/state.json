@@ -1,0 +1,70 @@
+{
+  "version": "0.4.0",
+  "origin": "deterministic_demo",
+  "session_id": "stage4-sparse",
+  "task_id": "synthetic-insufficient-data-003",
+  "phase": "awaiting_external_experiment",
+  "data_kind": "synthetic_demo",
+  "observable": "geometric_track_width_um",
+  "active_skills": {
+    "evidence": "hybrid-am-evidence",
+    "calibration": "measured-response-calibration",
+    "planning": "calibration-only-planning"
+  },
+  "inspected": true,
+  "evidence_checked": true,
+  "calibrated": true,
+  "planned": true,
+  "feedback_attached": false,
+  "imported": false,
+  "compared": false,
+  "update_prepared": false,
+  "artifacts": {
+    "artifacts/aggregated.json": "e7849590340165f525413970020e40c66850fc229810ec3978b7fee19a3012bf",
+    "artifacts/data_check.json": "3febe3216c8d0a9c0365437e6131cf5ca6a3fc5e9a89e5f86642f38fa7eb8194",
+    "artifacts/evidence_check.json": "58f3567a7f797f95415fedeb7b2b6c580c237d3d6dea39136299b620b22cc5a2",
+    "artifacts/calibration.json": "99d4734d7cc82084baeaec78956da25c4a76c66296ff88bf6ad752c9304703d4",
+    "artifacts/candidate_results.json": "f09e518c1469eec14a96406fc757587195b5e567cc771ac2626ee0ecb4ef8643",
+    "artifacts/plan.json": "df13c6c2120ce5b8d2105291b0072b742c970ff9292dd715f53289874073b62b",
+    "artifacts/next_experiments.csv": "1be8aa99b3d1c653f7ccd11b07214f0ec24aab2f55e57c97c3041f66b3bedd2c"
+  },
+  "call_ids": {
+    "demo-01": "3b711187f98ca97d96bc904ca17422510e41553a847013ddeb233ff44c2ecb07",
+    "demo-02": "04e4bab9952a6e001eee055c3bf57d4cf3e9324c217fdc7516feabba9c9580d2",
+    "demo-03": "0cb3b67fc9ddd6616c98415f7cf99d7cf54a17d343c1423ce1af7e4aa81bd1fb",
+    "demo-04": "996830b5bc0c81468a21539bcf10c14b9fd487e0cdbaa2f361a39f9e6a8984da",
+    "demo-05": "d29d8fd60f1cb0d64af5b83056309a7341b06ed8ffa8ba8784a8318822d16024",
+    "demo-06": "734105a7c5d82f2100eda3e313dd36f29b7bb6eaf3d6682fd0bce37cafa6d352",
+    "demo-07": "34caf15d6b7a0fb1f9558ef5442bfb61677c568fbf57737a5a7019eff063d980",
+    "demo-08": "ea1d7f82863147ab967d1414cf2636f3594ec849532c41b4680f5bc277e85f8b",
+    "demo-09": "b9cf2c8bee42fab512931c15987871352cfed25e3f63650113f3b8143160c333",
+    "demo-10": "5471777407cd7baeca5105d8bdf374cccf533aa1a465da706313dc21b00e5d0c",
+    "demo-11": "51c98dc53dae13299e7637dfedfa41a67013940281054d74b6b108a03f95a1b1"
+  },
+  "blocked_calls": 0,
+  "max_calls": 80,
+  "source_hashes": {
+    "scripts/agent_runtime.py": "a4ec595919db85efe4e1bcac1d98a02753b65738daae2dbcbaf3e07a9ec790e2",
+    "scripts/feedback_tools.py": "476eed9dd1533897b073f26b077b8c2fb0aeaf6893b111293c40048afe4aa47f",
+    "scripts/calibration_planning.py": "34168670815cb96656d0cbebc9321d50ff81d56f44057306d401dbdc6d875958",
+    "scripts/_core.py": "3cc4367223524001eae4ca836bbad45525e3fc6e956c5f4f94321e4d6b2b15ea",
+    "scripts/review_evidence.py": "c68a63480a50648c6fedffbe00228b73be41e14825ad9d7fb548a8e4aaf3da53",
+    "registry/runtime-skills.json": "aaebb0f7aa8af249485b6a88b9bfc71d2b5c13c8906404ae30d44d8a3fc27896",
+    "skills/hybrid-am-evidence/SKILL.md": "234f586ada99ca6aa387c44a5bc1cb84368a90b5c31e5d5597efa32bbc526e43",
+    "skills/measured-response-calibration/SKILL.md": "0f816cf8536720eff2e13847e2c254ef61015ff5ca9c1e2ef635261bdedaf5ee",
+    "skills/bounded-experiment-planning/SKILL.md": "5a00dd7d45ee225f4ee3d204e6a490ce83f5a40eae9983cafcced42a260e2bc9",
+    "skills/calibration-only-planning/SKILL.md": "c480f8aa73570c8fe419926f4bbd3adcac155eb3a2077f776a1edc414974b082",
+    "skills/descriptive-feedback/SKILL.md": "231cc6f73ff9fcd9e185f72cf260e9bd0a841e24380b4b3a11edb364861f900f",
+    "skills/safe-model-update/SKILL.md": "6384b3ffb82b69d75f876ca07d87b936013b8d974ca96d51e77f17cb78b354d9"
+  },
+  "input_hashes": {
+    "input/measurements.csv": "1c1b1a37339035d4296cf0a92b64552b578a0bcbdef522e1f60776d170545def",
+    "input/task.json": "2f303a7cda3aeab8ff94e8737bb109cac3ff6f9b47ee68f0a1a17adda3fde522",
+    "input/comparison_protocol.json": "d7bd96e3c2b62068a11e7e5a420dfd7c8a81e8c860cdf2673e45501da69ba2e0",
+    "input/evidence.json": "6d26229bc6d868f6c2b8c53756ef5b3e49cc18579da281b937adf79497fb996a"
+  },
+  "upstream_auto_install": false,
+  "hardware_execution_allowed": false,
+  "dedicated_simulation_software_allowed": false,
+  "origin_is_operator_declared_not_independent_attestation": true
+}

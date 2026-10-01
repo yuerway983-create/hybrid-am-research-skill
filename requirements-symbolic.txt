@@ -1,0 +1,3 @@
+# Optional, only for verify_diffusion_symbolic.py / --symbolic.
+# Already present in the test environment; no automatic installation.
+sympy==1.14.0

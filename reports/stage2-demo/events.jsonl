@@ -1,0 +1,5 @@
+{"time_utc": "2026-10-01T14:32:08.459901+00:00", "stage": "evidence", "action": "cached_packet_structure_checked", "run_mode": "offline_replay_and_synthetic_calculation"}
+{"time_utc": "2026-10-01T14:32:08.459942+00:00", "stage": "numeric", "action": "synthetic_moments_computed", "run_mode": "offline_replay_and_synthetic_calculation"}
+{"time_utc": "2026-10-01T14:32:08.459950+00:00", "stage": "negative_case", "action": "missing_parameter_correctly_blocked", "run_mode": "offline_replay_and_synthetic_calculation"}
+{"time_utc": "2026-10-01T14:32:08.459956+00:00", "stage": "negative_case", "action": "geometric_width_correctly_blocked", "run_mode": "offline_replay_and_synthetic_calculation"}
+{"time_utc": "2026-10-01T14:32:08.459961+00:00", "stage": "symbolic", "action": "passed", "run_mode": "offline_replay_and_synthetic_calculation"}

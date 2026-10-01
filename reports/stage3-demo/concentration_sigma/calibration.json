@@ -1,0 +1,513 @@
+{
+  "status": "numerical_gates_passed_not_physical_validation",
+  "numerical_fit_performed": true,
+  "model_usable_for_proposals": true,
+  "reasons": [],
+  "fit_groups": [
+    "SB-0",
+    "SB-1",
+    "SB-2",
+    "SB-3",
+    "SB-4"
+  ],
+  "holdout_groups": [
+    "SB-5",
+    "SB-6"
+  ],
+  "holdout_used_for_fitting": false,
+  "holdout_used_for_hyperparameter_selection": false,
+  "uncertainty": {
+    "type": "not_quantified",
+    "note": "CV/holdout RMSE is an error diagnostic, not a pointwise confidence or prediction interval"
+  },
+  "model": {
+    "type": "bounded_diffusion_variance_regression",
+    "a_um2": 2502.114714829576,
+    "b_um2_s": 80.0800879162276,
+    "sigma0_um": 50.02114267816736,
+    "diffusivity_um2_s": 40.0400439581138,
+    "fit_loss": "group-balanced squared residuals in variance units; diagnostics reported in sigma units",
+    "formula": "sigma^2 = a + b*t",
+    "physical_parameters_verified": false,
+    "initial_profile_time_zero_observed": true,
+    "boundary_parameter": false
+  },
+  "cv": {
+    "group_weighted_rmse_um": 0.11590662624256474,
+    "group_weighted_mae_um": 0.1033771529832228,
+    "max_abs_error_um": 0.17937473232679935,
+    "n_groups": 5,
+    "n_rows": 25
+  },
+  "constant_baseline_cv": {
+    "group_weighted_rmse_um": 2.138218339564598,
+    "group_weighted_mae_um": 1.8340758562600012,
+    "max_abs_error_um": 3.2297142322499965,
+    "n_groups": 5,
+    "n_rows": 25
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "fit_groups": [
+        "SB-0",
+        "SB-1",
+        "SB-2",
+        "SB-3"
+      ],
+      "validation_groups": [
+        "SB-4"
+      ],
+      "fit_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "validation_row_indices": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "fold": 2,
+      "fit_groups": [
+        "SB-0",
+        "SB-1",
+        "SB-2",
+        "SB-4"
+      ],
+      "validation_groups": [
+        "SB-3"
+      ],
+      "fit_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "validation_row_indices": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "fold": 3,
+      "fit_groups": [
+        "SB-0",
+        "SB-1",
+        "SB-3",
+        "SB-4"
+      ],
+      "validation_groups": [
+        "SB-2"
+      ],
+      "fit_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "validation_row_indices": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "fold": 4,
+      "fit_groups": [
+        "SB-0",
+        "SB-2",
+        "SB-3",
+        "SB-4"
+      ],
+      "validation_groups": [
+        "SB-1"
+      ],
+      "fit_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "validation_row_indices": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "fold": 5,
+      "fit_groups": [
+        "SB-1",
+        "SB-2",
+        "SB-3",
+        "SB-4"
+      ],
+      "validation_groups": [
+        "SB-0"
+      ],
+      "fit_row_indices": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "validation_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "oof_rows": [
+    {
+      "sample_id": "S-0",
+      "group_id": "SB-0",
+      "measured_um": 50.078270005,
+      "out_of_fold_prediction_um": 50.00180814597541,
+      "constant_baseline_um": 53.059376126749996
+    },
+    {
+      "sample_id": "S-0",
+      "group_id": "SB-0",
+      "measured_um": 51.68764632,
+      "out_of_fold_prediction_um": 51.57532889015943,
+      "constant_baseline_um": 53.059376126749996
+    },
+    {
+      "sample_id": "S-0",
+      "group_id": "SB-0",
+      "measured_um": 53.233892495000006,
+      "out_of_fold_prediction_um": 53.10224366624536,
+      "constant_baseline_um": 53.059376126749996
+    },
+    {
+      "sample_id": "S-0",
+      "group_id": "SB-0",
+      "measured_um": 54.76583839,
+      "out_of_fold_prediction_um": 54.5864636576732,
+      "constant_baseline_um": 53.059376126749996
+    },
+    {
+      "sample_id": "S-0",
+      "group_id": "SB-0",
+      "measured_um": 56.136625665,
+      "out_of_fold_prediction_um": 56.03138180441081,
+      "constant_baseline_um": 53.059376126749996
+    },
+    {
+      "sample_id": "S-1",
+      "group_id": "SB-1",
+      "measured_um": 49.886421985,
+      "out_of_fold_prediction_um": 50.05323533389061,
+      "constant_baseline_um": 53.116136217249995
+    },
+    {
+      "sample_id": "S-1",
+      "group_id": "SB-1",
+      "measured_um": 51.481044865,
+      "out_of_fold_prediction_um": 51.629526446971234,
+      "constant_baseline_um": 53.116136217249995
+    },
+    {
+      "sample_id": "S-1",
+      "group_id": "SB-1",
+      "measured_um": 52.996644135,
+      "out_of_fold_prediction_um": 53.159097385933556,
+      "constant_baseline_um": 53.116136217249995
+    },
+    {
+      "sample_id": "S-1",
+      "group_id": "SB-1",
+      "measured_um": 54.46670151,
+      "out_of_fold_prediction_um": 54.64587146926869,
+      "constant_baseline_um": 53.116136217249995
+    },
+    {
+      "sample_id": "S-1",
+      "group_id": "SB-1",
+      "measured_um": 55.93625857,
+      "out_of_fold_prediction_um": 56.093251843555116,
+      "constant_baseline_um": 53.116136217249995
+    },
+    {
+      "sample_id": "S-2",
+      "group_id": "SB-2",
+      "measured_um": 49.976298345000004,
+      "out_of_fold_prediction_um": 50.03991375173627,
+      "constant_baseline_um": 53.099361357
+    },
+    {
+      "sample_id": "S-2",
+      "group_id": "SB-2",
+      "measured_um": 51.490344545,
+      "out_of_fold_prediction_um": 51.614414022851705,
+      "constant_baseline_um": 53.099361357
+    },
+    {
+      "sample_id": "S-2",
+      "group_id": "SB-2",
+      "measured_um": 53.05901657,
+      "out_of_fold_prediction_um": 53.14228543790242,
+      "constant_baseline_um": 53.099361357
+    },
+    {
+      "sample_id": "S-2",
+      "group_id": "SB-2",
+      "measured_um": 54.562151060000005,
+      "out_of_fold_prediction_um": 54.627440615542675,
+      "constant_baseline_um": 53.099361357
+    },
+    {
+      "sample_id": "S-2",
+      "group_id": "SB-2",
+      "measured_um": 56.01475775,
+      "out_of_fold_prediction_um": 56.0732738017479,
+      "constant_baseline_um": 53.099361357
+    },
+    {
+      "sample_id": "S-3",
+      "group_id": "SB-3",
+      "measured_um": 50.131362955,
+      "out_of_fold_prediction_um": 49.99510042377086,
+      "constant_baseline_um": 53.05760770999999
+    },
+    {
+      "sample_id": "S-3",
+      "group_id": "SB-3",
+      "measured_um": 51.707416125,
+      "out_of_fold_prediction_um": 51.571245074385345,
+      "constant_baseline_um": 53.05760770999999
+    },
+    {
+      "sample_id": "S-3",
+      "group_id": "SB-3",
+      "measured_um": 53.214132275,
+      "out_of_fold_prediction_um": 53.100626838688974,
+      "constant_baseline_um": 53.05760770999999
+    },
+    {
+      "sample_id": "S-3",
+      "group_id": "SB-3",
+      "measured_um": 54.707761705,
+      "out_of_fold_prediction_um": 54.587176358565,
+      "constant_baseline_um": 53.05760770999999
+    },
+    {
+      "sample_id": "S-3",
+      "group_id": "SB-3",
+      "measured_um": 56.17696815,
+      "out_of_fold_prediction_um": 56.03430266310503,
+      "constant_baseline_um": 53.05760770999999
+    },
+    {
+      "sample_id": "S-4",
+      "group_id": "SB-4",
+      "measured_um": 50.025496000000004,
+      "out_of_fold_prediction_um": 50.01563109895719,
+      "constant_baseline_um": 53.085477670999985
+    },
+    {
+      "sample_id": "S-4",
+      "group_id": "SB-4",
+      "measured_um": 51.605505685,
+      "out_of_fold_prediction_um": 51.59564757417891,
+      "constant_baseline_um": 53.085477670999985
+    },
+    {
+      "sample_id": "S-4",
+      "group_id": "SB-4",
+      "measured_um": 53.14590991,
+      "out_of_fold_prediction_um": 53.12869604056526,
+      "constant_baseline_um": 53.085477670999985
+    },
+    {
+      "sample_id": "S-4",
+      "group_id": "SB-4",
+      "measured_um": 54.596240325,
+      "out_of_fold_prediction_um": 54.61873156109243,
+      "constant_baseline_um": 53.085477670999985
+    },
+    {
+      "sample_id": "S-4",
+      "group_id": "SB-4",
+      "measured_um": 56.007090070000004,
+      "out_of_fold_prediction_um": 56.06918344076874,
+      "constant_baseline_um": 53.085477670999985
+    }
+  ],
+  "training_metrics": {
+    "group_weighted_rmse_um": 0.09343019724646044,
+    "group_weighted_mae_um": 0.08289227051156614,
+    "max_abs_error_um": 0.1526967267799506,
+    "n_groups": 5,
+    "n_rows": 25
+  },
+  "holdout": {
+    "group_weighted_rmse_um": 0.13358177432481244,
+    "group_weighted_mae_um": 0.11252114562499926,
+    "max_abs_error_um": 0.20948380266625577,
+    "n_groups": 2,
+    "n_rows": 8
+  },
+  "holdout_rows": [
+    {
+      "sample_id": "S-5",
+      "group_id": "SB-5",
+      "measured_um": 50.75684808,
+      "prediction_um": 50.81530087233375,
+      "inside_training_domain": true
+    },
+    {
+      "sample_id": "S-5",
+      "group_id": "SB-5",
+      "measured_um": 52.334238885000005,
+      "prediction_um": 52.367499258397466,
+      "inside_training_domain": true
+    },
+    {
+      "sample_id": "S-5",
+      "group_id": "SB-5",
+      "measured_um": 53.84693052,
+      "prediction_um": 53.87499563258186,
+      "inside_training_domain": true
+    },
+    {
+      "sample_id": "S-5",
+      "group_id": "SB-5",
+      "measured_um": 55.281930305,
+      "prediction_um": 55.341443152877474,
+      "inside_training_domain": true
+    },
+    {
+      "sample_id": "S-6",
+      "group_id": "SB-6",
+      "measured_um": 51.02478467500001,
+      "prediction_um": 50.81530087233375,
+      "inside_training_domain": true
+    },
+    {
+      "sample_id": "S-6",
+      "group_id": "SB-6",
+      "measured_um": 52.500993519999994,
+      "prediction_um": 52.367499258397466,
+      "inside_training_domain": true
+    },
+    {
+      "sample_id": "S-6",
+      "group_id": "SB-6",
+      "measured_um": 54.08384456,
+      "prediction_um": 53.87499563258186,
+      "inside_training_domain": true
+    },
+    {
+      "sample_id": "S-6",
+      "group_id": "SB-6",
+      "measured_um": 55.5104942,
+      "prediction_um": 55.341443152877474,
+      "inside_training_domain": true
+    }
+  ],
+  "checks": {
+    "cv_within_preset_tolerance": true,
+    "cv_beats_constant_if_required": true,
+    "has_two_independent_holdout_groups": true,
+    "holdout_within_training_domain": true,
+    "holdout_within_preset_tolerance": true,
+    "positive_fit_and_cv_predictions": true
+  }
+}

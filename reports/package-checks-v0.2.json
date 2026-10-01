@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "created_on": "2026-10-01",
+  "local_tests_passed": 63,
+  "symbolic_checks_passed": 8,
+  "source_count": 4,
+  "claim_count": 6,
+  "negative_demo_cases_blocked": 2,
+  "all_json_parsed": true,
+  "all_python_sources_parsed": true,
+  "main_relative_links_checked": true,
+  "upstream_provider_runner_executed": false,
+  "host_assisted_literature_retrieval_performed": true,
+  "offline_replay_is_not_live_retrieval": true,
+  "real_material_calibration_available": false,
+  "print_optimisation_performed": false,
+  "physical_validation_performed": false,
+  "dedicated_simulation_software_called": false,
+  "remote_github_repository_created": false,
+  "python_version": "3.13.5"
+}

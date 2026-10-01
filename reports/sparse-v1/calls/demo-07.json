@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "call_id": "demo-07",
+  "tool": "calibrate_response",
+  "result": {
+    "status": "needs_calibration_design",
+    "calibration": {
+      "status": "needs_calibration_data",
+      "numerical_fit_performed": false,
+      "model_usable_for_proposals": false,
+      "reasons": [
+        "Need at least three independent fit groups for this prototype's grouped diagnostics; this is not a sample-size guarantee"
+      ],
+      "fit_groups": [
+        "WB-0"
+      ],
+      "holdout_groups": [],
+      "holdout_used_for_fitting": false,
+      "holdout_used_for_hyperparameter_selection": false,
+      "uncertainty": {
+        "type": "not_quantified",
+        "note": "CV/holdout RMSE is an error diagnostic, not a pointwise confidence or prediction interval"
+      }
+    },
+    "next_actions": [
+      "find_skills(planning)",
+      "activate_skill",
+      "plan_experiments"
+    ]
+  },
+  "idempotent_replay": false
+}

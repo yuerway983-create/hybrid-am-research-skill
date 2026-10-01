@@ -1,0 +1,22 @@
+test_boolean_budget_rejected (test_local_starter.StarterTests.test_boolean_budget_rejected) ... ok
+test_demo_and_overwrite_protection (test_local_starter.StarterTests.test_demo_and_overwrite_protection) ... ok
+test_duplicate_record (test_local_starter.StarterTests.test_duplicate_record) ... ok
+test_empty_candidate_stage_is_gap (test_local_starter.StarterTests.test_empty_candidate_stage_is_gap) ... ok
+test_forbidden_device_permission (test_local_starter.StarterTests.test_forbidden_device_permission) ... ok
+test_material_pooling (test_local_starter.StarterTests.test_material_pooling) ... ok
+test_missing_bounds (test_local_starter.StarterTests.test_missing_bounds) ... ok
+test_mixed_data_origin (test_local_starter.StarterTests.test_mixed_data_origin) ... ok
+test_nonfinite_value (test_local_starter.StarterTests.test_nonfinite_value) ... ok
+test_offline_search_not_execution (test_local_starter.StarterTests.test_offline_search_not_execution) ... ok
+test_out_of_bounds (test_local_starter.StarterTests.test_out_of_bounds) ... ok
+test_path_traversal_rejected (test_local_starter.StarterTests.test_path_traversal_rejected) ... ok
+test_source_required (test_local_starter.StarterTests.test_source_required) ... ok
+test_synthetic_not_research (test_local_starter.StarterTests.test_synthetic_not_research) ... ok
+test_task_template_intentionally_incomplete (test_local_starter.StarterTests.test_task_template_intentionally_incomplete) ... ok
+test_valid_bundle (test_local_starter.StarterTests.test_valid_bundle) ... ok
+test_wrong_unit (test_local_starter.StarterTests.test_wrong_unit) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.404s
+
+OK

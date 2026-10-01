@@ -1,0 +1,33 @@
+<!doctype html><html lang='zh-CN'><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Hybrid-AM · v1.0</title><style>body{font-family:system-ui,sans-serif;max-width:1000px;margin:36px auto;padding:0 20px;line-height:1.65}pre{white-space:pre-wrap;overflow-wrap:anywhere}h1{font-size:28px}</style><h1>Hybrid-AM · v1.0</h1><p>实际工具执行记录 · synthetic_demo · deterministic_demo</p><pre># Hybrid-AM v1.0 执行与回传报告
+
+数据标记：**synthetic_demo**；执行来源：`deterministic_demo`。
+当前状态：`awaiting_external_experiment`。
+本程序没有打印、没有运行专用模拟软件。来源标记由操作者声明，不是独立真实性认证。
+
+## 实际完成阶段
+{
+  &quot;inspected&quot;: true,
+  &quot;evidence_checked&quot;: true,
+  &quot;calibrated&quot;: true,
+  &quot;planned&quot;: true,
+  &quot;feedback_attached&quot;: false,
+  &quot;imported&quot;: false,
+  &quot;compared&quot;: false,
+  &quot;update_prepared&quot;: false
+}
+
+## 候选实验（未由软件批准或执行）
+| 编号 | 目的 | 参数 | 冻结预测 μm |
+|---|---|---|---|
+| T03 | baseline_replication | {&quot;speed_mm_s&quot;: 5.0, &quot;delay_s&quot;: 3.0} | None |
+| T01 | coverage_or_calibration | {&quot;speed_mm_s&quot;: 12.5, &quot;delay_s&quot;: 2.0} | None |
+| T02 | coverage_or_calibration | {&quot;speed_mm_s&quot;: 12.5, &quot;delay_s&quot;: 4.0} | None |
+
+## 下一步
+finish_report
+WAIT: operator must attach new reported measurements; never invent them
+
+## 审计
+events.jsonl 记录实际请求、响应、调用来源、哈希与错误；calls/保留结构化结果。
+程序日志证明代码执行，不证明实验真实性；固定回放不是在线LLM运行。
+</pre></html>

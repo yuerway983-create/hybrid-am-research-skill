@@ -1,0 +1,9 @@
+record_id,sample_id,batch_id,material_pair,context_id,data_kind,source_ref,partition,speed_mm_s,delay_s,response_um
+retired-45,W-5-0,WB-5,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,holdout,7.5,2.0,469.176649335
+retired-46,W-5-1,WB-5,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,holdout,7.5,4.0,495.85113110500004
+retired-47,W-5-2,WB-5,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,holdout,12.5,2.0,452.907041185
+retired-48,W-5-3,WB-5,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,holdout,12.5,4.0,482.26098893
+retired-49,W-6-0,WB-6,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,holdout,7.5,2.0,466.835410035
+retired-50,W-6-1,WB-6,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,holdout,7.5,4.0,493.712797455
+retired-51,W-6-2,WB-6,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,holdout,12.5,2.0,451.3171311
+retired-52,W-6-3,WB-6,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,holdout,12.5,4.0,479.78838667

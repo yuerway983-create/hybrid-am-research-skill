@@ -1,0 +1,2303 @@
+{
+  "version": "0.3.0",
+  "task_id": "synthetic-insufficient-data-003",
+  "mode": "offline_demo",
+  "data_kind": "synthetic_demo",
+  "observable": "geometric_track_width_um",
+  "status": "calibration_plan_without_validated_predictions",
+  "calibration": {
+    "status": "needs_calibration_data",
+    "numerical_fit_performed": false,
+    "model_usable_for_proposals": false,
+    "reasons": [
+      "Need at least three independent fit groups for this prototype's grouped diagnostics; this is not a sample-size guarantee"
+    ],
+    "fit_groups": [
+      "WB-0"
+    ],
+    "holdout_groups": [],
+    "holdout_used_for_fitting": false,
+    "holdout_used_for_hyperparameter_selection": false,
+    "uncertainty": {
+      "type": "not_quantified",
+      "note": "CV/holdout RMSE is an error diagnostic, not a pointwise confidence or prediction interval"
+    }
+  },
+  "experiment_plan": {
+    "status": "calibration_plan_without_validated_predictions",
+    "predicted_target_selection_performed": false,
+    "candidate_count": 357,
+    "candidates_inside_training_domain": 0,
+    "sampling": "attainable bounded grid, or quantized Latin-hypercube subset when grid exceeds 5000",
+    "budget_requested": 3,
+    "trials": [
+      {
+        "trial_id": "T03",
+        "run_order": 1,
+        "purpose": "baseline_replication",
+        "parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "predicted_response_um": null,
+        "inside_training_domain": false,
+        "prediction_interval": null,
+        "rationale": "New independent reference specimen at the declared baseline; do not replace with an old measurement",
+        "state": "suggested",
+        "human_approval_required": true,
+        "physical_feasibility": "not_verified",
+        "required_measurements": [
+          "geometric_track_width_um",
+          "actual_timing_and_settings",
+          "sample_id",
+          "batch_id",
+          "measurement_method"
+        ],
+        "data_kind": "synthetic_demo"
+      },
+      {
+        "trial_id": "T01",
+        "run_order": 2,
+        "purpose": "coverage_or_calibration",
+        "parameters": {
+          "speed_mm_s": 15.0,
+          "delay_s": 2.0
+        },
+        "predicted_response_um": null,
+        "inside_training_domain": false,
+        "prediction_interval": null,
+        "rationale": "Maximin coverage in normalized parameter space; not Bayesian information gain or evidence of safety",
+        "state": "suggested",
+        "human_approval_required": true,
+        "physical_feasibility": "not_verified",
+        "required_measurements": [
+          "geometric_track_width_um",
+          "actual_timing_and_settings",
+          "sample_id",
+          "batch_id",
+          "measurement_method"
+        ],
+        "data_kind": "synthetic_demo"
+      },
+      {
+        "trial_id": "T02",
+        "run_order": 3,
+        "purpose": "coverage_or_calibration",
+        "parameters": {
+          "speed_mm_s": 13.0,
+          "delay_s": 5.0
+        },
+        "predicted_response_um": null,
+        "inside_training_domain": false,
+        "prediction_interval": null,
+        "rationale": "Maximin coverage in normalized parameter space; not Bayesian information gain or evidence of safety",
+        "state": "suggested",
+        "human_approval_required": true,
+        "physical_feasibility": "not_verified",
+        "required_measurements": [
+          "geometric_track_width_um",
+          "actual_timing_and_settings",
+          "sample_id",
+          "batch_id",
+          "measurement_method"
+        ],
+        "data_kind": "synthetic_demo"
+      }
+    ],
+    "baseline_found_in_data": true,
+    "no_claims": [
+      "No physical improvement demonstrated",
+      "No guaranteed feasible curing/interface outcome",
+      "No global optimum or calibrated prediction interval",
+      "Not a sample-size/power calculation"
+    ],
+    "candidate_rows": [
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.0,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 5.5,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.0,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 6.5,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.0,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 7.5,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.0,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 8.5,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.0,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 9.5,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.0,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 10.5,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.0,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 11.5,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.0,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 12.5,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.0,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 13.5,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.0,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 14.5,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 1.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 1.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 1.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 1.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 2.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 2.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 2.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 2.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 3.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 3.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 3.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 3.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 4.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 4.25,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 4.5,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 4.75,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      },
+      {
+        "speed_mm_s": 15.0,
+        "delay_s": 5.0,
+        "inside_training_domain": false,
+        "predicted_response_um": null
+      }
+    ]
+  },
+  "physical_printing_performed": false,
+  "physical_validation_performed": false,
+  "hardware_commands_sent": false,
+  "dedicated_simulation_software_called": false,
+  "external_llm_api_called": false,
+  "live_github_search_in_this_run": false,
+  "runtime_routing": "deterministic observable/data gates among previously reviewed local adapters; not autonomous GitHub discovery",
+  "calibration_review_status": "needs_scientific_review",
+  "measured_improvement": null,
+  "not_predicted": [
+    "cure_conversion",
+    "interface_strength",
+    "fatigue_life",
+    "device_performance"
+  ],
+  "python_version": "3.13.5",
+  "input_hashes": {
+    "task_sha256": "2f303a7cda3aeab8ff94e8737bb109cac3ff6f9b47ee68f0a1a17adda3fde522",
+    "dataset_sha256": "1c1b1a37339035d4296cf0a92b64552b578a0bcbdef522e1f60776d170545def"
+  },
+  "data_check": {
+    "n_raw_rows": 6,
+    "n_aggregated_rows": 3,
+    "n_samples": 3,
+    "aggregation": "mean of repeated measurements of same sample at same settings; not extra replicates",
+    "group_column": "batch_id",
+    "partitions": {
+      "fit": {
+        "n_rows": 3,
+        "groups": [
+          "WB-0"
+        ]
+      },
+      "holdout": {
+        "n_rows": 0,
+        "groups": []
+      }
+    }
+  },
+  "environment": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0"
+  }
+}

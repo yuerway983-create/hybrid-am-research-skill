@@ -1,0 +1,43 @@
+{
+  "stage": "experiment_planning",
+  "date": "2026-10-01",
+  "host_mode": "ChatGPT-host-assisted selection",
+  "candidates": [
+    {
+      "name": "K-Dense experimental-design",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/experimental-design/SKILL.md",
+      "inspection": "full instructions read through GitHub connector",
+      "license_declared": "MIT",
+      "selected": true,
+      "reason": "Small experimental batch, replication, randomization, calibration-first fallback"
+    },
+    {
+      "name": "K-Dense pymoo",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/pymoo/SKILL.md",
+      "inspection": "full instructions read through GitHub connector",
+      "license_declared": "Apache-2.0",
+      "selected": false,
+      "reason": "No validated multiobjective response set; evolutionary search is unnecessary for this small attainable-grid prototype"
+    }
+  ],
+  "local_adapter": "skills/bounded-experiment-planning/SKILL.md",
+  "actual_tools": [
+    "numpy attainable grid",
+    "scipy.stats.qmc.LatinHypercube for large grids",
+    "numpy normalized maximin distance",
+    "numpy seeded permutation"
+  ],
+  "upstream_code_copied": false,
+  "upstream_pyDOE3_helpers_executed": false,
+  "modifications": [
+    "Use available SciPy and own grid helper rather than installing pyDOE3",
+    "Explicit grid/hull screening",
+    "Null predictions for calibration-only or extrapolative trials"
+  ],
+  "not_implemented": [
+    "Bayesian acquisition",
+    "Guaranteed physical safety",
+    "New physical experiments"
+  ],
+  "runtime_autonomous_github_discovery": false
+}

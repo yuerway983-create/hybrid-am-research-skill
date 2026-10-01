@@ -1,0 +1,16 @@
+{
+  "status": "needs_calibration",
+  "actual_parameters_proposed": false,
+  "minimum_inputs": [
+    "material pair and batch",
+    "fixed speed, pressure, nozzle and temperature with units",
+    "actual delay timestamps",
+    "profile measurement definition and scale",
+    "independent samples across delay levels",
+    "measurement and parameter uncertainty",
+    "approved feasible delay range"
+  ],
+  "alternative_if_only_geometric_width_available": "Fit an explicitly empirical within-condition width-vs-delay model in a later module. Do not label its fit coefficient molecular diffusivity.",
+  "delay_levels_s": null,
+  "physical_printing_performed": false
+}

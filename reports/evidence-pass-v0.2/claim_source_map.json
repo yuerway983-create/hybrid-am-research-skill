@@ -1,0 +1,63 @@
+[
+  {
+    "claim_id": "C1",
+    "source_ids": [
+      "S1"
+    ],
+    "kind": "equation",
+    "status": "source_supported",
+    "statement": "The source uses sigma^2=2Dt for one-dimensional diffusion.",
+    "locator": "S1 Section 2.1 Eq. (2), PDF p.3"
+  },
+  {
+    "claim_id": "C2",
+    "source_ids": [
+      "S1"
+    ],
+    "kind": "inference",
+    "status": "project_inference",
+    "statement": "For a finite Gaussian initial profile under constant-D free diffusion, use sigma(t)^2=sigma0^2+2Dt. This is an explicit project extension, not a verbatim equation in S1.",
+    "locator": "derived from C1 and stated Gaussian initial-condition assumption; symbolic test in scripts/verify_diffusion_symbolic.py"
+  },
+  {
+    "claim_id": "C3",
+    "source_ids": [
+      "S1"
+    ],
+    "kind": "limitation",
+    "status": "unresolved",
+    "statement": "The mapping from observable geometric track width to concentration-profile sigma is not verified; do not equate them.",
+    "locator": "S1 measurement method points to inaccessible Fig. S5; Eq. (2) defines a different observable"
+  },
+  {
+    "claim_id": "C4",
+    "source_ids": [
+      "S3"
+    ],
+    "kind": "equation",
+    "status": "source_supported",
+    "statement": "The Jacobs working curve requires area-normalized radiant exposure and material/light calibration. Delay is not exposure duration.",
+    "locator": "S3 Introduction Eq. (1) and parameter definitions"
+  },
+  {
+    "claim_id": "C5",
+    "source_ids": [
+      "S1",
+      "S3"
+    ],
+    "kind": "inference",
+    "status": "project_inference",
+    "statement": "Implement diffusion moments first at fixed conditions. Defer a coupled geometric-width/speed/cure/performance optimizer until its data and constraints are available.",
+    "locator": "project implementation decision based on S1 and S3; not a novelty or optimality claim"
+  },
+  {
+    "claim_id": "C6",
+    "source_ids": [
+      "S4"
+    ],
+    "kind": "workflow",
+    "status": "source_supported",
+    "statement": "Information gathering before intervention and separate physical validation are useful workflow precedents.",
+    "locator": "S4 pp.8-13 and 24-25"
+  }
+]

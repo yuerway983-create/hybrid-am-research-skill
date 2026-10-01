@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "call_id": "h21",
+  "tool": "finish_report",
+  "result": {
+    "status": "report_written",
+    "phase": "update_prepared_waiting_fresh_confirmation",
+    "files": [
+      "report.md",
+      "index.html"
+    ],
+    "report_sha256": "87d993dbc5ceed0a5d9a1d6b78803725444b27a9f4e64038594cd5bc4a57672c",
+    "data_kind": "synthetic_demo"
+  },
+  "idempotent_replay": false
+}

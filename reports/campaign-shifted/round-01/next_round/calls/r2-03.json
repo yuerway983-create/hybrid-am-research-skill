@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "call_id": "r2-03",
+  "tool": "activate_skill",
+  "result": {
+    "activated": "calibration-only-planning",
+    "stage": "planning",
+    "rationale": "Deterministic acceptance test selection; not an LLM invocation.",
+    "instructions": "---\nname: calibration-only-planning\ndescription: Generate calibration, coverage and baseline-repeat proposals when current response models fail evidence gates.\nmetadata:\n  version: \"0.4.0\"\n---\n# Calibration-only planning\nRead the actual calibration result and failure reasons. Do not relax acceptance thresholds.\nExecute plan_experiments. When the current model failed, prediction cells must remain empty.\nThis is the project's adapter of experimental-design workflow, not upstream code execution.\nDo not call maximin distance information gain. Await real operator-attached observations.\n",
+    "instructions_sha256": "c480f8aa73570c8fe419926f4bbd3adcac155eb3a2077f776a1edc414974b082",
+    "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/experimental-design/SKILL.md",
+    "upstream_original_script_executed": false
+  },
+  "idempotent_replay": false
+}

@@ -1,0 +1,29 @@
+{
+  "python": "3.13.5",
+  "stage3_dependencies_ready": true,
+  "required_packages": {
+    "numpy": {
+      "discoverable": true,
+      "installed_version": "2.3.5",
+      "numerical_health_not_tested_by_preflight": true
+    },
+    "scipy": {
+      "discoverable": true,
+      "installed_version": "1.17.0",
+      "numerical_health_not_tested_by_preflight": true
+    },
+    "scikit-learn": {
+      "discoverable": true,
+      "installed_version": "1.8.0",
+      "numerical_health_not_tested_by_preflight": true
+    }
+  },
+  "legacy_v02_standard_library_only": true,
+  "stage3_tested_versions_file": "requirements-calibration.txt",
+  "network_tested": false,
+  "llm_runtime_tested": false,
+  "equipment_connected": false,
+  "automatic_installation": false,
+  "dedicated_simulation_software_called": false,
+  "next_step": "Run python scripts/stage3_demo.py --out <new_directory>"
+}

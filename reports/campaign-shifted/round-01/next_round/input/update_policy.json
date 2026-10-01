@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "max_rounds": 3,
+  "confirmation_conditions": 6,
+  "min_confirmation_groups": 2,
+  "require_non_degradation": true,
+  "max_rmse_increase_um": 0.0,
+  "inference": "descriptive_only",
+  "source_ref": "Prototype workflow defaults; not a power analysis or validated material limits"
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "session": "reports/host-session-v1",
+    "integrity": true,
+    "audit": {
+      "valid": true,
+      "events": 24,
+      "note": "Local integrity checks, not an externally signed attestation."
+    }
+  },
+  {
+    "session": "reports/host-session-v1/next_round",
+    "integrity": true,
+    "audit": {
+      "valid": true,
+      "events": 5,
+      "note": "Local integrity checks, not an externally signed attestation."
+    }
+  },
+  {
+    "session": "reports/campaign-steady/round-01",
+    "integrity": true,
+    "audit": {
+      "valid": true,
+      "events": 23,
+      "note": "Local integrity checks, not an externally signed attestation."
+    }
+  },
+  {
+    "session": "reports/campaign-steady/round-01/next_round",
+    "integrity": true,
+    "audit": {
+      "valid": true,
+      "events": 16,
+      "note": "Local integrity checks, not an externally signed attestation."
+    }
+  },
+  {
+    "session": "reports/campaign-steady/round-01/next_round/next_round",
+    "integrity": true,
+    "audit": {
+      "valid": true,
+      "events": 5,
+      "note": "Local integrity checks, not an externally signed attestation."
+    }
+  },
+  {
+    "session": "reports/campaign-shifted/round-01",
+    "integrity": true,
+    "audit": {
+      "valid": true,
+      "events": 23,
+      "note": "Local integrity checks, not an externally signed attestation."
+    }
+  },
+  {
+    "session": "reports/campaign-shifted/round-01/next_round",
+    "integrity": true,
+    "audit": {
+      "valid": true,
+      "events": 5,
+      "note": "Local integrity checks, not an externally signed attestation."
+    }
+  }
+]

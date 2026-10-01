@@ -1,0 +1,63 @@
+record_id,sample_id,batch_id,material_pair,context_id,data_kind,source_ref,partition,speed_mm_s,delay_s,response_um
+historical-0,W-0-0,WB-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,1.0,480.806873905
+historical-1,W-0-1,WB-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,3.0,498.24873420999995
+historical-2,W-0-2,WB-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,5.0,528.2302337149999
+historical-3,W-0-3,WB-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,1.0,448.432463775
+historical-4,W-0-4,WB-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,3.0,469.5584316
+historical-5,W-0-5,WB-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,5.0,505.045700825
+historical-6,W-0-6,WB-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,1.0,442.686379815
+historical-7,W-0-7,WB-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,3.0,467.893791805
+historical-8,W-0-8,WB-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,5.0,506.279105495
+historical-9,W-1-0,WB-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,1.0,480.75932597999997
+historical-10,W-1-1,WB-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,3.0,497.94334016000005
+historical-11,W-1-2,WB-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,5.0,527.0576168800001
+historical-12,W-1-3,WB-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,1.0,448.75364596
+historical-13,W-1-4,WB-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,3.0,470.60344363
+historical-14,W-1-5,WB-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,5.0,503.675783505
+historical-15,W-1-6,WB-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,1.0,441.9430142
+historical-16,W-1-7,WB-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,3.0,467.649287555
+historical-17,W-1-8,WB-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,5.0,506.53683530499995
+historical-18,W-2-0,WB-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,1.0,478.84218983999995
+historical-19,W-2-1,WB-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,3.0,497.54862597
+historical-20,W-2-2,WB-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,5.0,527.449970195
+historical-21,W-2-3,WB-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,1.0,447.51322900499997
+historical-22,W-2-4,WB-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,3.0,470.4923485
+historical-23,W-2-5,WB-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,5.0,502.82291369
+historical-24,W-2-6,WB-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,1.0,440.6368426
+historical-25,W-2-7,WB-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,3.0,467.01547821500003
+historical-26,W-2-8,WB-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,5.0,504.74345315
+historical-27,W-3-0,WB-3,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,1.0,481.68023444
+historical-28,W-3-1,WB-3,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,3.0,499.949744395
+historical-29,W-3-2,WB-3,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,5.0,531.394040035
+historical-30,W-3-3,WB-3,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,1.0,450.62658494
+historical-31,W-3-4,WB-3,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,3.0,472.76067856500003
+historical-32,W-3-5,WB-3,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,5.0,505.336687215
+historical-33,W-3-6,WB-3,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,1.0,443.68017051
+historical-34,W-3-7,WB-3,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,3.0,469.85865054500005
+historical-35,W-3-8,WB-3,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,5.0,507.51098766999996
+historical-36,W-4-0,WB-4,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,1.0,481.001872695
+historical-37,W-4-1,WB-4,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,3.0,497.40411077
+historical-38,W-4-2,WB-4,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,5.0,5.0,527.711823955
+historical-39,W-4-3,WB-4,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,1.0,449.30686626
+historical-40,W-4-4,WB-4,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,3.0,469.685270965
+historical-41,W-4-5,WB-4,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,10.0,5.0,503.77751472
+historical-42,W-4-6,WB-4,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,1.0,441.275878005
+historical-43,W-4-7,WB-4,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,3.0,468.43417823
+historical-44,W-4-8,WB-4,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,synthetic fixture; equation in generate_fixtures.py,fit,15.0,5.0,505.096725195
+followup-0,R01-NEW-0-T03-0,R01-FOLLOWUP-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,5.0,3.0,497.7028096597806
+followup-1,R01-NEW-0-T03-1,R01-FOLLOWUP-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,5.0,3.0,497.51489921159475
+followup-2,R01-NEW-0-T01-0,R01-FOLLOWUP-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,7.5,4.25,498.9222285878315
+followup-3,R01-NEW-0-T01-1,R01-FOLLOWUP-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,7.5,4.25,499.2351942312396
+followup-5,R01-NEW-0-T02-1,R01-FOLLOWUP-0,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,7.5,2.0,469.23283923121886
+followup-6,R01-NEW-1-T03-0,R01-FOLLOWUP-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,5.0,3.0,497.18903979254674
+followup-7,R01-NEW-1-T03-1,R01-FOLLOWUP-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,5.0,3.0,497.93709838496886
+followup-8,R01-NEW-1-T01-0,R01-FOLLOWUP-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,7.5,4.25,499.05055883746064
+followup-9,R01-NEW-1-T01-1,R01-FOLLOWUP-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,7.5,4.25,499.4930651047605
+followup-10,R01-NEW-1-T02-0,R01-FOLLOWUP-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,7.5,2.0,469.22155001725895
+followup-11,R01-NEW-1-T02-1,R01-FOLLOWUP-1,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,7.5,2.0,468.64001857516433
+followup-12,R01-NEW-2-T03-0,R01-FOLLOWUP-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,5.0,3.0,497.24360547653964
+followup-13,R01-NEW-2-T03-1,R01-FOLLOWUP-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,5.0,3.0,497.49083628139346
+followup-14,R01-NEW-2-T01-0,R01-FOLLOWUP-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,7.5,4.25,499.49163648244956
+followup-15,R01-NEW-2-T01-1,R01-FOLLOWUP-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,7.5,4.25,499.5114667407503
+followup-16,R01-NEW-2-T02-0,R01-FOLLOWUP-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,7.5,2.0,469.3884367210791
+followup-17,R01-NEW-2-T02-1,R01-FOLLOWUP-2,SYNTHETIC-A / SYNTHETIC-B,synthetic-context-003,synthetic_demo,"synthetic campaign, independent artificial response function; synthetic_campaign.py external fixture; not an experiment",fit,7.5,2.0,468.83702094552643

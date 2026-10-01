@@ -1,0 +1,3 @@
+{"timestamp_utc": "2026-10-01T14:03:52.949460+00:00", "event": "local_input_check", "status": "format_checks_passed"}
+{"timestamp_utc": "2026-10-01T14:03:52.949481+00:00", "event": "search_plan_prepared", "live_search": false}
+{"timestamp_utc": "2026-10-01T14:03:52.949484+00:00", "event": "stopped", "status": "needs_evidence_and_model"}

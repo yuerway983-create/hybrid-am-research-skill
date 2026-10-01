@@ -1,0 +1,19 @@
+# 回传模板（不含实验数据）
+
+仅有表头与null字段，填入匹配的真实记录前应当校验失败。不得用合成数值填充实际实验。
+manifest必须与原会话的task_id、材料、context、观测量、固定条件、measurement_definition一致。
+plan_experiments返回两个内容哈希，分别填plan_sha256与comparison_protocol_sha256；不是直接文件字节哈希。
+真实数据：mode=research，data_kind=measured或public_measured，acquisition_status=reported_measurements。
+合成示例：mode=offline_demo，data_kind=synthetic_demo，acquisition_status=synthetic_fixture。
+
+真实执行日志approval_status=reported_approved并给出可追溯approval_source_ref；execution_status=reported_completed。
+这些字段只记录已发生的授权/操作，不等于本软件批准设备执行，不自动认证实验真实性。
+合成日志分别使用demo_only和synthetic_execution。
+
+几何宽度路线用actual_speed_mm_s与actual_delay_s；sigma路线替换为actual_elapsed_time_s。
+实际参数不要求精确落在设定网格上，但必须在任务范围内；偏离计划容许值会被标记，
+保留测量但不自动用于目标方案对照或新标定。若物理条件超出了研究任务，应新建context。
+时间戳要求时区，如2026-10-01T20:30:00+08:00。测量时间不得早于执行。
+response_unit必须um，不自动猜测或转换单位。新样品和批次不得与历史重叠。
+同一execution可有多条技术测量，record_id必须唯一，sample_id/batch_id需与执行日志一致。
+缺少同批次新基准时允许导入，但不能得出相对改善结论。

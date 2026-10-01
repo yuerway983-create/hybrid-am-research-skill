@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.3",
+  "task_id": "",
+  "mode": "research",
+  "data_kind": "measured",
+  "process": "hybrid-vpp-diw",
+  "material_pair": "",
+  "context_id": "",
+  "fixed_conditions": {},
+  "dataset_file": "measurements.csv",
+  "group_column": "batch_id",
+  "measurement_definition": {
+    "quantity": "concentration_sigma_um",
+    "method": "",
+    "scale_source_ref": "",
+    "unit": "um"
+  },
+  "factors": [
+    {
+      "name": "elapsed_time_s",
+      "unit": "s",
+      "bounds": [
+        null,
+        null
+      ],
+      "step": null,
+      "source_ref": ""
+    }
+  ],
+  "target_um": null,
+  "next_trials": 3,
+  "seed": 0,
+  "bounds_review_status": "needs_review",
+  "acceptance": {
+    "max_cv_rmse_um": null,
+    "max_holdout_rmse_um": null,
+    "require_beats_constant": true
+  },
+  "allow": {
+    "hardware_commands": false,
+    "dedicated_simulation_software": false
+  },
+  "notes": "Fill with traceable measurements and task-specific bounds/acceptance criteria; intentionally invalid until completed.",
+  "observable": "concentration_sigma_um",
+  "baseline_parameters": {
+    "elapsed_time_s": null
+  },
+  "time_reference": "elapsed_since_reference_profile",
+  "assumptions": {
+    "homogeneous_1d": true,
+    "unbounded_domain": true,
+    "constant_diffusivity": true,
+    "pre_gel_only": true,
+    "advection_ignored": true
+  }
+}

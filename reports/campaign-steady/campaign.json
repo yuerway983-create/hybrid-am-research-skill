@@ -1,0 +1,92 @@
+{
+  "version": "1.0.0",
+  "origin": "deterministic_demo",
+  "scenario": "steady",
+  "data_kind": "synthetic_demo",
+  "rounds": [
+    {
+      "round": 1,
+      "session": "round-01",
+      "planned": true,
+      "predictive_plan": true,
+      "data_kind": "synthetic_demo",
+      "update_status": "updated_model_passed_numeric_gates",
+      "continuation_mode": "validated_update",
+      "confirmation": {
+        "group_weighted_rmse_um": 0.8292803518597534,
+        "group_weighted_mae_um": 0.7885690799641244,
+        "max_abs_error_um": 1.183936684074638,
+        "n_groups": 2,
+        "n_rows": 12
+      },
+      "prior_same_confirmation": {
+        "group_weighted_rmse_um": 0.95284541378665,
+        "group_weighted_mae_um": 0.9221883008304227,
+        "max_abs_error_um": 1.3551136396633296,
+        "n_groups": 2,
+        "n_rows": 12
+      },
+      "comparison_verdicts": [
+        "descriptive_improvement",
+        "descriptive_worsening"
+      ],
+      "tool_calls": 23,
+      "audit": {
+        "valid": true,
+        "events": 23,
+        "note": "Local integrity checks, not an externally signed attestation."
+      }
+    },
+    {
+      "round": 2,
+      "session": "round-01/next_round",
+      "planned": true,
+      "predictive_plan": true,
+      "data_kind": "synthetic_demo",
+      "update_status": "updated_model_passed_numeric_gates",
+      "continuation_mode": "validated_update",
+      "confirmation": {
+        "group_weighted_rmse_um": 0.4106434745477406,
+        "group_weighted_mae_um": 0.34765541961832014,
+        "max_abs_error_um": 0.7367058022740594,
+        "n_groups": 2,
+        "n_rows": 12
+      },
+      "prior_same_confirmation": {
+        "group_weighted_rmse_um": 0.4184568040169979,
+        "group_weighted_mae_um": 0.3517598437025053,
+        "max_abs_error_um": 0.7071435402309021,
+        "n_groups": 2,
+        "n_rows": 12
+      },
+      "comparison_verdicts": [
+        "descriptive_improvement",
+        "descriptive_worsening"
+      ],
+      "tool_calls": 16,
+      "audit": {
+        "valid": true,
+        "events": 16,
+        "note": "Local integrity checks, not an externally signed attestation."
+      }
+    },
+    {
+      "round": 3,
+      "session": "round-01/next_round/next_round",
+      "planned": true,
+      "predictive_plan": true,
+      "data_kind": "synthetic_demo",
+      "status": "awaiting_external_experiment",
+      "audit": {
+        "valid": true,
+        "events": 5,
+        "note": "Local integrity checks, not an externally signed attestation."
+      }
+    }
+  ],
+  "hardware_commands_sent": false,
+  "live_llm_calls": 0,
+  "fresh_literature_search_in_demo": false,
+  "dedicated_simulation_software_called": false,
+  "physical_performance_improvement_established": false
+}

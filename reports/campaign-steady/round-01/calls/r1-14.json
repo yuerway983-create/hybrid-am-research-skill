@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "call_id": "r1-14",
+  "tool": "activate_skill",
+  "result": {
+    "activated": "descriptive-feedback",
+    "stage": "feedback",
+    "rationale": "Deterministic acceptance test selection; not an LLM invocation.",
+    "instructions": "---\nname: descriptive-feedback\ndescription: Import logged execution and new measurements against a frozen hybrid-AM plan; compare contemporaneous baseline and candidate outcomes descriptively.\nmetadata:\n  version: \"0.4.0\"\n---\n# Evidence-bounded feedback\n1. The operator must attach a manifest, execution CSV and measurement CSV. Never generate measured values.\n2. Execute import_results; check source kind, context, units, dates, sample ids and actual-versus-planned settings.\n3. Execute compare_results BEFORE any refitting. Predictions come from the frozen original model.\n4. Technical repeats are averaged within sample. Grouping follows the predeclared protocol.\n5. A candidate is compared only to eligible same-batch contemporaneous baseline samples.\n   Missing baseline -> inconclusive. No statistical significance tests or confidence intervals in this adapter.\n6. Report negative/null outcomes. Synthetic data always remain synthetic, including effect sizes.\n7. An execution log is a reported observation, not a hardware-control approval or laboratory authenticity certificate.\n8. Do not infer material strength, cure, fatigue or device performance from geometric width.\nThis local implementation is informed by the statistical-analysis and experimental-design workflows.\nTheir original scripts are not run. Actual tools are feedback_tools.import_feedback/compare_feedback.\n",
+    "instructions_sha256": "231cc6f73ff9fcd9e185f72cf260e9bd0a841e24380b4b3a11edb364861f900f",
+    "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/statistical-analysis/SKILL.md",
+    "upstream_original_script_executed": false
+  },
+  "idempotent_replay": false
+}

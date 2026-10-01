@@ -1,0 +1,15 @@
+{
+  "status": "update_dataset_prepared_fresh_confirmation_required",
+  "new_fit_rows": 62,
+  "retired_holdout_rows": 8,
+  "excluded_deviation_samples": [
+    "R01-NEW-0-T02-0"
+  ],
+  "original_data_modified": false,
+  "automatic_refit_performed": false,
+  "fresh_independent_validation_required": true,
+  "prior_comparison_sha256": "570776438d118d63dbe9f47f44958f7530a8970a7da370f95b33e8360deaee6d",
+  "data_kind": "synthetic_demo",
+  "task": "update/task.json",
+  "dataset": "update/measurements.csv"
+}

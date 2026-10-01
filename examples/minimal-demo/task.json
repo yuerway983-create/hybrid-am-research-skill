@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "task_id": "synthetic-track-demo",
+  "mode": "offline_demo",
+  "process": "hybrid-vpp-diw",
+  "material_pair": "SYNTHETIC-A / SYNTHETIC-B",
+  "geometry": "single-track",
+  "data_kind": "synthetic_demo",
+  "dataset_file": "experiments.csv",
+  "objective": {
+    "metric": "track_width_um",
+    "target": 500.0,
+    "unit": "um"
+  },
+  "factors": [
+    {
+      "name": "speed_mm_s",
+      "unit": "mm/s",
+      "bounds": [
+        5.0,
+        15.0
+      ]
+    },
+    {
+      "name": "delay_s",
+      "unit": "s",
+      "bounds": [
+        0.5,
+        5.0
+      ]
+    }
+  ],
+  "fixed_conditions": {
+    "exposure": "unspecified; synthetic software fixture only",
+    "material_properties": "not physical measurements"
+  },
+  "budget": {
+    "next_trials": 3
+  },
+  "allow": {
+    "hardware_commands": false,
+    "dedicated_simulation_software": false
+  },
+  "notes": "Illustrative task and data for testing input checks; no physical calibration."
+}

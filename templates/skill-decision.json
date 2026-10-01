@@ -1,0 +1,19 @@
+{
+  "stage": "literature",
+  "task_id": null,
+  "required_inputs": [],
+  "required_outputs": [
+    "evidence_packet.json"
+  ],
+  "queries_executed": [],
+  "candidates_reviewed": [],
+  "selected_candidate_id": null,
+  "decision_summary": null,
+  "licence_review": null,
+  "dependencies_confirmed": false,
+  "execution_approved": false,
+  "actual_tools_called": [],
+  "outputs": [],
+  "acceptance_result": "not_run",
+  "limitations": []
+}

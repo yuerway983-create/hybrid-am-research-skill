@@ -1,0 +1,4 @@
+# Exact versions used in v0.3 local tests. Install in a project virtual environment.
+numpy==2.3.5
+scipy==1.17.0
+scikit-learn==1.8.0

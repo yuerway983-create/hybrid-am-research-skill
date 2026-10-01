@@ -1,0 +1,139 @@
+{
+  "version": "0.4.0",
+  "task_id": "synthetic-geometric-width-003-update-01",
+  "data_kind": "synthetic_demo",
+  "status": "synthetic_feedback_evaluated",
+  "observable": "geometric_track_width_um",
+  "target_um": 500.0,
+  "protocol": {
+    "schema_version": "0.4",
+    "observable": "geometric_track_width_um",
+    "independent_unit": "batch_id",
+    "baseline": "concurrent_same_batch",
+    "inference": "descriptive_only",
+    "target_tolerance_um": 8.0,
+    "min_practical_reduction_um": 0.5,
+    "actual_setting_tolerances": {
+      "speed_mm_s": 0.05,
+      "delay_s": 0.03
+    },
+    "source_ref": "SYNTHETIC test protocol fixed before feedback; not a physical tolerance or power analysis"
+  },
+  "frozen_model_scored_before_update": true,
+  "per_trial": [
+    {
+      "trial_id": "T03",
+      "purpose": "baseline_replication",
+      "n_samples": 6,
+      "n_independent_units": 3,
+      "n_batches": 3,
+      "mean_response_um": 497.45547637453757,
+      "mean_absolute_target_error_um": 2.5445236254624413,
+      "target_pass_fraction": 1.0,
+      "frozen_prediction_rmse_um": 0.36633248155137094
+    },
+    {
+      "trial_id": "T01",
+      "purpose": "predicted_target_candidate",
+      "n_samples": 6,
+      "n_independent_units": 3,
+      "n_batches": 3,
+      "mean_response_um": 500.21722728757186,
+      "mean_absolute_target_error_um": 0.31081378524608755,
+      "target_pass_fraction": 1.0,
+      "frozen_prediction_rmse_um": 0.2990060088032959
+    },
+    {
+      "trial_id": "T02",
+      "purpose": "coverage_or_calibration",
+      "n_samples": 5,
+      "n_independent_units": 3,
+      "n_batches": 3,
+      "mean_response_um": 452.00587349582014,
+      "mean_absolute_target_error_um": 47.99412650417989,
+      "target_pass_fraction": 0.0,
+      "frozen_prediction_rmse_um": 0.6774516962640179
+    }
+  ],
+  "contrasts": [
+    {
+      "trial_id": "T01",
+      "baseline_trial_id": "T03",
+      "n_matched_batches": 3,
+      "matched_batch_differences": [
+        {
+          "batch_id": "R02-FOLLOWUP-0",
+          "baseline_error_um": 2.485233208959187,
+          "candidate_error_um": 0.11112711634075367,
+          "reduction_um": 2.374106092618433
+        },
+        {
+          "batch_id": "R02-FOLLOWUP-1",
+          "baseline_error_um": 2.482703753538999,
+          "candidate_error_um": 0.40276169534951123,
+          "reduction_um": 2.079942058189488
+        },
+        {
+          "batch_id": "R02-FOLLOWUP-2",
+          "baseline_error_um": 2.6656339138891383,
+          "candidate_error_um": 0.4185525440479978,
+          "reduction_um": 2.2470813698411405
+        }
+      ],
+      "mean_absolute_error_reduction_um": 2.233709840216354,
+      "relative_reduction_percent": 87.78499118122356,
+      "verdict": "descriptive_improvement",
+      "confidence_interval": null,
+      "p_value": null,
+      "causal_effect_established": false,
+      "generalisation_established": false
+    },
+    {
+      "trial_id": "T02",
+      "baseline_trial_id": "T03",
+      "n_matched_batches": 3,
+      "matched_batch_differences": [
+        {
+          "batch_id": "R02-FOLLOWUP-0",
+          "baseline_error_um": 2.485233208959187,
+          "candidate_error_um": 48.09579552977789,
+          "reduction_um": -45.6105623208187
+        },
+        {
+          "batch_id": "R02-FOLLOWUP-1",
+          "baseline_error_um": 2.482703753538999,
+          "candidate_error_um": 47.98409967963266,
+          "reduction_um": -45.501395926093664
+        },
+        {
+          "batch_id": "R02-FOLLOWUP-2",
+          "baseline_error_um": 2.6656339138891383,
+          "candidate_error_um": 47.902484303129114,
+          "reduction_um": -45.236850389239976
+        }
+      ],
+      "mean_absolute_error_reduction_um": -45.44960287871745,
+      "relative_reduction_percent": -1786.1733498527626,
+      "verdict": "descriptive_worsening",
+      "confidence_interval": null,
+      "p_value": null,
+      "causal_effect_established": false,
+      "generalisation_established": false
+    }
+  ],
+  "excluded_settings_deviation_samples": [
+    "R02-NEW-0-T02-0"
+  ],
+  "missing_trial_ids": [],
+  "performance_claim_scope": "geometric_track_width_um",
+  "real_printing_improvement_established_by_this_demo": false,
+  "statistical_significance_test_performed": false,
+  "cautions": [
+    "Descriptive comparison only; no confidence interval or hypothesis test.",
+    "Repeated measurements are aggregated before counting samples.",
+    "Contemporaneous same-batch controls used; missing controls give no improvement verdict.",
+    "No inference of cure conversion, interface strength, fatigue or device performance.",
+    "Declared provenance and context cannot authenticate the laboratory records.",
+    "Once used for model development, follow-up results are not a new independent validation set."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1",
+  "task_id": "replace-with-your-task",
+  "mode": "research",
+  "process": "hybrid-vpp-diw",
+  "material_pair": "",
+  "geometry": "single-track",
+  "data_kind": "measured",
+  "dataset_file": "experiments.csv",
+  "objective": {
+    "metric": "track_width_um",
+    "target": null,
+    "unit": "um"
+  },
+  "factors": [
+    {
+      "name": "speed_mm_s",
+      "unit": "mm/s",
+      "bounds": [
+        null,
+        null
+      ]
+    },
+    {
+      "name": "delay_s",
+      "unit": "s",
+      "bounds": [
+        null,
+        null
+      ]
+    }
+  ],
+  "fixed_conditions": {},
+  "budget": {
+    "next_trials": 3
+  },
+  "allow": {
+    "hardware_commands": false,
+    "dedicated_simulation_software": false
+  },
+  "notes": "Fill all placeholders with verified information. This template intentionally does not pass yet."
+}

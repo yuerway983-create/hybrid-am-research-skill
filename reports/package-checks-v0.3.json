@@ -1,0 +1,14 @@
+{
+  "version": "0.3.0",
+  "unit_tests_passed": 132,
+  "legacy_tests_included": 63,
+  "symbolic_checks_passed": 8,
+  "fixture_files_reproduced_byte_for_byte": 6,
+  "three_case_demo_executed": true,
+  "standalone_html_created": true,
+  "dedicated_simulation_software_called": false,
+  "physical_validation_performed": false,
+  "fresh_unpack_test": "passed: 132 tests and full stage3 demo",
+  "python_version": "3.13.5",
+  "fresh_unpack_environment": "same installed Python/scientific packages; independent extracted project directory, not a clean dependency installation"
+}

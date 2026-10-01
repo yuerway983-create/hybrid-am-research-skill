@@ -1,0 +1,5 @@
+{
+  "status": "blocked",
+  "reason": "Measurement quantity must match observable; no automatic sigma-width mapping",
+  "calculation_performed": false
+}

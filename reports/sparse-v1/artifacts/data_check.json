@@ -1,0 +1,19 @@
+{
+  "n_raw_rows": 6,
+  "n_aggregated_rows": 3,
+  "n_samples": 3,
+  "aggregation": "mean of repeated measurements of same sample at same settings; not extra replicates",
+  "group_column": "batch_id",
+  "partitions": {
+    "fit": {
+      "n_rows": 3,
+      "groups": [
+        "WB-0"
+      ]
+    },
+    "holdout": {
+      "n_rows": 0,
+      "groups": []
+    }
+  }
+}

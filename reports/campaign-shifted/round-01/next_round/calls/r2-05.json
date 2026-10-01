@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "call_id": "r2-05",
+  "tool": "finish_report",
+  "result": {
+    "status": "report_written",
+    "phase": "awaiting_external_experiment",
+    "files": [
+      "report.md",
+      "index.html"
+    ],
+    "report_sha256": "b580fd08e91502a87f4ce2b8d56dc8cac0792748753b6f57c5f890ac1e89df36",
+    "data_kind": "synthetic_demo"
+  },
+  "idempotent_replay": false
+}

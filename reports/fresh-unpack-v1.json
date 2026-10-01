@@ -1,0 +1,11 @@
+{
+  "fresh_unpack": true,
+  "tests": 274,
+  "passed": true,
+  "three_round_campaign_passed": true,
+  "same_installed_dependency_environment": true,
+  "new_virtualenv_install_tested": false,
+  "Windows_tested": false,
+  "host_session_portable_integrity_passed": true,
+  "note": "Fresh extracted archive in the same Linux environment; not a remote API or real printing validation."
+}

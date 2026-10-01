@@ -1,0 +1,86 @@
+{
+  "version": "1.0.0",
+  "skills": [
+    {
+      "skill_id": "hybrid-am-evidence",
+      "stages": [
+        "evidence"
+      ],
+      "implemented": true,
+      "local_path": "skills/hybrid-am-evidence/SKILL.md",
+      "description": "Host-adapted evidence checks on attached/frozen packet; no built-in new web search",
+      "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/research-lookup/SKILL.md",
+      "integration": "local project adapter; original upstream scripts not executed",
+      "review_status": "workflow reviewed; executable adapter pinned by session SHA256"
+    },
+    {
+      "skill_id": "measured-response-calibration",
+      "stages": [
+        "calibration"
+      ],
+      "implemented": true,
+      "local_path": "skills/measured-response-calibration/SKILL.md",
+      "description": "Fit the declared observable with grouped diagnostics; no model shopping",
+      "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/scikit-learn/SKILL.md",
+      "integration": "local project adapter; original upstream scripts not executed",
+      "review_status": "workflow reviewed; executable adapter pinned by session SHA256"
+    },
+    {
+      "skill_id": "bounded-experiment-planning",
+      "stages": [
+        "planning"
+      ],
+      "implemented": true,
+      "local_path": "skills/bounded-experiment-planning/SKILL.md",
+      "description": "Bounded target/coverage/baseline plan when predictive gates pass",
+      "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/experimental-design/SKILL.md",
+      "integration": "local project adapter; original upstream scripts not executed",
+      "review_status": "workflow reviewed; executable adapter pinned by session SHA256"
+    },
+    {
+      "skill_id": "calibration-only-planning",
+      "stages": [
+        "planning"
+      ],
+      "implemented": true,
+      "local_path": "skills/calibration-only-planning/SKILL.md",
+      "description": "Calibration design without predictions when model gates fail",
+      "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/experimental-design/SKILL.md",
+      "integration": "local project adapter; original upstream scripts not executed",
+      "review_status": "workflow reviewed; executable adapter pinned by session SHA256"
+    },
+    {
+      "skill_id": "descriptive-feedback",
+      "stages": [
+        "feedback"
+      ],
+      "implemented": true,
+      "local_path": "skills/descriptive-feedback/SKILL.md",
+      "description": "Actual-settings import and frozen prediction / concurrent-baseline comparison",
+      "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/statistical-analysis/SKILL.md",
+      "integration": "local project adapter; original upstream scripts not executed",
+      "review_status": "workflow reviewed; executable adapter pinned by session SHA256"
+    },
+    {
+      "skill_id": "safe-model-update",
+      "stages": [
+        "update"
+      ],
+      "implemented": true,
+      "local_path": "skills/safe-model-update/SKILL.md",
+      "description": "Versioned data export, frozen refit, fresh-confirmation checks and bounded next-round creation",
+      "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/scikit-learn/SKILL.md",
+      "integration": "local project adapter; original upstream scripts not executed",
+      "review_status": "workflow reviewed; executable adapter pinned by session SHA256"
+    },
+    {
+      "skill_id": "pymoo-multiobjective",
+      "stages": [
+        "planning"
+      ],
+      "implemented": false,
+      "description": "Considered but not integrated; current task has no verified multiple responses",
+      "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/pymoo/SKILL.md"
+    }
+  ]
+}

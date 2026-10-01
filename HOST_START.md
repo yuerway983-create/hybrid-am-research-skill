@@ -1,0 +1,80 @@
+# 主控智能体使用说明 · v1.0
+
+## 执行角色
+LLM宿主一次选择一个工具，agent_bridge.py执行真实Python工具并记录结果。
+GitHub负责获取第三方Skill，不是运行环境。宿主必须具备文件/终端能力，实际检索需授权网络工具。
+origin标签由操作者声明，不是独立身份认证。固定campaign_demo不等于LLM运行。
+
+## 创建第一轮
+```text
+python scripts/agent_bridge.py init --task examples/width-calibration-demo/task.json --protocol examples/agent-feedback-demo/comparison_protocol.json --evidence evidence/delay-evidence-001/evidence_packet.json --session runs/host-1 --origin chat_host
+python scripts/agent_bridge.py tools
+```
+
+可用 `--update-policy templates/update_policy_v1.json` 在运行前声明最大轮数、确认条件数及不退化容许量。
+任务/数据/协议/软件随后冻结；不能看过结果再改门槛。默认最多3轮，是演示预算而非科研结论。
+
+## 给宿主的完整指令
+读取SKILL.md，使用agent_bridge逐条调用；不要调用固定demo替代自己的选择。
+先session_status、inspect_task。每个技术阶段先find_skills，比较候选并记录简短理由，
+activate_skill后读取返回说明，再执行该阶段工具。数值计算来自Python，不得编造测量或预测。
+证据不足用实际宿主检索取得资料并按证据格式导入；工具缺口用实际GitHub搜索/读取审核，不执行未知代码。
+
+典型调用：
+```text
+python scripts/agent_bridge.py call --session runs/host-1 --origin chat_host --call-id h01 --tool session_status
+```
+含参数的调用，建议 `--args-file request.json`，避免Windows命令行引号差异。
+
+第一轮流程：
+inspect_task → 激活evidence/review_evidence → 激活calibration/calibrate_response → 根据返回选择planning → plan_experiments。
+没有外部结果时finish_report并等待。回传/确认文件不允许由主控模型生成。
+
+## 文献与结果由操作者附加
+无初始文献包时，可由授权宿主检索后：
+```text
+python scripts/agent_bridge.py attach-evidence --session runs/host-1 --packet path/to/evidence_packet.json
+```
+这只是导入，不会执行在线检索；包中的主张仍需宿主科学核查。已使用证据不覆盖。
+
+真实实验回传结构沿用templates/feedback_v0.4，manifest绑定原计划及比较协议的哈希：
+```text
+python scripts/agent_bridge.py attach-feedback --session runs/host-1 --manifest path/to/feedback/manifest.json
+```
+主控随后激活descriptive-feedback，import_results → compare_results。先评分原模型，不先重拟合。
+
+## 更新与第二轮
+激活safe-model-update后依次：prepare_update → refit_update。
+此时原模型/结果保留；候选模型已经冻结，同时生成confirmation_plan.json。
+尚无独立确认：可以等待，或start_next_round(mode=calibration_only)，但不提供已验证的数值预测。
+
+有确认数据后，操作者导入：
+```text
+python scripts/agent_bridge.py attach-confirmation --session runs/host-1 --manifest path/to/confirmation/manifest.json
+```
+manifest格式见templates/confirmation_v1。它绑定已冻结候选与预先生成的确认计划。
+已使用的任何样品/批次不得重用；确认覆盖条件不完整时会拒收。真实性是操作者声明，程序不认证实验。
+
+主控evaluate_update：通过才可start_next_round(mode=validated_update)；失败则calibration_only或停止。
+start_next_round返回next_round目录，宿主将--session切换过去，再选择planning Skill，生成第二轮试验。
+后续重复同样步骤。所有轮次保留历史，达到预定最大轮数则停止，不擅自延长预算。
+
+## 软件演示时的外部环境
+只能由操作者/测试工具在synthetic_demo中运行，绝不是agent工具：
+```text
+python scripts/synthetic_campaign.py feedback --session runs/host-1 --out runs/host-1/test-fixtures/feedback
+python scripts/synthetic_campaign.py confirmation --session runs/host-1 --out runs/host-1/test-fixtures/confirmation
+```
+需要在相应plan和candidate已经冻结后调用，然后用上面的attach命令附加。禁止将这些数据改标为真实数据。
+
+## 审计和可选API
+```text
+python scripts/agent_bridge.py audit --session runs/host-1
+```
+llm_agent.py提供Responses循环，start_next_round后自动切换工具会话。运行前创建origin=openai_responses会话。
+```text
+python scripts/llm_agent.py --session runs/api-1 --model YOUR_ACCOUNT_MODEL_ID --allow-external-data
+```
+模型名由账户实际可用模型指定。API密钥只在OPENAI_API_KEY环境变量/宿主凭据中配置，不发聊天、不写GitHub。
+联机可能付费并发送任务/工具结果；本包只做模拟传输和本地工具测试，未使用你的账户验收远程API。
+store=false不是对服务方数据保留政策的独立保证。更多能力由所选宿主承担，不是SKILL.md自动获得。

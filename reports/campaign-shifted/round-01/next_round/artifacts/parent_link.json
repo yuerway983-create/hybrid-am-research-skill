@@ -1,0 +1,7 @@
+{
+  "parent_candidate_sha256": "d07dcc0543b1ac9b8f2cb1fa8818494df72166de481ee43f300bc7295d7ca10b",
+  "parent_update_dataset_sha256": "f12c6cb315485dcd5ac68dea07192f8f75f79b4d7bc77fb36fdcc0605d048e05",
+  "mode": "calibration_only",
+  "round_index": 2,
+  "data_kind": "synthetic_demo"
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.4",
+  "feedback_id": null,
+  "task_id": null,
+  "material_pair": null,
+  "context_id": null,
+  "data_kind": null,
+  "mode": null,
+  "observable": null,
+  "fixed_conditions": null,
+  "measurement_definition": null,
+  "plan_sha256": null,
+  "comparison_protocol_sha256": null,
+  "source_ref": null,
+  "acquisition_status": null,
+  "dataset_file": "measurements.csv",
+  "execution_file": "executions.csv"
+}

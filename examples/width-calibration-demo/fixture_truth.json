@@ -1,0 +1,6 @@
+{
+  "data_kind": "synthetic_demo",
+  "generator": "470-3*(v-10)+14*(t-3)+0.5*(v-10)^2+1.5*(t-3)^2+0.4*(v-10)*(t-3)+batch/sample/measurement noise",
+  "purpose": "test fixture, NEVER read by fitter or candidate selection",
+  "seed": 32026
+}

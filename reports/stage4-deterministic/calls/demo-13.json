@@ -1,0 +1,623 @@
+{
+  "ok": true,
+  "call_id": "demo-13",
+  "tool": "import_results",
+  "result": {
+    "status": "feedback_imported_not_yet_compared",
+    "feedback_id": "synthetic-followup-shifted",
+    "data_kind": "synthetic_demo",
+    "acquisition_status": "synthetic_fixture",
+    "plan_sha256": "91cef3742517d6dab3005cd3e8a501e00431a298fc4942cfe97117a362031e22",
+    "comparison_protocol_sha256": "9a7f86f0e51460e34907e89883a60690594edc58fbe3abeb66b53672fe127b96",
+    "model_sha256": "d87fc8c4d783e214c1b7535ef056ee4acbc59977c5daa3b3fea64c96d88ee027",
+    "n_raw_measurements": 36,
+    "n_new_samples": 18,
+    "n_batches": 3,
+    "n_executions_without_measurement": 0,
+    "missing_trial_ids": [],
+    "n_samples_with_setting_deviations": 1,
+    "n_samples_without_supported_prediction": 0,
+    "samples": [
+      {
+        "execution_id": "EX-0-T03-0",
+        "sample_id": "NEW-0-T03-0",
+        "batch_id": "FOLLOWUP-0",
+        "trial_id": "T03",
+        "purpose": "baseline_replication",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 496.89532929,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-0-T03-0-0",
+          "NEWREC-0-T03-0-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 498.2893527797503,
+        "original_planned_prediction_um": 498.2893527797503,
+        "inside_training_domain": true,
+        "prediction_error_um": 1.394023489750282,
+        "absolute_target_error_um": 3.1046707099999935
+      },
+      {
+        "execution_id": "EX-0-T03-1",
+        "sample_id": "NEW-0-T03-1",
+        "batch_id": "FOLLOWUP-0",
+        "trial_id": "T03",
+        "purpose": "baseline_replication",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 497.126358785,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-0-T03-1-0",
+          "NEWREC-0-T03-1-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 498.2893527797503,
+        "original_planned_prediction_um": 498.2893527797503,
+        "inside_training_domain": true,
+        "prediction_error_um": 1.162993994750309,
+        "absolute_target_error_um": 2.8736412150000206
+      },
+      {
+        "execution_id": "EX-0-T01-0",
+        "sample_id": "NEW-0-T01-0",
+        "batch_id": "FOLLOWUP-0",
+        "trial_id": "T01",
+        "purpose": "predicted_target_candidate",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 4.25
+        },
+        "planned_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 4.25
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 504.04052693,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-0-T01-0-0",
+          "NEWREC-0-T01-0-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 499.91959294782254,
+        "original_planned_prediction_um": 499.91959294782254,
+        "inside_training_domain": true,
+        "prediction_error_um": -4.120933982177462,
+        "absolute_target_error_um": 4.040526929999999
+      },
+      {
+        "execution_id": "EX-0-T01-1",
+        "sample_id": "NEW-0-T01-1",
+        "batch_id": "FOLLOWUP-0",
+        "trial_id": "T01",
+        "purpose": "predicted_target_candidate",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 4.25
+        },
+        "planned_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 4.25
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 503.597569325,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-0-T01-1-0",
+          "NEWREC-0-T01-1-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 499.91959294782254,
+        "original_planned_prediction_um": 499.91959294782254,
+        "inside_training_domain": true,
+        "prediction_error_um": -3.6779763771774583,
+        "absolute_target_error_um": 3.597569324999995
+      },
+      {
+        "execution_id": "EX-0-T02-0",
+        "sample_id": "NEW-0-T02-0",
+        "batch_id": "FOLLOWUP-0",
+        "trial_id": "T02",
+        "purpose": "coverage_or_calibration",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 7.7,
+          "delay_s": 2.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 2.0
+        },
+        "setting_deviations": {
+          "speed_mm_s": 0.20000000000000018
+        },
+        "eligible_intended_comparison": false,
+        "response_um": 473.12400180500003,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-0-T02-0-0",
+          "NEWREC-0-T02-0-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 468.8748598456325,
+        "original_planned_prediction_um": 470.0355652064819,
+        "inside_training_domain": true,
+        "prediction_error_um": -4.249141959367535,
+        "absolute_target_error_um": 26.875998194999966
+      },
+      {
+        "execution_id": "EX-0-T02-1",
+        "sample_id": "NEW-0-T02-1",
+        "batch_id": "FOLLOWUP-0",
+        "trial_id": "T02",
+        "purpose": "coverage_or_calibration",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 2.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 2.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 473.79309726500003,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-0-T02-1-0",
+          "NEWREC-0-T02-1-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 470.0355652064819,
+        "original_planned_prediction_um": 470.0355652064819,
+        "inside_training_domain": true,
+        "prediction_error_um": -3.757532058518109,
+        "absolute_target_error_um": 26.20690273499997
+      },
+      {
+        "execution_id": "EX-1-T03-0",
+        "sample_id": "NEW-1-T03-0",
+        "batch_id": "FOLLOWUP-1",
+        "trial_id": "T03",
+        "purpose": "baseline_replication",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 497.45133094000005,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-1-T03-0-0",
+          "NEWREC-1-T03-0-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 498.2893527797503,
+        "original_planned_prediction_um": 498.2893527797503,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.8380218397502404,
+        "absolute_target_error_um": 2.548669059999952
+      },
+      {
+        "execution_id": "EX-1-T03-1",
+        "sample_id": "NEW-1-T03-1",
+        "batch_id": "FOLLOWUP-1",
+        "trial_id": "T03",
+        "purpose": "baseline_replication",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 497.78273375,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-1-T03-1-0",
+          "NEWREC-1-T03-1-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 498.2893527797503,
+        "original_planned_prediction_um": 498.2893527797503,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.5066190297503113,
+        "absolute_target_error_um": 2.217266250000023
+      },
+      {
+        "execution_id": "EX-1-T01-0",
+        "sample_id": "NEW-1-T01-0",
+        "batch_id": "FOLLOWUP-1",
+        "trial_id": "T01",
+        "purpose": "predicted_target_candidate",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 4.25
+        },
+        "planned_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 4.25
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 504.267961415,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-1-T01-0-0",
+          "NEWREC-1-T01-0-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 499.91959294782254,
+        "original_planned_prediction_um": 499.91959294782254,
+        "inside_training_domain": true,
+        "prediction_error_um": -4.348368467177465,
+        "absolute_target_error_um": 4.267961415000002
+      },
+      {
+        "execution_id": "EX-1-T01-1",
+        "sample_id": "NEW-1-T01-1",
+        "batch_id": "FOLLOWUP-1",
+        "trial_id": "T01",
+        "purpose": "predicted_target_candidate",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 4.25
+        },
+        "planned_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 4.25
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 504.24849478,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-1-T01-1-0",
+          "NEWREC-1-T01-1-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 499.91959294782254,
+        "original_planned_prediction_um": 499.91959294782254,
+        "inside_training_domain": true,
+        "prediction_error_um": -4.328901832177451,
+        "absolute_target_error_um": 4.248494779999987
+      },
+      {
+        "execution_id": "EX-1-T02-0",
+        "sample_id": "NEW-1-T02-0",
+        "batch_id": "FOLLOWUP-1",
+        "trial_id": "T02",
+        "purpose": "coverage_or_calibration",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 2.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 2.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 474.05641987,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-1-T02-0-0",
+          "NEWREC-1-T02-0-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 470.0355652064819,
+        "original_planned_prediction_um": 470.0355652064819,
+        "inside_training_domain": true,
+        "prediction_error_um": -4.020854663518094,
+        "absolute_target_error_um": 25.943580129999987
+      },
+      {
+        "execution_id": "EX-1-T02-1",
+        "sample_id": "NEW-1-T02-1",
+        "batch_id": "FOLLOWUP-1",
+        "trial_id": "T02",
+        "purpose": "coverage_or_calibration",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 2.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 2.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 474.542386715,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-1-T02-1-0",
+          "NEWREC-1-T02-1-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 470.0355652064819,
+        "original_planned_prediction_um": 470.0355652064819,
+        "inside_training_domain": true,
+        "prediction_error_um": -4.506821508518101,
+        "absolute_target_error_um": 25.45761328499998
+      },
+      {
+        "execution_id": "EX-2-T03-0",
+        "sample_id": "NEW-2-T03-0",
+        "batch_id": "FOLLOWUP-2",
+        "trial_id": "T03",
+        "purpose": "baseline_replication",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 497.122363695,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-2-T03-0-0",
+          "NEWREC-2-T03-0-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 498.2893527797503,
+        "original_planned_prediction_um": 498.2893527797503,
+        "inside_training_domain": true,
+        "prediction_error_um": 1.1669890847502984,
+        "absolute_target_error_um": 2.87763630500001
+      },
+      {
+        "execution_id": "EX-2-T03-1",
+        "sample_id": "NEW-2-T03-1",
+        "batch_id": "FOLLOWUP-2",
+        "trial_id": "T03",
+        "purpose": "baseline_replication",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 497.4175858,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-2-T03-1-0",
+          "NEWREC-2-T03-1-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 498.2893527797503,
+        "original_planned_prediction_um": 498.2893527797503,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.8717669797503049,
+        "absolute_target_error_um": 2.5824142000000165
+      },
+      {
+        "execution_id": "EX-2-T01-0",
+        "sample_id": "NEW-2-T01-0",
+        "batch_id": "FOLLOWUP-2",
+        "trial_id": "T01",
+        "purpose": "predicted_target_candidate",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 4.25
+        },
+        "planned_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 4.25
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 503.868087275,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-2-T01-0-0",
+          "NEWREC-2-T01-0-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 499.91959294782254,
+        "original_planned_prediction_um": 499.91959294782254,
+        "inside_training_domain": true,
+        "prediction_error_um": -3.948494327177457,
+        "absolute_target_error_um": 3.8680872749999935
+      },
+      {
+        "execution_id": "EX-2-T01-1",
+        "sample_id": "NEW-2-T01-1",
+        "batch_id": "FOLLOWUP-2",
+        "trial_id": "T01",
+        "purpose": "predicted_target_candidate",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 4.25
+        },
+        "planned_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 4.25
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 503.938163015,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-2-T01-1-0",
+          "NEWREC-2-T01-1-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 499.91959294782254,
+        "original_planned_prediction_um": 499.91959294782254,
+        "inside_training_domain": true,
+        "prediction_error_um": -4.01857006717745,
+        "absolute_target_error_um": 3.9381630149999864
+      },
+      {
+        "execution_id": "EX-2-T02-0",
+        "sample_id": "NEW-2-T02-0",
+        "batch_id": "FOLLOWUP-2",
+        "trial_id": "T02",
+        "purpose": "coverage_or_calibration",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 2.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 2.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 473.97830518,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-2-T02-0-0",
+          "NEWREC-2-T02-0-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 470.0355652064819,
+        "original_planned_prediction_um": 470.0355652064819,
+        "inside_training_domain": true,
+        "prediction_error_um": -3.942739973518087,
+        "absolute_target_error_um": 26.021694819999993
+      },
+      {
+        "execution_id": "EX-2-T02-1",
+        "sample_id": "NEW-2-T02-1",
+        "batch_id": "FOLLOWUP-2",
+        "trial_id": "T02",
+        "purpose": "coverage_or_calibration",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 2.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 7.5,
+          "delay_s": 2.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 473.50731319,
+        "technical_measurements": 2,
+        "record_ids": [
+          "NEWREC-2-T02-1-0",
+          "NEWREC-2-T02-1-1"
+        ],
+        "source_refs": [
+          "synthetic follow-up fixture; not a physical measurement",
+          "synthetic_followup.py independent test function, not model output"
+        ],
+        "frozen_prediction_at_actual_um": 470.0355652064819,
+        "original_planned_prediction_um": 470.0355652064819,
+        "inside_training_domain": true,
+        "prediction_error_um": -3.471747983518071,
+        "absolute_target_error_um": 26.49268681000001
+      }
+    ],
+    "physical_printing_performed_by_software": false,
+    "measurement_authenticity_verified": false,
+    "note": "Imports declared records only. Settings deviations retained but excluded from intended-arm comparisons. No automatic material/property inference."
+  },
+  "idempotent_replay": false
+}

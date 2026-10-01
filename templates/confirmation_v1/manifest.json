@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "candidate_sha256": null,
+  "confirmation_plan_sha256": null,
+  "role": "fresh_confirmation",
+  "reserved_after_candidate_freeze": false,
+  "material_pair": null,
+  "context_id": null,
+  "data_kind": null,
+  "mode": "research",
+  "observable": null,
+  "fixed_conditions": {},
+  "measurement_definition": {},
+  "acquisition_status": "reported_measurements",
+  "source_ref": null,
+  "dataset_file": "measurements.csv"
+}

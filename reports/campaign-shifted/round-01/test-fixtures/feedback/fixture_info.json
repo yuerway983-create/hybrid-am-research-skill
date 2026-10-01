@@ -1,0 +1,9 @@
+{
+  "data_kind": "synthetic_demo",
+  "scenario": "shifted",
+  "seed": 7026,
+  "round_index": 1,
+  "fitted_coefficients_used": false,
+  "predictions_used_as_measurements": false,
+  "physical_acquisition": false
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "sample_id": "W-0-0",
+    "batch_id": "WB-0",
+    "partition": "fit",
+    "group_id": "WB-0",
+    "speed_mm_s": 5.0,
+    "delay_s": 1.0,
+    "response_um": 480.806873905,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "W-0-0-0",
+      "W-0-0-1"
+    ],
+    "source_refs": [
+      "synthetic fixture; equation in generate_fixtures.py"
+    ]
+  },
+  {
+    "sample_id": "W-0-1",
+    "batch_id": "WB-0",
+    "partition": "fit",
+    "group_id": "WB-0",
+    "speed_mm_s": 5.0,
+    "delay_s": 3.0,
+    "response_um": 498.24873420999995,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "W-0-1-0",
+      "W-0-1-1"
+    ],
+    "source_refs": [
+      "synthetic fixture; equation in generate_fixtures.py"
+    ]
+  },
+  {
+    "sample_id": "W-0-2",
+    "batch_id": "WB-0",
+    "partition": "fit",
+    "group_id": "WB-0",
+    "speed_mm_s": 5.0,
+    "delay_s": 5.0,
+    "response_um": 528.2302337149999,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "W-0-2-0",
+      "W-0-2-1"
+    ],
+    "source_refs": [
+      "synthetic fixture; equation in generate_fixtures.py"
+    ]
+  }
+]

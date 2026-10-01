@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "checks": {
+    "diffusion_pde_residual_zero": true,
+    "unit_mass": true,
+    "centre_preserved": true,
+    "second_moment_matches": true,
+    "initial_variance": true,
+    "line_source_limit": true,
+    "variance_growth": true,
+    "dimension_consistency": true
+  },
+  "sympy_version": "1.14.0",
+  "python_version": "3.13.5",
+  "model_extension": "finite Gaussian initial profile added explicitly by this project",
+  "source_form": "S1 Eq.(2), sigma^2=2Dt for line-source variance",
+  "scientific_scope": "mathematical verification, not material calibration or physical validation",
+  "physical_validation_performed": false,
+  "dedicated_simulation_software_called": false
+}

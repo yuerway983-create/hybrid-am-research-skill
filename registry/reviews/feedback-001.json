@@ -1,0 +1,38 @@
+{
+  "stage": "feedback",
+  "selection_mode": "host-assisted actual GitHub search and source reading",
+  "queries": [
+    {
+      "tool": "GitHub.search",
+      "repository": "K-Dense-AI/scientific-agent-skills",
+      "query": "statistical-analysis"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "statistical-analysis",
+      "selected": true,
+      "read_scope": "workflow, assumptions and reporting sections from GitHub tool response",
+      "commit": "91497e335489dcb544ec8ddc8f6b7ce5fd6d1121",
+      "license": "MIT",
+      "reason": "Comparison of measured groups, independent-unit checks and practical effects"
+    },
+    {
+      "name": "scikit-learn",
+      "selected": false,
+      "reason": "Retained for predictive calibration; does not by itself provide the follow-up execution/provenance checks"
+    },
+    {
+      "name": "experimental-design",
+      "selected": "supporting",
+      "reason": "Concurrent control, replication and batch structure"
+    }
+  ],
+  "implementation": "New feedback_tools.py; no upstream Python scripts copied or executed",
+  "constraints": [
+    "Descriptive only; do not auto-select significance tests after observing outcome",
+    "No confidence intervals implemented",
+    "Use predeclared protocol and frozen predictions"
+  ],
+  "network_note": "GitHub connector succeeded. Raw HTTPS download in container failed DNS; no full upstream snapshot claimed."
+}

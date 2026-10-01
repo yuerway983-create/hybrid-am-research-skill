@@ -1,0 +1,29 @@
+{
+  "n_raw_rows": 79,
+  "n_aggregated_rows": 79,
+  "n_samples": 79,
+  "aggregation": "mean of repeated measurements of same sample at same settings; not extra replicates",
+  "group_column": "batch_id",
+  "partitions": {
+    "fit": {
+      "n_rows": 79,
+      "groups": [
+        "R01-FOLLOWUP-0",
+        "R01-FOLLOWUP-1",
+        "R01-FOLLOWUP-2",
+        "R02-FOLLOWUP-0",
+        "R02-FOLLOWUP-1",
+        "R02-FOLLOWUP-2",
+        "WB-0",
+        "WB-1",
+        "WB-2",
+        "WB-3",
+        "WB-4"
+      ]
+    },
+    "holdout": {
+      "n_rows": 0,
+      "groups": []
+    }
+  }
+}

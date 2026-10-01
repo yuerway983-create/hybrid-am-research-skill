@@ -1,0 +1,15 @@
+{
+  "schema_version": "0.1",
+  "stage": null,
+  "tool_id": null,
+  "status": "not_run",
+  "input_hashes": {},
+  "source_type": null,
+  "values": {},
+  "units": {},
+  "evidence_files": [],
+  "warnings": [],
+  "errors": [],
+  "numerical_validation": "not_assessed",
+  "scientific_validation": "not_assessed"
+}

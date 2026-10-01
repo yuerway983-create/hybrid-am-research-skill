@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "call_id": "r3-01",
+  "tool": "session_status",
+  "result": {
+    "phase": "calibrated",
+    "data_kind": "synthetic_demo",
+    "observable": "geometric_track_width_um",
+    "next_actions": [
+      "find_skills(planning)",
+      "activate_skill",
+      "plan_experiments"
+    ],
+    "active_skills": {},
+    "artifacts": {
+      "artifacts/aggregated.json": "0355c148c08121ae2f11a698c44ee0c5358e3986be964823635f2d20d26925e9",
+      "artifacts/data_check.json": "9d16fa4c6af5a5db82d52082a6409c82efcbd9218897c1324d7aed219edb8448",
+      "artifacts/calibration.json": "02ff975d0e272607e527619da1a8a3cbf8e21eac41024593c8b482174baeac19",
+      "artifacts/evidence_check.json": "58f3567a7f797f95415fedeb7b2b6c580c237d3d6dea39136299b620b22cc5a2",
+      "artifacts/parent_link.json": "86570d3649654b9f79828a61e9b061cd00b52c65d25e86fd07fdb874df6ebb61"
+    },
+    "feedback_attached": false,
+    "round_index": 3,
+    "confirmation_attached": false,
+    "next_session": null,
+    "inherited_model": {
+      "mode": "validated_update",
+      "parent_candidate_sha256": "0049553a36ec1ad8e305ed4fc7cc64d5737afd8752869c55a4eea5c141a192ef",
+      "new_confirmation_not_claimed_for_child": true
+    }
+  },
+  "idempotent_replay": false
+}

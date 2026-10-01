@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.3",
+  "task_id": "synthetic-diffusion-calibration-003",
+  "mode": "offline_demo",
+  "data_kind": "synthetic_demo",
+  "process": "hybrid-vpp-diw",
+  "material_pair": "SYNTHETIC-A / SYNTHETIC-B",
+  "context_id": "synthetic-context-003",
+  "fixed_conditions": {
+    "material_and_exposure": "Synthetic software fixture only, not a physical resin or approved exposure"
+  },
+  "dataset_file": "measurements.csv",
+  "group_column": "batch_id",
+  "measurement_definition": {
+    "quantity": "concentration_sigma_um",
+    "method": "synthetic scalar generator; NOT image metrology",
+    "scale_source_ref": "synthetic units",
+    "unit": "um"
+  },
+  "factors": [
+    {
+      "name": "elapsed_time_s",
+      "unit": "s",
+      "bounds": [
+        0.0,
+        8.0
+      ],
+      "step": 0.5,
+      "source_ref": "synthetic fixture"
+    }
+  ],
+  "target_um": 55.0,
+  "next_trials": 3,
+  "seed": 32026,
+  "bounds_review_status": "needs_review",
+  "acceptance": {
+    "max_cv_rmse_um": 0.8,
+    "max_holdout_rmse_um": 0.8,
+    "require_beats_constant": true
+  },
+  "allow": {
+    "hardware_commands": false,
+    "dedicated_simulation_software": false
+  },
+  "notes": "All ranges, targets, measurements and noise are artificial test fixtures. No real material validation or printing.",
+  "observable": "concentration_sigma_um",
+  "baseline_parameters": {
+    "elapsed_time_s": 0.0
+  },
+  "time_reference": "elapsed_since_reference_profile",
+  "assumptions": {
+    "homogeneous_1d": true,
+    "unbounded_domain": true,
+    "constant_diffusivity": true,
+    "pre_gel_only": true,
+    "advection_ignored": true
+  }
+}

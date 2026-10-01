@@ -1,0 +1,33 @@
+{
+  "review_id": "round-update-001",
+  "reviewed_on": "2026-10-01",
+  "stage": "update",
+  "selected": [
+    "safe-model-update project adapter using previously reviewed scikit-learn workflow",
+    "experimental-design sequential-development safeguards"
+  ],
+  "new_source_read": {
+    "repository": "K-Dense-AI/scientific-agent-skills",
+    "commit": "91497e335489dcb544ec8ddc8f6b7ce5fd6d1121",
+    "path": "skills/experimental-design/references/sequential_and_adaptive.md",
+    "method": "GitHub connector search and full fetch",
+    "citation_tool_ref": "turn68file0"
+  },
+  "rejected": [
+    "Clinical-trial alpha-spending procedures: not the present task; no significance claim made",
+    "Adding a new optimizer: no need to replace existing small-task bounded planner"
+  ],
+  "adaptation": "Versioned refit and fresh-confirmation acceptance; no reusing holdout or automatic gate relaxation",
+  "original_upstream_script_executed": false,
+  "project_files": [
+    "scripts/round_tools.py",
+    "scripts/agent_runtime.py"
+  ],
+  "license_note": "No new upstream source copied; existing K-Dense notices retained; actual libraries installed separately",
+  "not_established": [
+    "material performance",
+    "causal effect",
+    "unattended GitHub installation",
+    "live paid API validation"
+  ]
+}

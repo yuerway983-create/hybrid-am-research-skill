@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "call_id": "demo-06",
+  "tool": "activate_skill",
+  "result": {
+    "activated": "measured-response-calibration",
+    "stage": "calibration",
+    "rationale": "Deterministic regression scenario; not an LLM selection.",
+    "instructions": "---\nname: measured-response-calibration\ndescription: Fit and diagnose either a fixed-condition concentration-moment model OR an explicitly empirical two-factor geometric-width response model. Never map one observable to the other.\ncompatibility: Python 3.11+ with NumPy, SciPy and scikit-learn; tested versions in requirements-calibration.txt. Local/offline only.\nmetadata:\n  version: \"0.3.0\"\n---\n# Measured-response calibration\n\nRead `references/stage3-methods.md`, `registry/reviews/calibration-002.json` and the task before running.\nThis is a project-owned adapter informed by the reviewed K-Dense scikit-learn workflow;\nit is not the upstream example runner and does not silently install anything.\n\n1. Require `schema_version=0.3`, explicit measurement quantity/method/units and provenance.\n2. Validate CSV and partition integrity. Aggregate technical repeats; use declared independent groups.\n3. Concentration data: condition on fixed deposition and pre-gel assumptions; fit bounded variance.\n4. Geometric data: use preset degree and alpha in a fold-local sklearn Pipeline. This does not infer D.\n5. Use GroupKFold on fit groups. Fit final coefficients on fit rows only; evaluate untouched holdout separately.\n6. Record constant-predictor baseline, failures, errors and exact groups. No uncalibrated ± intervals.\n7. Failed/insufficient evidence goes to calibration planning; don't auto-lower acceptance thresholds.\n\nExecute `python scripts/calibration_planning.py --task <task.json> --out <new_dir>` from repository root.\nA passed numerical gate is not physical validation. Outputs remain drafts needing scientific review.\nNo external code execution, hardware, physics solver, LLM API or live literature request occurs in this command.\n",
+    "instructions_sha256": "0f816cf8536720eff2e13847e2c254ef61015ff5ca9c1e2ef635261bdedaf5ee",
+    "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/scikit-learn/SKILL.md",
+    "upstream_original_script_executed": false
+  },
+  "idempotent_replay": false
+}

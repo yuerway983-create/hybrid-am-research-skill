@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-01",
+  "scope": "Bounded selection from a previously reviewed GitHub repository, not an exhaustive GitHub survey",
+  "github_searches": [
+    {
+      "query": "scikit-learn",
+      "repository_name": "K-Dense-AI/scientific-agent-skills",
+      "topn": 2
+    }
+  ],
+  "full_reads": [
+    "skills/scikit-learn/SKILL.md",
+    "skills/experimental-design/SKILL.md",
+    "skills/pymoo/SKILL.md"
+  ],
+  "commit": "91497e335489dcb544ec8ddc8f6b7ce5fd6d1121",
+  "previous_review_reused": "skills/sympy/SKILL.md from v0.2",
+  "tools_used": [
+    "GitHub.search",
+    "GitHub.fetch",
+    "GitHub.fetch_file",
+    "web.open official method docs",
+    "local Python"
+  ],
+  "unperformed": [
+    "upstream helper runner execution",
+    "package installation",
+    "new scientific article search",
+    "unattended GitHub routing",
+    "real printing"
+  ],
+  "numeric_dependencies_used": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0"
+  },
+  "note": "Container raw-source byte-download attempts failed; successful connector reads were used for source inspection. No full upstream files vendored."
+}

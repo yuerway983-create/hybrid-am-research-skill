@@ -1,0 +1,16 @@
+{
+  "valid": true,
+  "errors": [],
+  "source_count": 4,
+  "claim_count": 6,
+  "access_counts": {
+    "abstract_only": 1,
+    "full_text_html": 2,
+    "full_text_pdf": 0,
+    "not_retrieved": 0,
+    "user_provided_pdf": 1
+  },
+  "scientific_truth_verified_by_program": false,
+  "scope": "structure and internal consistency only; host must check source content",
+  "live_retrieval_performed": false
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "candidate_sha256": "0049553a36ec1ad8e305ed4fc7cc64d5737afd8752869c55a4eea5c141a192ef",
+  "confirmation_plan_sha256": "809cc0d95fb55618346938c6a771b7dcccc0ca25cc2e2402e8e8edd88814cc2b",
+  "role": "fresh_confirmation",
+  "reserved_after_candidate_freeze": true,
+  "material_pair": "SYNTHETIC-A / SYNTHETIC-B",
+  "context_id": "synthetic-context-003",
+  "data_kind": "synthetic_demo",
+  "mode": "offline_demo",
+  "observable": "geometric_track_width_um",
+  "fixed_conditions": {
+    "material_and_exposure": "Synthetic software fixture only, not a physical resin or approved exposure"
+  },
+  "measurement_definition": {
+    "quantity": "geometric_track_width_um",
+    "method": "synthetic scalar generator; NOT image metrology",
+    "scale_source_ref": "synthetic units",
+    "unit": "um"
+  },
+  "acquisition_status": "synthetic_fixture",
+  "source_ref": "Independent synthetic test environment, steady",
+  "dataset_file": "measurements.csv"
+}

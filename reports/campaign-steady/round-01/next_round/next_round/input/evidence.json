@@ -1,0 +1,255 @@
+{
+  "schema_version": "0.2",
+  "packet_id": "delay-evidence-001",
+  "created_on": "2026-10-01",
+  "question": "Which evidence and lightweight relationships can support analysis of deposition-to-exposure delay in a single hybrid VPP-DIW track?",
+  "creation_mode": "host_assisted_live_search_then_curated_extraction",
+  "scope": "bounded evidence pass, not an exhaustive/systematic review",
+  "sources": [
+    {
+      "source_id": "S1",
+      "title": "Hybrid Multimaterial 3D Printing Using Photocuring-While-Dispensing",
+      "authors": [
+        "Jie Jin",
+        "Fangzhou Zhang",
+        "Yulong Yang",
+        "Chengqian Zhang",
+        "Haidong Wu",
+        "Yang Xu",
+        "Yong Chen"
+      ],
+      "year": 2023,
+      "doi_or_identifier": "10.1002/smll.202302405",
+      "source_locator": "https://onlinelibrary.wiley.com/doi/full/10.1002/smll.202302405",
+      "access_level": "full_text_html",
+      "actual_read_locations": [
+        "Section 2.1, Eqs. (1)-(3); PDF pp. 3-4, text layer",
+        "Section 2.2: double/triple exposure",
+        "Section 4: materials, printing parameters and motion synchronization"
+      ],
+      "process": "hybrid VPP-DIW",
+      "material": "Multiple pairs; user-specific material not selected or calibrated.",
+      "review_status": "host_read_relevant_sections",
+      "role": "direct_process_basis",
+      "local_data_claim": false,
+      "summary": "The article describes delayed photocuring of material deposited in a resin matrix. Section 2.1 assumes one-dimensional Fickian diffusion and gives sigma^2=2Dt. Nearby laser exposure also presents nozzle-clogging considerations. Section 2.2 separates fixation from later layer bonding. These are process and model precedents, not calibrated coefficients or performance results for this project.",
+      "equations_checked": [
+        {
+          "id": "S1-E2",
+          "expression": "sigma^2 = 2*D*t",
+          "locator": "Section 2.1, Eq. (2), PDF p.3",
+          "variables": {
+            "sigma": "spatial concentration-profile standard deviation",
+            "D": "diffusivity",
+            "t": "elapsed time"
+          },
+          "geometric_track_width_identity": false
+        }
+      ],
+      "limitations": [
+        "Supporting Information request failed; Fig. S5 measurement mapping was not inspected.",
+        "PDF text accessible; requested screenshots and binary download failed. No figures were digitized.",
+        "No local numeric D or verified concentration-to-geometric-width mapping is supplied.",
+        "No speed-to-initial-profile law established for this implementation."
+      ],
+      "applicability": "form_only_requires_calibration"
+    },
+    {
+      "source_id": "S2",
+      "title": "Measuring UV curing parameters of commercial photopolymers used in additive manufacturing",
+      "authors": [
+        "Joe Bennett"
+      ],
+      "year": 2017,
+      "doi_or_identifier": "10.1016/j.addma.2017.10.009",
+      "source_locator": "https://www.nist.gov/publications/measuring-uv-curing-parameters-commercial-photopolymers-used-additive-manufacturing",
+      "access_level": "abstract_only",
+      "actual_read_locations": [
+        "NIST publication abstract and bibliographic record"
+      ],
+      "process": "photopolymer curing characterization",
+      "material": "commercial photopolymers, not calibrated to our material",
+      "review_status": "host_read_abstract",
+      "role": "calibration_methods_context",
+      "local_data_claim": false,
+      "summary": "The study measures curing parameters across resins, wavelengths and thickness measurement methods. Its abstract supports the need for material- and measurement-specific characterization. It does not supply our material calibration.",
+      "equations_checked": [],
+      "limitations": [
+        "Only the institutional abstract was reviewed; full text via PMC was blocked by a browser check."
+      ],
+      "applicability": "method_reference_only"
+    },
+    {
+      "source_id": "S3",
+      "title": "Results of an interlaboratory study on the working curve in vat photopolymerization",
+      "authors": [
+        "Thomas J Kolibaba",
+        "Jason P Killgore",
+        "et al."
+      ],
+      "year": 2024,
+      "doi_or_identifier": "10.1016/j.addma.2024.104082",
+      "source_locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10986335/",
+      "access_level": "full_text_html",
+      "actual_read_locations": [
+        "Section 1 Eq. (1) and parameter definitions",
+        "Discussion of model assumptions and fitting-range sensitivity",
+        "Section 4 conclusion"
+      ],
+      "process": "VPP working-curve measurement",
+      "material": "PR48 study resin, not our material",
+      "review_status": "host_read_relevant_sections",
+      "role": "cure_model_candidate_and_limitations",
+      "local_data_claim": false,
+      "summary": "The working curve relates cure depth to incident radiant exposure using Dp and Ec. The study identifies material/light-source and measurement dependencies, as well as model error. This supports keeping exposure calibration separate from delay and not transferring coefficients without checking conditions.",
+      "equations_checked": [
+        {
+          "id": "S3-E1",
+          "expression": "Cd = Dp * ln(E0/Ec)",
+          "locator": "Introduction, Eq. (1)",
+          "variables": {
+            "Cd": "measured cure depth",
+            "Dp": "penetration-depth fit parameter",
+            "E0": "incident radiant exposure per area",
+            "Ec": "critical radiant exposure for gelation"
+          },
+          "geometric_track_width_identity": false
+        }
+      ],
+      "limitations": [
+        "Not a hybrid VPP-DIW width model.",
+        "Working-curve fit does not give complete conversion or interface strength.",
+        "No table numbers are used to calibrate the present project."
+      ],
+      "applicability": "deferred_cure_model_candidate"
+    },
+    {
+      "source_id": "S4",
+      "title": "LLM-3D Print: Large Language Models To Monitor and Control 3D Printing",
+      "authors": [
+        "Yayati Jadhav",
+        "Peter Pak",
+        "Amir Barati Farimani"
+      ],
+      "year": 2025,
+      "doi_or_identifier": "arXiv:2408.14307v3",
+      "source_locator": "https://arxiv.org/abs/2408.14307v3",
+      "access_level": "user_provided_pdf",
+      "actual_read_locations": [
+        "pp.8-13 information planning and execution",
+        "pp.24-25 compression validation",
+        "p.31 processing latency"
+      ],
+      "process": "material extrusion, not VPP-DIW",
+      "material": "PLA / TPU",
+      "review_status": "host_read_user_source",
+      "role": "workflow_reference_only",
+      "local_data_claim": false,
+      "summary": "The uploaded version separates observation, information planning, querying, solution planning and execution; it also reports post-print compression comparisons. It provides a workflow analogy, not our diffusion or curing parameters.",
+      "equations_checked": [],
+      "limitations": [
+        "Different process and materials.",
+        "Not Yang Xu work."
+      ],
+      "applicability": "workflow_only"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "source_ids": [
+        "S1"
+      ],
+      "kind": "equation",
+      "status": "source_supported",
+      "statement": "The source uses sigma^2=2Dt for one-dimensional diffusion.",
+      "locator": "S1 Section 2.1 Eq. (2), PDF p.3"
+    },
+    {
+      "claim_id": "C2",
+      "source_ids": [
+        "S1"
+      ],
+      "kind": "inference",
+      "status": "project_inference",
+      "statement": "For a finite Gaussian initial profile under constant-D free diffusion, use sigma(t)^2=sigma0^2+2Dt. This is an explicit project extension, not a verbatim equation in S1.",
+      "locator": "derived from C1 and stated Gaussian initial-condition assumption; symbolic test in scripts/verify_diffusion_symbolic.py"
+    },
+    {
+      "claim_id": "C3",
+      "source_ids": [
+        "S1"
+      ],
+      "kind": "limitation",
+      "status": "unresolved",
+      "statement": "The mapping from observable geometric track width to concentration-profile sigma is not verified; do not equate them.",
+      "locator": "S1 measurement method points to inaccessible Fig. S5; Eq. (2) defines a different observable"
+    },
+    {
+      "claim_id": "C4",
+      "source_ids": [
+        "S3"
+      ],
+      "kind": "equation",
+      "status": "source_supported",
+      "statement": "The Jacobs working curve requires area-normalized radiant exposure and material/light calibration. Delay is not exposure duration.",
+      "locator": "S3 Introduction Eq. (1) and parameter definitions"
+    },
+    {
+      "claim_id": "C5",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "kind": "inference",
+      "status": "project_inference",
+      "statement": "Implement diffusion moments first at fixed conditions. Defer a coupled geometric-width/speed/cure/performance optimizer until its data and constraints are available.",
+      "locator": "project implementation decision based on S1 and S3; not a novelty or optimality claim"
+    },
+    {
+      "claim_id": "C6",
+      "source_ids": [
+        "S4"
+      ],
+      "kind": "workflow",
+      "status": "source_supported",
+      "statement": "Information gathering before intervention and separate physical validation are useful workflow precedents.",
+      "locator": "S4 pp.8-13 and 24-25"
+    }
+  ],
+  "unresolved_gaps": [
+    {
+      "id": "G1",
+      "need": "actual material pair and fixed speed/pressure/nozzle conditions",
+      "effect": "cannot assign diffusivity or a speed-dependent initial profile"
+    },
+    {
+      "id": "G2",
+      "need": "time-resolved calibrated concentration profile or a validated geometric observation model",
+      "effect": "cannot report physical geometric track width from diffusion sigma"
+    },
+    {
+      "id": "G3",
+      "need": "matching diffusivity and initial profile plus uncertainty and validation range",
+      "effect": "real-data numerical prediction must stop until calibrated"
+    },
+    {
+      "id": "G4",
+      "need": "measured radiant exposure and material/light-specific working curve",
+      "effect": "no curing-depth or conversion prediction"
+    },
+    {
+      "id": "G5",
+      "need": "approved nozzle/laser timing safety envelope",
+      "effect": "shorter delay is not declared automatically feasible"
+    },
+    {
+      "id": "G6",
+      "need": "new independent printed samples and performance tests",
+      "effect": "no physical improvement claim"
+    }
+  ],
+  "accepted_model_form": "M1_gaussian_diffusion_moments",
+  "numeric_material_model_ready": false,
+  "next_action": "Demonstrate M1 only on explicit synthetic parameters, while issuing a calibration request for the actual research task."
+}

@@ -1,0 +1,623 @@
+{
+  "ok": true,
+  "call_id": "r2-08",
+  "tool": "import_results",
+  "result": {
+    "status": "feedback_imported_not_yet_compared",
+    "feedback_id": "R02-feedback-steady",
+    "data_kind": "synthetic_demo",
+    "acquisition_status": "synthetic_fixture",
+    "plan_sha256": "218812c50db099b3e10675f58ec21ed8fa9e255ae251ba89a08b68e330bb4dc1",
+    "comparison_protocol_sha256": "9a7f86f0e51460e34907e89883a60690594edc58fbe3abeb66b53672fe127b96",
+    "model_sha256": "432bbc3a63d96dadeea8bae9137272cbc234f3c4c6fd80fb8beade80734773c7",
+    "n_raw_measurements": 36,
+    "n_new_samples": 18,
+    "n_batches": 3,
+    "n_executions_without_measurement": 0,
+    "missing_trial_ids": [],
+    "n_samples_with_setting_deviations": 1,
+    "n_samples_without_supported_prediction": 0,
+    "samples": [
+      {
+        "execution_id": "R02-EX-0-T03-0",
+        "sample_id": "R02-NEW-0-T03-0",
+        "batch_id": "R02-FOLLOWUP-0",
+        "trial_id": "T03",
+        "purpose": "baseline_replication",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 497.38656249758924,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-0-T03-0-0",
+          "R02-NEWREC-0-T03-0-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 497.75660590819996,
+        "original_planned_prediction_um": 497.75660590819996,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.37004341061071955,
+        "absolute_target_error_um": 2.6134375024107612
+      },
+      {
+        "execution_id": "R02-EX-0-T03-1",
+        "sample_id": "R02-NEW-0-T03-1",
+        "batch_id": "R02-FOLLOWUP-0",
+        "trial_id": "T03",
+        "purpose": "baseline_replication",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 497.6429710844924,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-0-T03-1-0",
+          "R02-NEWREC-0-T03-1-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 497.75660590819996,
+        "original_planned_prediction_um": 497.75660590819996,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.11363482370757083,
+        "absolute_target_error_um": 2.3570289155076125
+      },
+      {
+        "execution_id": "R02-EX-0-T01-0",
+        "sample_id": "R02-NEW-0-T01-0",
+        "batch_id": "R02-FOLLOWUP-0",
+        "trial_id": "T01",
+        "purpose": "predicted_target_candidate",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.5,
+          "delay_s": 3.5
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.5,
+          "delay_s": 3.5
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 500.11413388268807,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-0-T01-0-0",
+          "R02-NEWREC-0-T01-0-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 500.3323222302526,
+        "original_planned_prediction_um": 500.3323222302526,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.21818834756453498,
+        "absolute_target_error_um": 0.11413388268806557
+      },
+      {
+        "execution_id": "R02-EX-0-T01-1",
+        "sample_id": "R02-NEW-0-T01-1",
+        "batch_id": "R02-FOLLOWUP-0",
+        "trial_id": "T01",
+        "purpose": "predicted_target_candidate",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.5,
+          "delay_s": 3.5
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.5,
+          "delay_s": 3.5
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 500.10812034999344,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-0-T01-1-0",
+          "R02-NEWREC-0-T01-1-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 500.3323222302526,
+        "original_planned_prediction_um": 500.3323222302526,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.22420188025915877,
+        "absolute_target_error_um": 0.10812034999344178
+      },
+      {
+        "execution_id": "R02-EX-0-T02-0",
+        "sample_id": "R02-NEW-0-T02-0",
+        "batch_id": "R02-FOLLOWUP-0",
+        "trial_id": "T02",
+        "purpose": "coverage_or_calibration",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 12.7,
+          "delay_s": 2.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 12.5,
+          "delay_s": 2.0
+        },
+        "setting_deviations": {
+          "speed_mm_s": 0.1999999999999993
+        },
+        "eligible_intended_comparison": false,
+        "response_um": 451.8134906120571,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-0-T02-0-0",
+          "R02-NEWREC-0-T02-0-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 452.40219080864944,
+        "original_planned_prediction_um": 452.5596502439432,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.588700196592356,
+        "absolute_target_error_um": 48.18650938794292
+      },
+      {
+        "execution_id": "R02-EX-0-T02-1",
+        "sample_id": "R02-NEW-0-T02-1",
+        "batch_id": "R02-FOLLOWUP-0",
+        "trial_id": "T02",
+        "purpose": "coverage_or_calibration",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 12.5,
+          "delay_s": 2.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 12.5,
+          "delay_s": 2.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 451.9042044702221,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-0-T02-1-0",
+          "R02-NEWREC-0-T02-1-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 452.5596502439432,
+        "original_planned_prediction_um": 452.5596502439432,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.6554457737211123,
+        "absolute_target_error_um": 48.09579552977789
+      },
+      {
+        "execution_id": "R02-EX-1-T03-0",
+        "sample_id": "R02-NEW-1-T03-0",
+        "batch_id": "R02-FOLLOWUP-1",
+        "trial_id": "T03",
+        "purpose": "baseline_replication",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 497.44409021086767,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-1-T03-0-0",
+          "R02-NEWREC-1-T03-0-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 497.75660590819996,
+        "original_planned_prediction_um": 497.75660590819996,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.31251569733228735,
+        "absolute_target_error_um": 2.555909789132329
+      },
+      {
+        "execution_id": "R02-EX-1-T03-1",
+        "sample_id": "R02-NEW-1-T03-1",
+        "batch_id": "R02-FOLLOWUP-1",
+        "trial_id": "T03",
+        "purpose": "baseline_replication",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 497.59050228205433,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-1-T03-1-0",
+          "R02-NEWREC-1-T03-1-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 497.75660590819996,
+        "original_planned_prediction_um": 497.75660590819996,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.16610362614562746,
+        "absolute_target_error_um": 2.409497717945669
+      },
+      {
+        "execution_id": "R02-EX-1-T01-0",
+        "sample_id": "R02-NEW-1-T01-0",
+        "batch_id": "R02-FOLLOWUP-1",
+        "trial_id": "T01",
+        "purpose": "predicted_target_candidate",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.5,
+          "delay_s": 3.5
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.5,
+          "delay_s": 3.5
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 500.43864914296114,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-1-T01-0-0",
+          "R02-NEWREC-1-T01-0-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 500.3323222302526,
+        "original_planned_prediction_um": 500.3323222302526,
+        "inside_training_domain": true,
+        "prediction_error_um": -0.10632691270853911,
+        "absolute_target_error_um": 0.43864914296113966
+      },
+      {
+        "execution_id": "R02-EX-1-T01-1",
+        "sample_id": "R02-NEW-1-T01-1",
+        "batch_id": "R02-FOLLOWUP-1",
+        "trial_id": "T01",
+        "purpose": "predicted_target_candidate",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.5,
+          "delay_s": 3.5
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.5,
+          "delay_s": 3.5
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 500.3668742477379,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-1-T01-1-0",
+          "R02-NEWREC-1-T01-1-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 500.3323222302526,
+        "original_planned_prediction_um": 500.3323222302526,
+        "inside_training_domain": true,
+        "prediction_error_um": -0.03455201748528225,
+        "absolute_target_error_um": 0.3668742477378828
+      },
+      {
+        "execution_id": "R02-EX-1-T02-0",
+        "sample_id": "R02-NEW-1-T02-0",
+        "batch_id": "R02-FOLLOWUP-1",
+        "trial_id": "T02",
+        "purpose": "coverage_or_calibration",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 12.5,
+          "delay_s": 2.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 12.5,
+          "delay_s": 2.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 451.4865745856198,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-1-T02-0-0",
+          "R02-NEWREC-1-T02-0-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 452.5596502439432,
+        "original_planned_prediction_um": 452.5596502439432,
+        "inside_training_domain": true,
+        "prediction_error_um": 1.0730756583234324,
+        "absolute_target_error_um": 48.51342541438021
+      },
+      {
+        "execution_id": "R02-EX-1-T02-1",
+        "sample_id": "R02-NEW-1-T02-1",
+        "batch_id": "R02-FOLLOWUP-1",
+        "trial_id": "T02",
+        "purpose": "coverage_or_calibration",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 12.5,
+          "delay_s": 2.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 12.5,
+          "delay_s": 2.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 452.5452260551149,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-1-T02-1-0",
+          "R02-NEWREC-1-T02-1-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 452.5596502439432,
+        "original_planned_prediction_um": 452.5596502439432,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.014424188828343176,
+        "absolute_target_error_um": 47.45477394488512
+      },
+      {
+        "execution_id": "R02-EX-2-T03-0",
+        "sample_id": "R02-NEW-2-T03-0",
+        "batch_id": "R02-FOLLOWUP-2",
+        "trial_id": "T03",
+        "purpose": "baseline_replication",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 497.03981344826104,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-2-T03-0-0",
+          "R02-NEWREC-2-T03-0-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 497.75660590819996,
+        "original_planned_prediction_um": 497.75660590819996,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.7167924599389153,
+        "absolute_target_error_um": 2.960186551738957
+      },
+      {
+        "execution_id": "R02-EX-2-T03-1",
+        "sample_id": "R02-NEW-2-T03-1",
+        "batch_id": "R02-FOLLOWUP-2",
+        "trial_id": "T03",
+        "purpose": "baseline_replication",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.0,
+          "delay_s": 3.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 497.6289187239607,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-2-T03-1-0",
+          "R02-NEWREC-2-T03-1-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 497.75660590819996,
+        "original_planned_prediction_um": 497.75660590819996,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.12768718423927794,
+        "absolute_target_error_um": 2.3710812760393196
+      },
+      {
+        "execution_id": "R02-EX-2-T01-0",
+        "sample_id": "R02-NEW-2-T01-0",
+        "batch_id": "R02-FOLLOWUP-2",
+        "trial_id": "T01",
+        "purpose": "predicted_target_candidate",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.5,
+          "delay_s": 3.5
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.5,
+          "delay_s": 3.5
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 499.71924050697737,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-2-T01-0-0",
+          "R02-NEWREC-2-T01-0-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 500.3323222302526,
+        "original_planned_prediction_um": 500.3323222302526,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.6130817232752293,
+        "absolute_target_error_um": 0.2807594930226287
+      },
+      {
+        "execution_id": "R02-EX-2-T01-1",
+        "sample_id": "R02-NEW-2-T01-1",
+        "batch_id": "R02-FOLLOWUP-2",
+        "trial_id": "T01",
+        "purpose": "predicted_target_candidate",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 5.5,
+          "delay_s": 3.5
+        },
+        "planned_parameters": {
+          "speed_mm_s": 5.5,
+          "delay_s": 3.5
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 500.55634559507337,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-2-T01-1-0",
+          "R02-NEWREC-2-T01-1-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 500.3323222302526,
+        "original_planned_prediction_um": 500.3323222302526,
+        "inside_training_domain": true,
+        "prediction_error_um": -0.22402336482076635,
+        "absolute_target_error_um": 0.5563455950733669
+      },
+      {
+        "execution_id": "R02-EX-2-T02-0",
+        "sample_id": "R02-NEW-2-T02-0",
+        "batch_id": "R02-FOLLOWUP-2",
+        "trial_id": "T02",
+        "purpose": "coverage_or_calibration",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 12.5,
+          "delay_s": 2.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 12.5,
+          "delay_s": 2.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 452.4947501208217,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-2-T02-0-0",
+          "R02-NEWREC-2-T02-0-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 452.5596502439432,
+        "original_planned_prediction_um": 452.5596502439432,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.06490012312150384,
+        "absolute_target_error_um": 47.50524987917828
+      },
+      {
+        "execution_id": "R02-EX-2-T02-1",
+        "sample_id": "R02-NEW-2-T02-1",
+        "batch_id": "R02-FOLLOWUP-2",
+        "trial_id": "T02",
+        "purpose": "coverage_or_calibration",
+        "data_kind": "synthetic_demo",
+        "actual_parameters": {
+          "speed_mm_s": 12.5,
+          "delay_s": 2.0
+        },
+        "planned_parameters": {
+          "speed_mm_s": 12.5,
+          "delay_s": 2.0
+        },
+        "setting_deviations": {},
+        "eligible_intended_comparison": true,
+        "response_um": 451.70028127292005,
+        "technical_measurements": 2,
+        "record_ids": [
+          "R02-NEWREC-2-T02-1-0",
+          "R02-NEWREC-2-T02-1-1"
+        ],
+        "source_refs": [
+          "synthetic campaign, independent artificial response function",
+          "synthetic_campaign.py external fixture; not an experiment"
+        ],
+        "frozen_prediction_at_actual_um": 452.5596502439432,
+        "original_planned_prediction_um": 452.5596502439432,
+        "inside_training_domain": true,
+        "prediction_error_um": 0.8593689710231729,
+        "absolute_target_error_um": 48.29971872707995
+      }
+    ],
+    "physical_printing_performed_by_software": false,
+    "measurement_authenticity_verified": false,
+    "note": "Imports declared records only. Settings deviations retained but excluded from intended-arm comparisons. No automatic material/property inference."
+  },
+  "idempotent_replay": false
+}

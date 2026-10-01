@@ -1,0 +1,8 @@
+{
+  "data_kind": "synthetic_demo",
+  "seed": 4102026,
+  "scenario": "shifted",
+  "model_coefficients_read": false,
+  "prediction_values_used_as_measurements": false,
+  "purpose": "Test frozen-model error, concurrent comparison and settings-deviation handling, not physical improvement"
+}

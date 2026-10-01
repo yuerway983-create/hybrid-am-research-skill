@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.2",
+  "status": "blocked",
+  "prediction_performed": false,
+  "physical_validation_performed": false,
+  "geometric_width_predicted": false,
+  "dedicated_simulation_software_called": false,
+  "hardware_commands_sent": false,
+  "model_id": "M1_gaussian_diffusion_moments",
+  "errors": [
+    "diffusivity requires a finite numeric value (not a boolean)"
+  ],
+  "rows": [],
+  "mode": "offline_demo",
+  "data_kind": "synthetic_demo",
+  "task_id": "missing-diffusivity-001",
+  "next_action": "Provide valid inputs and matching calibration; do not invent missing values or map geometric width to sigma."
+}

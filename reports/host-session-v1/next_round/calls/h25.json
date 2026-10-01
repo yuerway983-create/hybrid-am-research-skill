@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "call_id": "h25",
+  "tool": "session_status",
+  "result": {
+    "phase": "calibrated",
+    "data_kind": "synthetic_demo",
+    "observable": "geometric_track_width_um",
+    "next_actions": [
+      "find_skills(planning)",
+      "activate_skill",
+      "plan_experiments"
+    ],
+    "active_skills": {},
+    "artifacts": {
+      "artifacts/aggregated.json": "befbe8b08bb193df3d06a6fb877af8ac0f55dd560eea6e9a8755a81fb0b1ed89",
+      "artifacts/data_check.json": "2befcf503f1d5615f55f70ae624a67dda9f317527f42416000164a8bab534b15",
+      "artifacts/calibration.json": "d27f58e21372566e8f296c3244fd2abce6e122eb0ed7f0dd4b9aebfb8d14eae9",
+      "artifacts/evidence_check.json": "58f3567a7f797f95415fedeb7b2b6c580c237d3d6dea39136299b620b22cc5a2",
+      "artifacts/parent_link.json": "d47cfc9e02cdc1f443494a2f4e7584b4fa6bf468740b9748611a44a6eaa22fb9"
+    },
+    "feedback_attached": false,
+    "round_index": 2,
+    "confirmation_attached": false,
+    "next_session": null,
+    "inherited_model": {
+      "mode": "validated_update",
+      "parent_candidate_sha256": "cd181b951e47d1474f4effdbf028a4803ba0cc20eaa9c49a7e396743fc270f3b",
+      "new_confirmation_not_claimed_for_child": true
+    }
+  },
+  "idempotent_replay": false
+}

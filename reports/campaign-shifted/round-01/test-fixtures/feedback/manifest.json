@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.4",
+  "feedback_id": "R01-feedback-shifted",
+  "task_id": "synthetic-geometric-width-003",
+  "material_pair": "SYNTHETIC-A / SYNTHETIC-B",
+  "context_id": "synthetic-context-003",
+  "data_kind": "synthetic_demo",
+  "mode": "offline_demo",
+  "observable": "geometric_track_width_um",
+  "fixed_conditions": {
+    "material_and_exposure": "Synthetic software fixture only, not a physical resin or approved exposure"
+  },
+  "measurement_definition": {
+    "quantity": "geometric_track_width_um",
+    "method": "synthetic scalar generator; NOT image metrology",
+    "scale_source_ref": "synthetic units",
+    "unit": "um"
+  },
+  "plan_sha256": "91cef3742517d6dab3005cd3e8a501e00431a298fc4942cfe97117a362031e22",
+  "comparison_protocol_sha256": "9a7f86f0e51460e34907e89883a60690594edc58fbe3abeb66b53672fe127b96",
+  "source_ref": "synthetic_campaign.py; scenario=shifted",
+  "acquisition_status": "synthetic_fixture",
+  "dataset_file": "measurements.csv",
+  "execution_file": "executions.csv"
+}

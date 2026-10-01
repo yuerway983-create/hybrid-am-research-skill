@@ -1,0 +1,530 @@
+[
+  {
+    "sample_id": "S-0",
+    "batch_id": "SB-0",
+    "partition": "fit",
+    "group_id": "SB-0",
+    "elapsed_time_s": 0.0,
+    "response_um": 50.078270005,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-0-0-0",
+      "S-0-0-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-0",
+    "batch_id": "SB-0",
+    "partition": "fit",
+    "group_id": "SB-0",
+    "elapsed_time_s": 2.0,
+    "response_um": 51.68764632,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-0-1-0",
+      "S-0-1-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-0",
+    "batch_id": "SB-0",
+    "partition": "fit",
+    "group_id": "SB-0",
+    "elapsed_time_s": 4.0,
+    "response_um": 53.233892495000006,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-0-2-0",
+      "S-0-2-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-0",
+    "batch_id": "SB-0",
+    "partition": "fit",
+    "group_id": "SB-0",
+    "elapsed_time_s": 6.0,
+    "response_um": 54.76583839,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-0-3-0",
+      "S-0-3-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-0",
+    "batch_id": "SB-0",
+    "partition": "fit",
+    "group_id": "SB-0",
+    "elapsed_time_s": 8.0,
+    "response_um": 56.136625665,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-0-4-0",
+      "S-0-4-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-1",
+    "batch_id": "SB-1",
+    "partition": "fit",
+    "group_id": "SB-1",
+    "elapsed_time_s": 0.0,
+    "response_um": 49.886421985,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-1-0-0",
+      "S-1-0-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-1",
+    "batch_id": "SB-1",
+    "partition": "fit",
+    "group_id": "SB-1",
+    "elapsed_time_s": 2.0,
+    "response_um": 51.481044865,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-1-1-0",
+      "S-1-1-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-1",
+    "batch_id": "SB-1",
+    "partition": "fit",
+    "group_id": "SB-1",
+    "elapsed_time_s": 4.0,
+    "response_um": 52.996644135,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-1-2-0",
+      "S-1-2-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-1",
+    "batch_id": "SB-1",
+    "partition": "fit",
+    "group_id": "SB-1",
+    "elapsed_time_s": 6.0,
+    "response_um": 54.46670151,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-1-3-0",
+      "S-1-3-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-1",
+    "batch_id": "SB-1",
+    "partition": "fit",
+    "group_id": "SB-1",
+    "elapsed_time_s": 8.0,
+    "response_um": 55.93625857,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-1-4-0",
+      "S-1-4-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-2",
+    "batch_id": "SB-2",
+    "partition": "fit",
+    "group_id": "SB-2",
+    "elapsed_time_s": 0.0,
+    "response_um": 49.976298345000004,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-2-0-0",
+      "S-2-0-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-2",
+    "batch_id": "SB-2",
+    "partition": "fit",
+    "group_id": "SB-2",
+    "elapsed_time_s": 2.0,
+    "response_um": 51.490344545,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-2-1-0",
+      "S-2-1-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-2",
+    "batch_id": "SB-2",
+    "partition": "fit",
+    "group_id": "SB-2",
+    "elapsed_time_s": 4.0,
+    "response_um": 53.05901657,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-2-2-0",
+      "S-2-2-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-2",
+    "batch_id": "SB-2",
+    "partition": "fit",
+    "group_id": "SB-2",
+    "elapsed_time_s": 6.0,
+    "response_um": 54.562151060000005,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-2-3-0",
+      "S-2-3-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-2",
+    "batch_id": "SB-2",
+    "partition": "fit",
+    "group_id": "SB-2",
+    "elapsed_time_s": 8.0,
+    "response_um": 56.01475775,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-2-4-0",
+      "S-2-4-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-3",
+    "batch_id": "SB-3",
+    "partition": "fit",
+    "group_id": "SB-3",
+    "elapsed_time_s": 0.0,
+    "response_um": 50.131362955,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-3-0-0",
+      "S-3-0-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-3",
+    "batch_id": "SB-3",
+    "partition": "fit",
+    "group_id": "SB-3",
+    "elapsed_time_s": 2.0,
+    "response_um": 51.707416125,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-3-1-0",
+      "S-3-1-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-3",
+    "batch_id": "SB-3",
+    "partition": "fit",
+    "group_id": "SB-3",
+    "elapsed_time_s": 4.0,
+    "response_um": 53.214132275,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-3-2-0",
+      "S-3-2-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-3",
+    "batch_id": "SB-3",
+    "partition": "fit",
+    "group_id": "SB-3",
+    "elapsed_time_s": 6.0,
+    "response_um": 54.707761705,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-3-3-0",
+      "S-3-3-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-3",
+    "batch_id": "SB-3",
+    "partition": "fit",
+    "group_id": "SB-3",
+    "elapsed_time_s": 8.0,
+    "response_um": 56.17696815,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-3-4-0",
+      "S-3-4-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-4",
+    "batch_id": "SB-4",
+    "partition": "fit",
+    "group_id": "SB-4",
+    "elapsed_time_s": 0.0,
+    "response_um": 50.025496000000004,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-4-0-0",
+      "S-4-0-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-4",
+    "batch_id": "SB-4",
+    "partition": "fit",
+    "group_id": "SB-4",
+    "elapsed_time_s": 2.0,
+    "response_um": 51.605505685,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-4-1-0",
+      "S-4-1-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-4",
+    "batch_id": "SB-4",
+    "partition": "fit",
+    "group_id": "SB-4",
+    "elapsed_time_s": 4.0,
+    "response_um": 53.14590991,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-4-2-0",
+      "S-4-2-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-4",
+    "batch_id": "SB-4",
+    "partition": "fit",
+    "group_id": "SB-4",
+    "elapsed_time_s": 6.0,
+    "response_um": 54.596240325,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-4-3-0",
+      "S-4-3-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-4",
+    "batch_id": "SB-4",
+    "partition": "fit",
+    "group_id": "SB-4",
+    "elapsed_time_s": 8.0,
+    "response_um": 56.007090070000004,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-4-4-0",
+      "S-4-4-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-5",
+    "batch_id": "SB-5",
+    "partition": "holdout",
+    "group_id": "SB-5",
+    "elapsed_time_s": 1.0,
+    "response_um": 50.75684808,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-5-0-0",
+      "S-5-0-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-5",
+    "batch_id": "SB-5",
+    "partition": "holdout",
+    "group_id": "SB-5",
+    "elapsed_time_s": 3.0,
+    "response_um": 52.334238885000005,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-5-1-0",
+      "S-5-1-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-5",
+    "batch_id": "SB-5",
+    "partition": "holdout",
+    "group_id": "SB-5",
+    "elapsed_time_s": 5.0,
+    "response_um": 53.84693052,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-5-2-0",
+      "S-5-2-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-5",
+    "batch_id": "SB-5",
+    "partition": "holdout",
+    "group_id": "SB-5",
+    "elapsed_time_s": 7.0,
+    "response_um": 55.281930305,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-5-3-0",
+      "S-5-3-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-6",
+    "batch_id": "SB-6",
+    "partition": "holdout",
+    "group_id": "SB-6",
+    "elapsed_time_s": 1.0,
+    "response_um": 51.02478467500001,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-6-0-0",
+      "S-6-0-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-6",
+    "batch_id": "SB-6",
+    "partition": "holdout",
+    "group_id": "SB-6",
+    "elapsed_time_s": 3.0,
+    "response_um": 52.500993519999994,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-6-1-0",
+      "S-6-1-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-6",
+    "batch_id": "SB-6",
+    "partition": "holdout",
+    "group_id": "SB-6",
+    "elapsed_time_s": 5.0,
+    "response_um": 54.08384456,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-6-2-0",
+      "S-6-2-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  },
+  {
+    "sample_id": "S-6",
+    "batch_id": "SB-6",
+    "partition": "holdout",
+    "group_id": "SB-6",
+    "elapsed_time_s": 7.0,
+    "response_um": 55.5104942,
+    "n_repeated_measurements": 2,
+    "record_ids": [
+      "S-6-3-0",
+      "S-6-3-1"
+    ],
+    "source_refs": [
+      "synthetic Gaussian moment fixture"
+    ]
+  }
+]

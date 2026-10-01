@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "candidate_sha256": "d07dcc0543b1ac9b8f2cb1fa8818494df72166de481ee43f300bc7295d7ca10b",
+  "data_kind": "synthetic_demo",
+  "observable": "geometric_track_width_um",
+  "conditions": [
+    {
+      "condition_id": "C01",
+      "parameters": {
+        "speed_mm_s": 9.0,
+        "delay_s": 3.0
+      },
+      "state": "suggested",
+      "human_approval_required": true
+    },
+    {
+      "condition_id": "C02",
+      "parameters": {
+        "speed_mm_s": 15.0,
+        "delay_s": 1.0
+      },
+      "state": "suggested",
+      "human_approval_required": true
+    },
+    {
+      "condition_id": "C03",
+      "parameters": {
+        "speed_mm_s": 15.0,
+        "delay_s": 5.0
+      },
+      "state": "suggested",
+      "human_approval_required": true
+    },
+    {
+      "condition_id": "C04",
+      "parameters": {
+        "speed_mm_s": 5.0,
+        "delay_s": 1.0
+      },
+      "state": "suggested",
+      "human_approval_required": true
+    },
+    {
+      "condition_id": "C05",
+      "parameters": {
+        "speed_mm_s": 5.0,
+        "delay_s": 5.0
+      },
+      "state": "suggested",
+      "human_approval_required": true
+    },
+    {
+      "condition_id": "C06",
+      "parameters": {
+        "speed_mm_s": 14.5,
+        "delay_s": 3.0
+      },
+      "state": "suggested",
+      "human_approval_required": true
+    }
+  ],
+  "minimum_independent_groups": 2,
+  "purpose": "Check frozen candidate on new held-out groups; not fit or select hyperparameters",
+  "budget_note": "Additional confirmation measurements, not included in next_trials. No formal power calculation.",
+  "freshness_note": "IDs/context must be new; record identity checks cannot authenticate physical acquisition.",
+  "uncertainty": "No confidence or prediction interval estimated"
+}

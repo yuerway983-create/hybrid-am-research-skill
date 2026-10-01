@@ -1,0 +1,122 @@
+{
+  "ok": true,
+  "call_id": "h05",
+  "tool": "review_evidence",
+  "result": {
+    "status": "evidence_checked_needs_calibration",
+    "check": {
+      "valid": true,
+      "errors": [],
+      "source_count": 4,
+      "claim_count": 6,
+      "access_counts": {
+        "abstract_only": 1,
+        "full_text_html": 2,
+        "full_text_pdf": 0,
+        "not_retrieved": 0,
+        "user_provided_pdf": 1
+      },
+      "scientific_truth_verified_by_program": false,
+      "scope": "structure and internal consistency only; host must check source content",
+      "live_retrieval_performed": false
+    },
+    "question": "Which evidence and lightweight relationships can support analysis of deposition-to-exposure delay in a single hybrid VPP-DIW track?",
+    "claims": [
+      {
+        "claim_id": "C1",
+        "source_ids": [
+          "S1"
+        ],
+        "kind": "equation",
+        "status": "source_supported",
+        "statement": "The source uses sigma^2=2Dt for one-dimensional diffusion.",
+        "locator": "S1 Section 2.1 Eq. (2), PDF p.3"
+      },
+      {
+        "claim_id": "C2",
+        "source_ids": [
+          "S1"
+        ],
+        "kind": "inference",
+        "status": "project_inference",
+        "statement": "For a finite Gaussian initial profile under constant-D free diffusion, use sigma(t)^2=sigma0^2+2Dt. This is an explicit project extension, not a verbatim equation in S1.",
+        "locator": "derived from C1 and stated Gaussian initial-condition assumption; symbolic test in scripts/verify_diffusion_symbolic.py"
+      },
+      {
+        "claim_id": "C3",
+        "source_ids": [
+          "S1"
+        ],
+        "kind": "limitation",
+        "status": "unresolved",
+        "statement": "The mapping from observable geometric track width to concentration-profile sigma is not verified; do not equate them.",
+        "locator": "S1 measurement method points to inaccessible Fig. S5; Eq. (2) defines a different observable"
+      },
+      {
+        "claim_id": "C4",
+        "source_ids": [
+          "S3"
+        ],
+        "kind": "equation",
+        "status": "source_supported",
+        "statement": "The Jacobs working curve requires area-normalized radiant exposure and material/light calibration. Delay is not exposure duration.",
+        "locator": "S3 Introduction Eq. (1) and parameter definitions"
+      },
+      {
+        "claim_id": "C5",
+        "source_ids": [
+          "S1",
+          "S3"
+        ],
+        "kind": "inference",
+        "status": "project_inference",
+        "statement": "Implement diffusion moments first at fixed conditions. Defer a coupled geometric-width/speed/cure/performance optimizer until its data and constraints are available.",
+        "locator": "project implementation decision based on S1 and S3; not a novelty or optimality claim"
+      },
+      {
+        "claim_id": "C6",
+        "source_ids": [
+          "S4"
+        ],
+        "kind": "workflow",
+        "status": "source_supported",
+        "statement": "Information gathering before intervention and separate physical validation are useful workflow precedents.",
+        "locator": "S4 pp.8-13 and 24-25"
+      }
+    ],
+    "unresolved_gaps": [
+      {
+        "id": "G1",
+        "need": "actual material pair and fixed speed/pressure/nozzle conditions",
+        "effect": "cannot assign diffusivity or a speed-dependent initial profile"
+      },
+      {
+        "id": "G2",
+        "need": "time-resolved calibrated concentration profile or a validated geometric observation model",
+        "effect": "cannot report physical geometric track width from diffusion sigma"
+      },
+      {
+        "id": "G3",
+        "need": "matching diffusivity and initial profile plus uncertainty and validation range",
+        "effect": "real-data numerical prediction must stop until calibrated"
+      },
+      {
+        "id": "G4",
+        "need": "measured radiant exposure and material/light-specific working curve",
+        "effect": "no curing-depth or conversion prediction"
+      },
+      {
+        "id": "G5",
+        "need": "approved nozzle/laser timing safety envelope",
+        "effect": "shorter delay is not declared automatically feasible"
+      },
+      {
+        "id": "G6",
+        "need": "new independent printed samples and performance tests",
+        "effect": "no physical improvement claim"
+      }
+    ],
+    "note": "Frozen evidence replay only; no live literature retrieval performed by this tool"
+  },
+  "idempotent_replay": false
+}

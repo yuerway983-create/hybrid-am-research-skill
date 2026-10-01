@@ -1,0 +1,77 @@
+{
+  "schema_version": "0.1",
+  "stage": "literature",
+  "status": "offline_search_plan_only",
+  "queries_to_run": [
+    "literature evidence extraction SKILL.md",
+    "scientific literature search claim source mapping",
+    "VPP DIW process evidence skill"
+  ],
+  "seed_candidates": [
+    {
+      "id": "kd-literature-review",
+      "stage": "literature",
+      "repository": "K-Dense-AI/scientific-agent-skills",
+      "path": "skills/literature-review/SKILL.md",
+      "commit": "91497e335489dcb544ec8ddc8f6b7ce5fd6d1121",
+      "blob_sha": "c1ea86e86e3b5ec34db1f5e567dc16ee9709bda9",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/literature-review/SKILL.md",
+      "checked_on": "2026-10-01",
+      "read_lines": [
+        1,
+        130
+      ],
+      "licence_observation": "MIT stated in frontmatter",
+      "dependencies": [
+        "Parallel search/extract or explicitly adapted authorised search host"
+      ],
+      "review_notes": [
+        "Scope too broad for a small process-evidence packet.",
+        "Default generated-figure requirement must not be silently inherited."
+      ],
+      "review_status": "partial_read_only",
+      "installed": false,
+      "executed": false,
+      "approved": false
+    },
+    {
+      "id": "kd-research-lookup",
+      "stage": "literature",
+      "repository": "K-Dense-AI/scientific-agent-skills",
+      "path": "skills/research-lookup/SKILL.md",
+      "commit": "91497e335489dcb544ec8ddc8f6b7ce5fd6d1121",
+      "blob_sha": "e2f57fed797930e0e5a055ba7f1fa4fc46a004ba",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/research-lookup/SKILL.md",
+      "checked_on": "2026-10-01",
+      "read_lines": [
+        1,
+        170
+      ],
+      "licence_observation": "MIT stated in frontmatter",
+      "dependencies": [
+        "network",
+        "parallel-cli",
+        "authorised Parallel access"
+      ],
+      "review_notes": [
+        "Evidence packet is relevant.",
+        "Default 60 references is unnecessary for our bounded task.",
+        "No Parallel access has been configured in this project."
+      ],
+      "review_status": "partial_read_only",
+      "installed": false,
+      "executed": false,
+      "approved": false
+    }
+  ],
+  "selected_candidate_id": null,
+  "live_search_executed": false,
+  "remote_skill_executed": false,
+  "next_actions": [
+    "Use an authorised live GitHub search tool or review a trusted cache.",
+    "Read complete candidate instructions and executable resources; compare task fit and dependencies.",
+    "Obtain execution approval and pin reviewed versions.",
+    "Run actual authorised tools, validate outputs, then record a decision."
+  ],
+  "limitation": "This script prepares discovery. It does not perform GitHub search or decide that any candidate is safe."
+}

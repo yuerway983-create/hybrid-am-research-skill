@@ -1,0 +1,169 @@
+[
+  {
+    "type": "function",
+    "name": "session_status",
+    "description": "Read current stage, task summary, available next actions and already saved results.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "inspect_task",
+    "description": "Validate the frozen task and CSV, aggregate technical repeats and expose data quality counts.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "find_skills",
+    "description": "Find suitable candidates from the reviewed registry. A missing capability yields a host GitHub discovery request; never silently install.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "stage": {
+          "type": "string",
+          "enum": [
+            "evidence",
+            "calibration",
+            "planning",
+            "feedback",
+            "update"
+          ]
+        }
+      },
+      "required": [
+        "stage"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "activate_skill",
+    "description": "Load a reviewed local SKILL.md for this stage. Record a short evidence-based selection reason, not private reasoning.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "stage": {
+          "type": "string",
+          "enum": [
+            "evidence",
+            "calibration",
+            "planning",
+            "feedback",
+            "update"
+          ]
+        },
+        "skill_id": {
+          "type": "string"
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Short selection reason; maximum 1200 characters."
+        }
+      },
+      "required": [
+        "stage",
+        "skill_id",
+        "rationale"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "review_evidence",
+    "description": "Check the preauthorized frozen evidence packet and return source locations and scope. This is NOT a new literature search.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "calibrate_response",
+    "description": "Fit the response using the activated calibration skill, then evaluate grouped CV and preset holdout gates. Do not change the model or tolerances.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "plan_experiments",
+    "description": "Execute the activated planning skill. Passing models give bounded target/coverage/baseline proposals; failing models give calibration-only proposals.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "import_results",
+    "description": "Import only the operator-attached feedback manifest, actual execution log and measured CSV. Freeze/model predictions are not refit first.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "compare_results",
+    "description": "Compare new independent samples to concurrent baseline, score the frozen model and report descriptive changes, including null/negative outcomes.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "prepare_update",
+    "description": "Export an updated fitting dataset WITHOUT overwriting history. Retire consumed holdout to a separate file and request fresh confirmation data.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "type": "function",
+    "name": "finish_report",
+    "description": "Write a static evidence-linked progress report from actual results. Does not invent missing stages or execute experiments.",
+    "strict": true,
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    }
+  }
+]

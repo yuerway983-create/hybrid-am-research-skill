@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "call_id": "r1-13",
+  "tool": "find_skills",
+  "result": {
+    "stage": "feedback",
+    "candidates": [
+      {
+        "skill_id": "descriptive-feedback",
+        "stages": [
+          "feedback"
+        ],
+        "implemented": true,
+        "local_path": "skills/descriptive-feedback/SKILL.md",
+        "description": "Actual-settings import and frozen prediction / concurrent-baseline comparison",
+        "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/statistical-analysis/SKILL.md",
+        "integration": "local project adapter; original upstream scripts not executed",
+        "review_status": "workflow reviewed; executable adapter pinned by session SHA256"
+      }
+    ],
+    "selection_made": false,
+    "discovery_mode": "reviewed_registry_not_new_GitHub_search",
+    "missing_capability_action": "Ask host to search GitHub, inspect source and register an approved adapter; do not run fetched code"
+  },
+  "idempotent_replay": false
+}

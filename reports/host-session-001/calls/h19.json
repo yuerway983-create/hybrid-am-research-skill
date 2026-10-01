@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "call_id": "h19",
+  "tool": "activate_skill",
+  "result": {
+    "activated": "safe-model-update",
+    "stage": "update",
+    "rationale": "新夹具显示目标候选误差大于同批基准，且一件覆盖试样偏离计划；先保留原模型与负结果，再导出待重新标定的数据，旧留出集退役，不宣称新模型已验证。",
+    "instructions": "---\nname: safe-model-update\ndescription: Prepare a versioned calibration dataset after frozen-model evaluation without reusing consumed validation data as independent evidence.\nmetadata:\n  version: \"0.4.0\"\n---\n# Safe model update\nRequire a completed feedback comparison before prepare_update.\nOriginal inputs, plan, fitted coefficients and evaluated predictions are immutable.\nExport historical fit rows plus eligible new independent samples into a new fitting dataset.\nExclude settings-deviation samples from automatic incorporation pending review.\nSave old holdout separately as retired validation, not new independent confirmation.\nDo not perform automatic refitting or alter acceptance criteria. Request fresh independent\nconfirmation measurements before claiming the next model has passed independent validation.\n",
+    "instructions_sha256": "6384b3ffb82b69d75f876ca07d87b936013b8d974ca96d51e77f17cb78b354d9",
+    "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/scikit-learn/SKILL.md",
+    "upstream_original_script_executed": false
+  },
+  "idempotent_replay": false
+}

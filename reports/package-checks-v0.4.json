@@ -1,0 +1,11 @@
+{
+  "version": "0.4.0",
+  "test_count": 213,
+  "fresh_unpacked_tests_passed": true,
+  "fresh_demo_passed": true,
+  "host_audit_passed_after_unpack": true,
+  "python_sources_identical_to_fresh_tested_package": true,
+  "dependency_environment": "existing installed numpy 2.3.5 / scipy 1.17.0 / scikit-learn 1.8.0; not a fresh network dependency install",
+  "external_paid_llm_api_tested": false,
+  "physical_experiment_performed": false
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.2",
+  "status": "synthetic_calculation_complete",
+  "prediction_performed": true,
+  "physical_validation_performed": false,
+  "geometric_width_predicted": false,
+  "dedicated_simulation_software_called": false,
+  "hardware_commands_sent": false,
+  "model_id": "M1_gaussian_diffusion_moments",
+  "errors": [],
+  "rows": [
+    {
+      "elapsed_time_s": 0.0,
+      "concentration_variance_um2": 2500.0,
+      "concentration_sigma_um": 50.0,
+      "concentration_fwhm_um": 117.74100225154747,
+      "sigma_scenario_lower_um": 50.0,
+      "sigma_scenario_upper_um": 50.0
+    },
+    {
+      "elapsed_time_s": 1.0,
+      "concentration_variance_um2": 2580.0,
+      "concentration_sigma_um": 50.79370039680118,
+      "concentration_fwhm_um": 119.61002385568389,
+      "sigma_scenario_lower_um": 50.59644256269407,
+      "sigma_scenario_upper_um": 50.99019513592785
+    },
+    {
+      "elapsed_time_s": 2.0,
+      "concentration_variance_um2": 2660.0,
+      "concentration_sigma_um": 51.57518783291051,
+      "concentration_fwhm_um": 121.450286135174,
+      "sigma_scenario_lower_um": 51.18593556827891,
+      "sigma_scenario_upper_um": 51.96152422706632
+    },
+    {
+      "elapsed_time_s": 4.0,
+      "concentration_variance_um2": 2820.0,
+      "concentration_sigma_um": 53.103672189407014,
+      "concentration_fwhm_um": 125.0495917363682,
+      "sigma_scenario_lower_um": 52.3450093132096,
+      "sigma_scenario_upper_um": 53.85164807134504
+    },
+    {
+      "elapsed_time_s": 8.0,
+      "concentration_variance_um2": 3140.0,
+      "concentration_sigma_um": 56.0357029044876,
+      "concentration_fwhm_um": 131.9539964368864,
+      "sigma_scenario_lower_um": 54.589376255824725,
+      "sigma_scenario_upper_um": 57.445626465380286
+    }
+  ],
+  "mode": "offline_demo",
+  "data_kind": "synthetic_demo",
+  "task_id": "synthetic-diffusion-check-001",
+  "model_form": "sigma(t)^2 = sigma0^2 + 2*D*t",
+  "evidence_refs": [
+    "S1 Section 2.1 Eq.(2)",
+    "C2 explicit project finite-initial-width extension"
+  ],
+  "validated_physics": false,
+  "uncertainty": {
+    "type": "parameter_scenario_envelope_not_confidence_interval",
+    "excludes": [
+      "model discrepancy",
+      "observation-map error",
+      "unprovided measurement uncertainty"
+    ],
+    "coverage_probability": null
+  },
+  "not_predicted": [
+    "geometric_track_width",
+    "cure_depth",
+    "conversion",
+    "nozzle_clogging_probability",
+    "interface_strength",
+    "fatigue_life"
+  ],
+  "next_action": "Acquire actual material calibration and a geometric observation map before process optimisation."
+}

@@ -1,0 +1,2 @@
+# v0.4 host bridge + optional Responses driver (standard-library HTTP; no SDK).
+-r requirements-calibration.txt

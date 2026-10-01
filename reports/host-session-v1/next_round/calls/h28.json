@@ -1,0 +1,101 @@
+{
+  "ok": true,
+  "call_id": "h28",
+  "tool": "plan_experiments",
+  "result": {
+    "status": "awaiting_external_experiment",
+    "plan": {
+      "status": "candidate_plan_not_executed",
+      "predicted_target_selection_performed": true,
+      "candidate_count": 357,
+      "candidates_inside_training_domain": 357,
+      "sampling": "attainable bounded grid, or quantized Latin-hypercube subset when grid exceeds 5000",
+      "budget_requested": 3,
+      "trials": [
+        {
+          "trial_id": "T03",
+          "run_order": 1,
+          "purpose": "baseline_replication",
+          "parameters": {
+            "speed_mm_s": 5.0,
+            "delay_s": 3.0
+          },
+          "predicted_response_um": 497.75660590819996,
+          "inside_training_domain": true,
+          "prediction_interval": null,
+          "rationale": "New independent reference specimen at the declared baseline; do not replace with an old measurement",
+          "state": "suggested",
+          "human_approval_required": true,
+          "physical_feasibility": "not_verified",
+          "required_measurements": [
+            "geometric_track_width_um",
+            "actual_timing_and_settings",
+            "sample_id",
+            "batch_id",
+            "measurement_method"
+          ],
+          "data_kind": "synthetic_demo"
+        },
+        {
+          "trial_id": "T01",
+          "run_order": 2,
+          "purpose": "predicted_target_candidate",
+          "parameters": {
+            "speed_mm_s": 5.5,
+            "delay_s": 3.5
+          },
+          "predicted_response_um": 500.3323222302526,
+          "inside_training_domain": true,
+          "prediction_interval": null,
+          "rationale": "Smallest absolute target error among tested-grid model predictions within training convex hull; not a verified optimum",
+          "state": "suggested",
+          "human_approval_required": true,
+          "physical_feasibility": "not_verified",
+          "required_measurements": [
+            "geometric_track_width_um",
+            "actual_timing_and_settings",
+            "sample_id",
+            "batch_id",
+            "measurement_method"
+          ],
+          "data_kind": "synthetic_demo"
+        },
+        {
+          "trial_id": "T02",
+          "run_order": 3,
+          "purpose": "coverage_or_calibration",
+          "parameters": {
+            "speed_mm_s": 12.5,
+            "delay_s": 2.0
+          },
+          "predicted_response_um": 452.5596502439432,
+          "inside_training_domain": true,
+          "prediction_interval": null,
+          "rationale": "Maximin coverage in normalized parameter space; not Bayesian information gain or evidence of safety",
+          "state": "suggested",
+          "human_approval_required": true,
+          "physical_feasibility": "not_verified",
+          "required_measurements": [
+            "geometric_track_width_um",
+            "actual_timing_and_settings",
+            "sample_id",
+            "batch_id",
+            "measurement_method"
+          ],
+          "data_kind": "synthetic_demo"
+        }
+      ],
+      "baseline_found_in_data": true,
+      "no_claims": [
+        "No physical improvement demonstrated",
+        "No guaranteed feasible curing/interface outcome",
+        "No global optimum or calibrated prediction interval",
+        "Not a sample-size/power calculation"
+      ]
+    },
+    "plan_sha256": "218812c50db099b3e10675f58ec21ed8fa9e255ae251ba89a08b68e330bb4dc1",
+    "comparison_protocol_sha256": "9a7f86f0e51460e34907e89883a60690594edc58fbe3abeb66b53672fe127b96",
+    "note": "Parameters are suggested, not approved/executed. Await operator-attached data."
+  },
+  "idempotent_replay": false
+}

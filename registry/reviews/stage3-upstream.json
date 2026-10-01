@@ -1,0 +1,34 @@
+[
+  {
+    "skill": "scikit-learn",
+    "url": "https://raw.githubusercontent.com/K-Dense-AI/scientific-agent-skills/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/scikit-learn/SKILL.md",
+    "full_instructions_reviewed_via": "GitHub connector",
+    "integrity_download_error": "ConnectionError",
+    "code_copied": false,
+    "commit": "91497e335489dcb544ec8ddc8f6b7ce5fd6d1121",
+    "declared_license": "BSD-3-Clause",
+    "raw_byte_download_note": "Container network request failed; authoritative full content was read through GitHub connector. No bytes vendored.",
+    "github_blob_sha": "1fc683032c6f59de0758161ffcf843941f8b2cb5"
+  },
+  {
+    "skill": "experimental-design",
+    "url": "https://raw.githubusercontent.com/K-Dense-AI/scientific-agent-skills/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/experimental-design/SKILL.md",
+    "full_instructions_reviewed_via": "GitHub connector",
+    "integrity_download_error": "ConnectionError",
+    "code_copied": false,
+    "commit": "91497e335489dcb544ec8ddc8f6b7ce5fd6d1121",
+    "declared_license": "MIT",
+    "raw_byte_download_note": "Container network request failed; authoritative full content was read through GitHub connector. No bytes vendored.",
+    "github_blob_sha": "46227bb09abd5afa7db91fb6eefba1bbafc523b4"
+  },
+  {
+    "skill": "pymoo",
+    "url": "https://raw.githubusercontent.com/K-Dense-AI/scientific-agent-skills/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/pymoo/SKILL.md",
+    "full_instructions_reviewed_via": "GitHub connector",
+    "integrity_download_error": "ConnectionError",
+    "code_copied": false,
+    "commit": "91497e335489dcb544ec8ddc8f6b7ce5fd6d1121",
+    "declared_license": "Apache-2.0",
+    "raw_byte_download_note": "Container network request failed; authoritative full content was read through GitHub connector. No bytes vendored."
+  }
+]

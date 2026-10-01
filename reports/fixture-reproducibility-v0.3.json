@@ -1,0 +1,26 @@
+[
+  {
+    "file": "examples/width-calibration-demo/task.json",
+    "identical": true
+  },
+  {
+    "file": "examples/width-calibration-demo/measurements.csv",
+    "identical": true
+  },
+  {
+    "file": "examples/sigma-calibration-demo/task.json",
+    "identical": true
+  },
+  {
+    "file": "examples/sigma-calibration-demo/measurements.csv",
+    "identical": true
+  },
+  {
+    "file": "examples/insufficient-data-demo/task.json",
+    "identical": true
+  },
+  {
+    "file": "examples/insufficient-data-demo/measurements.csv",
+    "identical": true
+  }
+]

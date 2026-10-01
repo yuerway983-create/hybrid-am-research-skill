@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.3",
+  "task_id": "synthetic-insufficient-data-003",
+  "mode": "offline_demo",
+  "data_kind": "synthetic_demo",
+  "process": "hybrid-vpp-diw",
+  "material_pair": "SYNTHETIC-A / SYNTHETIC-B",
+  "context_id": "synthetic-context-003",
+  "fixed_conditions": {
+    "material_and_exposure": "Synthetic software fixture only, not a physical resin or approved exposure"
+  },
+  "dataset_file": "measurements.csv",
+  "group_column": "batch_id",
+  "measurement_definition": {
+    "quantity": "geometric_track_width_um",
+    "method": "synthetic scalar generator; NOT image metrology",
+    "scale_source_ref": "synthetic units",
+    "unit": "um"
+  },
+  "factors": [
+    {
+      "name": "speed_mm_s",
+      "unit": "mm/s",
+      "bounds": [
+        5.0,
+        15.0
+      ],
+      "step": 0.5,
+      "source_ref": "synthetic fixture"
+    },
+    {
+      "name": "delay_s",
+      "unit": "s",
+      "bounds": [
+        1.0,
+        5.0
+      ],
+      "step": 0.25,
+      "source_ref": "synthetic fixture"
+    }
+  ],
+  "target_um": 500.0,
+  "next_trials": 3,
+  "seed": 32026,
+  "bounds_review_status": "needs_review",
+  "acceptance": {
+    "max_cv_rmse_um": 8.0,
+    "max_holdout_rmse_um": 8.0,
+    "require_beats_constant": true
+  },
+  "allow": {
+    "hardware_commands": false,
+    "dedicated_simulation_software": false
+  },
+  "notes": "All ranges, targets, measurements and noise are artificial test fixtures. No real material validation or printing.",
+  "observable": "geometric_track_width_um",
+  "empirical_model": {
+    "degree": 2,
+    "ridge_alpha": 0.01
+  },
+  "baseline_parameters": {
+    "speed_mm_s": 5.0,
+    "delay_s": 3.0
+  }
+}

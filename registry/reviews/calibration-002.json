@@ -1,0 +1,41 @@
+{
+  "stage": "calibration",
+  "date": "2026-10-01",
+  "host_mode": "ChatGPT-host-assisted selection and implementation",
+  "candidates": [
+    {
+      "name": "K-Dense scikit-learn",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/scikit-learn/SKILL.md",
+      "inspection": "full instructions read through GitHub connector",
+      "license_declared": "BSD-3-Clause",
+      "selected": true,
+      "reason": "Regression Pipeline, grouped validation, baseline comparison match the task"
+    },
+    {
+      "name": "K-Dense sympy",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/sympy/SKILL.md",
+      "inspection": "previous v0.2 full review reused, not newly fetched",
+      "selected": false,
+      "reason": "Useful for equation verification; not a replacement for empirical fitting and independent validation"
+    }
+  ],
+  "local_adapter": "skills/measured-response-calibration/SKILL.md",
+  "actual_tools": [
+    "scipy.optimize.lsq_linear",
+    "sklearn.model_selection.GroupKFold",
+    "sklearn.pipeline.make_pipeline",
+    "sklearn.linear_model.Ridge",
+    "sklearn.dummy.DummyRegressor"
+  ],
+  "upstream_code_copied": false,
+  "upstream_example_runner_executed": false,
+  "new_code": "Project-owned adapter; library APIs used directly",
+  "runtime_autonomous_github_discovery": false,
+  "scientific_data_available": "synthetic fixtures only",
+  "limitations": [
+    "No image-to-sigma mapping",
+    "No real-material validation",
+    "No pointwise predictive intervals",
+    "No hyperparameter search"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "status": "next_round_ready",
+  "round_index": 3,
+  "mode": "validated_update",
+  "next_session": "next_round",
+  "data_kind": "synthetic_demo",
+  "parent_model_and_results_preserved": true,
+  "fresh_holdout_reused": false,
+  "next": "Switch host to the next_round session; select planning skill and generate a new proposal. No experiments are executed."
+}

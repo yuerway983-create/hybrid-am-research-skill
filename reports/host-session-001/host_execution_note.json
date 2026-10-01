@@ -1,0 +1,10 @@
+{
+  "execution": "current chat LLM chose individual bridge calls after reading prior results",
+  "tool_calls": 21,
+  "not_executed": "stage4_demo.py was not used for this host session",
+  "runtime_discovery": "reviewed local registry; current stage also had a separate actual GitHub workflow lookup",
+  "numerical_data_kind": "synthetic_demo",
+  "external_paid_llm_api_called": false,
+  "fixture_attachment": "synthetic_followup.py run outside the model tool allowlist by the development harness, explicitly labelled",
+  "limitations": "This is a host-directed demonstration, not independent evidence of autonomous benchmarking or physical printing."
+}

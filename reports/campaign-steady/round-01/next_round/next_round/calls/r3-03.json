@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "call_id": "r3-03",
+  "tool": "activate_skill",
+  "result": {
+    "activated": "bounded-experiment-planning",
+    "stage": "planning",
+    "rationale": "Deterministic acceptance test selection; not an LLM invocation.",
+    "instructions": "---\nname: bounded-experiment-planning\ndescription: Propose a small batch for model-predicted target verification, parameter-space coverage and baseline replication; use calibration-only proposals when data checks fail.\ncompatibility: Uses local NumPy/SciPy plus the calibration adapter. No pyDOE3/BoTorch or simulation software needed.\nmetadata:\n  version: \"0.3.0\"\n---\n# Bounded experiment planning\n\nRead the calibration result and `registry/reviews/planning-001.json`.\nAdapted from K-Dense experimental-design workflow: retain replication and randomized run order.\nWe use our own attainable-grid/maximin code and SciPy LatinHypercube for large candidate spaces,\nNOT the upstream pyDOE3 scripts. Do not call this Bayesian optimisation or information-gain maximisation.\n\n- User-supplied bounds and steps are required; zero implicit device limits.\n- Only models passing the preset diagnostic gates may rank candidates by target error.\n- Predict only inside the fit-data convex hull (or observed time interval), not merely the rectangular bounds.\n- A coverage trial may be outside the fit hull, but its prediction is null and human approval is required.\n- Reserve a concurrent independent baseline specimen. Old measurements do not constitute fresh controls.\n- Randomise suggested run order reproducibly; the user must approve physical execution.\n- No numeric prediction interval is implemented; CV error is not a confidence interval.\n- Return an empty measurement import template; never synthesize a purported follow-up experiment.\n\nThis adapter is called by calibration_planning.propose after measurement validation.\nThe plan is a finite-grid heuristic and candidate set, never a proven global/physical optimum.\n",
+    "instructions_sha256": "5a00dd7d45ee225f4ee3d204e6a490ce83f5a40eae9983cafcced42a260e2bc9",
+    "upstream": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/experimental-design/SKILL.md",
+    "upstream_original_script_executed": false
+  },
+  "idempotent_replay": false
+}

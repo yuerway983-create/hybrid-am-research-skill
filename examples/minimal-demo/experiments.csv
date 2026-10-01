@@ -1,0 +1,7 @@
+record_id,sample_id,batch_id,material_pair,data_kind,source_ref,speed_mm_s,delay_s,track_width_um
+r01,s01,demo-batch,SYNTHETIC-A / SYNTHETIC-B,synthetic_demo,handwritten-test-fixture,5,0.5,580
+r02,s02,demo-batch,SYNTHETIC-A / SYNTHETIC-B,synthetic_demo,handwritten-test-fixture,5,5,690
+r03,s03,demo-batch,SYNTHETIC-A / SYNTHETIC-B,synthetic_demo,handwritten-test-fixture,10,2.5,540
+r04,s04,demo-batch,SYNTHETIC-A / SYNTHETIC-B,synthetic_demo,handwritten-test-fixture,15,0.5,410
+r05,s05,demo-batch,SYNTHETIC-A / SYNTHETIC-B,synthetic_demo,handwritten-test-fixture,15,5,530
+r06,s06,demo-batch,SYNTHETIC-A / SYNTHETIC-B,synthetic_demo,handwritten-test-fixture,10,2.5,552

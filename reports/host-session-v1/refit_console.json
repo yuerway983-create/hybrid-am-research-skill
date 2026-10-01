@@ -1,0 +1,1051 @@
+{
+  "ok": true,
+  "call_id": "h20",
+  "tool": "refit_update",
+  "result": {
+    "candidate": {
+      "schema_version": "1.0",
+      "round_index": 1,
+      "data_kind": "synthetic_demo",
+      "calibration": {
+        "status": "diagnostics_failed_or_incomplete",
+        "numerical_fit_performed": true,
+        "model_usable_for_proposals": false,
+        "reasons": [
+          "has_two_independent_holdout_groups",
+          "holdout_within_training_domain",
+          "holdout_within_preset_tolerance"
+        ],
+        "fit_groups": [
+          "R01-FOLLOWUP-0",
+          "R01-FOLLOWUP-1",
+          "R01-FOLLOWUP-2",
+          "WB-0",
+          "WB-1",
+          "WB-2",
+          "WB-3",
+          "WB-4"
+        ],
+        "holdout_groups": [],
+        "holdout_used_for_fitting": false,
+        "holdout_used_for_hyperparameter_selection": false,
+        "uncertainty": {
+          "type": "not_quantified",
+          "note": "CV/holdout RMSE is an error diagnostic, not a pointwise confidence or prediction interval"
+        },
+        "model": {
+          "type": "empirical_polynomial_ridge",
+          "degree": 2,
+          "ridge_alpha": 0.01,
+          "selection": "degree and alpha specified before evaluation; no hyperparameter search on holdout",
+          "feature_names": [
+            "speed_mm_s",
+            "delay_s",
+            "speed_mm_s^2",
+            "speed_mm_s delay_s",
+            "delay_s^2"
+          ],
+          "scaler_mean": [
+            8.729166666666668,
+            3.058333333333334,
+            89.84375000000001,
+            26.625000000000004,
+            11.33333333333333
+          ],
+          "scaler_scale": [
+            3.6939679621723247,
+            1.4071000517218224,
+            74.40765433366047,
+            18.21119352059179,
+            8.653385256007546
+          ],
+          "coef_standardized": [
+            -52.55287808268456,
+            0.55384813857531,
+            37.3162009024009,
+            7.296484952459609,
+            13.729640775835762
+          ],
+          "intercept": 485.60551286519234,
+          "is_physical_diffusion_model": false,
+          "diffusivity_inferred": false
+        },
+        "cv": {
+          "group_weighted_rmse_um": 1.0708687157182892,
+          "group_weighted_mae_um": 0.7757907804677973,
+          "max_abs_error_um": 3.994280803873494,
+          "n_groups": 8,
+          "n_rows": 62
+        },
+        "constant_baseline_cv": {
+          "group_weighted_rmse_um": 23.02106575202658,
+          "group_weighted_mae_um": 19.976284900156426,
+          "max_abs_error_um": 46.1440001848037,
+          "n_groups": 8,
+          "n_rows": 62
+        },
+        "folds": [
+          {
+            "fold": 1,
+            "fit_groups": [
+              "R01-FOLLOWUP-0",
+              "R01-FOLLOWUP-1",
+              "WB-0",
+              "WB-1",
+              "WB-2",
+              "WB-3"
+            ],
+            "validation_groups": [
+              "R01-FOLLOWUP-2",
+              "WB-4"
+            ],
+            "fit_row_indices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55
+            ],
+            "validation_row_indices": [
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61
+            ]
+          },
+          {
+            "fold": 2,
+            "fit_groups": [
+              "R01-FOLLOWUP-0",
+              "R01-FOLLOWUP-2",
+              "WB-0",
+              "WB-1",
+              "WB-2",
+              "WB-4"
+            ],
+            "validation_groups": [
+              "R01-FOLLOWUP-1",
+              "WB-3"
+            ],
+            "fit_row_indices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61
+            ],
+            "validation_row_indices": [
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55
+            ]
+          },
+          {
+            "fold": 3,
+            "fit_groups": [
+              "R01-FOLLOWUP-1",
+              "R01-FOLLOWUP-2",
+              "WB-0",
+              "WB-1",
+              "WB-3",
+              "WB-4"
+            ],
+            "validation_groups": [
+              "R01-FOLLOWUP-0",
+              "WB-2"
+            ],
+            "fit_row_indices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61
+            ],
+            "validation_row_indices": [
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              45,
+              46,
+              47,
+              48,
+              49
+            ]
+          },
+          {
+            "fold": 4,
+            "fit_groups": [
+              "R01-FOLLOWUP-0",
+              "R01-FOLLOWUP-1",
+              "R01-FOLLOWUP-2",
+              "WB-0",
+              "WB-2",
+              "WB-3",
+              "WB-4"
+            ],
+            "validation_groups": [
+              "WB-1"
+            ],
+            "fit_row_indices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61
+            ],
+            "validation_row_indices": [
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ]
+          },
+          {
+            "fold": 5,
+            "fit_groups": [
+              "R01-FOLLOWUP-0",
+              "R01-FOLLOWUP-1",
+              "R01-FOLLOWUP-2",
+              "WB-1",
+              "WB-2",
+              "WB-3",
+              "WB-4"
+            ],
+            "validation_groups": [
+              "WB-0"
+            ],
+            "fit_row_indices": [
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61
+            ],
+            "validation_row_indices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          }
+        ],
+        "oof_rows": [
+          {
+            "sample_id": "W-0-0",
+            "group_id": "WB-0",
+            "measured_um": 480.806873905,
+            "out_of_fold_prediction_um": 480.1589072220949,
+            "constant_baseline_um": 485.9748446214104
+          },
+          {
+            "sample_id": "W-0-1",
+            "group_id": "WB-0",
+            "measured_um": 498.24873420999995,
+            "out_of_fold_prediction_um": 497.7290210190411,
+            "constant_baseline_um": 485.9748446214104
+          },
+          {
+            "sample_id": "W-0-2",
+            "group_id": "WB-0",
+            "measured_um": 528.2302337149999,
+            "out_of_fold_prediction_um": 527.8071378604708,
+            "constant_baseline_um": 485.9748446214104
+          },
+          {
+            "sample_id": "W-0-3",
+            "group_id": "WB-0",
+            "measured_um": 448.432463775,
+            "out_of_fold_prediction_um": 448.75326463409885,
+            "constant_baseline_um": 485.9748446214104
+          },
+          {
+            "sample_id": "W-0-4",
+            "group_id": "WB-0",
+            "measured_um": 469.5584316,
+            "out_of_fold_prediction_um": 470.31936416445416,
+            "constant_baseline_um": 485.9748446214104
+          },
+          {
+            "sample_id": "W-0-5",
+            "group_id": "WB-0",
+            "measured_um": 505.045700825,
+            "out_of_fold_prediction_um": 504.393466739293,
+            "constant_baseline_um": 485.9748446214104
+          },
+          {
+            "sample_id": "W-0-6",
+            "group_id": "WB-0",
+            "measured_um": 442.686379815,
+            "out_of_fold_prediction_um": 442.2563524225246,
+            "constant_baseline_um": 485.9748446214104
+          },
+          {
+            "sample_id": "W-0-7",
+            "group_id": "WB-0",
+            "measured_um": 467.893791805,
+            "out_of_fold_prediction_um": 467.81843768628914,
+            "constant_baseline_um": 485.9748446214104
+          },
+          {
+            "sample_id": "W-0-8",
+            "group_id": "WB-0",
+            "measured_um": 506.279105495,
+            "out_of_fold_prediction_um": 505.8885259945372,
+            "constant_baseline_um": 485.9748446214104
+          },
+          {
+            "sample_id": "W-1-0",
+            "group_id": "WB-1",
+            "measured_um": 480.75932597999997,
+            "out_of_fold_prediction_um": 480.1667347969744,
+            "constant_baseline_um": 486.01070846220404
+          },
+          {
+            "sample_id": "W-1-1",
+            "group_id": "WB-1",
+            "measured_um": 497.94334016000005,
+            "out_of_fold_prediction_um": 497.7426736190331,
+            "constant_baseline_um": 486.01070846220404
+          },
+          {
+            "sample_id": "W-1-2",
+            "group_id": "WB-1",
+            "measured_um": 527.0576168800001,
+            "out_of_fold_prediction_um": 528.1346951123484,
+            "constant_baseline_um": 486.01070846220404
+          },
+          {
+            "sample_id": "W-1-3",
+            "group_id": "WB-1",
+            "measured_um": 448.75364596,
+            "out_of_fold_prediction_um": 448.75968922896516,
+            "constant_baseline_um": 486.01070846220404
+          },
+          {
+            "sample_id": "W-1-4",
+            "group_id": "WB-1",
+            "measured_um": 470.60344363,
+            "out_of_fold_prediction_um": 470.21960252368206,
+            "constant_baseline_um": 486.01070846220404
+          },
+          {
+            "sample_id": "W-1-5",
+            "group_id": "WB-1",
+            "measured_um": 503.675783505,
+            "out_of_fold_prediction_um": 504.49559848965566,
+            "constant_baseline_um": 486.01070846220404
+          },
+          {
+            "sample_id": "W-1-6",
+            "group_id": "WB-1",
+            "measured_um": 441.9430142,
+            "out_of_fold_prediction_um": 442.4319427842498,
+            "constant_baseline_um": 486.01070846220404
+          },
+          {
+            "sample_id": "W-1-7",
+            "group_id": "WB-1",
+            "measured_um": 467.649287555,
+            "out_of_fold_prediction_um": 467.775830551625,
+            "constant_baseline_um": 486.01070846220404
+          },
+          {
+            "sample_id": "W-1-8",
+            "group_id": "WB-1",
+            "measured_um": 506.53683530499995,
+            "out_of_fold_prediction_um": 505.9358009902569,
+            "constant_baseline_um": 486.01070846220404
+          },
+          {
+            "sample_id": "W-2-0",
+            "group_id": "WB-2",
+            "measured_um": 478.84218983999995,
+            "out_of_fold_prediction_um": 480.5854268240042,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "W-2-1",
+            "group_id": "WB-2",
+            "measured_um": 497.54862597,
+            "out_of_fold_prediction_um": 497.81040476390723,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "W-2-2",
+            "group_id": "WB-2",
+            "measured_um": 527.449970195,
+            "out_of_fold_prediction_um": 528.1853312573769,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "W-2-3",
+            "group_id": "WB-2",
+            "measured_um": 447.51322900499997,
+            "out_of_fold_prediction_um": 449.0877338006125,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "W-2-4",
+            "group_id": "WB-2",
+            "measured_um": 470.4923485,
+            "out_of_fold_prediction_um": 470.33455486022035,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "W-2-5",
+            "group_id": "WB-2",
+            "measured_um": 502.82291369,
+            "out_of_fold_prediction_um": 504.73132447339475,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "W-2-6",
+            "group_id": "WB-2",
+            "measured_um": 440.6368426,
+            "out_of_fold_prediction_um": 442.69778085551803,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "W-2-7",
+            "group_id": "WB-2",
+            "measured_um": 467.01547821500003,
+            "out_of_fold_prediction_um": 467.9664450348306,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "W-2-8",
+            "group_id": "WB-2",
+            "measured_um": 504.74345315,
+            "out_of_fold_prediction_um": 506.3850577677097,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "W-3-0",
+            "group_id": "WB-3",
+            "measured_um": 481.68023444,
+            "out_of_fold_prediction_um": 480.04287327269105,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "W-3-1",
+            "group_id": "WB-3",
+            "measured_um": 499.949744395,
+            "out_of_fold_prediction_um": 497.57596575746544,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "W-3-2",
+            "group_id": "WB-3",
+            "measured_um": 531.394040035,
+            "out_of_fold_prediction_um": 527.3997592311265,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "W-3-3",
+            "group_id": "WB-3",
+            "measured_um": 450.62658494,
+            "out_of_fold_prediction_um": 448.5492273812672,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "W-3-4",
+            "group_id": "WB-3",
+            "measured_um": 472.76067856500003,
+            "out_of_fold_prediction_um": 470.20102163339646,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "W-3-5",
+            "group_id": "WB-3",
+            "measured_um": 505.336687215,
+            "out_of_fold_prediction_um": 504.14351687441246,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "W-3-6",
+            "group_id": "WB-3",
+            "measured_um": 443.68017051,
+            "out_of_fold_prediction_um": 441.72046681979026,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "W-3-7",
+            "group_id": "WB-3",
+            "measured_um": 469.85865054500005,
+            "out_of_fold_prediction_um": 467.49096283927435,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "W-3-8",
+            "group_id": "WB-3",
+            "measured_um": 507.51098766999996,
+            "out_of_fold_prediction_um": 505.5521598476452,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "W-4-0",
+            "group_id": "WB-4",
+            "measured_um": 481.001872695,
+            "out_of_fold_prediction_um": 480.22119186036167,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "W-4-1",
+            "group_id": "WB-4",
+            "measured_um": 497.40411077,
+            "out_of_fold_prediction_um": 497.8319973386023,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "W-4-2",
+            "group_id": "WB-4",
+            "measured_um": 527.711823955,
+            "out_of_fold_prediction_um": 528.0498129282046,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "W-4-3",
+            "group_id": "WB-4",
+            "measured_um": 449.30686626,
+            "out_of_fold_prediction_um": 448.7737366440461,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "W-4-4",
+            "group_id": "WB-4",
+            "measured_um": 469.685270965,
+            "out_of_fold_prediction_um": 470.35334286779283,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "W-4-5",
+            "group_id": "WB-4",
+            "measured_um": 503.77751472,
+            "out_of_fold_prediction_um": 504.53995920290123,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "W-4-6",
+            "group_id": "WB-4",
+            "measured_um": 441.275878005,
+            "out_of_fold_prediction_um": 442.39629457067315,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "W-4-7",
+            "group_id": "WB-4",
+            "measured_um": 468.43417823,
+            "out_of_fold_prediction_um": 467.9447015399261,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "W-4-8",
+            "group_id": "WB-4",
+            "measured_um": 505.096725195,
+            "out_of_fold_prediction_um": 506.1001186205406,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "R01-NEW-0-T03-0",
+            "group_id": "R01-FOLLOWUP-0",
+            "measured_um": 497.7028096597806,
+            "out_of_fold_prediction_um": 497.81040476390723,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "R01-NEW-0-T03-1",
+            "group_id": "R01-FOLLOWUP-0",
+            "measured_um": 497.51489921159475,
+            "out_of_fold_prediction_um": 497.81040476390723,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "R01-NEW-0-T01-0",
+            "group_id": "R01-FOLLOWUP-0",
+            "measured_um": 498.9222285878315,
+            "out_of_fold_prediction_um": 499.6341577394818,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "R01-NEW-0-T01-1",
+            "group_id": "R01-FOLLOWUP-0",
+            "measured_um": 499.2351942312396,
+            "out_of_fold_prediction_um": 499.6341577394818,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "R01-NEW-0-T02-1",
+            "group_id": "R01-FOLLOWUP-0",
+            "measured_um": 469.23283923121886,
+            "out_of_fold_prediction_um": 469.67231898320307,
+            "constant_baseline_um": 485.0710653235157
+          },
+          {
+            "sample_id": "R01-NEW-1-T03-0",
+            "group_id": "R01-FOLLOWUP-1",
+            "measured_um": 497.18903979254674,
+            "out_of_fold_prediction_um": 497.57596575746544,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "R01-NEW-1-T03-1",
+            "group_id": "R01-FOLLOWUP-1",
+            "measured_um": 497.93709838496886,
+            "out_of_fold_prediction_um": 497.57596575746544,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "R01-NEW-1-T01-0",
+            "group_id": "R01-FOLLOWUP-1",
+            "measured_um": 499.05055883746064,
+            "out_of_fold_prediction_um": 499.292031730389,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "R01-NEW-1-T01-1",
+            "group_id": "R01-FOLLOWUP-1",
+            "measured_um": 499.4930651047605,
+            "out_of_fold_prediction_um": 499.292031730389,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "R01-NEW-1-T02-0",
+            "group_id": "R01-FOLLOWUP-1",
+            "measured_um": 469.22155001725895,
+            "out_of_fold_prediction_um": 469.47282372135084,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "R01-NEW-1-T02-1",
+            "group_id": "R01-FOLLOWUP-1",
+            "measured_um": 468.64001857516433,
+            "out_of_fold_prediction_um": 469.47282372135084,
+            "constant_baseline_um": 485.2500398501963
+          },
+          {
+            "sample_id": "R01-NEW-2-T03-0",
+            "group_id": "R01-FOLLOWUP-2",
+            "measured_um": 497.24360547653964,
+            "out_of_fold_prediction_um": 497.8319973386023,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "R01-NEW-2-T03-1",
+            "group_id": "R01-FOLLOWUP-2",
+            "measured_um": 497.49083628139346,
+            "out_of_fold_prediction_um": 497.8319973386023,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "R01-NEW-2-T01-0",
+            "group_id": "R01-FOLLOWUP-2",
+            "measured_um": 499.49163648244956,
+            "out_of_fold_prediction_um": 499.60791943937664,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "R01-NEW-2-T01-1",
+            "group_id": "R01-FOLLOWUP-2",
+            "measured_um": 499.5114667407503,
+            "out_of_fold_prediction_um": 499.60791943937664,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "R01-NEW-2-T02-0",
+            "group_id": "R01-FOLLOWUP-2",
+            "measured_um": 469.3884367210791,
+            "out_of_fold_prediction_um": 469.5854392709127,
+            "constant_baseline_um": 485.5918181764303
+          },
+          {
+            "sample_id": "R01-NEW-2-T02-1",
+            "group_id": "R01-FOLLOWUP-2",
+            "measured_um": 468.83702094552643,
+            "out_of_fold_prediction_um": 469.5854392709127,
+            "constant_baseline_um": 485.5918181764303
+          }
+        ],
+        "training_metrics": {
+          "group_weighted_rmse_um": 0.925931652460332,
+          "group_weighted_mae_um": 0.6655394390417592,
+          "max_abs_error_um": 3.457689043058167,
+          "n_groups": 8,
+          "n_rows": 62
+        },
+        "checks": {
+          "cv_within_preset_tolerance": true,
+          "cv_beats_constant_if_required": true,
+          "has_two_independent_holdout_groups": false,
+          "holdout_within_training_domain": false,
+          "holdout_within_preset_tolerance": false,
+          "positive_fit_and_cv_predictions": true
+        }
+      },
+      "fit_data_sha256": "259bc6dbd12a64fd2dfec64a3743b29f3fed77681416a14a5c4ebd00e90ee7ae",
+      "fit_task_sha256": "2fe145c18af9c15dd9ffbbf779e67913581cf52e61f4e306ea18516e25117b8d",
+      "original_model_sha256": "d87fc8c4d783e214c1b7535ef056ee4acbc59977c5daa3b3fea64c96d88ee027",
+      "update_policy_sha256": "8925b8cf75cb752a229827de204ee09e0876ae284c1da691f3b0a842652f1652",
+      "confirmation_used_for_fitting": false,
+      "status": "frozen_candidate_needs_fresh_confirmation",
+      "data_check": {
+        "n_raw_rows": 62,
+        "n_aggregated_rows": 62,
+        "n_samples": 62,
+        "aggregation": "mean of repeated measurements of same sample at same settings; not extra replicates",
+        "group_column": "batch_id",
+        "partitions": {
+          "fit": {
+            "n_rows": 62,
+            "groups": [
+              "R01-FOLLOWUP-0",
+              "R01-FOLLOWUP-1",
+              "R01-FOLLOWUP-2",
+              "WB-0",
+              "WB-1",
+              "WB-2",
+              "WB-3",
+              "WB-4"
+            ]
+          },
+          "holdout": {
+            "n_rows": 0,
+            "groups": []
+          }
+        }
+      },
+      "same_objective_model_and_acceptance": true,
+      "physical_validation": false
+    },
+    "confirmation_plan": {
+      "schema_version": "1.0",
+      "candidate_sha256": "cd181b951e47d1474f4effdbf028a4803ba0cc20eaa9c49a7e396743fc270f3b",
+      "data_kind": "synthetic_demo",
+      "observable": "geometric_track_width_um",
+      "conditions": [
+        {
+          "condition_id": "C01",
+          "parameters": {
+            "speed_mm_s": 9.0,
+            "delay_s": 3.0
+          },
+          "state": "suggested",
+          "human_approval_required": true
+        },
+        {
+          "condition_id": "C02",
+          "parameters": {
+            "speed_mm_s": 15.0,
+            "delay_s": 1.0
+          },
+          "state": "suggested",
+          "human_approval_required": true
+        },
+        {
+          "condition_id": "C03",
+          "parameters": {
+            "speed_mm_s": 15.0,
+            "delay_s": 5.0
+          },
+          "state": "suggested",
+          "human_approval_required": true
+        },
+        {
+          "condition_id": "C04",
+          "parameters": {
+            "speed_mm_s": 5.0,
+            "delay_s": 1.0
+          },
+          "state": "suggested",
+          "human_approval_required": true
+        },
+        {
+          "condition_id": "C05",
+          "parameters": {
+            "speed_mm_s": 5.0,
+            "delay_s": 5.0
+          },
+          "state": "suggested",
+          "human_approval_required": true
+        },
+        {
+          "condition_id": "C06",
+          "parameters": {
+            "speed_mm_s": 14.5,
+            "delay_s": 3.0
+          },
+          "state": "suggested",
+          "human_approval_required": true
+        }
+      ],
+      "minimum_independent_groups": 2,
+      "purpose": "Check frozen candidate on new held-out groups; not fit or select hyperparameters",
+      "budget_note": "Additional confirmation measurements, not included in next_trials. No formal power calculation.",
+      "freshness_note": "IDs/context must be new; record identity checks cannot authenticate physical acquisition.",
+      "uncertainty": "No confidence or prediction interval estimated"
+    },
+    "next": "Operator may attach fresh confirmation; otherwise choose calibration-only next round."
+  },
+  "idempotent_replay": false
+}

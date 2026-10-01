@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.4",
+  "observable": "geometric_track_width_um",
+  "independent_unit": "batch_id",
+  "baseline": "concurrent_same_batch",
+  "inference": "descriptive_only",
+  "target_tolerance_um": 8.0,
+  "min_practical_reduction_um": 0.5,
+  "actual_setting_tolerances": {
+    "speed_mm_s": 0.05,
+    "delay_s": 0.03
+  },
+  "source_ref": "SYNTHETIC test protocol fixed before feedback; not a physical tolerance or power analysis"
+}

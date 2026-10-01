@@ -1,0 +1,7 @@
+{
+  "sigma0_um": 50.0,
+  "diffusivity_um2_s": 40.0,
+  "data_kind": "synthetic_demo",
+  "purpose": "Only for checking synthetic recovery; never fit from this file",
+  "seed": 72026
+}

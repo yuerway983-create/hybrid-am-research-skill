@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "call_id": "h13",
+  "tool": "session_status",
+  "result": {
+    "phase": "feedback_ready_for_import",
+    "data_kind": "synthetic_demo",
+    "observable": "geometric_track_width_um",
+    "next_actions": [
+      "find_skills(feedback)",
+      "activate_skill",
+      "import_results"
+    ],
+    "active_skills": {
+      "evidence": "hybrid-am-evidence",
+      "calibration": "measured-response-calibration",
+      "planning": "bounded-experiment-planning"
+    },
+    "artifacts": {
+      "artifacts/aggregated.json": "872a256b186633238f15d1c8a43544de8f179829bcf704c38638251f534b3821",
+      "artifacts/data_check.json": "d41e757e928a4860ae730ac1ccc4f767598c85a9478089180ff55e22080d5b1d",
+      "artifacts/evidence_check.json": "58f3567a7f797f95415fedeb7b2b6c580c237d3d6dea39136299b620b22cc5a2",
+      "artifacts/calibration.json": "56a96a764164bba10547174096784632c7b16d247825c448db89bd809f83e3df",
+      "artifacts/candidate_results.json": "92230cd59012ac16aa71dffd8bb56faaf8aafc8f95191d95a58641d96771bfad",
+      "artifacts/plan.json": "cbf312b7a1dbdf9e449d970cefeb76c75f5936b487579a8f833eb7141e0bc526",
+      "artifacts/next_experiments.csv": "2e57cd9a15cfdc5ad1f2c443d75c5bdc5868df4a9d917dbdc8a40d02ccdce2f9"
+    },
+    "feedback_attached": true
+  },
+  "idempotent_replay": false
+}

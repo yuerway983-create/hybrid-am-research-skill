@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-01",
+  "mode": "manually transcribed audit of actual host tool calls, not raw API dumps",
+  "events": [
+    {
+      "id": "L1",
+      "tool": "GitHub.search",
+      "request": {
+        "repository_name": "K-Dense-AI/scientific-agent-skills",
+        "query": "research-lookup",
+        "topn": 3
+      },
+      "outcome": "candidate files retrieved at fixed commit 91497e335489dcb544ec8ddc8f6b7ce5fd6d1121"
+    },
+    {
+      "id": "L2",
+      "tool": "GitHub.fetch_file",
+      "request": {
+        "paths": [
+          "skills/research-lookup/SKILL.md",
+          "skills/literature-review/SKILL.md",
+          "skills/literature-review/scripts/verify_citations.py",
+          "skills/sympy/SKILL.md",
+          "LICENSE.md"
+        ],
+        "ref": "91497e335489dcb544ec8ddc8f6b7ce5fd6d1121"
+      },
+      "outcome": "complete content read; only instructional adaptation used; original runners not executed"
+    },
+    {
+      "id": "L3",
+      "tool": "web.search_query",
+      "request": {
+        "queries": [
+          "\"Hybrid Multimaterial 3D Printing Using Photocuring-While-Dispensing\" pdf",
+          "\"photocuring while dispensing\" diffusion delay",
+          "\"vitro\" \"working curve\" photopolymerization NIST Jacobs cure depth"
+        ]
+      },
+      "outcome": "primary Wiley paper found; broad curing query refined below"
+    },
+    {
+      "id": "L4",
+      "tool": "web.open",
+      "request": {
+        "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/smll.202302405"
+      },
+      "outcome": "full-text HTML accessible; relevant sections and equations read"
+    },
+    {
+      "id": "L5",
+      "tool": "web.search_query",
+      "request": {
+        "queries": [
+          "\"smll202302405-sup-0001\"",
+          "\"Hybrid Multimaterial\" \"pdf\" \"usc\"",
+          "photopolymer working curve interlaboratory NIST measurement curing depth penetration depth critical exposure"
+        ]
+      },
+      "outcome": "NIST records and interlaboratory study found"
+    },
+    {
+      "id": "L6",
+      "tool": "web.open / web.click",
+      "request": {
+        "urls": [
+          "https://www.nist.gov/publications/measuring-uv-curing-parameters-commercial-photopolymers-used-additive-manufacturing",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC10986335/"
+        ]
+      },
+      "outcome": "S2 institutional abstract; S3 full-text relevant sections"
+    },
+    {
+      "id": "L7",
+      "tool": "web.click / web.open",
+      "request": {
+        "url": "https://onlinelibrary.wiley.com/doi/suppl/10.1002/smll.202302405/supinfo/smll202302405-sup-0001-SuppMat.pdf"
+      },
+      "outcome": "retrieval_failed; not read"
+    },
+    {
+      "id": "L8",
+      "tool": "web.open / web.screenshot / container.download",
+      "request": {
+        "url": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/smll.202302405",
+        "screenshot_page_indices": [
+          2,
+          3,
+          8
+        ]
+      },
+      "outcome": "PDF text accessible, screenshots failed; binary download failed; no visual/digitization claim"
+    },
+    {
+      "id": "L9",
+      "tool": "container Python requests",
+      "request": {
+        "url": "https://raw.githubusercontent.com/K-Dense-AI/scientific-agent-skills/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/literature-review/scripts/verify_citations.py"
+      },
+      "outcome": "DNS_failure; no upstream network script run"
+    },
+    {
+      "id": "L10",
+      "tool": "user-source inspection",
+      "request": {
+        "file": "2408.14307v3.pdf",
+        "locations": [
+          "pp.8-13 information planning and execution",
+          "pp.24-25 compression validation",
+          "p.31 processing latency"
+        ]
+      },
+      "outcome": "use supplied parsed source and previously read workflow; no new experiment"
+    }
+  ],
+  "known_omissions": "incidental navigation and repeated open calls are not exhaustively reproduced; no systematic-review completeness claim"
+}

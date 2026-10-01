@@ -1,0 +1,24 @@
+{
+  "mode": "offline_demo",
+  "data_kind": "synthetic_demo",
+  "stage": "literature",
+  "status": "needs_evidence_and_model",
+  "executed": [
+    "validate_inputs",
+    "prepare_offline_skill_search_plan"
+  ],
+  "not_executed": [
+    "live_github_search",
+    "external_skill_execution",
+    "literature_retrieval",
+    "llm_invocation",
+    "numerical_process_prediction",
+    "optimisation",
+    "physical_printing"
+  ],
+  "input_hashes": {
+    "task_sha256": "2be4127242d233374e16c10bccb49ab9ee323fdf02ee168dd974f1381cfe3e46",
+    "data_sha256": "010423b751aab7b58741693143c8b3b164ba10f0e499f01731a2ad545bcd0e83"
+  },
+  "next_step": "Compare and approve a literature workflow in the selected host; retrieve source-grounded evidence."
+}

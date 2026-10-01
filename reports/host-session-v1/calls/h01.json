@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "call_id": "h01",
+  "tool": "session_status",
+  "result": {
+    "phase": "ready_for_inspection",
+    "data_kind": "synthetic_demo",
+    "observable": "geometric_track_width_um",
+    "next_actions": [
+      "inspect_task"
+    ],
+    "active_skills": {},
+    "artifacts": {},
+    "feedback_attached": false,
+    "round_index": 1,
+    "confirmation_attached": false,
+    "next_session": null,
+    "inherited_model": null
+  },
+  "idempotent_replay": false
+}

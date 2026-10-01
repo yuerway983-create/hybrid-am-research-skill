@@ -1,0 +1,133 @@
+{
+  "ok": true,
+  "call_id": "r2-14",
+  "tool": "evaluate_update",
+  "result": {
+    "schema_version": "1.0",
+    "data_kind": "synthetic_demo",
+    "status": "updated_model_passed_numeric_gates",
+    "promotion_allowed": true,
+    "checks": {
+      "cv_within_preset_tolerance": true,
+      "cv_beats_constant_if_required": true,
+      "positive_fit_and_cv_predictions": true,
+      "fresh_independent_groups": true,
+      "confirmation_inside_training_domain": true,
+      "positive_confirmation_predictions": true,
+      "confirmation_within_preset_tolerance": true,
+      "non_degradation_if_comparable": true
+    },
+    "reasons": [],
+    "new_model_confirmation": {
+      "group_weighted_rmse_um": 0.4106434745477406,
+      "group_weighted_mae_um": 0.34765541961832014,
+      "max_abs_error_um": 0.7367058022740594,
+      "n_groups": 2,
+      "n_rows": 12
+    },
+    "previous_model_same_confirmation": {
+      "group_weighted_rmse_um": 0.4184568040169979,
+      "group_weighted_mae_um": 0.3517598437025053,
+      "max_abs_error_um": 0.7071435402309021,
+      "n_groups": 2,
+      "n_rows": 12
+    },
+    "candidate_sha256": "0049553a36ec1ad8e305ed4fc7cc64d5737afd8752869c55a4eea5c141a192ef",
+    "confirmation_sha256": "7624f14408997e4a3be266ff601662bd371aa062b954b53c5ae28dae857f773f",
+    "confirmation_was_used_for_fitting": false,
+    "hyperparameters_changed": false,
+    "old_model_overwritten": false,
+    "confidence_interval": null,
+    "p_value": null,
+    "fresh_confirmation_now_consumed": true,
+    "physical_validation_established": false,
+    "sample_predictions": [
+      {
+        "sample_id": "R02-CONF-S-0-0",
+        "batch_id": "R02-CONF-B-0",
+        "measured_um": 475.9402913836184,
+        "prediction_um": 475.720918803444,
+        "inside_domain": true
+      },
+      {
+        "sample_id": "R02-CONF-S-0-1",
+        "batch_id": "R02-CONF-B-0",
+        "measured_um": 441.7398568063676,
+        "prediction_um": 442.1891993858277,
+        "inside_domain": true
+      },
+      {
+        "sample_id": "R02-CONF-S-0-2",
+        "batch_id": "R02-CONF-B-0",
+        "measured_um": 505.5923378510936,
+        "prediction_um": 506.0486728970839,
+        "inside_domain": true
+      },
+      {
+        "sample_id": "R02-CONF-S-0-3",
+        "batch_id": "R02-CONF-B-0",
+        "measured_um": 479.6791120344476,
+        "prediction_um": 480.29938924450664,
+        "inside_domain": true
+      },
+      {
+        "sample_id": "R02-CONF-S-0-4",
+        "batch_id": "R02-CONF-B-0",
+        "measured_um": 527.833658885374,
+        "prediction_um": 527.9775583476066,
+        "inside_domain": true
+      },
+      {
+        "sample_id": "R02-CONF-S-0-5",
+        "batch_id": "R02-CONF-B-0",
+        "measured_um": 466.27568142139364,
+        "prediction_um": 466.11531849766357,
+        "inside_domain": true
+      },
+      {
+        "sample_id": "R02-CONF-S-1-0",
+        "batch_id": "R02-CONF-B-1",
+        "measured_um": 475.7157591286092,
+        "prediction_um": 475.720918803444,
+        "inside_domain": true
+      },
+      {
+        "sample_id": "R02-CONF-S-1-1",
+        "batch_id": "R02-CONF-B-1",
+        "measured_um": 441.7196677428633,
+        "prediction_um": 442.1891993858277,
+        "inside_domain": true
+      },
+      {
+        "sample_id": "R02-CONF-S-1-2",
+        "batch_id": "R02-CONF-B-1",
+        "measured_um": 505.5278594448172,
+        "prediction_um": 506.0486728970839,
+        "inside_domain": true
+      },
+      {
+        "sample_id": "R02-CONF-S-1-3",
+        "batch_id": "R02-CONF-B-1",
+        "measured_um": 479.5626834422326,
+        "prediction_um": 480.29938924450664,
+        "inside_domain": true
+      },
+      {
+        "sample_id": "R02-CONF-S-1-4",
+        "batch_id": "R02-CONF-B-1",
+        "measured_um": 527.6740111230857,
+        "prediction_um": 527.9775583476066,
+        "inside_domain": true
+      },
+      {
+        "sample_id": "R02-CONF-S-1-5",
+        "batch_id": "R02-CONF-B-1",
+        "measured_um": 466.0288010607512,
+        "prediction_um": 466.11531849766357,
+        "inside_domain": true
+      }
+    ],
+    "note": "A predeclared development gate, not an unbiased estimate after model selection; final independent performance confirmation still needed."
+  },
+  "idempotent_replay": false
+}

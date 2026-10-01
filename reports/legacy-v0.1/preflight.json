@@ -1,0 +1,17 @@
+{
+  "python": "3.13.5",
+  "supported": true,
+  "local_helpers_require": "Python standard library only",
+  "optional_packages_discoverable_not_tested": {
+    "numpy": true,
+    "sympy": true,
+    "sklearn": true,
+    "botorch": false,
+    "jsonschema": true
+  },
+  "network_tested": false,
+  "llm_runtime_tested": false,
+  "equipment_connected": false,
+  "dedicated_simulation_software_called": false,
+  "automatic_installation": false
+}

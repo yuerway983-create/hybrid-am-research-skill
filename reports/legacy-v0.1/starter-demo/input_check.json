@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "status": "format_checks_passed",
+  "valid": true,
+  "errors": [],
+  "scientific_validity": "not_assessed",
+  "prediction_performed": false,
+  "input_hashes": {
+    "task_sha256": "2be4127242d233374e16c10bccb49ab9ee323fdf02ee168dd974f1381cfe3e46",
+    "data_sha256": "010423b751aab7b58741693143c8b3b164ba10f0e499f01731a2ad545bcd0e83"
+  },
+  "n_rows": 6,
+  "n_distinct_sample_ids": 6,
+  "mode": "offline_demo",
+  "data_kind": "synthetic_demo",
+  "task_id": "synthetic-track-demo",
+  "warnings": [
+    "Passing format checks does not validate a material model or establish parameter effects.",
+    "Images/rows from one specimen must not be counted as independent replicate specimens.",
+    "SYNTHETIC SOFTWARE TEST DATA. No real printing or scientific validation."
+  ]
+}

@@ -1,0 +1,4 @@
+trial_id,run_order,purpose,speed_mm_s,delay_s,predicted_response_um,state,data_kind
+T03,1,baseline_replication,5.0,3.0,498.2893527797503,suggested,synthetic_demo
+T01,2,predicted_target_candidate,7.5,4.25,499.91959294782254,suggested,synthetic_demo
+T02,3,coverage_or_calibration,7.5,2.0,470.0355652064819,suggested,synthetic_demo

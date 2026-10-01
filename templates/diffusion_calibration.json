@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.2",
+  "review_status": "needs_review",
+  "observable": "concentration_sigma_um",
+  "material_pair": "",
+  "fixed_conditions": {},
+  "data_kind": "measured",
+  "parameters": {
+    "sigma0": {
+      "value": null,
+      "unit": "um",
+      "origin": "user_calibration",
+      "source_ref": ""
+    },
+    "diffusivity": {
+      "value": null,
+      "unit": "um2/s",
+      "origin": "user_calibration",
+      "source_ref": ""
+    }
+  },
+  "time_domain_s": [
+    null,
+    null
+  ],
+  "evidence_refs": [],
+  "note": "Requires matching empirical calibration. A reviewed flag is a record, not proof of truth."
+}

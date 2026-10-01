@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.2",
+  "task_id": "missing-diffusivity-001",
+  "process": "hybrid-vpp-diw",
+  "material_pair": "SYNTHETIC-A-IN-SYNTHETIC-B",
+  "mode": "offline_demo",
+  "data_kind": "synthetic_demo",
+  "observable": "concentration_sigma_um",
+  "time_reference": "elapsed_since_reference_profile",
+  "fixed_conditions": {
+    "deposition_speed": "fixed; not numerically modelled",
+    "nozzle": "fixed; no real equipment specification",
+    "temperature": "constant; synthetic assumption",
+    "exposure": "not simulated; this module stops at the pre-gel interval"
+  },
+  "assumptions": {
+    "homogeneous_1d": true,
+    "unbounded_domain": true,
+    "constant_diffusivity": true,
+    "pre_gel_only": true,
+    "advection_ignored": true,
+    "initial_distribution": "gaussian"
+  },
+  "parameters": {
+    "sigma0": {
+      "value": 50.0,
+      "unit": "um",
+      "origin": "synthetic_demo",
+      "source_ref": "Arbitrary test fixture, not a paper or measurement"
+    },
+    "diffusivity": {
+      "value": null,
+      "unit": "um2/s",
+      "origin": "synthetic_demo",
+      "source_ref": "Arbitrary test fixture, not a paper or measurement"
+    }
+  },
+  "evaluation_times": {
+    "values": [
+      0,
+      1,
+      2,
+      4,
+      8
+    ],
+    "unit": "s"
+  },
+  "time_domain_s": [
+    0,
+    8
+  ],
+  "diffusivity_scenario_bounds": {
+    "values": [
+      30,
+      50
+    ],
+    "unit": "um2/s",
+    "source_ref": "Arbitrary sensitivity scenario; no confidence level"
+  },
+  "allow": {
+    "hardware_commands": false,
+    "dedicated_simulation_software": false
+  },
+  "note": "All numerical values are intentionally synthetic for software tests. This is not a printing recipe or a material calibration."
+}

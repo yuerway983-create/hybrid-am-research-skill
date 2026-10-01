@@ -1,0 +1,21 @@
+{
+  "version": "0.3.0",
+  "mode": "offline_replay_and_synthetic_calibration",
+  "status": "calibration_and_candidate_planning_implemented_real_validation_pending",
+  "live_literature_search_in_this_run": false,
+  "live_github_search_in_this_run": false,
+  "external_llm_api_called": false,
+  "dedicated_simulation_software_called": false,
+  "hardware_commands_sent": false,
+  "physical_validation_performed": false,
+  "inherited_evidence_sha256": "6d26229bc6d868f6c2b8c53756ef5b3e49cc18579da281b937adf79497fb996a",
+  "case_statuses": {
+    "geometric_width": "candidate_plan_not_executed",
+    "concentration_sigma": "candidate_plan_not_executed",
+    "insufficient_data": "calibration_plan_without_validated_predictions"
+  },
+  "observable_mismatch_blocked": true,
+  "no_numeric_prediction_when_data_insufficient": true,
+  "skill_selection": "recorded host-assisted GitHub review; local deterministic adapter routing during replay",
+  "next_action": "Use real traceable measurements or connect an authorized LLM host; do not claim physical improvement from these fixtures."
+}

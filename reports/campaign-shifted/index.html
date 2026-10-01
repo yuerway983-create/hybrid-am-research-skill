@@ -1,0 +1,59 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hybrid-AM Research v1.0</title><style>body{font:16px/1.7 system-ui,sans-serif;max-width:1060px;margin:36px auto;padding:0 24px;background:#fafafa;color:#17333e}h1{font-size:32px}table{border-collapse:collapse;width:100%;background:white}th,td{padding:12px;text-align:left;border-bottom:1px solid #d5dce0}aside{padding:16px 20px;background:#fff1d5;border-left:4px solid #c19020}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:white;padding:20px}a{color:#145475}</style><h1>Hybrid-AM Research · v1.0</h1><p>文献证据 → 轻量建模 → 候选实验 → 结果回传 → 冻结重拟合 → 独立确认 → 下一轮</p><aside><strong>全部数值为合成测试。</strong>这是固定顺序的软件验收演示，不是在线LLM、真实打印或制造性能提升。实验和确认数据由独立测试环境提供，未使用模型预测值充当测量。</aside><h2>多轮执行结果</h2><table><tr><th>轮次</th><th>数值预测已开放</th><th>更新检查</th><th>确认RMSE（μm）</th><th>明细</th></tr><tr><td>1</td><td>True</td><td>updated_model_rejected</td><td>13.639</td><td><a href='round-01/index.html'>逐步记录</a></td></tr><tr><td>2</td><td>False</td><td>等待下一次外部数据</td><td>—</td><td><a href='round-01/next_round/index.html'>逐步记录</a></td></tr></table><h2>如何看这些结果</h2><p>新数据先评价旧模型，再用于训练候选模型。确认数据在候选冻结后附加；旧holdout和已用确认不会在下一轮再次当作新验证。模型未通过则转标定计划，预测栏为空。</p><h2>可复现记录</h2><pre>{
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;origin&quot;: &quot;deterministic_demo&quot;,
+  &quot;scenario&quot;: &quot;shifted&quot;,
+  &quot;data_kind&quot;: &quot;synthetic_demo&quot;,
+  &quot;rounds&quot;: [
+    {
+      &quot;round&quot;: 1,
+      &quot;session&quot;: &quot;round-01&quot;,
+      &quot;planned&quot;: true,
+      &quot;predictive_plan&quot;: true,
+      &quot;data_kind&quot;: &quot;synthetic_demo&quot;,
+      &quot;update_status&quot;: &quot;updated_model_rejected&quot;,
+      &quot;continuation_mode&quot;: &quot;calibration_only&quot;,
+      &quot;confirmation&quot;: {
+        &quot;group_weighted_rmse_um&quot;: 13.639381144487869,
+        &quot;group_weighted_mae_um&quot;: 10.649230046968754,
+        &quot;max_abs_error_um&quot;: 19.938087222873094,
+        &quot;n_groups&quot;: 2,
+        &quot;n_rows&quot;: 12
+      },
+      &quot;prior_same_confirmation&quot;: {
+        &quot;group_weighted_rmse_um&quot;: 13.66339748900893,
+        &quot;group_weighted_mae_um&quot;: 10.938390613461655,
+        &quot;max_abs_error_um&quot;: 19.489226456627932,
+        &quot;n_groups&quot;: 2,
+        &quot;n_rows&quot;: 12
+      },
+      &quot;comparison_verdicts&quot;: [
+        &quot;descriptive_worsening&quot;,
+        &quot;descriptive_worsening&quot;
+      ],
+      &quot;tool_calls&quot;: 23,
+      &quot;audit&quot;: {
+        &quot;valid&quot;: true,
+        &quot;events&quot;: 23,
+        &quot;note&quot;: &quot;Local integrity checks, not an externally signed attestation.&quot;
+      }
+    },
+    {
+      &quot;round&quot;: 2,
+      &quot;session&quot;: &quot;round-01/next_round&quot;,
+      &quot;planned&quot;: true,
+      &quot;predictive_plan&quot;: false,
+      &quot;data_kind&quot;: &quot;synthetic_demo&quot;,
+      &quot;status&quot;: &quot;awaiting_external_experiment&quot;,
+      &quot;audit&quot;: {
+        &quot;valid&quot;: true,
+        &quot;events&quot;: 5,
+        &quot;note&quot;: &quot;Local integrity checks, not an externally signed attestation.&quot;
+      }
+    }
+  ],
+  &quot;hardware_commands_sent&quot;: false,
+  &quot;live_llm_calls&quot;: 0,
+  &quot;fresh_literature_search_in_demo&quot;: false,
+  &quot;dedicated_simulation_software_called&quot;: false,
+  &quot;physical_performance_improvement_established&quot;: false
+}</pre></html>

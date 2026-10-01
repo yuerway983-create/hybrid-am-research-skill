@@ -1,0 +1,46 @@
+# Hybrid-AM v0.4 执行与回传报告
+
+数据标记：**synthetic_demo**；执行来源：`chat_host`。
+当前状态：`update_prepared_waiting_fresh_confirmation`。
+本程序没有打印、没有运行专用模拟软件。来源标记由操作者声明，不是独立真实性认证。
+
+## 实际完成阶段
+{
+  "inspected": true,
+  "evidence_checked": true,
+  "calibrated": true,
+  "planned": true,
+  "feedback_attached": true,
+  "imported": true,
+  "compared": true,
+  "update_prepared": true
+}
+
+## 候选实验（未由软件批准或执行）
+| 编号 | 目的 | 参数 | 冻结预测 μm |
+|---|---|---|---|
+| T03 | baseline_replication | {"speed_mm_s": 5.0, "delay_s": 3.0} | 498.2893527797503 |
+| T01 | predicted_target_candidate | {"speed_mm_s": 7.5, "delay_s": 4.25} | 499.91959294782254 |
+| T02 | coverage_or_calibration | {"speed_mm_s": 7.5, "delay_s": 2.0} | 470.0355652064819 |
+
+## 回传数据的描述性对照
+不是统计显著性结论。合成数据的任何改善或变差都不是实际制造成果。
+| 编号 | 独立组数 | 平均目标绝对误差 μm | 冻结模型RMSE μm |
+|---|---|---|---|
+| T03 | 3 | 2.7007162900000026 | 1.0309090776198184 |
+| T01 | 3 | 3.993467123333327 | 4.0803761949130815 |
+| T02 | 3 | 26.054896752499985 | 3.9224787918737998 |
+
+T01: descriptive_worsening；同批基准误差减去候选误差=-1.2927508333333246 μm；共享批次=3。
+
+T02: descriptive_worsening；同批基准误差减去候选误差=-23.354180462499983 μm；共享批次=3。
+
+不推断界面强度、疲劳或器件性能；没有置信区间与p值。
+
+## 下一步
+finish_report
+WAIT: fresh independent confirmation data needed before a new validated optimisation cycle
+
+## 审计
+events.jsonl 记录实际请求、响应、调用来源、哈希与错误；calls/保留结构化结果。
+程序日志证明代码执行，不证明实验真实性；固定回放不是在线LLM运行。

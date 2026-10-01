@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hybrid-AM v0.1 task",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "mode",
+    "process",
+    "material_pair",
+    "geometry",
+    "data_kind",
+    "dataset_file",
+    "objective",
+    "factors",
+    "fixed_conditions",
+    "budget",
+    "allow"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": [
+        "offline_demo",
+        "research"
+      ]
+    },
+    "process": {
+      "const": "hybrid-vpp-diw"
+    },
+    "material_pair": {
+      "type": "string",
+      "minLength": 1
+    },
+    "geometry": {
+      "const": "single-track"
+    },
+    "data_kind": {
+      "enum": [
+        "synthetic_demo",
+        "measured",
+        "public_measured"
+      ]
+    },
+    "dataset_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "objective": {
+      "type": "object",
+      "required": [
+        "metric",
+        "target",
+        "unit"
+      ],
+      "properties": {
+        "metric": {
+          "const": "track_width_um"
+        },
+        "target": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "unit": {
+          "const": "um"
+        }
+      }
+    },
+    "factors": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "unit",
+          "bounds"
+        ],
+        "properties": {
+          "name": {
+            "enum": [
+              "speed_mm_s",
+              "delay_s"
+            ]
+          },
+          "unit": {
+            "enum": [
+              "mm/s",
+              "s"
+            ]
+          },
+          "bounds": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "fixed_conditions": {
+      "type": "object",
+      "minProperties": 1
+    },
+    "budget": {
+      "type": "object",
+      "required": [
+        "next_trials"
+      ],
+      "properties": {
+        "next_trials": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        }
+      }
+    },
+    "allow": {
+      "type": "object",
+      "required": [
+        "hardware_commands",
+        "dedicated_simulation_software"
+      ],
+      "properties": {
+        "hardware_commands": {
+          "const": false
+        },
+        "dedicated_simulation_software": {
+          "const": false
+        }
+      }
+    }
+  }
+}

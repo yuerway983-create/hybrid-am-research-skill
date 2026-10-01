@@ -1,0 +1,77 @@
+{
+  "schema_version": "0.2",
+  "decision_id": "literature-001",
+  "review_date": "2026-10-01",
+  "stage": "literature",
+  "decision_made_by": "ChatGPT host-assisted review in this conversation",
+  "research_question": "Which evidence and lightweight relationships can support analysis of deposition-to-exposure delay in a single hybrid VPP-DIW track?",
+  "candidates": [
+    {
+      "id": "kd-research-lookup",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/research-lookup/SKILL.md",
+      "blob_sha": "e2f57fed797930e0e5a055ba7f1fa4fc46a004ba",
+      "read_scope": "entire SKILL.md",
+      "licence": "MIT",
+      "fit": "Evidence packet, claim-source mapping, bounded searches and verification are a good fit.",
+      "limitations": [
+        "Original runner expects Parallel access; parallel-cli absent in the runtime.",
+        "Default large bibliography target is unnecessary for this bounded task."
+      ],
+      "decision": "selected_as_adaptation_basis",
+      "original_runner_executed": false
+    },
+    {
+      "id": "kd-literature-review",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/91497e335489dcb544ec8ddc8f6b7ce5fd6d1121/skills/literature-review/SKILL.md",
+      "blob_sha": "c1ea86e86e3b5ec34db1f5e567dc16ee9709bda9",
+      "read_scope": "entire SKILL.md plus verify_citations.py",
+      "licence": "MIT",
+      "fit": "Useful full-text screening and citation discipline.",
+      "limitations": [
+        "Systematic-review and compulsory-figure defaults are outside this task.",
+        "Citation helper can treat handle HTTP success as verified even when bibliographic metadata are missing; that is not semantic claim verification."
+      ],
+      "decision": "not_selected_as_main_workflow",
+      "original_runner_executed": false
+    }
+  ],
+  "selected_local_skill": "skills/hybrid-am-evidence/SKILL.md",
+  "adaptation": {
+    "kind": "transparent host-tool adaptation, not unmodified upstream execution",
+    "retained": [
+      "scope definition",
+      "primary source search",
+      "claim-source mapping",
+      "access limitations",
+      "negative evidence and calibration gaps"
+    ],
+    "changed": [
+      "use available host web search/open and GitHub tools instead of Parallel",
+      "bounded evidence packet, no mandatory reference count",
+      "no automatic installation, generated figures or network calls by offline helpers"
+    ]
+  },
+  "actually_executed": [
+    "live GitHub search",
+    "read both candidate instructions",
+    "read source citation helper without executing it",
+    "host web primary-source retrieval",
+    "read original article equations and methods",
+    "record inaccessible supplement and unsuccessful figure rendering"
+  ],
+  "not_executed": [
+    "Parallel CLI/API",
+    "upstream research_lookup.py",
+    "upstream verify_citations.py",
+    "autonomous live retrieval from this downloaded package",
+    "hardware control"
+  ],
+  "environment_observations": {
+    "parallel_cli_installed": false,
+    "container_direct_network": "attempt to raw.githubusercontent.com failed with DNS resolution error",
+    "host_web": "available and used",
+    "github_connector": "available and used",
+    "secrets_read": false
+  },
+  "status": "host_adapted_literature_pass_completed"
+}

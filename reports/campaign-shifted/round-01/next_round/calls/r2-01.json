@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "call_id": "r2-01",
+  "tool": "session_status",
+  "result": {
+    "phase": "needs_calibration_design",
+    "data_kind": "synthetic_demo",
+    "observable": "geometric_track_width_um",
+    "next_actions": [
+      "find_skills(planning)",
+      "activate_skill",
+      "plan_experiments"
+    ],
+    "active_skills": {},
+    "artifacts": {
+      "artifacts/aggregated.json": "948fb9493788e2090ed0ead843288d200ae2d1db5e1b2c9353059993ff7112e4",
+      "artifacts/data_check.json": "2befcf503f1d5615f55f70ae624a67dda9f317527f42416000164a8bab534b15",
+      "artifacts/calibration.json": "40a8e1161e2972eaa0bfe768f389e263c5351375b518f4b0076529126fa6d277",
+      "artifacts/evidence_check.json": "58f3567a7f797f95415fedeb7b2b6c580c237d3d6dea39136299b620b22cc5a2",
+      "artifacts/parent_link.json": "eb1e3c2df5269e839679bb4f34cdcb7862773f8dcdd222d9a3f9e45e3fa8de67"
+    },
+    "feedback_attached": false,
+    "round_index": 2,
+    "confirmation_attached": false,
+    "next_session": null,
+    "inherited_model": {
+      "mode": "calibration_only",
+      "parent_candidate_sha256": "d07dcc0543b1ac9b8f2cb1fa8818494df72166de481ee43f300bc7295d7ca10b",
+      "new_confirmation_not_claimed_for_child": true
+    }
+  },
+  "idempotent_replay": false
+}
