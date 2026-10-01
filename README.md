@@ -4,22 +4,18 @@ An evidence-grounded research agent for hybrid additive manufacturing.
 It coordinates literature retrieval, lightweight virtual experiments, model calibration,
 experiment planning, and iterative feedback through dynamically selected scientific skills.
 ## Research Workflow
-**Research Goal & Existing Data**  
-↓  
-**Literature Retrieval & Evidence Building**  
-↓  
-**Model Selection / Construction / Calibration**  
-↓  
-**Virtual Experiments & Candidate Parameter Generation**  
-↓  
-**Prediction Validation, Domain & Uncertainty Checks**  
-↓  
-**Next-Round Experiment Planning**  
-↓  
-**Physical Printing & Testing** *(performed by researchers and equipment)*  
-↓  
-**Experimental Feedback & Model Update**  
-↺ **Next Research Iteration**
+```mermaid
+flowchart TD
+    A[Research Goal & Existing Data]
+    --> B[Literature Retrieval & Evidence Building]
+    --> C[Model Selection / Construction / Calibration]
+    --> D[Virtual Experiments & Candidate Parameter Generation]
+    --> E[Prediction Validation & Domain Checks]
+    --> F[Next-Round Experiment Planning]
+    --> G[Physical Printing & Testing]
+    --> H[Experimental Feedback & Model Update]
+    --> C
+```
 > At each technical stage, the master research skill selects and invokes suitable reviewed sub-skills from the scientific open-source ecosystem.
 ## Current Status
 **v1.0 research-agent prototype**
