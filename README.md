@@ -1,32 +1,36 @@
 # Hybrid-AM Research Skill · v1.0
 
-**A bounded, evidence-grounded research skill for hybrid additive manufacturing.**
-
-Input goals/data → literature evidence → lightweight model → candidate trials → external
-measurements → frozen-model comparison → refit → fresh confirmation → next round.
-
-**无需真实打印数据即可运行完整软件演示。所有演示数值均为合成数据，不代表材料性能。**
-
+An evidence-grounded research agent for hybrid additive manufacturing.
+It coordinates literature retrieval, lightweight virtual experiments, model calibration,
+experiment planning, and iterative feedback through dynamically selected scientific skills.
+## Research Workflow
+**Research Goal & Existing Data**  
+↓  
+**Literature Retrieval & Evidence Building**  
+↓  
+**Model Selection / Construction / Calibration**  
+↓  
+**Virtual Experiments & Candidate Parameter Generation**  
+↓  
+**Prediction Validation, Domain & Uncertainty Checks**  
+↓  
+**Next-Round Experiment Planning**  
+↓  
+**Physical Printing & Testing** *(performed by researchers and equipment)*  
+↓  
+**Experimental Feedback & Model Update**  
+↺ **Next Research Iteration**
+> At each technical stage, the master research skill selects and invokes suitable reviewed sub-skills from the scientific open-source ecosystem.
+## Current Status
+**v1.0 research-agent prototype**
+The complete software workflow can be demonstrated without real printing data using clearly labelled synthetic datasets.
+Real additive-manufacturing experiments are still required to validate actual process improvement and material performance.
 ## Start here
 
-- [中文使用说明](START_HERE.md)
-- [给主控智能体的操作说明](HOST_START.md)
-- [主控 Skill](SKILL.md)
-- [v1.0 完成说明](reports/V1_REPORT_ZH.md)
-- [三轮固定验收演示](reports/campaign-steady/index.html)
-- [模型失效后的分支演示](reports/campaign-shifted/index.html)
-
-```text
-python -m venv .venv
-# Use .venv/Scripts/python.exe on Windows, .venv/bin/python on macOS/Linux.
-python -m pip install -r requirements-agent.txt
-python scripts/campaign_demo.py --out runs/my-first-campaign
-python -m unittest discover -s tests -v
-```
-
-Use your virtual environment's Python for all commands. Analysis is local and offline;
-initial dependency installation may use a network. The static report needs no installation.
-
+- [`START_HERE.md`](START_HERE.md) — local demonstration and setup
+- [`HOST_START.md`](HOST_START.md) — agent-controlled workflow
+- [`SKILL.md`](SKILL.md) — master skill definition
+- [`reports/`](reports/) — demonstration and validation records
 ## Completed software scope
 
 - 14 allowlisted tools with per-stage reviewed-skill selection and instructions loading.
