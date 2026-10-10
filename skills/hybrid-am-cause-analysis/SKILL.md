@@ -1,6 +1,6 @@
 ---
 name: hybrid-am-cause-analysis
-description: 分析混合 VPP-DIW 打印的工艺异常与模型偏差，将证据和候选原因转为预算内的区分实验或调参建议。适用于已有任务、测量、文献或模型诊断的 hybrid-am-research 流程。
+description: 分析混合 VPP-DIW 打印的工艺异常与模型偏差，将证据和候选原因转为预算内的区分实验或调参建议。适用于已有任务、测量、文献或模型诊断的 axiom-research 流程。
 metadata:
   version: "0.2.0"
 ---

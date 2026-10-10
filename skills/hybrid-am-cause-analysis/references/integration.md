@@ -1,4 +1,4 @@
-# 接入 hybrid-am-research 的具体方案 · 子 Skill 0.2
+# 接入 Axiom Research（axiom-research）的具体方案 · 子 Skill 0.2
 
 ## 本次选择
 

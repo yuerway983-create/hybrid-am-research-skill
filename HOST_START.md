@@ -1,4 +1,4 @@
-# 主控智能体使用说明 · v1.0
+# Axiom Research · 主控智能体使用说明 · v1.0
 
 ## 执行角色
 LLM宿主一次选择一个工具，agent_bridge.py执行真实Python工具并记录结果。

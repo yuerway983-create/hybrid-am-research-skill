@@ -1,4 +1,4 @@
-# v1.0：没有真实数据也可以完成软件演示
+# Axiom Research · v1.0：没有真实数据也可以完成软件演示
 
 ## 1. 先直接看结果
 打开 `reports/campaign-steady/index.html`：完整三轮合成验收。

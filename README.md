@@ -1,8 +1,10 @@
-# Hybrid-AM Research Skill · v1.0
+# Axiom Research
 
-An evidence-grounded research agent for hybrid additive manufacturing.
-It coordinates literature retrieval, lightweight virtual experiments, model calibration,
-experiment planning, and iterative feedback through dynamically selected scientific skills.
+科研智能建模与实验优化框架：连接科学知识、轻量模型与实验反馈的 LLM 辅助科研工作流。
+
+Skill 调用名：`axiom-research`；界面展示名：**Axiom Research**。原名 Hybrid-AM Research，现有仓库网址保留以兼容旧链接。
+当前实现仍聚焦混合 VPP–DIW 增材制造与发泡 FDM 分级聚合物泡沫，通用品牌名不代表已支持所有材料或科研领域。
+原 v1.0 工作流、原因分析 v0.2 和 foam-0.1 模块的版本与验证边界保持不变。
 ## Research Workflow
 ```mermaid
 flowchart TD
