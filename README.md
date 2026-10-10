@@ -1,83 +1,47 @@
 # Axiom Research
 
-科研智能建模与实验优化框架：连接科学知识、轻量模型与实验反馈的 LLM 辅助科研工作流。
+**LLM 辅助分级聚合物泡沫的材料设计、工艺优化与模型修正**
 
-Skill 调用名：`axiom-research`；界面展示名：**Axiom Research**。原名 Hybrid-AM Research，仓库已迁移为 `axiom-research-skill`。
-当前实现仍聚焦混合 VPP–DIW 增材制造与发泡 FDM 分级聚合物泡沫，通用品牌名不代表已支持所有材料或科研领域。
-原 v1.0 工作流、原因分析 v0.2 和 foam-0.1 模块的版本与验证边界保持不变。
+LLM-Assisted Materials Design, Process Optimisation and Model Refinement for Additively Manufactured Hierarchical Polymer Foams
 
-## 最新完整下载 · v1.1.0
+围绕牛津大学 **Reece Oosterbeek 团队的发泡 FDM 分级多孔聚合物研究**，连接文献因素提取、两级简化计算、模型标定与实验建议。当前实现侧重因素整理、压缩性能分析和候选模型修正；材料设计与工艺优化是研究目标，具体改进仍需真实实验检验。
 
-- [下载完整 Skill 文件包](https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.0/axiom-research-skill-v1.1.0.zip)：解压后根目录为 `axiom-research/`，包含主 Skill、全部子模块、脚本、模板、示例及验证记录。
-- [发布说明及校验文件](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.0)。此前 v1.0.0 的下载对应旧提交，不包含后续增加的模块；历史发布保留，不是本次更新包。
+[快速开始](START_HERE.md) · [泡沫研究 Skill](skills/polymer-foam-model-refinement/SKILL.md) · [LLM 宿主入口](HOST_START.md) · [下载完整 v1.1.1 文件包](https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.1/axiom-research-skill-v1.1.1.zip)
 
-发布包版本为 **1.1.0**；VPP–DIW 运行时仍为 **1.0.0**，原因分析为 **0.2.0**，泡沫模块为 **foam-0.1**。根 `MANIFEST.json` 对应当前发布文件，旧版清单另存于 `reports/releases/v1.0.0/MANIFEST.json`。下载包不含虚拟环境、凭据或本地运行目录；解压后使用根目录的脚本，不单独复制泡沫子 Skill。
+## 与 Reece 研究的衔接
 
-## Research Workflow
-```mermaid
-flowchart TD
-    A[Research Goal & Existing Data]
-    --> B[Literature Retrieval & Evidence Building]
-    --> C[Model Selection / Construction / Calibration]
-    --> D[Virtual Experiments & Candidate Parameter Generation]
-    --> E[Prediction Validation & Domain Checks]
-    --> F[Next-Round Experiment Planning]
-    --> G[Physical Printing & Testing]
-    --> H[Experimental Feedback & Model Update]
-    --> C
-```
-> At each technical stage, the master research skill selects and invokes suitable reviewed sub-skills from the scientific open-source ecosystem.
-## Current Status
-**v1.0 research-agent prototype**
-The complete software workflow can be demonstrated without real printing data using clearly labelled synthetic datasets.
-Real additive-manufacturing experiments are still required to validate actual process improvement and material performance.
-## Start here
+研究依据是 Sevcenco、Walters、Siviour 与 Oosterbeek 的论文：[Mechanics and modeling of hierarchically porous metamaterials manufactured by foaming fused deposition modeling](https://doi.org/10.1063/5.0301777)。原研究将打印形成的宏观孔结构与材料内部微观泡孔结合，用两级密度与 Gibson–Ashby 型关系描述力学响应。
 
-- [`START_HERE.md`](START_HERE.md) — local demonstration and setup
-- [`HOST_START.md`](HOST_START.md) — agent-controlled workflow
-- [`SKILL.md`](SKILL.md) — master skill definition
-- [`skills/hybrid-am-cause-analysis/SKILL.md`](skills/hybrid-am-cause-analysis/SKILL.md) — LLM cause analysis and parameter advice (v0.2, host-read supplement)
-- [`skills/polymer-foam-model-refinement/SKILL.md`](skills/polymer-foam-model-refinement/SKILL.md) — 发泡 FDM 分级聚合物泡沫的独立简化计算与候选模型修正（foam-0.1）
-- [`reports/`](reports/) — demonstration and validation records
-## Completed software scope
+本项目以这套已有简化模型为基础，加入 LLM 辅助的证据整理、候选原因解释与预声明修正，再用数值程序完成标定和比较。这些 LLM 分析与软件扩展属于本项目，并非原论文已经实现的方法，也不是牛津大学或 Reece 团队的官方软件。
 
-- 14 allowlisted tools with per-stage reviewed-skill selection and instructions loading.
-- Checked task/provenance/units; technical-repeat aggregation; group-separated validation.
-- Two different routes: concentration-profile sigma and empirical geometric track width.
-- Bounded parameter screening and calibration-only fallback when evidence/model gates fail.
-- Operator-attached actual-setting logs and measured-response records; frozen prediction scoring
-  and descriptive concurrent-baseline comparison before using new data for fitting.
-- New versioned fit datasets; old holdout retired; separate frozen updated model.
-- Prospective fresh-confirmation plan and operator import, then unchanged acceptance and
-  non-degradation checks. Failed/missing checks route to calibration-only, not fabricated predictions.
-- Automatic child-round creation, inherited accepted model, next-round proposals and a bounded
-  round budget. No previous raw data/model/result is overwritten.
-- Host-driven CLI interface; optional Responses loop automatically switches to created child sessions.
-- Separate synthetic environment for repeatable normal and failure-case SOFTWARE tests.
+Reece 的研究背景见[牛津个人主页](https://eng.ox.ac.uk/people/reece-oosterbeek)，公式、原文位置和适用限制见[来源与证据边界](skills/polymer-foam-model-refinement/references/sources.md)。其更广泛的降解、疲劳与回收研究并不等于本模块已支持这些预测。
 
-## LLM 原因分析与参数建议 · 子 Skill v0.2
+## 当前可以完成什么
 
-新增的 [hybrid-am-cause-analysis](skills/hybrid-am-cause-analysis/SKILL.md) 将现象、证据、候选原因和区分检查连接起来，给出符合目标与预算的下一步建议。
-它区分方向建议、诊断试验和有数值模型依据的目标候选；缺少模型仍可排查原因，缺少试验名额时继续核查已有记录。
+| 环节 | 当前能力 |
+| --- | --- |
+| 因素与证据 | LLM 宿主整理温度、出料倍率、密度、微观孔隙份额与实测几何，标注出处和缺失信息 |
+| 两级简化计算 | 由总相对密度和微观孔隙份额换算微／宏两级密度，分别标定单尺度幂律 |
+| 压缩性能 | 每次分析小应变压缩模量或初始压缩屈服强度中的一种 |
+| 工艺关系 | 独立拟合温度／出料倍率到内部密度的经验响应面 |
+| 模型修正 | 比较原模型、普通密度残差修正与最多两个预声明宿主修正特征 |
+| 诊断与建议 | 输出误差、有限支持范围内的敏感性、尺度审核及优先补测项；由宿主解释并提出人工可审查的实验建议 |
 
-文件型 LLM 宿主可在标定后、规划前，或冻结模型比较后、更新前读取该 Skill。
-具体调用提示见 [HOST_START.md](HOST_START.md#llm-原因分析与参数建议宿主补充步骤)，输入、预算、结构化输出和自动接入设计见 [接入说明](skills/hybrid-am-cause-analysis/references/integration.md)。
-当前以宿主补充分析方式使用：自动运行时仍为 v1.0 的 14 个工具，规划器尚不接收诊断候选，也不会自动将分析写入正式报告或审计。
-子 Skill 的格式、结构约束和合成案例行为已检查；真实工艺效果仍需实验评价。
+这里的“虚拟仿真”是简化模型计算与有限参数扫描。LLM 负责证据、机制假设和中文解释，脚本负责可复算的数值。当前没有完整发泡过程仿真、端到端工艺到性能验证、预测区间或自动泡沫实验规划，也不输出完整吸能曲线与疲劳／降解寿命。
 
-## 发泡 FDM：因素提取、简化计算与模型修正 · foam-0.1
+## 研究流程
 
-围绕 Reece Oosterbeek 团队的两级孔结构研究，增加独立宿主 Skill 与 `scripts/foam_model.py`。原论文已有两级简化模型；本扩展在其基础上加入数据核对、标定、有限修正与验证，不声称首次替代原文的完整仿真。
+1. 定义材料、宏观拓扑、测试条件与目标观测量，整理文献和已有测量。
+2. 核对密度定义、单位、样品身份及训练／留出条件与批次。
+3. 标定两级模型，预声明候选修正，只用训练条件交叉验证选择模型。
+4. 冻结模型后评分留出数据，检查误差、适用域与尺度假设。
+5. LLM 依据报告解释候选原因；研究者结合预算、设备约束审核下一步实验并获得新数据。
 
-- 按总相对密度和微观孔隙占全部孔隙的份额，计算微／宏两级密度。
-- 分别标定单尺度幂律，预测小应变压缩模量或初始压缩屈服强度。
-- 独立标定温度／出料倍率到内部密度的经验响应面；这不是发泡过程物理仿真，也尚未验证完整工艺到性能预测链。
-- 比较原始模型、普通密度残差修正及最多两项预声明的宿主修正；只用训练条件 CV 选模型，冻结后再评分留出集。
-- 合并技术重复、按条件等权、阻止样品／条件／批次跨分区；报告训练范围内的敏感性、输入快照、哈希和适用边界。
+温度／出料倍率到内部密度与密度到性能的模型分别评估，不能直接拼接成已验证的全流程预测。技术重复先合并，再按条件等权；不能根据留出误差反复挑选修正项。
 
-LLM 宿主负责有出处的因素提取、候选机制与中文解释；程序负责可复算的数值。脚本不自行调用 LLM API，也不自动生成真实数据、执行打印或调用商业仿真软件。该模块未注册到旧 14 工具运行时，原 VPP–DIW 流程不变。独立调用仍需保留完整仓库目录，不是只复制子 Skill 文件夹即可运行。
+## 快速运行泡沫案例
 
-使用已有 `requirements-calibration.txt` 中的 NumPy/SciPy，或只安装 `requirements-foam.txt`。Windows 可从仓库根目录创建隔离环境（已有环境可跳过第一行），优先使用国内镜像：
+下载[最新完整包 v1.1.1](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.1)，解压后在 `axiom-research/` 根目录操作。Windows PowerShell：
 
 ```powershell
 python -m venv .venv
@@ -85,50 +49,30 @@ python -m venv .venv
 .\.venv\Scripts\python.exe scripts/foam_model.py run --task examples/foam-refinement-demo/task.json --out outputs/foam-demo-1
 ```
 
-已经安装依赖的宿主环境也可直接运行：
+已有环境可跳过创建环境；macOS/Linux 用 `.venv/bin/python`。输出目录必须不存在，重复运行换新目录。数值步骤不需要 LLM API 密钥，也不调用商业仿真软件或打印设备。
 
-```text
-python scripts/foam_model.py run --task examples/foam-refinement-demo/task.json --out outputs/foam-demo-1
-```
+运行后查看 `report.md` 的中文诊断，结合 `result.json`、`model.json` 和输入快照核查计算。脚本先冻结任务和 CSV 快照，再对快照计算并记录哈希。
 
-输出目录必须不存在。演示全部是[合成夹具](examples/foam-refinement-demo/README.md)，刻意包含已知修正项，只验证计算和隔离行为，不证明 PLA 性能或 LLM 优势。真实研究需提供同材料、拓扑、测试条件下的基体性能、单尺度和分级结构数据及留出条件；不能直接套用示例常数。此版本仅输出诊断，不提供吸能曲线、寿命、自动实验规划或已证实的最优打印参数。
+案例全部是[合成软件夹具](examples/foam-refinement-demo/README.md)，刻意包含已知修正项；只能验证计算和数据隔离，不能证明真实 PLA 性能或 LLM 优势。泡沫模块已有 73 项测试记录，完整项目已有 347 项测试记录，详见[优化验证](reports/foam-0.1-optimization-validation.md)；本次页面更新没有改变数值实现。
 
-真实分析从 [任务模板](templates/foam-research/task.json) 和 [CSV 字段模板](templates/foam-research/measurements.csv) 开始，复制到自己的任务目录后填入真实数据和预声明的模型配置。模板中的 `null`、空数组和空数据故意阻止直接运行，避免继承虚构材料参数。屈服强度任务需同步修改观测量、测量定义和独立基体参考值。
+## 换成自己的实验数据
 
-优化后的中文报告逐项显示误差和范围检查、不可用原因及优先补充事项；敏感性列出有限扫描方向、实际支持范围、支持点数、端点预测和固定参考。扫描同时检查分级凸包、两级单尺度标定区间和所选修正特征边界；不足两个支持点不被解释为零效应。力学、工艺密度和尺度审核分别报告，不把数值通过当成实物确认。
+从[任务模板](templates/foam-research/task.json)和[CSV 字段模板](templates/foam-research/measurements.csv)另存新任务。准备同材料、拓扑与测试条件下的基体参考性能、单尺度和分级结构数据，以及分开的训练与留出条件。
 
-数据契约及来源见[工作流](skills/polymer-foam-model-refinement/references/workflow.md)、[证据边界](skills/polymer-foam-model-refinement/references/sources.md)。历史 v1.0 报告与旧发布清单单独保留；当前发布清单见根 `MANIFEST.json`，每次独立运行另记录实际代码及输入哈希。
-初版与本轮优化的实际测试结果见 [初版记录](reports/foam-0.1-validation.md) 与 [优化验证记录](reports/foam-0.1-optimization-validation.md)。输入先保存为快照，再对快照计算和哈希；执行中原文件的后续变化不会被混入本次模型。
+模板的 `null`、空数组和空数据表示尚未完成，不能直接运行或继承演示常数。微观孔隙份额表示微观孔隙占全部孔隙的比例，不是微观孔隙率；出料倍率也不等同于实测体积流量。切换模量／屈服强度时需同步修改观测量、测量定义和独立基体参考值。
 
-## What each run means
+完整输入规则见[工作流](skills/polymer-foam-model-refinement/references/workflow.md)。缺少数据或支持范围不足时，报告保留失败原因与优先补测项；“无法判断”不会被写成零效应或已确认改善。
 
-| Execution | Meaning |
-|---|---|
-| `campaign_demo.py` | Deterministic, synthetic software acceptance test, no LLM decisions |
-| Host + `agent_bridge.py` | Real individual numerical tool calls selected by the host LLM |
-| `llm_agent.py` | Opt-in remote Responses driver; contract-tested, not live-account-tested here |
-| Imported measured data | Operator-declared laboratory records; software does not certify authenticity |
+## Skill 与文件包
 
-Live GitHub/literature discovery uses the host's authorised tools. The local registry is not a
-web search. New external code needs review/registration; no automatic arbitrary installation.
-No COMSOL/Abaqus/DEFORM or printer APIs are invoked. No confidence/prediction intervals,
-formal sequential significance tests or automatically determined sample sizes are claimed.
-Image metrology, new material physics and full multi-objective BO are outside this release's scope.
+主 Skill 调用名为 `axiom-research`，展示名为 **Axiom Research**。发泡 FDM 任务使用独立子 Skill `polymer-foam-model-refinement` 与 `scripts/foam_model.py`；保留完整发布包，不单独复制子 Skill 文件夹。
 
-## Data protection and reproducibility
+发布包版本 **1.1.1**，泡沫模块 **foam-0.1**。下载附件同时提供 `SHA256SUMS.txt`，根 `MANIFEST.json` 记录包内文件哈希（自身除外）。旧 v1.1.0 清单保留于 `reports/releases/v1.1.0/MANIFEST.json`，旧发布继续作为历史版本。包中不含虚拟环境、凭据或私有数据。
 
-Input snapshots and numerical artifacts are hash-checked. Calls have unique identifiers and
-are replayable/idempotent. Each round has a separate directory and lineage. The audit detects
-local inconsistency but is not an external signature. Untrusted repositories must be reviewed;
-the CLI is not a general-purpose OS sandbox. No keys, private data or binaries are bundled.
+输入记录由操作者提供，软件检查不能独立认证实验真实性。外部文献和仓库需要核对来源；未经审核的外部代码不会自动安装执行。第三方归属见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
-## Attribution and publication
+## 旧模块与历史记录
 
-See THIRD_PARTY_NOTICES.md and registry/reviews/. Upstream workflows were reviewed; actual
-Python adapters are project implementations using separately installed libraries. Public
-repository visibility and the licence for project-owned files remain an owner decision.
-The maintained source is available in [the project GitHub repository](https://github.com/yuerway983-create/axiom-research-skill). Historical demonstration and validation records remain archived rather than being rewritten as new experiment results.
+原混合 VPP–DIW v1.0 工作流和原因分析 v0.2 保留在[旧模块入口](LEGACY_VPP_DIW.md)，历史报告保持原始标题与结论。旧的 14 工具流程、三轮演示和线宽／扩散结果不代表泡沫模块已经完成自动闭环。
 
-Historical v0.2–v0.4 reports are preserved as archives. Start NEW v1.0 sessions; do not resume
-old-version sessions against changed code hashes. Legacy input schemas (0.3/0.4) remain supported
-intentionally, so numeric task/feedback examples do not require relabelling.
+维护仓库：[yuerway983-create/axiom-research-skill](https://github.com/yuerway983-create/axiom-research-skill)。

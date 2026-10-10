@@ -1,56 +1,71 @@
-# Axiom Research · v1.0：没有真实数据也可以完成软件演示
+# Axiom Research · 分级聚合物泡沫快速开始
 
-当前完整发布包为 **v1.1.0**，VPP–DIW 运行流程仍为 v1.0。请从[最新发布](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.0)下载 `axiom-research-skill-v1.1.0.zip`，解压后在 `axiom-research/` 根目录操作。泡沫与原因分析的独立入口见 `HOST_START.md`；旧 v1.0.0 下载不包含后续模块。
+当前入口围绕 Reece Oosterbeek 团队的发泡 FDM 研究。先用合成数据了解两级简化计算与模型修正，再换成自己的实验数据。
 
-## 1. 先直接看结果
-打开 `reports/campaign-steady/index.html`：完整三轮合成验收。
-打开 `reports/campaign-shifted/index.html`：模型失效时不硬预测，而是继续标定计划。
-它们是静态文件，没有外部脚本、网络资源、付费调用或设备指令。
+## 1. 下载与选择入口
 
-## 2. 本地重新运行
-建议Python 3.11+，先在项目根目录创建虚拟环境：
+下载[完整发布包 v1.1.1](https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.1/axiom-research-skill-v1.1.1.zip)，解压后在 `axiom-research/` 根目录操作。发布说明和校验值见[对应版本](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.1)。
 
-```text
+- 了解方法：[泡沫研究 Skill](skills/polymer-foam-model-refinement/SKILL.md)。
+- 让 LLM 整理证据与解释结果：[宿主入口](HOST_START.md)。
+- 原线宽／扩散任务：[旧 VPP–DIW 模块](LEGACY_VPP_DIW.md)。
+
+泡沫分析依赖根目录脚本与模板，请保留完整文件包。
+
+## 2. 运行合成案例
+
+建议 Python 3.11+。在 Windows PowerShell 中：
+
+```powershell
 python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-foam.txt --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+.\.venv\Scripts\python.exe scripts/foam_model.py run --task examples/foam-refinement-demo/task.json --out outputs/foam-demo-1
 ```
 
-Windows PowerShell后续用 `.venv\Scripts\python.exe`；macOS/Linux用 `.venv/bin/python`。
-下面的python均替换成所选虚拟环境路径：
+已有虚拟环境可跳过第一行；macOS/Linux 使用 `.venv/bin/python` 替代 Windows 环境路径。首次安装依赖需要联网，数值案例无需 API 密钥。输出目录必须不存在，重跑时换成 `outputs/foam-demo-2` 等新目录。
+
+## 3. 看懂输出
+
+先打开 `outputs/foam-demo-1/report.md`，阅读中文诊断与优先补充事项，再按需要查看：
+
+| 文件 | 内容 |
+| --- | --- |
+| `result.json` | 数值检查、候选模型比较、敏感性和判断依据 |
+| `model.json` | 成功计算时保存的模型与参数 |
+| `input_task.json`、`input_measurements.csv` | 本次实际使用的冻结输入 |
+
+力学、工艺密度和尺度假设分别报告。数值检查通过不等于实物改善；敏感性不可用表示支持点不足，不能解释成没有影响。
+
+案例使用人工设定的数据与修正项，只检验软件行为。具体说明见[合成案例](examples/foam-refinement-demo/README.md)，已有测试见[泡沫验证记录](reports/foam-0.1-optimization-validation.md)。
+
+## 4. 让 LLM 参与分析
+
+在有本地文件和终端能力的宿主中，可以发送：
 
 ```text
-python -m pip install -r requirements-agent.txt
-python scripts/preflight.py
-python scripts/campaign_demo.py --out runs/demo-1
-python -m unittest discover -s tests -v
+使用 $axiom-research 处理 Reece Oosterbeek 团队相关的发泡 FDM 分级聚合物泡沫研究。
+读取 skills/polymer-foam-model-refinement/SKILL.md 及其工作流与来源说明。
+先整理关键因素和证据，再运行泡沫合成案例，读取实际输出并用中文解释模型比较、
+适用范围和优先补测项。将所有合成结果标为软件演示；数值必须来自脚本。
+具体实验建议应结合我提供的目标、预算和设备范围；未知参数保持未知。
 ```
 
-首次安装依赖可能联网，演示与数值分析无需联网或API密钥。输出目录必须是新的。
+分析自己的数据时，把上述“合成案例”改成自己的任务文件路径，并提供研究目标。宿主读取 Skill 后调用独立泡沫入口，详细说明见 [HOST_START.md](HOST_START.md)。
 
-## 3. 正常演示发生什么
-第一轮：冻结输入和原模型 → 推荐试验 → 测试程序附加独立合成回传 → 原模型评分与同批基准比较。
-然后：导出新增训练数据 → 冻结重拟合候选 → 测试程序附加新合成确认数据 → 验收 → 创建第二轮。
-第二轮重复上述过程并创建第三轮；第三轮输出新实验表，停在等待外部结果处。
-确认数据来自预先定义的人工响应函数，不是把模型预测值复制成“测量”。
+## 5. 使用真实研究数据
 
-## 4. 失败案例
+把 `templates/foam-research/` 中的[任务模板](templates/foam-research/task.json)和[测量模板](templates/foam-research/measurements.csv)复制到自己的任务目录，再填写真实来源、单位、基体参考性能和实测数据。
+
+每次选择小应变压缩模量或初始压缩屈服强度中的一种。按材料、拓扑与测试条件限定分析范围，预先声明修正特征，并分开训练／留出条件和批次。不要把示例数值或论文特定条件下的常数直接当成自己的材料参数。
+
 ```text
-python scripts/campaign_demo.py --out runs/demo-shift --scenario shifted --rounds 2
-python scripts/stage4_demo.py --out runs/demo-sparse --sparse
+python scripts/foam_model.py run --task path/to/your/task.json --out outputs/your-study-1
 ```
 
-模型变差或新确认不通过：不采用新模型、不改误差门槛，下一轮只输出标定/覆盖/基准。
-数据不足：保留需要测量的内容，不填造参数响应或置信区间。
-任何真实模式都禁止调用synthetic_campaign.py生成测量。
+模板空值故意阻止直接运行。输入字段、数据分组及所需测量见[数据契约](skills/polymer-foam-model-refinement/references/workflow.md)。
 
-## 5. 真正的主控智能体
-固定demo用于软件测试，不代表模型在自主决策。要让宿主逐步选Skill，阅读HOST_START.md。
-主控可选14个明确工具；每步find_skills → activate_skill → 执行 → 查看真实返回。
-下载版不会自行扫描所有GitHub并安装代码；新文献与新Skill由授权宿主查找、审核和导入。
+## 6. 研究范围
 
-## 6. 后续有真实数据时
-从新research-mode任务开始，复制templates中的任务和回传格式，填真实来源与测量定义。
-先标定原模型，推荐方案由人审核并执行。准备更新前必须先评分旧模型、报告负结果。
-新候选冻结后，按confirmation_plan进行额外独立确认；在操作者附加数据后才允许数值验收。
-测试默认组数仅为原型数值检查要求，不是满足论文统计功效的样本量建议。
+当前能做两级简化计算、模型标定与有限修正，工艺到内部密度的经验关系单独评估。LLM 解释候选原因和有条件的参数方向；下一步实验由研究者审核和执行。
 
-当前主要支持sigma或几何宽度，不从它们自动推断固化程度、界面强度、疲劳寿命或器件性能。
+当前未实现端到端工艺到性能预测、自动泡沫实验规划、完整吸能曲线或疲劳／降解寿命。原 VPP–DIW 三轮闭环演示属于[旧模块](LEGACY_VPP_DIW.md)，不能作为泡沫能力证明。

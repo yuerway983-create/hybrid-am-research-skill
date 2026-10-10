@@ -1,4 +1,22 @@
-# Axiom Research · 主控智能体使用说明 · v1.0
+# Axiom Research · LLM 宿主使用入口
+
+## 当前主入口：Reece 相关分级聚合物泡沫
+
+发泡 FDM 任务先读取 [polymer-foam-model-refinement](skills/polymer-foam-model-refinement/SKILL.md) 及其工作流和来源说明。由宿主整理证据和预声明候选修正，再调用独立数值脚本；不创建旧的 `agent_bridge.py` 会话。
+
+从完整发布包根目录、已安装 `requirements-foam.txt` 的环境运行合成示例：
+
+```text
+python scripts/foam_model.py run --task examples/foam-refinement-demo/task.json --out outputs/foam-host-1
+```
+
+读取实际生成的 `report.md`、`result.json`、成功时的 `model.json` 与输入快照。解释模型比较、误差、支持范围、尺度审核和优先补测项，所有示例输出保持合成数据标记。真实分析改用自己的任务文件；安装和输入准备见 [快速开始](START_HERE.md)。
+
+LLM 根据来源与数值结果给出候选原因和有条件的参数方向，具体实验建议需结合用户目标、预算和设备约束。该模块目前没有自动实验规划和端到端工艺到性能验证；下方旧流程的自动工具与三轮能力不适用于泡沫。
+
+## 旧 VPP–DIW v1.0 主控流程
+
+以下 `agent_bridge.py`、线宽／扩散、原因分析与回传更新操作保留给原有任务。历史结果和重跑入口见 [LEGACY_VPP_DIW.md](LEGACY_VPP_DIW.md)。
 
 ## 执行角色
 LLM宿主一次选择一个工具，agent_bridge.py执行真实Python工具并记录结果。
@@ -55,35 +73,6 @@ inspect_task → 激活evidence/review_evidence → 激活calibration/calibrate_
 宿主可以对照正式计划记录建议的交接状态；需要新诊断点时保留待接入建议，不能用文字报告覆盖冻结的 `plan.json`。
 完整输入约定、输出 Schema 和后续自动接入位置见 [接入说明](skills/hybrid-am-cause-analysis/references/integration.md)。
 
-## 发泡 FDM 分级泡沫：独立入口
-
-本入口由宿主直接读取，与原 VPP–DIW 会话及 14 工具运行时分开。保持完整仓库目录，先安装数值依赖，然后可以使用以下中文提示词：
-
-```text
-读取 skills/polymer-foam-model-refinement/SKILL.md 及它要求的工作流和来源说明。
-分析 Reece Oosterbeek 团队两级泡沫模型能够覆盖的观测量，先检查数据来源、
-密度与孔隙份额定义、测量方法、技术重复及训练/留出隔离。不要填补未知材料参数。
-演示时使用 examples/foam-refinement-demo/task.json，明确所有结果来自合成数据。
-真实任务只使用用户提供、匹配任务范围的实测 CSV，事先声明修正特征及误差门槛。
-从仓库根目录调用 scripts/foam_model.py run，指定不存在的新输出目录。
-用实际 result.json 和 report.md 解释原模型、普通修正和宿主修正的比较、
-敏感性与适用范围。只用训练条件 CV 选模型，不能看到留出结果后改模型或门槛。
-先读 decision_summary 的力学、工艺密度和尺度审核三类状态及优先补充事项。
-方向只是实际支持的有限扫描；点数不足表示暂不可比较，不是因素没有影响。
-温度/出料倍率到密度响应面和结构到性能模型分别验证，不称为已验证的端到端工艺模拟。
-若目标是吸能、寿命或范围外最优参数，指出模型缺口并说明需要什么新数据或模型。
-输出可检验的原因假设和有条件的参数方向，不执行设备、不调用商业求解器，
-不将敏感性当成因果效应，不把数值关口通过当成新确认实验或真实材料效果。
-```
-
-典型独立调用：
-
-```text
-python scripts/foam_model.py run --task examples/foam-refinement-demo/task.json --out outputs/foam-demo-1
-```
-
-缺少真实数据时可完成输入检查和知识整理，不能把合成夹具重标为实验数据。当前版本不自动导出规划器任务；下一轮打印点需另行核对预算、设备范围、网格与基准条件。
-真实任务可从 `templates/foam-research/` 复制任务与 CSV 字段模板；必填参数保持空值直到用户提供或完成标定，不能套用演示常数。
 
 ## 文献与结果由操作者附加
 无初始文献包时，可由授权宿主检索后：

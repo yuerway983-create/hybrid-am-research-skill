@@ -1,25 +1,31 @@
 ---
 name: axiom-research
-description: 通过可追溯证据、轻量数值模型与实验反馈开展 LLM 辅助科研分析、标定和候选实验规划。当前支持混合 VPP–DIW 工作流，并将发泡 FDM 分级聚合物数据路由到独立泡沫模型修正模块；不调用专用仿真软件或控制打印设备。
+description: 围绕发泡 FDM 分级聚合物泡沫开展 LLM 辅助因素提取、两级简化计算、标定与模型修正，路由到独立泡沫模块；保留 VPP–DIW 线宽与扩散任务的旧工作流。不调用专用仿真软件或控制打印设备。
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
   runtime-version: "1.0.0"
   implementation-status: "bounded-multi-round-software-prototype"
   foam-extension-version: "foam-0.1"
-  compatibility: Python 3.11+ with requirements-agent.txt. A file/terminal-capable LLM host selects CLI tools. Optional OpenAI Responses driver requires explicit network/data-sharing consent and user-configured credentials; live API integration is not certified by local tests.
+  compatibility: Python 3.11+ with requirements-foam.txt for foam analysis, or requirements-agent.txt for legacy VPP-DIW. A file/terminal-capable LLM host selects CLI tools. The optional legacy OpenAI Responses driver requires user-configured credentials and authorised network/data sharing; local tests do not certify live API integration.
 ---
 
 # Axiom Research
 
-科研智能建模与实验优化框架。原名 Hybrid-AM Research；品牌更新不扩展已验证的研究范围，也不改变专业子 Skill 的标识。
+LLM 辅助分级聚合物泡沫研究框架。当前展示与快速入口围绕 Reece Oosterbeek 团队的发泡 FDM 研究；原 Hybrid-AM / VPP–DIW 模块保留供原任务使用。
 
-## Mission
+## 先按研究问题选择入口
+
+发泡 FDM／分级聚合物泡沫任务：读取 [polymer-foam-model-refinement](skills/polymer-foam-model-refinement/SKILL.md)，按其工作流调用 `scripts/foam_model.py`。使用 `requirements-foam.txt` 的依赖，不需要初始化旧运行时会话。该模块支持简化计算、标定和有限修正，尚未实现自动实验规划或多轮闭环。
+
+VPP–DIW 线宽／扩散任务：使用下文保留的 v1.0 流程，安装 `requirements-agent.txt`，参见 [旧模块入口](LEGACY_VPP_DIW.md)。下文的 14 工具、候选规划和多轮更新规则只适用于这一旧流程，不套用于泡沫任务。
+
+## Legacy VPP–DIW mission
 Follow the agreed scientific loop: goals/data -> literature evidence -> checked lightweight
 model -> candidate assessment -> trial plan -> external printing/measurement -> frozen-model
 comparison -> versioned update. Use skill selection as the implementation layer at each
 technical step. This project uses additive-manufacturing data, not forging data.
 
-## Actual v1.0 scope
+## Legacy VPP–DIW v1.0 scope
 Implemented: input validation; frozen evidence checks; sigma-calibration OR empirical geometric
 width calibration; grouped validation; bounded proposals; reviewed-skill activation; actual
 tool execution; follow-up CSV/log import; descriptive concurrent-control comparison; update
@@ -35,7 +41,7 @@ contains a Responses function-calling loop; local transport tests are not a paid
 再调用该模块的独立数值入口。不要把泡沫任务送入旧 VPP–DIW 的 14 工具运行时。
 这是宿主路由扩展，不是旧运行时新增工艺支持；完整仓库中的脚本及示例需一并保留。
 
-Read START_HERE.md and HOST_START.md. Use `python scripts/agent_bridge.py tools` for exact
+For legacy VPP–DIW tasks, read LEGACY_VPP_DIW.md and the legacy sections of HOST_START.md. Use `python scripts/agent_bridge.py tools` for exact
 schemas. A session snapshots task, CSV, predeclared comparison protocol and evidence before
 any feedback is available. Never mutate these snapshots or reduce thresholds to pass gates.
 
