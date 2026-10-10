@@ -1,0 +1,32 @@
+%%{init: {"theme":"base","htmlLabels":false,"fontFamily":"Microsoft YaHei","themeCSS":".cluster[id$='CORE'] .cluster-label text { transform: translateX(-123px); } .cluster[id$='FEEDBACK'] .cluster-label text { transform: translateX(-126px); }","themeVariables":{"fontFamily":"Microsoft YaHei","fontSize":"16px","primaryColor":"#f4f7fb","primaryTextColor":"#17324d","primaryBorderColor":"#8396aa","lineColor":"#52748e","clusterBkg":"#ffffff","clusterBorder":"#b8c7d5","edgeLabelBackground":"#ffffff","tertiaryColor":"#ffffff"},"flowchart":{"curve":"basis","nodeSpacing":28,"rankSpacing":48,"padding":14,"wrappingWidth":310,"subGraphTitleMargin":{"top":10,"bottom":30},"useMaxWidth":true}}}%%
+flowchart TD
+    accTitle: Axiom Research - 研究工作流
+    accDescr: 本图为总体工作流，不代表每个模块均已自动完成整条链。研究输入进入 LLM 辅助工作流；宿主在每个技术阶段选择经过审核的 Skill，经过验证的数值程序负责计算。证据不足时返回证据整理；真实实验由研究者批准并在外部完成，导入结果后与冻结预测比较，验证后进行版本化模型更新并重新标定。具体模块支持范围见能力状态表。
+    subgraph INPUT["研究输入"]
+        A["研究目标、已有数据与约束"]
+    end
+    subgraph CORE["LLM 辅助研究工作流"]
+        B["整理证据并界定任务"]
+        C["在每个技术阶段选择并执行<br/>经过审核的 Skill"]
+        D["模型选择与标定"]
+        E["计算试验与候选方案评估"]
+        F["检查预测、偏差与适用范围"]
+        G["提出建议或请求补充证据"]
+        B --> C --> D --> E --> F --> G
+        F -->|"需要更多证据"| B
+    end
+    subgraph FEEDBACK["人工验证与反馈"]
+        H["人工批准与真实物理实验<br/>（外部完成）"]
+        I["导入结果并与冻结预测比较"]
+        J["验证后进行版本化模型更新"]
+        H --> I --> J
+    end
+    A --> B
+    G -.-> H
+    J --> D
+    classDef input fill:#f4f7fb,stroke:#8396aa,color:#17324d
+    classDef core fill:#edf4fb,stroke:#52748e,color:#17324d
+    classDef human fill:#eff7f4,stroke:#72978d,color:#173f37
+    class A input
+    class B,C,D,E,F,G core
+    class H,I,J human

@@ -1,8 +1,24 @@
-# Axiom Research · LLM 宿主使用入口
+# Axiom Research · LLM host guide / 宿主使用入口
+
+[Overview](README.md) · [中文总览](README.zh-CN.md) · [Local examples / 本地案例](START_HERE.md) · [Package guide / 文件包说明](PACKAGE_GUIDE.md)
+
+## Choose a module / 选择适用模块
+
+The LLM host reviews the research question and evidence, selects reviewed Skills at each technical stage, and runs the matching numerical tools. The [overall workflow](docs/assets/research-workflow.svg) is a project-level map; supported execution differs by module. Physical manufacturing and measurement remain external human activities. The unchanged English runtime rules are in [SKILL.md](SKILL.md#host-driven-operation); detailed operator commands follow below.
+
+| Research task / 研究任务 | Entry / 执行入口 | Supported scope / 当前范围 |
+| --- | --- | --- |
+| VPP–DIW linewidth/diffusion / 线宽与扩散 | Main [Skill](SKILL.md), then `scripts/agent_bridge.py` | Reviewed local tool selection, calibration, bounded planning, frozen feedback comparison and guarded multi-round updates / 已审核工具选择、标定、约束规划、冻结预测比较及受条件限制的多轮更新 |
+| Hierarchical polymer foams / 分级聚合物泡沫 | [Foam Skill](skills/polymer-foam-model-refinement/SKILL.md), then `scripts/foam_model.py` | Independent model calibration, comparison and limited refinement; no connection to the VPP–DIW planner or multi-round runtime / 独立标定、比较及有限修正，未接入 VPP–DIW 规划器或多轮运行时 |
+| Discrepancy and cause analysis / 偏差与原因分析 | [Cause-analysis Skill](skills/hybrid-am-cause-analysis/SKILL.md), read by the host | Supplementary evidence-based reasoning for its stated scope; no automatic planner, report or audit integration / 在其适用范围内提供宿主补充分析，尚未自动接入规划器、报告或审计 |
+
+For another material or manufacturing problem, first assess whether existing assumptions, observables and data contracts fit. New evidence, tools or scientific models may be needed; the general workflow does not make a current numerical model universally applicable. `registry/` is local: runtime registrations, review records and unapproved seed candidates are distinct. Fresh GitHub or literature retrieval uses the host's authorised tools and requires review before adoption.
+
+以下保留已有路由、数据冻结、实验回传、确认与权限规则。使用前按任务选入口；一般科研问题先整理目标、资料、数据和约束，不能直接假定任一案例模型适用。宿主所需文件与依赖见 [START_HERE](START_HERE.md)。
 
 ## 分级泡沫建模与修正入口
 
-发泡 FDM 任务先读取 [polymer-foam-model-refinement](skills/polymer-foam-model-refinement/SKILL.md) 及其工作流和来源说明。由宿主整理证据和预声明候选修正，再调用独立数值脚本；不创建旧的 `agent_bridge.py` 会话。
+发泡 FDM 任务先读取 [polymer-foam-model-refinement](skills/polymer-foam-model-refinement/SKILL.md) 及其工作流和来源说明。由宿主整理证据和预声明候选修正，再调用独立数值脚本；不创建 VPP–DIW 的 `agent_bridge.py` 会话。
 
 从完整发布包根目录、已安装 `requirements-foam.txt` 的环境运行合成示例：
 
@@ -12,11 +28,11 @@ python scripts/foam_model.py run --task examples/foam-refinement-demo/task.json 
 
 读取实际生成的 `report.md`、`result.json`、成功时的 `model.json` 与输入快照。解释模型比较、误差、支持范围、尺度审核和优先补测项，所有示例输出保持合成数据标记。真实分析改用自己的任务文件；安装和输入准备见 [快速开始](START_HERE.md)。
 
-LLM 根据来源与数值结果给出候选原因和有条件的参数方向，具体实验建议需结合用户目标、预算和设备约束。该模块目前没有自动实验规划和端到端工艺到性能验证；下方旧流程的自动工具与三轮能力不适用于泡沫。
+LLM 根据来源与数值结果给出候选原因和有条件的参数方向，具体实验建议需结合用户目标、预算和设备约束。该模块目前没有自动实验规划和端到端工艺到性能验证；下方 VPP–DIW 流程的自动工具与三轮能力不适用于泡沫。
 
-## 旧 VPP–DIW v1.0 主控流程
+## VPP–DIW v1.0 主控流程
 
-以下 `agent_bridge.py`、线宽／扩散、原因分析与回传更新操作保留给原有任务。历史结果和重跑入口见 [LEGACY_VPP_DIW.md](LEGACY_VPP_DIW.md)。
+以下 `agent_bridge.py`、线宽／扩散、原因分析与回传更新操作适用于 VPP–DIW 任务。模块技术入口与历史结果见 [LEGACY_VPP_DIW.md](LEGACY_VPP_DIW.md)；该文件名为兼容保留，模块仍可执行。
 
 ## 执行角色
 LLM宿主一次选择一个工具，agent_bridge.py执行真实Python工具并记录结果。
@@ -50,7 +66,7 @@ inspect_task → 激活evidence/review_evidence → 激活calibration/calibrate_
 
 ## LLM 原因分析与参数建议（宿主补充步骤）
 
-新增 [hybrid-am-cause-analysis v0.2](skills/hybrid-am-cause-analysis/SKILL.md)，由宿主直接读取，在以下位置生成补充分析：
+[hybrid-am-cause-analysis v0.2](skills/hybrid-am-cause-analysis/SKILL.md) 由宿主直接读取，在以下位置生成补充分析：
 
 - 实验前：`calibrate_response` 返回后、`plan_experiments` 前；解释现有现象、模型诊断或设计风险。
 - 回传后：`compare_results` 完成后、`prepare_update` 前；依据实际设置与冻结模型偏差提出待验证原因。

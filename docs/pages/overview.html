@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Axiom Research</title><link rel="stylesheet" href="../assets/docs.css"></head><body><nav aria-label="Documentation"><a href="../../index.html">Axiom Research</a><a href="overview.html">Overview</a><a href="overview.zh-CN.html">中文总览</a><a href="start.html">Start</a><a href="package.html">Package</a></nav><main><p class="export-note">Offline document · generated from README.md</p><h1 id="axiom-research">Axiom Research</h1>
+<p><a href="overview.html">English</a> · <a href="overview.zh-CN.html">简体中文</a></p>
+<p><strong>A modular LLM-assisted research framework connecting scientific evidence, numerical modelling and experimental feedback through reusable Skills.</strong></p>
+<p>Start with a research question, the available data and practical constraints. A file- and terminal-capable LLM host organises evidence and selects reviewed Skills; numerical tools perform the calculations. Researchers receive traceable analyses and proposals, then decide which physical experiments to perform and which results to return.</p>
+<p>The workflow can support materials-design and process-improvement studies. Its modular interfaces are extensible; the models currently implemented remain specific to their documented materials, observables and process conditions.</p>
+<p><a href="#research-workflow">Research workflow</a> · <a href="start.html">Quick start</a> · <a href="package.html">Package guide</a> · <a href="host.html">Host guide</a> · <a href="../../index.html">Static overview</a></p>
+<h2 id="research-workflow">Research workflow</h2>
+<p>This is the overall research workflow, <strong>not a claim that every module automatically implements the whole loop</strong>. See the <a href="#capability-status-and-boundaries">capability status</a> below.</p>
+<!-- workflow:en:start -->
+<figure class="document-workflow"><img src="../assets/research-workflow.svg" alt="Overall workflow: inputs, LLM-assisted analysis, human validation and feedback, with evidence and model-update loops."><figcaption><a href="../assets/research-workflow.svg">Open full SVG</a></figcaption></figure>
+<!-- workflow:en:end -->
+
+<p><a href="../assets/research-workflow.svg">View the local SVG</a> · <a href="../assets/research-workflow.mmd">Editable Mermaid source</a></p>
+<p>The host selects a suitable reviewed Skill <strong>at each technical stage</strong>; the selection node does not mean “once per research round”. Numerical results come from checked programs, while manufacturing and testing take place outside the framework under researcher control. Insufficient data or model support leads to additional evidence, calibration or a stop—not a claimed optimum. Feedback updates require the validation supported by the chosen module.</p>
+<h2 id="capability-groups">Capability groups</h2>
+<table>
+<thead>
+<tr>
+<th>Research need</th>
+<th>Skills and tools</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Define the question and review evidence</td>
+<td>Source-located evidence, assumptions and gaps: <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/hybrid-am-evidence/SKILL.md">evidence Skill</a></td>
+</tr>
+<tr>
+<td>Calibrate a model</td>
+<td>Measured-response fitting and grouped validation: <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/measured-response-calibration/SKILL.md">calibration Skill</a></td>
+</tr>
+<tr>
+<td>Run computational experiments and assess candidates</td>
+<td>Lightweight <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/diffusion-moments/SKILL.md">diffusion calculations</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/SKILL.md">foam model comparison</a> and supported-domain candidate assessment</td>
+</tr>
+<tr>
+<td>Analyse discrepancies and possible causes</td>
+<td>Evidence-linked hypotheses and distinguishing checks: <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/hybrid-am-cause-analysis/SKILL.md">cause-analysis Skill</a></td>
+</tr>
+<tr>
+<td>Propose experiments or further measurements</td>
+<td>Budgeted, constrained <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/bounded-experiment-planning/SKILL.md">candidate planning</a> or <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/calibration-only-planning/SKILL.md">calibration planning</a>, within the implemented VPP–DIW workflow</td>
+</tr>
+<tr>
+<td>Compare feedback and update models</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/descriptive-feedback/SKILL.md">Frozen-prediction comparisons</a> and <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/safe-model-update/SKILL.md">versioned updates with fresh confirmation</a>, within the VPP–DIW runtime</td>
+</tr>
+</tbody></table>
+<h2 id="current-examples">Current examples</h2>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>What it demonstrates</th>
+<th>Start here</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>VPP–DIW track width / diffusion</td>
+<td>Separate empirical geometric-width and concentration-sigma routes; calibration, bounded proposals, measured-feedback comparison and guarded model updates</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/examples/width-calibration-demo/README.md">Width fixture</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/examples/sigma-calibration-demo/README.md">sigma fixture</a>, <a href="vpp-diw.html">workflow and run records</a></td>
+</tr>
+<tr>
+<td>Hierarchical polymer foams</td>
+<td>Two-level lightweight modelling, calibration, predeclared refinements and limited supported-domain sensitivity analysis</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/SKILL.md">Module guide</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/examples/foam-refinement-demo/README.md">synthetic fixture</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/templates/foam-research/task.json">research templates</a></td>
+</tr>
+</tbody></table>
+<p>These are implemented application examples, not a definition of all possible research uses. Bundled numerical fixtures are synthetic software demonstrations. The foam module has its own entry point; the VPP–DIW multi-round runtime does not automatically apply to it.</p>
+<h2 id="what-goes-in--what-comes-out">What goes in / What comes out</h2>
+<table>
+<thead>
+<tr>
+<th>Research inputs</th>
+<th>Inspectable outputs</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Question, observable, objectives and constraints</td>
+<td>Explicit task scope, assumptions and missing-data requests</td>
+</tr>
+<tr>
+<td>Literature and source locations</td>
+<td>Evidence records with conditions and traceable references</td>
+</tr>
+<tr>
+<td>Measurements, units, sample identities and declared partitions</td>
+<td>Calibration diagnostics, numerical analyses and model comparisons</td>
+</tr>
+<tr>
+<td>Parameter bounds, budget and external experimental feedback</td>
+<td>Module-supported candidate suggestions, frozen-prediction comparisons and versioned reports</td>
+</tr>
+</tbody></table>
+<p>Files and numerical outputs depend on the selected module. A suggestion is a research proposal for human review, not an equipment command.</p>
+<h2 id="choose-an-entry-point">Choose an entry point</h2>
+<ul>
+<li><strong>Understand the project:</strong> read this overview, the <a href="../assets/research-workflow.svg">workflow SVG</a> and the <a href="package.html">package map</a>.</li>
+<li><strong>Run local tools:</strong> follow <a href="start.html">START_HERE.md</a> for either application example. These scripts do not automatically connect to an LLM.</li>
+<li><strong>Use an LLM host:</strong> read <a href="host.html">HOST_START.md</a> and the main <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/SKILL.md">Skill</a>. The host must support files and terminal tools.</li>
+</ul>
+<p>Get the <strong>v1.1.3 documentation release</strong>: <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.3/axiom-research-modeling-toolkit-v1.1.3.zip">complete ZIP</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.3">checksums and release</a>, or <a href="release-draft.html">included release notes</a>. The previous <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.2">v1.1.2 release</a> remains available with its original documentation.</p>
+<h2 id="capability-status-and-boundaries">Capability status and boundaries</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Current status</th>
+<th>Implementation evidence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>VPP–DIW workflow</td>
+<td>Executable numerical tools, host-directed operation and guarded multi-round feedback; fixed demos remain deterministic and synthetic</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/scripts/agent_runtime.py">Runtime</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/scripts/round_tools.py">round tools</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/scripts/campaign_demo.py">demo</a></td>
+</tr>
+<tr>
+<td>Foam modelling</td>
+<td>Executable independent analysis; no integrated automatic experiment planner or validated end-to-end process-to-performance chain</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/scripts/foam_model.py">Numerical entry</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/references/workflow.md">module workflow</a></td>
+</tr>
+<tr>
+<td>Cause analysis</td>
+<td>Host-read supplementary analysis; not automatically consumed by the planner or included in formal runtime audit/reporting</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/hybrid-am-cause-analysis/references/integration.md">Integration contract</a></td>
+</tr>
+<tr>
+<td>Skill and literature discovery</td>
+<td>Local registry contains reviewed entries; fresh literature or GitHub discovery requires authorised host tools and review before integration</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/registry/runtime-skills.json">Registry</a>, <a href="host.html">host instructions</a></td>
+</tr>
+<tr>
+<td>Broader research applications</td>
+<td>Extension opportunities requiring suitable data, models and adapters; not implemented universal materials design</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/SKILL.md">Current scope</a></td>
+</tr>
+</tbody></table>
+<p>Prediction intervals, Bayesian optimisation, commercial solver integration and equipment control are not implemented features. Synthetic demos do not establish autonomous LLM research, real-material improvement or superiority over ordinary modelling. Detailed module-specific constraints stay in the linked technical guides.</p>
+<h2 id="sources-reproducibility-and-licence">Sources, reproducibility and licence</h2>
+<p>The master Skill is <code>axiom-research</code>; the repository remains <code>axiom-research-skill</code>. Distribution <strong>1.1.3</strong> is separate from VPP–DIW runtime <strong>1.0.0</strong>, cause analysis <strong>0.2.0</strong> and foam <strong>foam-0.1</strong>. This revision changes documentation and presentation only.</p>
+<p>Source records and methods remain in <a href="https://github.com/yuerway983-create/axiom-research-skill/tree/main/evidence/">evidence/</a> and <a href="https://github.com/yuerway983-create/axiom-research-skill/tree/main/references/">references/</a>; foam-specific sources are <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/references/sources.md">listed in the module</a>. <a href="https://github.com/yuerway983-create/axiom-research-skill/tree/main/tests/">Tests</a> and <a href="https://github.com/yuerway983-create/axiom-research-skill/tree/main/reports/">historical reports</a> record software checks, not universal scientific validation. <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/VERSION">VERSION</a> and <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/MANIFEST.json">MANIFEST.json</a> identify and check the package; each historical manifest belongs only to its original version.</p>
+<p>Project-owned files use the <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/LICENSE">MIT licence</a>. Retain the <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/THIRD_PARTY_NOTICES.md">third-party notices</a> and component-specific attribution.</p>
+</main><footer>Documentation version 1.1.3. Technical GitHub links require a network connection; the Markdown source files remain in this package.</footer></body></html>

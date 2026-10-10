@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>VPP–DIW 工作流与运行记录</title><link rel="stylesheet" href="../assets/docs.css"></head><body><nav aria-label="Documentation"><a href="../../index.html">Axiom Research</a><a href="overview.html">Overview</a><a href="overview.zh-CN.html">中文总览</a><a href="start.html">Start</a><a href="package.html">Package</a></nav><main><p class="export-note">Offline document · generated from LEGACY_VPP_DIW.md</p><h1 id="vppdiw-工作流与运行记录">VPP–DIW 工作流与运行记录</h1>
+<p>VPP–DIW 线宽／扩散是 Axiom Research 当前可执行的应用工作流之一，与独立的层级聚合物泡沫模块并列。项目总览见 <a href="overview.html">README</a>，运行入口见 <a href="start.html">快速开始</a>。本文件名为兼容已有链接保留，不表示该工作流被弃用。本页中的 14 工具、三轮更新、几何宽度与扩散结果属于 VPP–DIW 运行时，不代表泡沫模块具备相同能力。</p>
+<h2 id="历史结果">历史结果</h2>
+<ul>
+<li><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/reports/campaign-steady/index.html">完整三轮合成验收</a>：合成回传、冻结更新、独立合成确认和下一轮。</li>
+<li><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/reports/campaign-shifted/index.html">模型失效分支</a>：失败时转入标定方案。</li>
+<li><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/reports/host-session-v1/index.html">宿主逐步调用记录</a>：29 次工具调用记录，外部数据仍为合成。</li>
+<li><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/reports/host-session-v1/next_round/index.html">历史第二轮方案</a>。</li>
+<li><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/reports/V1_REPORT_ZH.md">v1.0 完成记录</a>：当时的 274 项测试与验证范围。</li>
+</ul>
+<p>历史文件保留原始名称、版本与结论。软件验收不是实际打印或材料改善证据；当前包中的完整测试数量及泡沫扩展另见 <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/reports/foam-0.1-optimization-validation.md">foam-0.1 优化验证</a>。</p>
+<h2 id="运行-vppdiw-流程">运行 VPP–DIW 流程</h2>
+<p>在独立虚拟环境中安装旧流程依赖，从完整仓库根目录运行：</p>
+<pre><code class="language-text">python -m pip install -r requirements-agent.txt --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+python scripts/preflight.py
+python scripts/campaign_demo.py --out runs/demo-1</code></pre>
+<p>输出目录必须不存在。失败场景可用 <code>--scenario shifted --rounds 2</code>，并另选新输出目录。演示不需要 API 密钥，也不会运行真实设备。</p>
+<p>固定演示由脚本驱动；LLM 宿主逐步选择工具请读取 <a href="host.html">HOST_START.md</a> 中VPP–DIW v1.0 主控流程及主 <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/SKILL.md">SKILL.md</a> 的旧流程说明。</p>
+<h2 id="原因分析与数据回传">原因分析与数据回传</h2>
+<p><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/hybrid-am-cause-analysis/SKILL.md">hybrid-am-cause-analysis v0.2</a> 是旧工作流的宿主补充分析。它支持证据、替代原因、区分检查及参数建议，目前未自动注册到 14 工具运行时，也不会自动将诊断候选写入规划器或正式审计。</p>
+<p>原运行时支持冻结预测评分、版本化重拟合和独立新确认。开始真实研究时需另建任务，使用真实测量与来源；旧确认数据不能重复宣称为新验证。不要用旧会话绕过代码／输入哈希检查，也不要从几何宽度直接推断界面强度、疲劳寿命或器件性能。</p>
+<p>原可选远程 API 驱动仅有本地协议测试，未用真实账户验收。是否联网调用由用户所选宿主和凭据配置决定；新检索来源和外部代码仍需审核。</p>
+</main><footer>Documentation version 1.1.3. Technical GitHub links require a network connection; the Markdown source files remain in this package.</footer></body></html>

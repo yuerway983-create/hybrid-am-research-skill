@@ -1,111 +1,106 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Axiom Research · 科研建模与实验优化工具包</title>
-  <meta name="description" content="面向材料与制造研究的 LLM 辅助工具包：证据整理、简化计算、模型标定、原因分析与实验建议；提供分级聚合物泡沫研究模块。">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-  <style>
-    *{box-sizing:border-box}body{font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif;color:#163641;background:#f4f6f7;margin:0}
-    main{max-width:1080px;padding:42px 28px;margin:auto}header{border-bottom:2px solid #bd2947;padding-bottom:24px}
-    small,.eyebrow{letter-spacing:1px;color:#b12040;font-weight:700}h1{font-size:clamp(32px,5vw,48px);line-height:1.15;margin:12px 0}
-    h2{font-size:24px;font-weight:700;margin:30px 0 12px}h3{font-size:18px;font-weight:700;margin:0 0 8px}
-    p{margin:8px 0}.subtitle{font-size:clamp(20px,3vw,28px);font-weight:650;line-height:1.5}.muted{color:#526b75;font-size:14px}
-    .notice{background:#fff5df;border-left:4px solid #b38528;padding:16px 20px;margin:24px 0}.notice h2{margin-top:0}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}article{background:white;padding:20px;border:1px solid #d6e0e3;border-radius:8px}
-    article p{font-size:14px}.button{display:inline-block;background:#163641;color:white;padding:10px 18px;border-radius:6px;text-decoration:none;margin:8px 12px 8px 0;font-weight:650}
-    .table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:white}td,th{padding:12px 16px;border-bottom:1px solid #dce4e7;text-align:left;vertical-align:top}th{font-weight:700}
-    pre{background:#173641;color:white;padding:18px;white-space:pre-wrap;overflow-wrap:anywhere;border-radius:6px;font-size:14px;margin:14px 0}
-    a{color:#125269;text-decoration:underline;text-underline-offset:3px}a:focus-visible{outline:3px solid #b12040;outline-offset:4px}
-    ol{list-style:decimal;padding-left:24px}li{margin:8px 0}code{overflow-wrap:anywhere}footer{font-size:13px;margin-top:30px;padding-top:18px;border-top:1px solid #d6e0e3;color:#526b75}
-    @media(max-width:600px){main{padding:26px 18px}td,th{padding:10px}.grid{grid-template-columns:1fr}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Axiom Research · Modular LLM-assisted research</title>
+<meta name="description" content="A modular LLM-assisted research framework connecting scientific evidence, numerical modelling and experimental feedback through reusable Skills.">
+<link rel="stylesheet" href="docs/assets/site.css">
+<script src="docs/assets/site.js" defer></script>
 </head>
 <body>
-<main>
-  <header>
-    <small>AXIOM RESEARCH · RESEARCH MODELLING TOOLKIT</small>
-    <h1>Axiom Research</h1>
-    <p class="subtitle">LLM 辅助科研建模<br>与实验优化工具包</p>
-    <p>LLM-Assisted Research Modelling<br>and Experimental Optimisation Toolkit</p>
-    <p>面向材料与制造研究，连接证据整理、关键因素提取、简化计算、模型标定与实验建议。当前研究示例以发泡 FDM 分级聚合物泡沫为主，另保留线宽与扩散分析流程。</p>
-    <p class="muted">当前实现：因素整理、简化计算、标定与模型修正；材料设计与工艺优化是研究目标，具体建议仍需实验检验。</p>
-  </header>
+<a class="skip-link" href="#main"><span data-lang="en">Skip to content</span><span data-lang="zh-CN" hidden>跳至正文</span></a>
+<header class="topbar">
+  <a class="brand" href="#main">Axiom Research</a>
+  <nav aria-label="Main navigation"><a href="#workflow"><span data-lang="en">Workflow</span><span data-lang="zh-CN" hidden>研究流程</span></a><a href="#examples"><span data-lang="en">Examples</span><span data-lang="zh-CN" hidden>应用案例</span></a><a href="#start"><span data-lang="en">Get started</span><span data-lang="zh-CN" hidden>使用入口</span></a></nav>
+  <div class="language-switch" role="group" aria-label="Language / 语言"><button type="button" data-set-lang="en" aria-pressed="true">EN</button><button type="button" data-set-lang="zh-CN" aria-pressed="false">中文</button></div>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="project-title">
+  <p class="eyebrow"><span data-lang="en">EVIDENCE · MODELS · FEEDBACK</span><span data-lang="zh-CN" hidden>科学证据 · 数值模型 · 实验反馈</span></p>
+  <h1 id="project-title">Axiom Research</h1>
+  <p class="lead"><span data-lang="en">A modular LLM-assisted research framework connecting scientific evidence, numerical modelling and experimental feedback through reusable Skills.</span><span data-lang="zh-CN" hidden>以可复用 Skill 连接科学证据、数值建模与实验反馈的模块化 LLM 辅助研究框架。</span></p>
+  <p class="intro"><span data-lang="en">Bring a research question, your available data and practical constraints. The host selects reviewed Skills, numerical tools calculate, and researchers decide how to validate the resulting analyses and proposals.</span><span data-lang="zh-CN" hidden>提出研究问题，提供已有数据与实际约束。宿主选择已审核的 Skill，数值工具负责计算，研究者决定如何验证分析结果与建议。</span></p>
+  <div class="actions"><a href="#workflow"><span data-lang="en">Explore the research workflow ↓</span><span data-lang="zh-CN" hidden>查看研究流程 ↓</span></a><a href="docs/pages/overview.html"><span data-lang="en">Read the project overview</span><span data-lang="zh-CN" hidden>阅读项目总览</span></a></div>
+</section>
 
-  <section aria-labelledby="download">
-    <h2 id="download">科研建模与实验优化完整包</h2>
-    <a class="button" href="https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.2/axiom-research-modeling-toolkit-v1.1.2.zip"><i class="fa fa-download" aria-hidden="true"></i> 下载通用工具包 · v1.1.2</a>
-    <a href="START_HERE.md">快速开始</a> · <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.2">更新说明与校验文件</a>
-    <p class="muted">解压后在 <code>axiom-research/</code> 根目录使用。主 Skill：<code>axiom-research</code>；泡沫研究入口：<code>polymer-foam-model-refinement</code>。</p>
-  </section>
+<section class="section" aria-labelledby="workflow">
+  <h2 id="workflow"><span data-lang="en">Research workflow</span><span data-lang="zh-CN" hidden>研究流程</span></h2>
+  <p class="section-intro"><span data-lang="en">An overall workflow, with module-specific support—not a claim that every module automatically completes the full loop.</span><span data-lang="zh-CN" hidden>这是总体工作流，具体支持范围取决于模块，不代表每个模块都已自动完成整条链。</span> <a href="#status"><span data-lang="en">Check capability status</span><span data-lang="zh-CN" hidden>查看能力状态</span></a></p>
+  <div class="workflow-layout">
+    <figure class="workflow-figure">
+      <img data-lang="en" src="docs/assets/research-workflow.svg" alt="Top-down research workflow: research inputs, LLM-assisted evidence and Skill selection, numerical modelling and assessment, then human experiments, frozen comparisons and validated updates. Feedback loops return to evidence review and model calibration.">
+      <img data-lang="zh-CN" hidden src="docs/assets/research-workflow.zh-CN.svg" alt="纵向研究流程：研究输入、LLM辅助证据整理与Skill选择、数值建模和候选检查，再经人工实验、冻结预测比较与验证后的模型更新。反馈箭头返回证据整理和模型标定。">
+      <figcaption><span data-lang="en">View <a href="docs/assets/research-workflow.svg">full-size SVG</a> · <a href="docs/assets/research-workflow.mmd">editable source</a></span><span data-lang="zh-CN" hidden>查看<a href="docs/assets/research-workflow.zh-CN.svg">完整 SVG</a> · <a href="docs/assets/research-workflow.zh-CN.mmd">可编辑源文件</a></span></figcaption>
+    </figure>
+    <aside class="workflow-notes" aria-label="Workflow responsibilities">
+      <h3><span data-lang="en">Who does what?</span><span data-lang="zh-CN" hidden>谁负责什么？</span></h3>
+      <dl>
+        <dt><span data-lang="en">Researcher</span><span data-lang="zh-CN" hidden>研究者</span></dt><dd><span data-lang="en">Defines goals and constraints, approves proposals, performs external manufacturing and testing, and returns measured results.</span><span data-lang="zh-CN" hidden>定义目标与约束，审核方案，在外部完成制造与测试，回传实测结果。</span></dd>
+        <dt><span data-lang="en">LLM host</span><span data-lang="zh-CN" hidden>LLM 宿主</span></dt><dd><span data-lang="en">Organises evidence and selects a suitable reviewed Skill at each technical stage—not just once per round.</span><span data-lang="zh-CN" hidden>组织证据，并在每个技术阶段选择合适的已审核 Skill，而非每轮只选择一次。</span></dd>
+        <dt><span data-lang="en">Numerical programs</span><span data-lang="zh-CN" hidden>数值程序</span></dt><dd><span data-lang="en">Execute reproducible calculations, diagnostics and comparisons within their documented scope.</span><span data-lang="zh-CN" hidden>在已说明的范围内执行可复算的计算、诊断与比较。</span></dd>
+      </dl>
+      <p class="decision-note"><span data-lang="en">When evidence or models are insufficient, request more evidence, calibrate or stop. Proposals are not automatically optimal or experimentally confirmed.</span><span data-lang="zh-CN" hidden>证据或模型不足时，补证据、补标定或停止。提出建议不等于已得到最优方案或实验确认。</span></p>
+    </aside>
+  </div>
+</section>
 
-  <section aria-labelledby="modules">
-    <h2 id="modules">按能力选择模块</h2>
-    <p><a href="skills/hybrid-am-evidence/SKILL.md">科研证据整理与核查</a> · <a href="skills/measured-response-calibration/SKILL.md">测量响应标定与验证</a> · <a href="skills/diffusion-moments/SKILL.md">扩散特征计算</a></p>
-    <p><a href="skills/bounded-experiment-planning/SKILL.md">约束实验规划</a> · <a href="skills/calibration-only-planning/SKILL.md">标定实验规划</a> · <a href="skills/descriptive-feedback/SKILL.md">实验反馈与模型比较</a></p>
-    <p><a href="skills/safe-model-update/SKILL.md">模型更新与迭代验证</a> · <a href="skills/hybrid-am-cause-analysis/SKILL.md">原因分析与参数建议</a> · <a href="skills/polymer-foam-model-refinement/SKILL.md">分级泡沫建模与修正</a></p>
-    <p class="muted">各模块随完整包交付。泡沫模块独立运行，其他模块保留原有工艺和数据限制；通用名称不代表已经支持任意材料。</p>
-  </section>
+<section class="section" aria-labelledby="capabilities">
+  <h2 id="capabilities"><span data-lang="en">Capabilities organised around research tasks</span><span data-lang="zh-CN" hidden>围绕研究任务组织能力</span></h2>
+  <div class="capability-grid"><article class="capability"><span class="step-number">01</span><h3><span data-lang="en">Research question & evidence</span><span data-lang="zh-CN" hidden>研究问题与证据</span></h3><p><span data-lang="en">Define the observable, review sources and expose assumptions or missing measurements.</span><span data-lang="zh-CN" hidden>明确观测量、核对来源，指出假设与缺失测量。</span></p><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/hybrid-am-evidence/SKILL.md"><span data-lang="en">Skill reference ↗</span><span data-lang="zh-CN" hidden>Skill 说明 ↗</span></a></article>
+<article class="capability"><span class="step-number">02</span><h3><span data-lang="en">Model calibration</span><span data-lang="zh-CN" hidden>模型标定</span></h3><p><span data-lang="en">Fit the declared response and inspect grouped validation within the chosen application.</span><span data-lang="zh-CN" hidden>拟合已声明响应，在所选应用范围内检查分组验证。</span></p><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/measured-response-calibration/SKILL.md"><span data-lang="en">Skill reference ↗</span><span data-lang="zh-CN" hidden>Skill 说明 ↗</span></a></article>
+<article class="capability"><span class="step-number">03</span><h3><span data-lang="en">Computational experiments</span><span data-lang="zh-CN" hidden>计算试验与候选分析</span></h3><p><span data-lang="en">Run lightweight calculations and assess candidates only within supported model domains.</span><span data-lang="zh-CN" hidden>执行轻量计算，在模型支持范围内分析候选。</span></p><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/SKILL.md"><span data-lang="en">Skill reference ↗</span><span data-lang="zh-CN" hidden>Skill 说明 ↗</span></a></article>
+<article class="capability"><span class="step-number">04</span><h3><span data-lang="en">Discrepancy & cause analysis</span><span data-lang="zh-CN" hidden>偏差与原因分析</span></h3><p><span data-lang="en">Connect observations with evidence-linked hypotheses and distinguishing checks.</span><span data-lang="zh-CN" hidden>将现象与有证据的假设、区分检查相联系。</span></p><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/hybrid-am-cause-analysis/SKILL.md"><span data-lang="en">Skill reference ↗</span><span data-lang="zh-CN" hidden>Skill 说明 ↗</span></a></article>
+<article class="capability"><span class="step-number">05</span><h3><span data-lang="en">Experiment proposals</span><span data-lang="zh-CN" hidden>实验建议</span></h3><p><span data-lang="en">Suggest constrained trials or calibration measurements for researcher review.</span><span data-lang="zh-CN" hidden>提出符合约束的候选试验或标定测量，供研究者审核。</span></p><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/bounded-experiment-planning/SKILL.md"><span data-lang="en">Skill reference ↗</span><span data-lang="zh-CN" hidden>Skill 说明 ↗</span></a></article>
+<article class="capability"><span class="step-number">06</span><h3><span data-lang="en">Feedback & model updates</span><span data-lang="zh-CN" hidden>反馈与模型更新</span></h3><p><span data-lang="en">Compare frozen predictions and use the module's validated update path.</span><span data-lang="zh-CN" hidden>比较冻结预测，按模块已实现的验证规则更新模型。</span></p><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/safe-model-update/SKILL.md"><span data-lang="en">Skill reference ↗</span><span data-lang="zh-CN" hidden>Skill 说明 ↗</span></a></article></div>
+</section>
 
-  <section aria-labelledby="research">
-    <h2 id="research">分级泡沫模块：方法基础</h2>
-    <p>分级泡沫计算参考关于发泡熔融沉积成型分级多孔超材料的公开论文。它把打印形成的宏观孔结构与材料内部的微观泡孔联系起来，建立两级密度与力学性能模型。</p>
-    <p>本项目在这一研究基础上，加入 LLM 辅助的证据整理、候选机制解释，以及可复算的模型比较和有限修正。这里的 LLM 分析与软件实现属于本项目的扩展。</p>
-    <p><a href="https://doi.org/10.1063/5.0301777">原始论文</a> · <a href="skills/polymer-foam-model-refinement/references/sources.md">公式与证据对应关系</a></p>
-  </section>
+<section class="section" aria-labelledby="examples">
+  <h2 id="examples"><span data-lang="en">Current examples</span><span data-lang="zh-CN" hidden>当前应用案例</span></h2>
+  <p class="section-intro"><span data-lang="en">Two implemented examples illustrate the framework. They are starting points with their own scientific scope, not a universal materials model.</span><span data-lang="zh-CN" hidden>两个已实现案例展示框架如何工作。它们各有科学适用范围，不构成通用材料模型。</span></p>
+  <div class="example-grid">
+    <article><p class="eyebrow"><span data-lang="en">APPLICATION WORKFLOW</span><span data-lang="zh-CN" hidden>应用工作流</span></p><h3><span data-lang="en">VPP–DIW track width / diffusion</span><span data-lang="zh-CN" hidden>VPP–DIW 线宽／扩散</span></h3><p><span data-lang="en">Separate geometric-width and concentration-sigma routes, with calibration, constrained candidate trials, feedback comparison and guarded model updates.</span><span data-lang="zh-CN" hidden>分开的几何线宽与浓度 sigma 路径，包含标定、约束候选试验、反馈比较与受验证条件控制的模型更新。</span></p><a href="docs/pages/start.html#local-vpp-diw"><span data-lang="en">Run the local example</span><span data-lang="zh-CN" hidden>运行本地案例</span></a> · <a href="docs/pages/vpp-diw.html"><span data-lang="en">Workflow & run records</span><span data-lang="zh-CN" hidden>工作流与运行记录</span></a></article>
+    <article><p class="eyebrow"><span data-lang="en">INDEPENDENT MODELLING MODULE</span><span data-lang="zh-CN" hidden>独立建模模块</span></p><h3><span data-lang="en">Hierarchical polymer foams</span><span data-lang="zh-CN" hidden>层级聚合物泡沫</span></h3><p><span data-lang="en">Two-level lightweight modelling, calibration, predeclared model refinements and limited sensitivity analysis within supported conditions.</span><span data-lang="zh-CN" hidden>两级轻量建模、标定、预声明模型修正，以及受支持条件内的有限敏感性分析。</span></p><a href="docs/pages/start.html#local-foam"><span data-lang="en">Run the local example</span><span data-lang="zh-CN" hidden>运行本地案例</span></a> · <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/SKILL.md"><span data-lang="en">Module guide ↗</span><span data-lang="zh-CN" hidden>模块指南 ↗</span></a></article>
+  </div>
+  <p class="caption"><span data-lang="en">Bundled numerical examples use synthetic data. Materials design and process improvement are research uses to investigate, not demonstrated automatic optimisation of arbitrary materials.</span><span data-lang="zh-CN" hidden>包内数值案例使用合成数据。材料设计与工艺改进是可研究的用途，不代表已经验证了任意材料的自动优化。</span></p>
+</section>
 
-  <section aria-labelledby="capabilities">
-    <h2 id="capabilities">分级泡沫建模与修正</h2>
-    <div class="grid">
-      <article><h3><i class="fa fa-search" aria-hidden="true"></i> 提取关键因素</h3><p>整理温度、出料倍率、总相对密度、微观孔隙份额及实测几何；核对出处、单位与缺失信息。</p></article>
-      <article><h3><i class="fa fa-calculator" aria-hidden="true"></i> 运行简化计算</h3><p>换算微观／宏观相对密度，标定两级幂律；每次分析小应变压缩模量或初始压缩屈服强度中的一种。</p></article>
-      <article><h3><i class="fa fa-sliders" aria-hidden="true"></i> 比较与修正模型</h3><p>比较原始模型、普通密度残差修正及最多两个预先声明的宿主修正特征；训练条件交叉验证后冻结，再评分留出数据。</p></article>
-      <article><h3><i class="fa fa-file-text-o" aria-hidden="true"></i> 解释结果与建议</h3><p>输出误差、受支持范围内的敏感性和优先补测项。LLM 结合证据给出原因假设与参数方向，具体实验由研究者审核。</p></article>
-    </div>
-  </section>
+<section class="section" aria-labelledby="io">
+  <h2 id="io"><span data-lang="en">What goes in / What comes out</span><span data-lang="zh-CN" hidden>输入与输出</span></h2>
+  <div class="table-wrap"><table><thead><tr><th scope="col"><span data-lang="en">Research inputs</span><span data-lang="zh-CN" hidden>研究输入</span></th><th scope="col"><span data-lang="en">Inspectable outputs</span><span data-lang="zh-CN" hidden>可核查输出</span></th></tr></thead><tbody><tr><td><span data-lang="en">Research question, observable, goals and constraints</span><span data-lang="zh-CN" hidden>研究问题、观测量、目标与约束</span></td><td><span data-lang="en">Task scope, assumptions and requests for missing data</span><span data-lang="zh-CN" hidden>任务范围、假设与补充数据请求</span></td></tr>
+<tr><td><span data-lang="en">Literature and source locations</span><span data-lang="zh-CN" hidden>文献资料与原文位置</span></td><td><span data-lang="en">Evidence records with conditions and references</span><span data-lang="zh-CN" hidden>附带条件和引用的证据记录</span></td></tr>
+<tr><td><span data-lang="en">Measurements, units, sample identities and declared partitions</span><span data-lang="zh-CN" hidden>测量、单位、样品身份与预声明分区</span></td><td><span data-lang="en">Calibration diagnostics, numerical analyses and model comparisons</span><span data-lang="zh-CN" hidden>标定诊断、数值分析与模型比较</span></td></tr>
+<tr><td><span data-lang="en">Parameter bounds, budget and external experimental results</span><span data-lang="zh-CN" hidden>参数范围、预算与外部实验结果</span></td><td><span data-lang="en">Module-supported candidate suggestions, comparisons and versioned reports</span><span data-lang="zh-CN" hidden>模块支持的候选建议、比较与版本化报告</span></td></tr></tbody></table></div>
+  <p class="caption"><span data-lang="en">Outputs depend on the selected module. A candidate is a proposal for human review, not an equipment command.</span><span data-lang="zh-CN" hidden>输出取决于所选模块；候选方案供研究者审核，不是设备指令。</span></p>
+</section>
 
-  <section aria-labelledby="workflow">
-    <h2 id="workflow">从已有数据到下一步实验</h2>
-    <ol>
-      <li><strong>定义研究问题：</strong>固定材料、拓扑、测试条件与目标观测量，整理文献和真实测量。</li>
-      <li><strong>简化计算与标定：</strong>核对两级密度，拟合原始模型；温度／出料倍率到内部密度的经验关系单独评估。</li>
-      <li><strong>比较模型：</strong>预声明候选修正，完成训练分组验证与冻结后的留出评分，检查适用范围。</li>
-      <li><strong>形成实验建议：</strong>读取中文报告，结合预算与设备范围审核建议；打印、测试和新数据回传由研究者完成。</li>
-    </ol>
-    <div class="notice"><strong>“虚拟仿真”在这里指轻量模型计算与有限参数扫描。</strong><p>当前未实现完整发泡过程仿真、端到端工艺到性能预测或自动实验规划。LLM 负责证据与解释，数值由脚本计算。</p></div>
-  </section>
+<section class="section" aria-labelledby="start">
+  <h2 id="start"><span data-lang="en">Choose your entry point</span><span data-lang="zh-CN" hidden>选择你的入口</span></h2>
+  <div class="entry-grid">
+    <article><h3><a href="docs/pages/overview.html"><span data-lang="en">Understand the project</span><span data-lang="zh-CN" hidden>了解项目</span></a></h3><p><span data-lang="en">Overview, workflow and capabilities. No installation required.</span><span data-lang="zh-CN" hidden>了解总览、研究流程与能力，无需安装。</span></p></article>
+    <article><h3><a href="docs/pages/start.html"><span data-lang="en">Run a local example</span><span data-lang="zh-CN" hidden>运行本地案例</span></a></h3><p><span data-lang="en">Choose VPP–DIW or foam calculations. Local scripts do not automatically connect to an LLM.</span><span data-lang="zh-CN" hidden>选择 VPP–DIW 或泡沫计算；本地脚本不会自动连接 LLM。</span></p></article>
+    <article><h3><a href="docs/pages/host.html"><span data-lang="en">Work with an LLM host</span><span data-lang="zh-CN" hidden>通过 LLM 宿主工作</span></a></h3><p><span data-lang="en">Use reviewed Skills in a host with file and terminal tools.</span><span data-lang="zh-CN" hidden>在具备文件与终端工具的宿主中使用经过审核的 Skill。</span></p></article>
+  </div>
+  <p><a href="docs/pages/package.html"><span data-lang="en">Package guide: what each directory is for</span><span data-lang="zh-CN" hidden>文件包说明：各目录是什么、何时使用</span></a> · <a href="docs/pages/release-draft.html"><span data-lang="en">Release notes</span><span data-lang="zh-CN" hidden>发布说明</span></a></p>
+</section>
 
-  <section aria-labelledby="inputs">
-    <h2 id="inputs">准备输入，获得可核查结果</h2>
-    <div class="table-wrap"><table>
-      <thead><tr><th scope="col">输入与准备</th><th scope="col">输出与用途</th></tr></thead>
-      <tbody>
-        <tr><td>同材料与测试条件的基体、单尺度及分级结构数据</td><td>两级模型、误差与适用范围检查</td></tr>
-        <tr><td>总相对密度、微观孔隙份额，以及分开的训练／留出条件与批次</td><td>原始与修正模型的冻结比较</td></tr>
-        <tr><td>工艺记录及可用的壁厚、泡孔等实测信息</td><td>独立工艺密度分析、尺度审核与补测建议</td></tr>
-      </tbody>
-    </table></div>
-    <p><a href="templates/foam-research/task.json">研究任务模板</a> · <a href="templates/foam-research/measurements.csv">测量字段模板</a> · <a href="skills/polymer-foam-model-refinement/references/workflow.md">输入要求与分析流程</a></p>
-    <p class="muted">模板中的空值需要用真实依据填写。未知材料参数保持未知；微观孔隙份额表示微观孔隙占全部孔隙的比例。</p>
-  </section>
+<section class="section" aria-labelledby="status">
+  <h2 id="status"><span data-lang="en">Capability status</span><span data-lang="zh-CN" hidden>能力状态</span></h2>
+  <div class="table-wrap"><table class="status-table"><thead><tr><th scope="col"><span data-lang="en">Area</span><span data-lang="zh-CN" hidden>领域</span></th><th scope="col"><span data-lang="en">Status and boundary</span><span data-lang="zh-CN" hidden>状态与边界</span></th><th scope="col"><span data-lang="en">Evidence</span><span data-lang="zh-CN" hidden>实现依据</span></th></tr></thead><tbody><tr><th scope="row"><span data-lang="en">VPP–DIW workflow</span><span data-lang="zh-CN" hidden>VPP–DIW 工作流</span></th><td><span class="badge"><span data-lang="en">Executable</span><span data-lang="zh-CN" hidden>已有可执行模块</span></span><p><span data-lang="en">Calibration, bounded proposals, frozen comparisons and guarded multi-round updates. Fixed demos are deterministic and synthetic.</span><span data-lang="zh-CN" hidden>标定、约束候选、冻结比较与受验证条件控制的多轮更新；固定 demo 是确定性合成演示。</span></p></td><td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/scripts/agent_runtime.py"><span data-lang="en">Runtime + round tools</span><span data-lang="zh-CN" hidden>运行时与轮次工具</span></a><br><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/scripts/round_tools.py"><span data-lang="en">Round tools</span><span data-lang="zh-CN" hidden>轮次工具</span></a></td></tr>
+<tr><th scope="row"><span data-lang="en">Polymer foam modelling</span><span data-lang="zh-CN" hidden>聚合物泡沫建模</span></th><td><span class="badge"><span data-lang="en">Independent executable</span><span data-lang="zh-CN" hidden>独立可执行入口</span></span><p><span data-lang="en">Standalone model analysis; no integrated automatic planner or validated full process-to-performance chain.</span><span data-lang="zh-CN" hidden>独立模型分析；未接入自动规划器，未验证完整工艺到性能预测链。</span></p></td><td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/references/workflow.md"><span data-lang="en">Module workflow</span><span data-lang="zh-CN" hidden>模块工作流</span></a></td></tr>
+<tr><th scope="row"><span data-lang="en">Cause analysis</span><span data-lang="zh-CN" hidden>原因分析</span></th><td><span class="badge"><span data-lang="en">Host-assisted</span><span data-lang="zh-CN" hidden>需 LLM 宿主执行</span></span><p><span data-lang="en">Supplementary host analysis; not automatically included in planner ranking or formal runtime audit/reporting.</span><span data-lang="zh-CN" hidden>宿主补充分析；不会自动进入规划排序或正式运行时审计／报告。</span></p></td><td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/hybrid-am-cause-analysis/references/integration.md"><span data-lang="en">Integration contract</span><span data-lang="zh-CN" hidden>接入约定</span></a></td></tr>
+<tr><th scope="row"><span data-lang="en">Skills & literature</span><span data-lang="zh-CN" hidden>Skill 与文献发现</span></th><td><span class="badge"><span data-lang="en">Host + reviewed registry</span><span data-lang="zh-CN" hidden>宿主与已审核登记</span></span><p><span data-lang="en">Runtime selection is local. Fresh literature/GitHub retrieval and new tool review are host responsibilities; seed entries are only candidates.</span><span data-lang="zh-CN" hidden>运行时选择来自本地。新文献／GitHub 检索及新工具审核由宿主负责；种子条目只是候选线索。</span></p></td><td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/registry/runtime-skills.json"><span data-lang="en">Runtime registry</span><span data-lang="zh-CN" hidden>运行时登记</span></a></td></tr>
+<tr><th scope="row"><span data-lang="en">Broader applications</span><span data-lang="zh-CN" hidden>更广泛应用</span></th><td><span class="badge"><span data-lang="en">Extension opportunities</span><span data-lang="zh-CN" hidden>未来可扩展用途</span></span><p><span data-lang="en">New materials and research objectives need suitable evidence, models and adapters.</span><span data-lang="zh-CN" hidden>新材料与研究目标需要适用证据、模型和适配器。</span></p></td><td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/SKILL.md"><span data-lang="en">Implemented scope</span><span data-lang="zh-CN" hidden>已实现范围</span></a></td></tr></tbody></table></div>
+  <p class="caption"><span data-lang="en">Prediction intervals, Bayesian optimisation, commercial solvers and device control are not implemented. Synthetic demos do not establish autonomous LLM research, material improvement or superiority over ordinary modelling. Technical guides retain the full constraints.</span><span data-lang="zh-CN" hidden>预测区间、贝叶斯优化、商业求解器和设备控制不是现成功能。合成演示不证明 LLM 自主科研、材料改善或优于普通建模；完整约束保留在技术指南中。</span></p>
+</section>
 
-  <section aria-labelledby="demo">
-    <h2 id="demo">先运行一个合成案例</h2>
-    <p>在发布包根目录创建隔离环境后运行；已有环境可跳过第一行：</p>
-    <pre><code>python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements-foam.txt --index-url https://pypi.tuna.tsinghua.edu.cn/simple
-.\.venv\Scripts\python.exe scripts/foam_model.py run --task examples/foam-refinement-demo/task.json --out outputs/foam-demo-1</code></pre>
-    <p>打开新输出目录中的 <code>report.md</code> 阅读中文诊断；<code>model.json</code>、<code>result.json</code> 与输入快照保留计算依据。重复运行请换一个新目录。</p>
-    <p><a href="examples/foam-refinement-demo/README.md">合成案例说明</a> · <a href="reports/foam-0.1-optimization-validation.md">泡沫模块验证记录</a> · <a href="HOST_START.md">让 LLM 宿主开展分析</a></p>
-    <p class="muted">案例数据和已知修正项为人工设定，仅验证软件行为，不代表实际 PLA 性能、实物改善或 LLM 优势。吸能曲线、疲劳和降解寿命尚未实现。</p>
-  </section>
-
-  <footer>
-    <p>本工具包依据公开文献与可复算模型构建；使用范围由各模块说明和输入数据决定。页面与使用入口更新为 v1.1.2，泡沫数值模块仍为 foam-0.1。</p>
-    <p><a href="https://github.com/yuerway983-create/axiom-research-skill">GitHub 仓库</a> · <a href="LEGACY_VPP_DIW.md">旧 VPP–DIW 模块与历史报告</a> · <a href="THIRD_PARTY_NOTICES.md">第三方说明</a></p>
-  </footer>
+<footer>
+  <p><span data-lang="en">Reusable workflows, application-specific models. Source records, review history and licences remain part of the package.</span><span data-lang="zh-CN" hidden>工作流可复用，模型有适用范围。来源记录、审核历史与许可证随包保留。</span></p>
+  <p><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/LICENSE"><span data-lang="en">MIT licence</span><span data-lang="zh-CN" hidden>MIT 许可</span></a> · <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/THIRD_PARTY_NOTICES.md"><span data-lang="en">Third-party notices</span><span data-lang="zh-CN" hidden>第三方说明</span></a> · <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/references/sources.md"><span data-lang="en">Module sources</span><span data-lang="zh-CN" hidden>模块来源</span></a> · <a href="https://github.com/yuerway983-create/axiom-research-skill"><span data-lang="en">GitHub repository</span><span data-lang="zh-CN" hidden>GitHub 仓库</span></a></p>
+  <p><span data-lang="en">Documentation release <strong>v1.1.3</strong> · <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.3/axiom-research-modeling-toolkit-v1.1.3.zip">Download the complete ZIP</a> · <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.3">Release &amp; checksums</a>. The <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.2">previous v1.1.2 release</a> remains available.</span><span data-lang="zh-CN" hidden>文档版 <strong>v1.1.3</strong> · <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.3/axiom-research-modeling-toolkit-v1.1.3.zip">下载完整 ZIP</a> · <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.3">发布页与校验文件</a>。此前的 <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.2">v1.1.2</a> 保持可用。</span></p>
+  <p><span data-lang="en">These core pages and workflow SVGs are local and readable offline. Links marked ↗ and source-code references open GitHub; their originals remain in the package.</span><span data-lang="zh-CN" hidden>本页、核心指南和流程 SVG 均为本地文件，可离线阅读。标有 ↗ 的链接及代码依据在 GitHub 打开，原文件也保留在包内。</span></p>
+</footer>
 </main>
+<noscript><p class="noscript-note">English is shown without JavaScript. <a href="docs/pages/overview.zh-CN.html">阅读离线中文版总览</a>。</p></noscript>
 </body>
 </html>

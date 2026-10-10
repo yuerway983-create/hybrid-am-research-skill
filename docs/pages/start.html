@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Axiom Research · Start here / 从这里开始</title><link rel="stylesheet" href="../assets/docs.css"></head><body><nav aria-label="Documentation"><a href="../../index.html">Axiom Research</a><a href="overview.html">Overview</a><a href="overview.zh-CN.html">中文总览</a><a href="start.html">Start</a><a href="package.html">Package</a></nav><main><p class="export-note">Offline document · generated from START_HERE.md</p><h1 id="axiom-research--start-here--从这里开始">Axiom Research · Start here / 从这里开始</h1>
+<p>Choose an entry according to what you want to do: understand the project, run a local numerical example, or work with an LLM host that can read files and use a terminal. The two current application examples are VPP–DIW linewidth/diffusion and hierarchical polymer foams; neither defines the whole framework.</p>
+<p><a href="overview.html">Project overview</a> · <a href="overview.zh-CN.html">中文项目总览</a> · <a href="package.html">Package guide / 文件包说明</a> · <a href="host.html">Host guide / 宿主说明</a></p>
+<h2 id="1-understand-the-project">1. Understand the project</h2>
+<p>Start with the <a href="overview.html#research-workflow">research workflow</a> and the capability status table in the README. Open <code>index.html</code> in a browser for the bilingual presentation; its core text and local workflow SVG work offline. The <a href="../assets/research-workflow.mmd">editable diagram source</a> and <a href="../assets/research-workflow.svg">SVG</a> are included in the package.</p>
+<p>LLM hosts organise evidence and choose reviewed Skills at each technical stage. Numerical programs carry out supported calculations; researchers approve and perform physical experiments. The overall diagram describes the research workflow, while each module implements a defined subset of it.</p>
+<p>The documentation patch is <strong>v1.1.3</strong>. Download the <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.3/axiom-research-modeling-toolkit-v1.1.3.zip">complete package</a> and verify it with the checksum attached to <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.3">the release</a>. The previous <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.2">v1.1.2 release</a> remains available but does not contain this documentation layout. See the <a href="package.html#versions-and-integrity">package guide</a> for version and integrity information.</p>
+<h2 id="2-run-a-local-numerical-or-synthetic-example">2. Run a local numerical or synthetic example</h2>
+<p>Keep the complete package together and run all commands from its <code>axiom-research/</code> root. Use Python 3.11 or later and a project virtual environment. Installing dependencies initially requires network access. The example scripts below do not connect to an LLM or need an API key.</p>
+<p>Choose either example. Both use <strong>synthetic software fixtures</strong>, not laboratory measurements. Their results demonstrate program behaviour and do not establish real materials improvement or an advantage from LLM decisions.</p>
+<p><a id="local-vpp-diw"></a></p>
+<h3 id="a-vppdiw-linewidth-calibration-and-bounded-feedback">A. VPP–DIW: linewidth calibration and bounded feedback</h3>
+<p>This example exercises the existing VPP–DIW runtime: calibration, candidate planning, frozen-model comparison, versioned refitting and independent synthetic confirmation. Its deterministic controller follows a fixed sequence; host-selected execution is a separate entry below.</p>
+<p>Windows PowerShell:</p>
+<pre><code class="language-powershell">python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-agent.txt
+.\.venv\Scripts\python.exe scripts/preflight.py
+.\.venv\Scripts\python.exe scripts/campaign_demo.py --out outputs/quickstart-vpp-diw-1</code></pre>
+<p>macOS / Linux:</p>
+<pre><code class="language-sh">python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-agent.txt
+.venv/bin/python scripts/preflight.py
+.venv/bin/python scripts/campaign_demo.py --out outputs/quickstart-vpp-diw-1</code></pre>
+<p>Open <code>outputs/quickstart-vpp-diw-1/index.html</code> for the campaign report; <code>campaign.json</code> and each round&#39;s linked report contain the actual records. The dependency check reports discoverable packages, not scientific validity. For the input fixture and module-specific history, see <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/examples/width-calibration-demo/README.md">linewidth example</a> and <a href="vpp-diw.html">VPP–DIW module guide</a>.</p>
+<p><a id="local-foam"></a></p>
+<h3 id="b-hierarchical-polymer-foams-model-calibration-and-refinement">B. Hierarchical polymer foams: model calibration and refinement</h3>
+<p>This independent entry compares bounded lightweight models and reports fit diagnostics, applicability and supported sensitivity checks. It uses one declared observable per task: small-strain compressive modulus or initial compressive yield strength. It does not use the VPP–DIW session runtime or its multi-round planner.</p>
+<p>Windows PowerShell:</p>
+<pre><code class="language-powershell">python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-foam.txt
+.\.venv\Scripts\python.exe scripts/foam_model.py run --task examples/foam-refinement-demo/task.json --out outputs/quickstart-foam-1</code></pre>
+<p>macOS / Linux:</p>
+<pre><code class="language-sh">python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-foam.txt
+.venv/bin/python scripts/foam_model.py run --task examples/foam-refinement-demo/task.json --out outputs/quickstart-foam-1</code></pre>
+<p>Open <code>outputs/quickstart-foam-1/report.md</code> in a Markdown reader. <code>result.json</code> contains numerical checks and comparisons; <code>model.json</code> is saved on successful calculation; <code>input_task.json</code> and <code>input_measurements.csv</code> record the inputs actually used. Missing support for a sensitivity estimate does not mean that factor has no effect. Read the <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/examples/foam-refinement-demo/README.md">synthetic fixture explanation</a> and <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/SKILL.md">foam Skill</a> for the method and scope.</p>
+<p>If <code>.venv</code> already exists, skip its creation. Every output directory must be new: use suffix <code>-2</code>, <code>-3</code>, etc. when repeating a run. Commands intentionally write to <code>outputs/</code>, leaving bundled examples and historical reports unchanged.</p>
+<p>Optional for users who need a mainland China package mirror: append <code>--index-url https://pypi.tuna.tsinghua.edu.cn/simple</code> to the relevant <code>pip install</code> command. The default commands use the normal pip index; the mirror is not required.</p>
+<h2 id="3-use-a-file-and-terminal-capable-llm-host">3. Use a file-and-terminal-capable LLM host</h2>
+<p>Provide the complete package to your host and start with <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/SKILL.md">SKILL.md</a>, whose invocation identifier remains <code>axiom-research</code>. A host must actually be able to read these files and run the supported tools. Copying the Skill text alone does not install dependencies, connect a model service or grant terminal/network permissions.</p>
+<p>Example user instruction (Chinese):</p>
+<pre><code class="language-text">使用 $axiom-research。先读取 README、SKILL.md 和 HOST_START.md，
+根据我提供的研究目标、资料、已有数据和约束，说明当前哪个模块适用。
+在每个技术阶段选择经过审核的 Skill，读取其规则并调用相应数值工具。
+如果运行示例，明确标注合成数据；数值结论必须来自实际工具输出。
+证据或数据不足时列出补充材料、标定需求或停止原因，不编造测量结果。
+给出可追溯的结果解释和待人工审核的研究建议，真实实验由研究者完成。</code></pre>
+<p>Continue with the relevant route in <a href="host.html">HOST_START.md</a>: VPP–DIW uses <code>agent_bridge.py</code>; foam modelling uses <code>foam_model.py</code> independently. The cause-analysis Skill is a host-read supplement and is not automatically registered in the planner, report or audit. The reviewed local registry does not perform live GitHub or literature search; new evidence and tools require the host&#39;s authorised retrieval and review.</p>
+<h2 id="4-bring-your-own-research-inputs">4. Bring your own research inputs</h2>
+<p>Define the observable, source records, units, material/process scope, constraints and budget before running a research task. Use the appropriate templates rather than changing only the label on a synthetic example.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Start from</th>
+<th>Read before use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>VPP–DIW linewidth/diffusion</td>
+<td><code>templates/task_geometric_v0.3.json</code>, <code>templates/task_geometric_v0.3.csv</code>, or the corresponding <code>task_sigma_v0.3.*</code> pair</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/references/model-contract.md">Model contract</a>, <a href="host.html">host workflow</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/templates/feedback_v0.4/README.md">feedback template</a></td>
+</tr>
+<tr>
+<td>Hierarchical polymer foams</td>
+<td><code>templates/foam-research/task.json</code> and <code>templates/foam-research/measurements.csv</code></td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/references/workflow.md">Foam data contract and workflow</a></td>
+</tr>
+</tbody></table>
+<p>The foam templates intentionally contain missing values that prevent direct execution. Preserve independent training/holdout conditions and batches, declare refinement features in advance, and use measured matrix properties appropriate to the task. In VPP–DIW, the protocol, evidence and session inputs are frozen before feedback; compare the frozen model before refitting. Full rules stay in the linked module and host documents.</p>
+<h2 id="中文阅读提示">中文阅读提示</h2>
+<ul>
+<li><strong>看项目</strong>：先读 <a href="overview.zh-CN.html">中文总览</a>，或离线打开 <code>index.html</code>。流程图表达总体研究路径，具体已实现范围见能力状态表。</li>
+<li><strong>本地运行</strong>：上方 A 为 VPP–DIW 固定流程合成演示，B 为泡沫独立数值案例。选择对应依赖，在完整包根目录执行；两者都不自动调用 LLM，重跑必须换新输出目录。</li>
+<li><strong>使用 LLM 宿主</strong>：从主 Skill <code>axiom-research</code> 和 <a href="host.html">HOST_START</a> 开始。每个技术阶段按适用范围选 Skill，真实实验由研究者审核和完成。</li>
+<li><strong>查文件用途</strong>：读 <a href="package.html">PACKAGE_GUIDE</a>。本次文档补丁为 1.1.3；旧版 1.1.2 下载仍保留，但不含本次新版文档。科研模块版本和科学验证范围没有因文档改版而提升。</li>
+</ul>
+</main><footer>Documentation version 1.1.3. Technical GitHub links require a network connection; the Markdown source files remain in this package.</footer></body></html>

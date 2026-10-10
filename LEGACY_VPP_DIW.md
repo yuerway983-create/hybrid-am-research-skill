@@ -1,6 +1,6 @@
-# 原 VPP–DIW 模块与历史记录
+# VPP–DIW 工作流与运行记录
 
-这里保留原混合增材制造的线宽／扩散研究入口。当前首页按科研建模能力组织，提供分级聚合物泡沫研究示例，见 [README](README.md) 和 [快速开始](START_HERE.md)。本页中的 14 工具、三轮更新、几何宽度与扩散结果属于旧 VPP–DIW 运行时，不代表泡沫模块具备相同能力。
+VPP–DIW 线宽／扩散是 Axiom Research 当前可执行的应用工作流之一，与独立的层级聚合物泡沫模块并列。项目总览见 [README](README.md)，运行入口见 [快速开始](START_HERE.md)。本文件名为兼容已有链接保留，不表示该工作流被弃用。本页中的 14 工具、三轮更新、几何宽度与扩散结果属于 VPP–DIW 运行时，不代表泡沫模块具备相同能力。
 
 ## 历史结果
 
@@ -12,7 +12,7 @@
 
 历史文件保留原始名称、版本与结论。软件验收不是实际打印或材料改善证据；当前包中的完整测试数量及泡沫扩展另见 [foam-0.1 优化验证](reports/foam-0.1-optimization-validation.md)。
 
-## 重跑原流程
+## 运行 VPP–DIW 流程
 
 在独立虚拟环境中安装旧流程依赖，从完整仓库根目录运行：
 
@@ -24,7 +24,7 @@ python scripts/campaign_demo.py --out runs/demo-1
 
 输出目录必须不存在。失败场景可用 `--scenario shifted --rounds 2`，并另选新输出目录。演示不需要 API 密钥，也不会运行真实设备。
 
-固定演示由脚本驱动；LLM 宿主逐步选择工具请读取 [HOST_START.md](HOST_START.md) 中“旧 VPP–DIW v1.0 主控流程”及主 [SKILL.md](SKILL.md) 的旧流程说明。
+固定演示由脚本驱动；LLM 宿主逐步选择工具请读取 [HOST_START.md](HOST_START.md) 中VPP–DIW v1.0 主控流程及主 [SKILL.md](SKILL.md) 的旧流程说明。
 
 ## 原因分析与数据回传
 

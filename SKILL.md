@@ -2,7 +2,7 @@
 name: axiom-research
 description: 通过文献证据、轻量计算和测量数据开展 LLM 辅助科研建模、原因分析与实验建议。当前支持独立的发泡 FDM 分级泡沫建模，以及 VPP–DIW 线宽和扩散工作流；按实际模块范围选择入口。
 metadata:
-  version: "1.1.2"
+  version: "1.1.3"
   runtime-version: "1.0.0"
   implementation-status: "bounded-multi-round-software-prototype"
   foam-extension-version: "foam-0.1"
@@ -11,21 +11,21 @@ metadata:
 
 # Axiom Research
 
-LLM 辅助科研建模与实验优化工具包。按证据整理、模型标定、简化计算、原因分析和实验规划等能力组织模块；当前提供分级聚合物泡沫与 VPP–DIW 线宽／扩散两类研究入口。
+以可复用 Skill 连接科学证据、数值建模与实验反馈的模块化 LLM 辅助研究框架。当前可执行应用包括 VPP–DIW 线宽／扩散工作流与独立的分级聚合物泡沫分析；下列路由与操作规则保持各自范围。项目总览见 [README](README.md)，文件组织见 [PACKAGE_GUIDE](PACKAGE_GUIDE.md)。
 
 ## 先按研究问题选择入口
 
 发泡 FDM／分级聚合物泡沫任务：读取 [polymer-foam-model-refinement](skills/polymer-foam-model-refinement/SKILL.md)，按其工作流调用 `scripts/foam_model.py`。使用 `requirements-foam.txt` 的依赖，不需要初始化旧运行时会话。该模块支持简化计算、标定和有限修正，尚未实现自动实验规划或多轮闭环。
 
-VPP–DIW 线宽／扩散任务：使用下文保留的 v1.0 流程，安装 `requirements-agent.txt`，参见 [旧模块入口](LEGACY_VPP_DIW.md)。下文的 14 工具、候选规划和多轮更新规则只适用于这一旧流程，不套用于泡沫任务。
+VPP–DIW 线宽／扩散任务：使用下文保留的 v1.0 流程，安装 `requirements-agent.txt`，参见 [VPP–DIW 工作流与运行记录](LEGACY_VPP_DIW.md)。下文的 14 工具、候选规划和多轮更新规则只适用于这一旧流程，不套用于泡沫任务。
 
-## Legacy VPP–DIW mission
+## VPP–DIW workflow mission
 Follow the agreed scientific loop: goals/data -> literature evidence -> checked lightweight
 model -> candidate assessment -> trial plan -> external printing/measurement -> frozen-model
 comparison -> versioned update. Use skill selection as the implementation layer at each
 technical step. This project uses additive-manufacturing data, not forging data.
 
-## Legacy VPP–DIW v1.0 scope
+## VPP–DIW v1.0 scope
 Implemented: input validation; frozen evidence checks; sigma-calibration OR empirical geometric
 width calibration; grouped validation; bounded proposals; reviewed-skill activation; actual
 tool execution; follow-up CSV/log import; descriptive concurrent-control comparison; update

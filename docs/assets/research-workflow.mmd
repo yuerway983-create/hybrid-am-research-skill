@@ -1,0 +1,32 @@
+%%{init: {"theme":"base","htmlLabels":false,"fontFamily":"Arial","themeCSS":".cluster[id$='CORE'] .cluster-label text { transform: translateX(-180px); } .cluster[id$='FEEDBACK'] .cluster-label text { transform: translateX(-160px); }","themeVariables":{"fontFamily":"Arial","fontSize":"16px","primaryColor":"#f4f7fb","primaryTextColor":"#17324d","primaryBorderColor":"#8396aa","lineColor":"#52748e","clusterBkg":"#ffffff","clusterBorder":"#b8c7d5","edgeLabelBackground":"#ffffff","tertiaryColor":"#ffffff"},"flowchart":{"curve":"basis","nodeSpacing":28,"rankSpacing":48,"padding":14,"wrappingWidth":310,"subGraphTitleMargin":{"top":10,"bottom":30},"useMaxWidth":true}}}%%
+flowchart TD
+    accTitle: Axiom Research - Research Workflow
+    accDescr: Overall workflow, not an automated capability claim for every module. Research inputs enter an LLM-assisted workflow. The host selects reviewed Skills at each technical stage; validated numerical programs perform calculations. Missing evidence returns the workflow to evidence review. Researchers approve and perform physical experiments externally, import results for comparison with frozen predictions, and validate versioned model updates before recalibration. See the capability status table for module-specific support.
+    subgraph INPUT["Research inputs"]
+        A["Research goals, existing data<br/>and constraints"]
+    end
+    subgraph CORE["LLM-assisted<br/>research workflow"]
+        B["Review evidence and define the task"]
+        C["Select and execute reviewed Skills<br/>at each technical stage"]
+        D["Model selection and calibration"]
+        E["Virtual experiments<br/>and candidate assessment"]
+        F["Check predictions, discrepancies<br/>and applicability"]
+        G["Proposals or requests<br/>for further evidence"]
+        B --> C --> D --> E --> F --> G
+        F -->|"More evidence needed"| B
+    end
+    subgraph FEEDBACK["Human validation<br/>and feedback"]
+        H["Human approval and physical experiments<br/>(external)"]
+        I["Import results and compare<br/>frozen predictions"]
+        J["Versioned model update<br/>after validation"]
+        H --> I --> J
+    end
+    A --> B
+    G -.-> H
+    J --> D
+    classDef input fill:#f4f7fb,stroke:#8396aa,color:#17324d
+    classDef core fill:#edf4fb,stroke:#52748e,color:#17324d
+    classDef human fill:#eff7f4,stroke:#72978d,color:#173f37
+    class A input
+    class B,C,D,E,F,G core
+    class H,I,J human

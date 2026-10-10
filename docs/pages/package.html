@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Axiom Research · Package guide / 文件包说明</title><link rel="stylesheet" href="../assets/docs.css"></head><body><nav aria-label="Documentation"><a href="../../index.html">Axiom Research</a><a href="overview.html">Overview</a><a href="overview.zh-CN.html">中文总览</a><a href="start.html">Start</a><a href="package.html">Package</a></nav><main><p class="export-note">Offline document · generated from PACKAGE_GUIDE.md</p><h1 id="axiom-research--package-guide--文件包说明">Axiom Research · Package guide / 文件包说明</h1>
+<p>This guide is new in documentation patch <strong>1.1.3</strong>. It explains how the complete framework is organised and where to begin. Package and directory names remain compatible: <code>axiom-research-modeling-toolkit-v1.1.3.zip</code> extracts to <code>axiom-research/</code>, and the main Skill identifier remains <code>axiom-research</code>.</p>
+<p>本文件是 1.1.3 文档补丁新增内容，说明完整包“是什么、什么时候用、先读哪里”。模块按实际能力使用；通用工作流可扩展，不代表所有材料都已有可用数值模型。请保留完整文件包，子 Skill 可能依赖根目录的工具、模板和方法资料。</p>
+<p><a href="overview.html">Overview</a> · <a href="overview.zh-CN.html">中文总览</a> · <a href="start.html">Quick start / 运行入口</a> · <a href="host.html">Host guide / 宿主入口</a> · <a href="../../index.html">Offline presentation / 离线展示</a></p>
+<h2 id="choose-a-starting-point--按需求找入口">Choose a starting point / 按需求找入口</h2>
+<table>
+<thead>
+<tr>
+<th>What you want to do / 你想做什么</th>
+<th>Start here / 先读哪里</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Understand the framework and its supported scope / 了解框架与范围</td>
+<td><a href="overview.html">README</a>, <a href="overview.zh-CN.html">中文 README</a>, or local <code>index.html</code></td>
+</tr>
+<tr>
+<td>Run an existing local synthetic example / 运行现有本地合成案例</td>
+<td><a href="start.html">START_HERE</a>, then choose VPP–DIW or foam modelling</td>
+</tr>
+<tr>
+<td>Let an LLM host choose and execute reviewed Skills / 由 LLM 宿主选择并执行已审核 Skill</td>
+<td><a href="host.html">HOST_START</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/SKILL.md">main Skill</a>, then the matching sub-Skill</td>
+</tr>
+<tr>
+<td>Prepare your own measurements and constraints / 准备自己的测量与约束</td>
+<td>Relevant module workflow, then the corresponding files in <code>templates/</code></td>
+</tr>
+<tr>
+<td>Inspect software evidence, provenance or limitations / 检查软件记录、来源及限制</td>
+<td><code>tests/</code>, <code>reports/</code>, <code>references/</code> and the relevant sub-Skill references</td>
+</tr>
+</tbody></table>
+<h2 id="files-and-directories--文件与目录">Files and directories / 文件与目录</h2>
+<p>The entries below exist in this package. Local run folders such as <code>outputs/</code>, <code>runs/</code>, virtual environments and caches are not distributed as research evidence.</p>
+<p>以下仅列实际交付内容；本地生成的输出、运行目录、虚拟环境和缓存不作为发布包内的研究证据交付。</p>
+<table>
+<thead>
+<tr>
+<th>File or directory / 路径</th>
+<th>What it is and when to use it / 用途与使用时机</th>
+<th>First read / 建议先读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>README.md</code>, <code>README.zh-CN.md</code></td>
+<td>Project overview, workflow and capability status in English and Chinese / 中英文项目总览、流程与能力状态</td>
+<td><a href="overview.html">English</a> / <a href="overview.zh-CN.html">中文</a></td>
+</tr>
+<tr>
+<td><code>index.html</code></td>
+<td>Bilingual static presentation with a local SVG; core content works offline / 双语静态展示，本地图示离线可读</td>
+<td>Open <code>index.html</code> in a browser / 在浏览器打开</td>
+</tr>
+<tr>
+<td><code>START_HERE.md</code></td>
+<td>Separate paths for project readers, numerical examples and LLM hosts / 阅读、数值案例、LLM 宿主三种入口</td>
+<td><a href="start.html">Quick start</a></td>
+</tr>
+<tr>
+<td><code>HOST_START.md</code></td>
+<td>Operator and LLM-host instructions; preserves routing, data freeze and feedback rules / 宿主与操作者流程，含路由、冻结和回传规则</td>
+<td><a href="host.html">Host guide</a></td>
+</tr>
+<tr>
+<td><code>PACKAGE_GUIDE.md</code></td>
+<td>This new guide to the package contents / 本次新增文件包说明</td>
+<td>This document / 本文</td>
+</tr>
+<tr>
+<td><code>SKILL.md</code></td>
+<td>Main Skill <code>axiom-research</code>, including actual scope and host rules / 主 Skill、实际适用范围及主控规则</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/SKILL.md">Main Skill</a></td>
+</tr>
+<tr>
+<td><code>agents/</code></td>
+<td>Host-facing display metadata; not equipment or network permissions / 宿主展示元数据，不是设备或网络授权</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/agents/openai.yaml">Display metadata</a></td>
+</tr>
+<tr>
+<td><code>skills/</code></td>
+<td>Nine existing capability-specific Skills and their instructions; routes and directory IDs stay unchanged / 九个现有子 Skill 及规则，目录和调用标识保持兼容</td>
+<td>Match the <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/SKILL.md">main Skill&#39;s routing</a>; each subdirectory contains <code>SKILL.md</code></td>
+</tr>
+<tr>
+<td><code>registry/</code></td>
+<td>Runtime registrations and adaptation metadata, review records and a separate unapproved seed-candidate pool / 运行时登记、适配与审核记录，以及未获准候选池</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/registry/runtime-skills.json">Runtime registry</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/references/skill-selection.md">selection method</a>; <code>implemented: false</code> entries and <code>seed_candidates.json</code> are not executable approvals</td>
+</tr>
+<tr>
+<td><code>scripts/</code></td>
+<td>Numerical, validation and runtime command-line programs / 数值计算、校验与运行工具</td>
+<td><a href="start.html">Local commands</a>, then module instructions</td>
+</tr>
+<tr>
+<td><code>schemas/</code></td>
+<td>Task contracts and historical tool-schema snapshots; module-specific contracts live with their Skills / 任务约定与历史工具契约快照，其他模块契约位于相应 Skill</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/schemas/task.schema.json">Task schema</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/schemas/tool-schemas-v0.4.json">historical v0.4 tool snapshot / 历史工具快照</a>; get the current exact tool contracts with <code>python scripts/agent_bridge.py tools</code></td>
+</tr>
+<tr>
+<td><code>examples/</code></td>
+<td>Existing runnable scenarios and labelled synthetic fixtures / 可运行案例与明确标记的合成数据</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/examples/width-calibration-demo/README.md">Linewidth fixture</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/examples/foam-refinement-demo/README.md">foam fixture</a></td>
+</tr>
+<tr>
+<td><code>templates/</code></td>
+<td>Templates for study inputs, constraints, evidence and feedback / 研究输入、约束、证据与回传模板</td>
+<td><a href="start.html#4-bring-your-own-research-inputs">Input preparation</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/templates/feedback_v0.4/README.md">feedback contract</a></td>
+</tr>
+<tr>
+<td><code>evidence/</code></td>
+<td>Frozen evidence packets supplied to existing examples / 现有案例使用的冻结证据包</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/evidence/delay-evidence-001/evidence_packet.json">Example packet</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/references/evidence-protocol.md">evidence protocol</a></td>
+</tr>
+<tr>
+<td><code>references/</code></td>
+<td>Method, source, model-contract and implementation documents / 方法、来源、模型契约与实现说明</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/references/model-contract.md">Model contract</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/references/sources.md">source list</a>, then module-specific references</td>
+</tr>
+<tr>
+<td><code>tests/</code></td>
+<td>Software checks for the implemented tools and constraints / 工具及科学约束的软件测试，不是新实物实验</td>
+<td>Run the documented test commands in the current release validation record; inspect relevant <code>test_*.py</code> files</td>
+</tr>
+<tr>
+<td><code>reports/</code></td>
+<td>Preserved historical software runs, acceptance records and past release documents / 保留的历史运行、验收及旧版说明，结论属于其原始版本</td>
+<td><a href="vpp-diw.html">VPP–DIW records</a>, <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/reports/foam-0.1-optimization-validation.md">foam validation</a></td>
+</tr>
+<tr>
+<td><code>docs/</code></td>
+<td>Added in this revision: workflow sources and SVGs, offline HTML document exports, documentation build/check tooling and release notes / 本次新增：流程图源文件和 SVG、离线文档页面、文档构建检查工具及发布说明</td>
+<td><a href="../assets/research-workflow.mmd">Workflow source</a>, <a href="../assets/research-workflow.svg">SVG</a>, <code>docs/pages/</code>, <code>docs/build-docs.mjs</code></td>
+</tr>
+<tr>
+<td><code>third_party/</code></td>
+<td>Retained upstream material and attribution context / 保留的上游资料及归属信息</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/THIRD_PARTY_NOTICES.md">Third-party notices</a> before reusing upstream assets</td>
+</tr>
+<tr>
+<td><code>LEGACY_VPP_DIW.md</code></td>
+<td>Existing VPP–DIW module details and historical reports; compatible filename, still executable module / VPP–DIW 专项入口与历史记录；保留旧文件名不表示模块失效</td>
+<td><a href="vpp-diw.html">VPP–DIW guide</a></td>
+</tr>
+<tr>
+<td><code>requirements*.txt</code></td>
+<td>Dependency sets for different local tools; installing them does not connect an LLM / 各本地工具依赖，安装依赖不会自动连接 LLM</td>
+<td><a href="start.html">Quick start</a>; choose <code>requirements-agent.txt</code> or <code>requirements-foam.txt</code></td>
+</tr>
+<tr>
+<td><code>VERSION</code></td>
+<td>Full distribution version, separate from runtime and module versions / 整体文件包版本，与运行时和模块版本分开</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/VERSION">Version file</a> and table below</td>
+</tr>
+<tr>
+<td><code>MANIFEST.json</code></td>
+<td>SHA-256 hashes for the files in the current package, excluding the manifest itself / 当前包内文件校验，自身除外</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/MANIFEST.json">Current manifest</a>; match the package version before checking</td>
+</tr>
+<tr>
+<td><code>LICENSE</code></td>
+<td>Project licence / 项目许可</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/LICENSE">Licence</a></td>
+</tr>
+<tr>
+<td><code>THIRD_PARTY_NOTICES.md</code></td>
+<td>Upstream licences and attribution / 第三方许可与归属</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/THIRD_PARTY_NOTICES.md">Notices</a></td>
+</tr>
+</tbody></table>
+<p><code>registry/</code> is not live GitHub or literature search. A host may retrieve new sources through authorised tools, but source review and an approved adapter are required before execution. Cause-analysis remains a host supplement, and the foam module remains an independent entry. Directory presence alone does not imply runtime integration.</p>
+<p><code>registry/</code> 不是实时检索服务。新来源由获得授权的宿主工具检索，新增可执行工具需先审核并完成适配登记。原因分析仍为宿主补充步骤，泡沫仍为独立入口；文件存在不等于已接入主运行时。</p>
+<h2 id="versions-and-integrity">Versions and integrity</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Version</th>
+<th>Meaning / 含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Current distribution / 当前整体包</td>
+<td><code>1.1.3</code></td>
+<td>General project documentation, restored workflow diagram and package guide / 通用项目介绍、恢复流程图与文件包说明</td>
+</tr>
+<tr>
+<td>Previous public distribution / 旧版公开包</td>
+<td><code>1.1.2</code></td>
+<td>Previously published package; does not contain this revision / 已公开旧包，不含本次文档改版</td>
+</tr>
+<tr>
+<td>VPP–DIW runtime</td>
+<td><code>1.0.0</code></td>
+<td>Existing bounded local runtime / 现有受约束本地运行时</td>
+</tr>
+<tr>
+<td>Cause-analysis module</td>
+<td><code>0.2.0</code></td>
+<td>Host-read supplementary analysis / 宿主补充分析</td>
+</tr>
+<tr>
+<td>Foam module</td>
+<td><code>foam-0.1</code></td>
+<td>Independent lightweight numerical modelling / 独立轻量数值建模</td>
+</tr>
+</tbody></table>
+<p>The full package is named <code>axiom-research-modeling-toolkit-v1.1.3.zip</code>, with top-level directory <code>axiom-research/</code>. Get the <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.3/axiom-research-modeling-toolkit-v1.1.3.zip">v1.1.3 ZIP</a> and <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.3">release checksum</a>. The still-available <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.2/axiom-research-modeling-toolkit-v1.1.2.zip">v1.1.2 ZIP</a> and <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.2">v1.1.2 release</a> remain clearly labelled as that version.</p>
+<p>The <code>SHA256SUMS.txt</code> file delivered <strong>alongside</strong> a ZIP checks that archive. After extracting it, use the root <code>MANIFEST.json</code> to check the listed file hashes; that manifest excludes itself. Old manifests and reports are preserved for their own versions and must not be used to validate changed files from a later package. A matching checksum proves file consistency, not experimental truth or scientific generality.</p>
+<p>v1.1.3 ZIP 保留通用包名与 <code>axiom-research/</code> 根目录；新版下载和发布入口见上方链接。随 ZIP 单独交付的 <code>SHA256SUMS.txt</code> 校验压缩包，解压后的根 <code>MANIFEST.json</code> 校验包内文件。旧报告、旧清单仅对应原版本；校验一致不代表实验真实性或任意材料适用性。</p>
+<p>This patch changes presentation and documentation only. It does not change numerical algorithms, input schemas, tool routing, runtime permissions, data partitions, thresholds or outputs, and does not add scientific validation. The revised overview states implemented capabilities, host-dependent analysis and possible future applications separately.</p>
+<p>本次仅调整展示和文档：科研算法、输入约定、工具路由、权限、数据分区、门槛及数值输出不变，没有新增科学验证。项目总览分别标明已执行模块、需宿主完成的分析和可扩展用途。</p>
+</main><footer>Documentation version 1.1.3. Technical GitHub links require a network connection; the Markdown source files remain in this package.</footer></body></html>

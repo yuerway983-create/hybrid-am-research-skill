@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Axiom Research</title><link rel="stylesheet" href="../assets/docs.css"></head><body><nav aria-label="Documentation"><a href="../../index.html">Axiom Research</a><a href="overview.html">Overview</a><a href="overview.zh-CN.html">中文总览</a><a href="start.html">Start</a><a href="package.html">Package</a></nav><main><p class="export-note">本地文档预览 · 来自 README.zh-CN.md</p><h1 id="axiom-research">Axiom Research</h1>
+<p><a href="overview.html">English</a> · <a href="overview.zh-CN.html">简体中文</a></p>
+<p><strong>以可复用 Skill 连接科学证据、数值建模与实验反馈的模块化 LLM 辅助研究框架。</strong></p>
+<p>从研究问题、已有数据和实际约束出发。具备文件与终端能力的 LLM 宿主整理证据、选择经过审核的 Skill，数值工具执行计算。研究者获得可追溯的分析与建议，再决定开展哪些实物实验、回传哪些结果。</p>
+<p>这一工作流可服务于材料设计与工艺改进研究。“模块化”指接口和工作流可扩展；当前模型仍受各自材料、观测量与工艺条件的适用范围限制。</p>
+<p><a href="#%E7%A0%94%E7%A9%B6%E6%B5%81%E7%A8%8B">研究流程</a> · <a href="start.html">快速开始</a> · <a href="package.html">文件包说明</a> · <a href="host.html">宿主指南</a> · <a href="../../index.html">静态展示页</a></p>
+<h2 id="研究流程">研究流程</h2>
+<p>下图是总体研究工作流，<strong>不代表每个模块都已自动跑通完整链路</strong>。具体范围见下方<a href="#%E8%83%BD%E5%8A%9B%E7%8A%B6%E6%80%81%E4%B8%8E%E8%BE%B9%E7%95%8C">能力状态与边界</a>。</p>
+<!-- workflow:zh-CN:start -->
+<figure class="document-workflow"><img src="../assets/research-workflow.zh-CN.svg" alt="总体研究流程：输入、LLM 辅助分析、人工验证与反馈；含补证据及模型更新回路。"><figcaption><a href="../assets/research-workflow.zh-CN.svg">打开完整 SVG</a></figcaption></figure>
+<!-- workflow:zh-CN:end -->
+
+<p><a href="../assets/research-workflow.zh-CN.svg">查看本地 SVG</a> · <a href="../assets/research-workflow.zh-CN.mmd">可编辑 Mermaid 源文件</a></p>
+<p>主控会在<strong>每个技术阶段</strong>选择适合的已审核 Skill，图中的选择节点并非“每轮只选一次”。数值结果来自经过检查的程序，制造与测试由研究者在框架外完成。数据或模型不足时，应补证据、补标定或停止，不能直接宣称“最优方案”。反馈更新须满足所选模块支持的验证规则。</p>
+<h2 id="能力分组">能力分组</h2>
+<table>
+<thead>
+<tr>
+<th>研究需要</th>
+<th>Skill 与工具</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>定义问题、整理证据</td>
+<td>带原文位置的证据、假设与缺口：<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/hybrid-am-evidence/SKILL.md">证据 Skill</a></td>
+</tr>
+<tr>
+<td>标定模型</td>
+<td>测量响应拟合与分组验证：<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/measured-response-calibration/SKILL.md">标定 Skill</a></td>
+</tr>
+<tr>
+<td>计算试验与候选分析</td>
+<td>轻量<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/diffusion-moments/SKILL.md">扩散计算</a>、<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/SKILL.md">泡沫模型比较</a>，以及受支持范围内的候选分析</td>
+</tr>
+<tr>
+<td>偏差与原因分析</td>
+<td>有证据关联的假设和区分检查：<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/hybrid-am-cause-analysis/SKILL.md">原因分析 Skill</a></td>
+</tr>
+<tr>
+<td>提出实验或补测建议</td>
+<td>在已实现的 VPP–DIW 工作流中，按预算与约束进行<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/bounded-experiment-planning/SKILL.md">候选规划</a>或<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/calibration-only-planning/SKILL.md">标定规划</a></td>
+</tr>
+<tr>
+<td>比较反馈、更新模型</td>
+<td>在 VPP–DIW 运行时中进行<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/descriptive-feedback/SKILL.md">冻结预测比较</a>，以及<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/safe-model-update/SKILL.md">版本化更新与新确认</a></td>
+</tr>
+</tbody></table>
+<h2 id="当前应用案例">当前应用案例</h2>
+<table>
+<thead>
+<tr>
+<th>案例</th>
+<th>展示的已有能力</th>
+<th>入口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>VPP–DIW 线宽／扩散</td>
+<td>分开的经验几何线宽与浓度 sigma 路径；模型标定、约束候选、实测反馈比较和受验证条件控制的模型更新</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/examples/width-calibration-demo/README.md">线宽夹具</a>、<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/examples/sigma-calibration-demo/README.md">sigma 夹具</a>、<a href="vpp-diw.html">工作流与运行记录</a></td>
+</tr>
+<tr>
+<td>层级聚合物泡沫</td>
+<td>两级轻量建模、标定、预声明修正，以及受支持范围内的有限敏感性分析</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/SKILL.md">模块指南</a>、<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/examples/foam-refinement-demo/README.md">合成夹具</a>、<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/templates/foam-research/task.json">研究模板</a></td>
+</tr>
+</tbody></table>
+<p>这些是已实现的应用案例，不代表全部可能研究用途。包内数值夹具属于合成软件演示。泡沫模块使用独立入口，VPP–DIW 多轮运行时不会自动套用于泡沫。</p>
+<h2 id="输入与输出">输入与输出</h2>
+<table>
+<thead>
+<tr>
+<th>研究输入</th>
+<th>可核查输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>问题、观测量、目标与约束</td>
+<td>明确的任务范围、假设和补充数据请求</td>
+</tr>
+<tr>
+<td>文献资料与原文位置</td>
+<td>附带条件和可追溯引用的证据记录</td>
+</tr>
+<tr>
+<td>测量、单位、样品身份与预声明的数据分区</td>
+<td>标定诊断、数值分析与模型比较</td>
+</tr>
+<tr>
+<td>参数范围、预算及外部实验反馈</td>
+<td>模块支持的候选建议、冻结预测比较与版本化报告</td>
+</tr>
+</tbody></table>
+<p>具体文件和数值输出取决于所选模块。建议用于研究者审核，不是设备指令。</p>
+<h2 id="选择入口">选择入口</h2>
+<ul>
+<li>**看项目：**阅读本总览、<a href="../assets/research-workflow.zh-CN.svg">流程 SVG</a>和<a href="package.html">文件包目录说明</a>。</li>
+<li>**运行本地工具：**按 <a href="start.html">START_HERE.md</a> 选择任一应用案例；这些脚本不会自动连接 LLM。</li>
+<li>**使用 LLM 宿主：**阅读 <a href="host.html">HOST_START.md</a> 和<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/SKILL.md">主 Skill</a>。宿主须具备文件与终端工具。</li>
+</ul>
+<p>获取 <strong>v1.1.3 文档版</strong>：<a href="https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.3/axiom-research-modeling-toolkit-v1.1.3.zip">完整 ZIP</a>、<a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.3">发布页与校验文件</a>、<a href="release-draft.html">包内发布说明</a>。此前的 <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.2">v1.1.2</a> 保留原版文档与下载。</p>
+<h2 id="能力状态与边界">能力状态与边界</h2>
+<table>
+<thead>
+<tr>
+<th>领域</th>
+<th>当前状态</th>
+<th>实现依据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>VPP–DIW 工作流</td>
+<td>可执行数值工具、宿主逐步操作与受验证条件控制的多轮反馈；固定 demo 仍为确定性合成演示</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/scripts/agent_runtime.py">运行时</a>、<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/scripts/round_tools.py">轮次工具</a>、<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/scripts/campaign_demo.py">演示</a></td>
+</tr>
+<tr>
+<td>泡沫建模</td>
+<td>可执行的独立分析；未接入自动实验规划器，未验证完整工艺到性能预测链</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/scripts/foam_model.py">数值入口</a>、<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/references/workflow.md">模块工作流</a></td>
+</tr>
+<tr>
+<td>原因分析</td>
+<td>宿主读取后开展补充分析；规划器不会自动使用，正式运行时审计／报告也不会自动收录</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/hybrid-am-cause-analysis/references/integration.md">接入约定</a></td>
+</tr>
+<tr>
+<td>Skill 与文献发现</td>
+<td>本地 registry 登记已审核条目；实时文献或 GitHub 检索依赖已授权的宿主工具，接入前需要审核</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/registry/runtime-skills.json">登记表</a>、<a href="host.html">宿主说明</a></td>
+</tr>
+<tr>
+<td>更广泛科研用途</td>
+<td>可扩展方向，需要匹配的数据、模型和适配器；不是已实现的任意材料设计</td>
+<td><a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/SKILL.md">现有范围</a></td>
+</tr>
+</tbody></table>
+<p>预测区间、贝叶斯优化、商业求解器集成和设备控制不是现成功能。合成 demo 不证明 LLM 自主科研、真实材料改善或优于普通建模。各模块的完整限制保留在链接的技术指南中。</p>
+<h2 id="来源可复现性与许可">来源、可复现性与许可</h2>
+<p>主 Skill 标识为 <code>axiom-research</code>，仓库名保持 <code>axiom-research-skill</code>。文件包 <strong>1.1.3</strong>与 VPP–DIW 运行时 <strong>1.0.0</strong>、原因分析 <strong>0.2.0</strong>、泡沫 <strong>foam-0.1</strong> 分别计版本；本次只修改文档与展示。</p>
+<p>来源记录和方法资料保留在 <a href="https://github.com/yuerway983-create/axiom-research-skill/tree/main/evidence/">evidence/</a> 与 <a href="https://github.com/yuerway983-create/axiom-research-skill/tree/main/references/">references/</a>，泡沫专用出处见<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/skills/polymer-foam-model-refinement/references/sources.md">模块来源登记</a>。<a href="https://github.com/yuerway983-create/axiom-research-skill/tree/main/tests/">测试</a>与<a href="https://github.com/yuerway983-create/axiom-research-skill/tree/main/reports/">历史报告</a>记录软件核查，不代表普遍科学验证。<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/VERSION">VERSION</a> 和 <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/MANIFEST.json">MANIFEST.json</a> 用于标识和核验文件包；每份历史清单仅对应其原版本。</p>
+<p>项目自有文件采用 <a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/LICENSE">MIT 许可</a>。保留<a href="https://github.com/yuerway983-create/axiom-research-skill/blob/main/THIRD_PARTY_NOTICES.md">第三方说明</a>及各组件的归属信息。</p>
+</main><footer>Documentation version 1.1.3. Technical GitHub links require a network connection; the Markdown source files remain in this package.</footer></body></html>

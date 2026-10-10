@@ -1,71 +1,108 @@
-# Axiom Research · 科研建模与实验优化快速开始
+# Axiom Research · Start here / 从这里开始
 
-当前以发泡 FDM 分级聚合物泡沫作为简化建模示例，其他功能模块见 [能力目录](README.md#功能模块与通用名称)。先用合成数据了解两级简化计算与模型修正，再换成自己的实验数据。
+Choose an entry according to what you want to do: understand the project, run a local numerical example, or work with an LLM host that can read files and use a terminal. The two current application examples are VPP–DIW linewidth/diffusion and hierarchical polymer foams; neither defines the whole framework.
 
-## 1. 下载与选择入口
+[Project overview](README.md) · [中文项目总览](README.zh-CN.md) · [Package guide / 文件包说明](PACKAGE_GUIDE.md) · [Host guide / 宿主说明](HOST_START.md)
 
-下载[完整发布包 v1.1.2](https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.2/axiom-research-modeling-toolkit-v1.1.2.zip)，解压后在 `axiom-research/` 根目录操作。发布说明和校验值见[对应版本](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.2)。
+## 1. Understand the project
 
-- 了解方法：[泡沫研究 Skill](skills/polymer-foam-model-refinement/SKILL.md)。
-- 让 LLM 整理证据与解释结果：[宿主入口](HOST_START.md)。
-- 原线宽／扩散任务：[旧 VPP–DIW 模块](LEGACY_VPP_DIW.md)。
+Start with the [research workflow](README.md#research-workflow) and the capability status table in the README. Open `index.html` in a browser for the bilingual presentation; its core text and local workflow SVG work offline. The [editable diagram source](docs/assets/research-workflow.mmd) and [SVG](docs/assets/research-workflow.svg) are included in the package.
 
-泡沫分析依赖根目录脚本与模板，请保留完整文件包。
+LLM hosts organise evidence and choose reviewed Skills at each technical stage. Numerical programs carry out supported calculations; researchers approve and perform physical experiments. The overall diagram describes the research workflow, while each module implements a defined subset of it.
 
-## 2. 运行合成案例
+The documentation patch is **v1.1.3**. Download the [complete package](https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.3/axiom-research-modeling-toolkit-v1.1.3.zip) and verify it with the checksum attached to [the release](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.3). The previous [v1.1.2 release](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.2) remains available but does not contain this documentation layout. See the [package guide](PACKAGE_GUIDE.md#versions-and-integrity) for version and integrity information.
 
-建议 Python 3.11+。在 Windows PowerShell 中：
+## 2. Run a local numerical or synthetic example
+
+Keep the complete package together and run all commands from its `axiom-research/` root. Use Python 3.11 or later and a project virtual environment. Installing dependencies initially requires network access. The example scripts below do not connect to an LLM or need an API key.
+
+Choose either example. Both use **synthetic software fixtures**, not laboratory measurements. Their results demonstrate program behaviour and do not establish real materials improvement or an advantage from LLM decisions.
+
+<a id="local-vpp-diw"></a>
+
+### A. VPP–DIW: linewidth calibration and bounded feedback
+
+This example exercises the existing VPP–DIW runtime: calibration, candidate planning, frozen-model comparison, versioned refitting and independent synthetic confirmation. Its deterministic controller follows a fixed sequence; host-selected execution is a separate entry below.
+
+Windows PowerShell:
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements-foam.txt --index-url https://pypi.tuna.tsinghua.edu.cn/simple
-.\.venv\Scripts\python.exe scripts/foam_model.py run --task examples/foam-refinement-demo/task.json --out outputs/foam-demo-1
+.\.venv\Scripts\python.exe -m pip install -r requirements-agent.txt
+.\.venv\Scripts\python.exe scripts/preflight.py
+.\.venv\Scripts\python.exe scripts/campaign_demo.py --out outputs/quickstart-vpp-diw-1
 ```
 
-已有虚拟环境可跳过第一行；macOS/Linux 使用 `.venv/bin/python` 替代 Windows 环境路径。首次安装依赖需要联网，数值案例无需 API 密钥。输出目录必须不存在，重跑时换成 `outputs/foam-demo-2` 等新目录。
+macOS / Linux:
 
-## 3. 看懂输出
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-agent.txt
+.venv/bin/python scripts/preflight.py
+.venv/bin/python scripts/campaign_demo.py --out outputs/quickstart-vpp-diw-1
+```
 
-先打开 `outputs/foam-demo-1/report.md`，阅读中文诊断与优先补充事项，再按需要查看：
+Open `outputs/quickstart-vpp-diw-1/index.html` for the campaign report; `campaign.json` and each round's linked report contain the actual records. The dependency check reports discoverable packages, not scientific validity. For the input fixture and module-specific history, see [linewidth example](examples/width-calibration-demo/README.md) and [VPP–DIW module guide](LEGACY_VPP_DIW.md).
 
-| 文件 | 内容 |
-| --- | --- |
-| `result.json` | 数值检查、候选模型比较、敏感性和判断依据 |
-| `model.json` | 成功计算时保存的模型与参数 |
-| `input_task.json`、`input_measurements.csv` | 本次实际使用的冻结输入 |
+<a id="local-foam"></a>
 
-力学、工艺密度和尺度假设分别报告。数值检查通过不等于实物改善；敏感性不可用表示支持点不足，不能解释成没有影响。
+### B. Hierarchical polymer foams: model calibration and refinement
 
-案例使用人工设定的数据与修正项，只检验软件行为。具体说明见[合成案例](examples/foam-refinement-demo/README.md)，已有测试见[泡沫验证记录](reports/foam-0.1-optimization-validation.md)。
+This independent entry compares bounded lightweight models and reports fit diagnostics, applicability and supported sensitivity checks. It uses one declared observable per task: small-strain compressive modulus or initial compressive yield strength. It does not use the VPP–DIW session runtime or its multi-round planner.
 
-## 4. 让 LLM 参与分析
+Windows PowerShell:
 
-在有本地文件和终端能力的宿主中，可以发送：
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-foam.txt
+.\.venv\Scripts\python.exe scripts/foam_model.py run --task examples/foam-refinement-demo/task.json --out outputs/quickstart-foam-1
+```
+
+macOS / Linux:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-foam.txt
+.venv/bin/python scripts/foam_model.py run --task examples/foam-refinement-demo/task.json --out outputs/quickstart-foam-1
+```
+
+Open `outputs/quickstart-foam-1/report.md` in a Markdown reader. `result.json` contains numerical checks and comparisons; `model.json` is saved on successful calculation; `input_task.json` and `input_measurements.csv` record the inputs actually used. Missing support for a sensitivity estimate does not mean that factor has no effect. Read the [synthetic fixture explanation](examples/foam-refinement-demo/README.md) and [foam Skill](skills/polymer-foam-model-refinement/SKILL.md) for the method and scope.
+
+If `.venv` already exists, skip its creation. Every output directory must be new: use suffix `-2`, `-3`, etc. when repeating a run. Commands intentionally write to `outputs/`, leaving bundled examples and historical reports unchanged.
+
+Optional for users who need a mainland China package mirror: append `--index-url https://pypi.tuna.tsinghua.edu.cn/simple` to the relevant `pip install` command. The default commands use the normal pip index; the mirror is not required.
+
+## 3. Use a file-and-terminal-capable LLM host
+
+Provide the complete package to your host and start with [SKILL.md](SKILL.md), whose invocation identifier remains `axiom-research`. A host must actually be able to read these files and run the supported tools. Copying the Skill text alone does not install dependencies, connect a model service or grant terminal/network permissions.
+
+Example user instruction (Chinese):
 
 ```text
-使用 $axiom-research 分析发泡 FDM 分级聚合物泡沫数据，开展简化计算与模型修正。
-读取 skills/polymer-foam-model-refinement/SKILL.md 及其工作流与来源说明。
-先整理关键因素和证据，再运行泡沫合成案例，读取实际输出并用中文解释模型比较、
-适用范围和优先补测项。将所有合成结果标为软件演示；数值必须来自脚本。
-具体实验建议应结合我提供的目标、预算和设备范围；未知参数保持未知。
+使用 $axiom-research。先读取 README、SKILL.md 和 HOST_START.md，
+根据我提供的研究目标、资料、已有数据和约束，说明当前哪个模块适用。
+在每个技术阶段选择经过审核的 Skill，读取其规则并调用相应数值工具。
+如果运行示例，明确标注合成数据；数值结论必须来自实际工具输出。
+证据或数据不足时列出补充材料、标定需求或停止原因，不编造测量结果。
+给出可追溯的结果解释和待人工审核的研究建议，真实实验由研究者完成。
 ```
 
-分析自己的数据时，把上述“合成案例”改成自己的任务文件路径，并提供研究目标。宿主读取 Skill 后调用独立泡沫入口，详细说明见 [HOST_START.md](HOST_START.md)。
+Continue with the relevant route in [HOST_START.md](HOST_START.md): VPP–DIW uses `agent_bridge.py`; foam modelling uses `foam_model.py` independently. The cause-analysis Skill is a host-read supplement and is not automatically registered in the planner, report or audit. The reviewed local registry does not perform live GitHub or literature search; new evidence and tools require the host's authorised retrieval and review.
 
-## 5. 使用真实研究数据
+## 4. Bring your own research inputs
 
-把 `templates/foam-research/` 中的[任务模板](templates/foam-research/task.json)和[测量模板](templates/foam-research/measurements.csv)复制到自己的任务目录，再填写真实来源、单位、基体参考性能和实测数据。
+Define the observable, source records, units, material/process scope, constraints and budget before running a research task. Use the appropriate templates rather than changing only the label on a synthetic example.
 
-每次选择小应变压缩模量或初始压缩屈服强度中的一种。按材料、拓扑与测试条件限定分析范围，预先声明修正特征，并分开训练／留出条件和批次。不要把示例数值或论文特定条件下的常数直接当成自己的材料参数。
+| Module | Start from | Read before use |
+| --- | --- | --- |
+| VPP–DIW linewidth/diffusion | `templates/task_geometric_v0.3.json`, `templates/task_geometric_v0.3.csv`, or the corresponding `task_sigma_v0.3.*` pair | [Model contract](references/model-contract.md), [host workflow](HOST_START.md), [feedback template](templates/feedback_v0.4/README.md) |
+| Hierarchical polymer foams | `templates/foam-research/task.json` and `templates/foam-research/measurements.csv` | [Foam data contract and workflow](skills/polymer-foam-model-refinement/references/workflow.md) |
 
-```text
-python scripts/foam_model.py run --task path/to/your/task.json --out outputs/your-study-1
-```
+The foam templates intentionally contain missing values that prevent direct execution. Preserve independent training/holdout conditions and batches, declare refinement features in advance, and use measured matrix properties appropriate to the task. In VPP–DIW, the protocol, evidence and session inputs are frozen before feedback; compare the frozen model before refitting. Full rules stay in the linked module and host documents.
 
-模板空值故意阻止直接运行。输入字段、数据分组及所需测量见[数据契约](skills/polymer-foam-model-refinement/references/workflow.md)。
+## 中文阅读提示
 
-## 6. 研究范围
-
-当前能做两级简化计算、模型标定与有限修正，工艺到内部密度的经验关系单独评估。LLM 解释候选原因和有条件的参数方向；下一步实验由研究者审核和执行。
-
-当前未实现端到端工艺到性能预测、自动泡沫实验规划、完整吸能曲线或疲劳／降解寿命。原 VPP–DIW 三轮闭环演示属于[旧模块](LEGACY_VPP_DIW.md)，不能作为泡沫能力证明。
+- **看项目**：先读 [中文总览](README.zh-CN.md)，或离线打开 `index.html`。流程图表达总体研究路径，具体已实现范围见能力状态表。
+- **本地运行**：上方 A 为 VPP–DIW 固定流程合成演示，B 为泡沫独立数值案例。选择对应依赖，在完整包根目录执行；两者都不自动调用 LLM，重跑必须换新输出目录。
+- **使用 LLM 宿主**：从主 Skill `axiom-research` 和 [HOST_START](HOST_START.md) 开始。每个技术阶段按适用范围选 Skill，真实实验由研究者审核和完成。
+- **查文件用途**：读 [PACKAGE_GUIDE](PACKAGE_GUIDE.md)。本次文档补丁为 1.1.3；旧版 1.1.2 下载仍保留，但不含本次新版文档。科研模块版本和科学验证范围没有因文档改版而提升。
