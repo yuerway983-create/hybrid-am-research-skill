@@ -1,22 +1,40 @@
 # Axiom Research
 
-**LLM 辅助分级聚合物泡沫的材料设计、工艺优化与模型修正**
+**LLM 辅助科研建模与实验优化工具包**
 
-LLM-Assisted Materials Design, Process Optimisation and Model Refinement for Additively Manufactured Hierarchical Polymer Foams
+LLM-Assisted Research Modelling and Experimental Optimisation Toolkit
 
-围绕牛津大学 **Reece Oosterbeek 团队的发泡 FDM 分级多孔聚合物研究**，连接文献因素提取、两级简化计算、模型标定与实验建议。当前实现侧重因素整理、压缩性能分析和候选模型修正；材料设计与工艺优化是研究目标，具体改进仍需真实实验检验。
+面向材料与制造研究，连接文献证据、关键因素提取、简化计算、模型标定与实验建议。当前示例聚焦发泡 FDM 分级多孔聚合物，另保留线宽与扩散分析流程。当前实现侧重因素整理、压缩性能分析和候选模型修正；材料设计与工艺优化是研究目标，具体改进仍需真实实验检验。
 
-[快速开始](START_HERE.md) · [泡沫研究 Skill](skills/polymer-foam-model-refinement/SKILL.md) · [LLM 宿主入口](HOST_START.md) · [下载完整 v1.1.1 文件包](https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.1/axiom-research-skill-v1.1.1.zip)
+[快速开始](START_HERE.md) · [泡沫研究 Skill](skills/polymer-foam-model-refinement/SKILL.md) · [LLM 宿主入口](HOST_START.md) · [下载完整 v1.1.2 文件包](https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.2/axiom-research-modeling-toolkit-v1.1.2.zip)
 
-## 与 Reece 研究的衔接
+## 方法基础与适用范围
 
-研究依据是 Sevcenco、Walters、Siviour 与 Oosterbeek 的论文：[Mechanics and modeling of hierarchically porous metamaterials manufactured by foaming fused deposition modeling](https://doi.org/10.1063/5.0301777)。原研究将打印形成的宏观孔结构与材料内部微观泡孔结合，用两级密度与 Gibson–Ashby 型关系描述力学响应。
+分级泡沫计算参考公开论文：[Mechanics and modeling of hierarchically porous metamaterials manufactured by foaming fused deposition modeling](https://doi.org/10.1063/5.0301777)。原研究将打印形成的宏观孔结构与材料内部微观泡孔结合，用两级密度与 Gibson–Ashby 型关系描述力学响应。
 
-本项目以这套已有简化模型为基础，加入 LLM 辅助的证据整理、候选原因解释与预声明修正，再用数值程序完成标定和比较。这些 LLM 分析与软件扩展属于本项目，并非原论文已经实现的方法，也不是牛津大学或 Reece 团队的官方软件。
+本项目以这套已有简化模型为基础，加入 LLM 辅助的证据整理、候选原因解释与预声明修正，再用数值程序完成标定和比较。这些 LLM 分析与软件扩展属于本项目，并非原论文已经实现的方法。
 
-Reece 的研究背景见[牛津个人主页](https://eng.ox.ac.uk/people/reece-oosterbeek)，公式、原文位置和适用限制见[来源与证据边界](skills/polymer-foam-model-refinement/references/sources.md)。其更广泛的降解、疲劳与回收研究并不等于本模块已支持这些预测。
+公式、原文位置和适用限制见[来源与证据边界](skills/polymer-foam-model-refinement/references/sources.md)。当前模块未实现降解、疲劳或回收性能预测；更换材料与工况需要相应数据和重新标定。
 
-## 当前可以完成什么
+## 功能模块与通用名称
+
+模块随完整工具包交付，按能力选择入口；名称描述用途，实际适用工艺与数据要求见各模块说明。
+
+| 功能模块 | 主要用途 |
+| --- | --- |
+| [科研证据整理与核查](skills/hybrid-am-evidence/SKILL.md) | 文献位置、主张与数据依据核对 |
+| [测量响应标定与验证](skills/measured-response-calibration/SKILL.md) | 在已实现观测量范围内拟合并分组验证 |
+| [扩散特征计算](skills/diffusion-moments/SKILL.md) | 计算浓度分布的扩散特征 |
+| [约束实验规划](skills/bounded-experiment-planning/SKILL.md) | 在已声明范围与预算内提出候选试验 |
+| [标定实验规划](skills/calibration-only-planning/SKILL.md) | 数据不足或模型检查未通过时补标定 |
+| [实验反馈与模型比较](skills/descriptive-feedback/SKILL.md) | 整理回传记录并评分冻结预测 |
+| [模型更新与迭代验证](skills/safe-model-update/SKILL.md) | 版本化重拟合与新确认检查 |
+| [原因分析与参数建议](skills/hybrid-am-cause-analysis/SKILL.md) | 解释异常、区分候选原因并提出调整方向 |
+| [分级泡沫建模与修正](skills/polymer-foam-model-refinement/SKILL.md) | 两级简化计算、候选修正和有限敏感性分析 |
+
+泡沫模块采用独立入口；其余原流程模块的工艺限制保持不变，不因通用命名而扩展为任意材料或自动泡沫闭环。
+
+## 分级泡沫模块当前可以完成什么
 
 | 环节 | 当前能力 |
 | --- | --- |
@@ -41,7 +59,7 @@ Reece 的研究背景见[牛津个人主页](https://eng.ox.ac.uk/people/reece-o
 
 ## 快速运行泡沫案例
 
-下载[最新完整包 v1.1.1](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.1)，解压后在 `axiom-research/` 根目录操作。Windows PowerShell：
+下载[最新完整包 v1.1.2](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.2)，解压后在 `axiom-research/` 根目录操作。Windows PowerShell：
 
 ```powershell
 python -m venv .venv
@@ -67,7 +85,7 @@ python -m venv .venv
 
 主 Skill 调用名为 `axiom-research`，展示名为 **Axiom Research**。发泡 FDM 任务使用独立子 Skill `polymer-foam-model-refinement` 与 `scripts/foam_model.py`；保留完整发布包，不单独复制子 Skill 文件夹。
 
-发布包版本 **1.1.1**，泡沫模块 **foam-0.1**。下载附件同时提供 `SHA256SUMS.txt`，根 `MANIFEST.json` 记录包内文件哈希（自身除外）。旧 v1.1.0 清单保留于 `reports/releases/v1.1.0/MANIFEST.json`，旧发布继续作为历史版本。包中不含虚拟环境、凭据或私有数据。
+发布包版本 **1.1.2**，泡沫模块 **foam-0.1**。下载附件同时提供 `SHA256SUMS.txt`，根 `MANIFEST.json` 记录包内文件哈希（自身除外）。旧清单保留在 `reports/releases/` 的版本目录中，供对应历史版本核对；当前公开下载统一使用本版通用工具包。包中不含虚拟环境、凭据或私有数据。
 
 输入记录由操作者提供，软件检查不能独立认证实验真实性。外部文献和仓库需要核对来源；未经审核的外部代码不会自动安装执行。第三方归属见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 

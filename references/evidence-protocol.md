@@ -14,6 +14,6 @@
 1. Hybrid Multimaterial 3D Printing Using Photocuring-While-Dispensing，
    DOI 10.1002/smll.202302405（用户先前讨论的工艺来源，下一步取得原文核查）。
 2. LLM-3D Print: Large Language Models To Monitor and Control 3D Printing，
-   arXiv:2408.14307v3（用户提供的外部流程参考，不是Yang Xu的论文，也不是VPP-DIW数据）。
+   arXiv:2408.14307v3（用户提供的外部流程参考，不提供 VPP–DIW 实验数据）。
 
 工作流或数字模拟有效性，应与真实打印和性能改善的证据分别评价。

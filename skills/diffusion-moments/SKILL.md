@@ -6,7 +6,7 @@ metadata:
   version: "0.2.0"
 ---
 
-# Diffusion moments
+# 扩散特征计算
 
 Load only after the host has reviewed S1 and model-001. This is a local original
 implementation, following the selected SymPy skill's verify-before-evaluate workflow.

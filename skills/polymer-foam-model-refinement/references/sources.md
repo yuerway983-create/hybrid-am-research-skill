@@ -6,11 +6,10 @@
 
 | 来源标识 | 原始来源 | 可支持的内容 |
 | --- | --- | --- |
-| `oxford_oosterbeek_profile` | [牛津大学工程科学系 Reece Oosterbeek 个人页](https://eng.ox.ac.uk/people/reece-oosterbeek) | 研究者归属及发泡材料、分级孔隙和多尺度力学研究方向；不提供本技能的模型实现或实验数据 |
-| `oosterbeek2026_foam_fdm` | [发泡熔融沉积成型制造分级多孔超材料的力学与建模，出版方全文](https://pubs.aip.org/aip/jap/article/139/5/055103/3378726/Mechanics-and-modeling-of-hierarchically-porous)，[DOI：10.1063/5.0301777](https://doi.org/10.1063/5.0301777) | 发泡 FDM 的材料及方法、两级密度定义、Gibson–Ashby 型模型及讨论的适用限制 |
+| `hierarchical_foam_fdm_2026` | [发泡熔融沉积成型制造分级多孔超材料的力学与建模，出版方全文](https://pubs.aip.org/aip/jap/article/139/5/055103/3378726/Mechanics-and-modeling-of-hierarchically-porous)，[DOI：10.1063/5.0301777](https://doi.org/10.1063/5.0301777) | 发泡 FDM 的材料及方法、两级密度定义、Gibson–Ashby 型模型及讨论的适用限制 |
 | `synthetic_fixture` | 发布包的 `examples/foam-refinement-demo/` | 软件验证夹具；不支持任何真实材料的参数、性能或机制结论 |
 
-论文作者包括 Alexandra Sevcenco、Peter Walters、Clive R. Siviour 与 Reece N. Oosterbeek，刊于《应用物理学杂志》139 卷，文章号 055103，2026 年 2 月 5 日。使用“Reece Oosterbeek 团队研究”作研究线索，不把多人研究归为单人完成。
+文献为《Mechanics and modeling of hierarchically porous metamaterials manufactured by foaming fused deposition modeling》，刊于《应用物理学杂志》139 卷，文章号 055103，2026 年 2 月 5 日，DOI：10.1063/5.0301777。引用以标题、DOI 和原文位置定位；本工具包的数值实现与 LLM 辅助步骤属于独立扩展。
 
 ## 公式与方法定位
 

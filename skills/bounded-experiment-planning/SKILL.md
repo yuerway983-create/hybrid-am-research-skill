@@ -5,7 +5,7 @@ compatibility: Uses local NumPy/SciPy plus the calibration adapter. No pyDOE3/Bo
 metadata:
   version: "0.3.0"
 ---
-# Bounded experiment planning
+# 约束实验规划
 
 Read the calibration result and `registry/reviews/planning-001.json`.
 Adapted from K-Dense experimental-design workflow: retain replication and randomized run order.

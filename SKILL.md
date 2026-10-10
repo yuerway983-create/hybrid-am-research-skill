@@ -1,8 +1,8 @@
 ---
 name: axiom-research
-description: 围绕发泡 FDM 分级聚合物泡沫开展 LLM 辅助因素提取、两级简化计算、标定与模型修正，路由到独立泡沫模块；保留 VPP–DIW 线宽与扩散任务的旧工作流。不调用专用仿真软件或控制打印设备。
+description: 通过文献证据、轻量计算和测量数据开展 LLM 辅助科研建模、原因分析与实验建议。当前支持独立的发泡 FDM 分级泡沫建模，以及 VPP–DIW 线宽和扩散工作流；按实际模块范围选择入口。
 metadata:
-  version: "1.1.1"
+  version: "1.1.2"
   runtime-version: "1.0.0"
   implementation-status: "bounded-multi-round-software-prototype"
   foam-extension-version: "foam-0.1"
@@ -11,7 +11,7 @@ metadata:
 
 # Axiom Research
 
-LLM 辅助分级聚合物泡沫研究框架。当前展示与快速入口围绕 Reece Oosterbeek 团队的发泡 FDM 研究；原 Hybrid-AM / VPP–DIW 模块保留供原任务使用。
+LLM 辅助科研建模与实验优化工具包。按证据整理、模型标定、简化计算、原因分析和实验规划等能力组织模块；当前提供分级聚合物泡沫与 VPP–DIW 线宽／扩散两类研究入口。
 
 ## 先按研究问题选择入口
 

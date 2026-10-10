@@ -8,7 +8,7 @@ metadata:
   adaptation-basis: "K-Dense research-lookup at 91497e335489dcb544ec8ddc8f6b7ce5fd6d1121"
 ---
 
-# Hybrid-AM evidence pass
+# 科研证据整理与核查
 
 This is an explicit adaptation, not the unchanged Parallel-backed research-lookup runner.
 Retain its scope, provenance, contradictory-evidence and access-level discipline; replace

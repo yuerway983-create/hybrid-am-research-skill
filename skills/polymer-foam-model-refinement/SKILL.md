@@ -3,9 +3,9 @@ name: polymer-foam-model-refinement
 description: 针对发泡 FDM 分级多孔 PLA 的压缩模量或屈服强度数据，核对文献与密度定义，标定两级幂律并评估预声明的小幅修正。
 ---
 
-# 发泡聚合物分级模型修正
+# 分级泡沫建模与修正
 
-围绕 Reece Oosterbeek 团队的发泡 FDM 分级多孔 PLA 研究，用用户提供的测量数据检验两级 Gibson–Ashby 型模型，并形成有出处、可复算的候选修正。这是独立的宿主技能；按宿主的正常技能发现方式使用，或显式调用 `$polymer-foam-model-refinement`。
+针对发泡 FDM 分级多孔 PLA 的压缩性能，用用户提供的测量数据检验文献中的两级 Gibson–Ashby 型模型，并形成有出处、可复算的候选修正。这是独立的宿主技能；按宿主的正常技能发现方式使用，或显式调用 `$polymer-foam-model-refinement`。
 
 ## 使用范围
 

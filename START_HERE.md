@@ -1,10 +1,10 @@
-# Axiom Research · 分级聚合物泡沫快速开始
+# Axiom Research · 科研建模与实验优化快速开始
 
-当前入口围绕 Reece Oosterbeek 团队的发泡 FDM 研究。先用合成数据了解两级简化计算与模型修正，再换成自己的实验数据。
+当前以发泡 FDM 分级聚合物泡沫作为简化建模示例，其他功能模块见 [能力目录](README.md#功能模块与通用名称)。先用合成数据了解两级简化计算与模型修正，再换成自己的实验数据。
 
 ## 1. 下载与选择入口
 
-下载[完整发布包 v1.1.1](https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.1/axiom-research-skill-v1.1.1.zip)，解压后在 `axiom-research/` 根目录操作。发布说明和校验值见[对应版本](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.1)。
+下载[完整发布包 v1.1.2](https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.2/axiom-research-modeling-toolkit-v1.1.2.zip)，解压后在 `axiom-research/` 根目录操作。发布说明和校验值见[对应版本](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.2)。
 
 - 了解方法：[泡沫研究 Skill](skills/polymer-foam-model-refinement/SKILL.md)。
 - 让 LLM 整理证据与解释结果：[宿主入口](HOST_START.md)。
@@ -43,7 +43,7 @@ python -m venv .venv
 在有本地文件和终端能力的宿主中，可以发送：
 
 ```text
-使用 $axiom-research 处理 Reece Oosterbeek 团队相关的发泡 FDM 分级聚合物泡沫研究。
+使用 $axiom-research 分析发泡 FDM 分级聚合物泡沫数据，开展简化计算与模型修正。
 读取 skills/polymer-foam-model-refinement/SKILL.md 及其工作流与来源说明。
 先整理关键因素和证据，再运行泡沫合成案例，读取实际输出并用中文解释模型比较、
 适用范围和优先补测项。将所有合成结果标为软件演示；数值必须来自脚本。

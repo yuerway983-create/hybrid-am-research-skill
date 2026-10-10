@@ -1,6 +1,6 @@
 # Axiom Research · LLM 宿主使用入口
 
-## 当前主入口：Reece 相关分级聚合物泡沫
+## 分级泡沫建模与修正入口
 
 发泡 FDM 任务先读取 [polymer-foam-model-refinement](skills/polymer-foam-model-refinement/SKILL.md) 及其工作流和来源说明。由宿主整理证据和预声明候选修正，再调用独立数值脚本；不创建旧的 `agent_bridge.py` 会话。
 

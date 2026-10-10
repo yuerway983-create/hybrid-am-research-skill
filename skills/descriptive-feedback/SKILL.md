@@ -4,7 +4,7 @@ description: Import logged execution and new measurements against a frozen hybri
 metadata:
   version: "0.4.0"
 ---
-# Evidence-bounded feedback
+# 实验反馈与模型比较
 1. The operator must attach a manifest, execution CSV and measurement CSV. Never generate measured values.
 2. Execute import_results; check source kind, context, units, dates, sample ids and actual-versus-planned settings.
 3. Execute compare_results BEFORE any refitting. Predictions come from the frozen original model.

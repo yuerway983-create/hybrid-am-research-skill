@@ -5,7 +5,7 @@ metadata:
   version: "1.0"
 ---
 
-# Safe model update and round continuation
+# 模型更新与迭代验证
 
 1. Call prepare_update only after original predictions were scored and concurrent
    same-batch results compared. Preserve negative results.

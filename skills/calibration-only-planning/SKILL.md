@@ -4,7 +4,7 @@ description: Generate calibration, coverage and baseline-repeat proposals when c
 metadata:
   version: "0.4.0"
 ---
-# Calibration-only planning
+# 标定实验规划
 Read the actual calibration result and failure reasons. Do not relax acceptance thresholds.
 Execute plan_experiments. When the current model failed, prediction cells must remain empty.
 This is the project's adapter of experimental-design workflow, not upstream code execution.

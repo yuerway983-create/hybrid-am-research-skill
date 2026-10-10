@@ -5,7 +5,7 @@ compatibility: Python 3.11+ with NumPy, SciPy and scikit-learn; tested versions 
 metadata:
   version: "0.3.0"
 ---
-# Measured-response calibration
+# 测量响应标定与验证
 
 Read `references/stage3-methods.md`, `registry/reviews/calibration-002.json` and the task before running.
 This is a project-owned adapter informed by the reviewed K-Dense scikit-learn workflow;

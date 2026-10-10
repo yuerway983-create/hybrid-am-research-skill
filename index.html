@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Axiom Research · LLM 辅助分级聚合物泡沫研究</title>
-  <meta name="description" content="围绕 Reece Oosterbeek 团队的发泡 FDM 分级多孔聚合物研究，连接文献因素提取、两级简化计算、模型修正与实验建议。">
+  <title>Axiom Research · 科研建模与实验优化工具包</title>
+  <meta name="description" content="面向材料与制造研究的 LLM 辅助工具包：证据整理、简化计算、模型标定、原因分析与实验建议；提供分级聚合物泡沫研究模块。">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
   <style>
@@ -26,30 +26,38 @@
 <body>
 <main>
   <header>
-    <small>AXIOM RESEARCH · HIERARCHICAL POLYMER FOAMS</small>
+    <small>AXIOM RESEARCH · RESEARCH MODELLING TOOLKIT</small>
     <h1>Axiom Research</h1>
-    <p class="subtitle">LLM 辅助分级聚合物泡沫的<br>材料设计、工艺优化与模型修正</p>
-    <p>LLM-Assisted Materials Design, Process Optimisation and Model Refinement<br>for Additively Manufactured Hierarchical Polymer Foams</p>
-    <p>围绕牛津大学 Reece Oosterbeek 团队的发泡 FDM 研究，从关键因素与测量数据出发，用两级简化模型分析孔结构与压缩性能，并提出可检验的改进方向。</p>
+    <p class="subtitle">LLM 辅助科研建模<br>与实验优化工具包</p>
+    <p>LLM-Assisted Research Modelling<br>and Experimental Optimisation Toolkit</p>
+    <p>面向材料与制造研究，连接证据整理、关键因素提取、简化计算、模型标定与实验建议。当前研究示例以发泡 FDM 分级聚合物泡沫为主，另保留线宽与扩散分析流程。</p>
     <p class="muted">当前实现：因素整理、简化计算、标定与模型修正；材料设计与工艺优化是研究目标，具体建议仍需实验检验。</p>
   </header>
 
   <section aria-labelledby="download">
-    <h2 id="download">开始分级泡沫研究</h2>
-    <a class="button" href="https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.1/axiom-research-skill-v1.1.1.zip"><i class="fa fa-download" aria-hidden="true"></i> 下载完整 Skill · v1.1.1</a>
-    <a href="START_HERE.md">快速开始</a> · <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.1">更新说明与校验文件</a>
+    <h2 id="download">科研建模与实验优化完整包</h2>
+    <a class="button" href="https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.2/axiom-research-modeling-toolkit-v1.1.2.zip"><i class="fa fa-download" aria-hidden="true"></i> 下载通用工具包 · v1.1.2</a>
+    <a href="START_HERE.md">快速开始</a> · <a href="https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.2">更新说明与校验文件</a>
     <p class="muted">解压后在 <code>axiom-research/</code> 根目录使用。主 Skill：<code>axiom-research</code>；泡沫研究入口：<code>polymer-foam-model-refinement</code>。</p>
   </section>
 
+  <section aria-labelledby="modules">
+    <h2 id="modules">按能力选择模块</h2>
+    <p><a href="skills/hybrid-am-evidence/SKILL.md">科研证据整理与核查</a> · <a href="skills/measured-response-calibration/SKILL.md">测量响应标定与验证</a> · <a href="skills/diffusion-moments/SKILL.md">扩散特征计算</a></p>
+    <p><a href="skills/bounded-experiment-planning/SKILL.md">约束实验规划</a> · <a href="skills/calibration-only-planning/SKILL.md">标定实验规划</a> · <a href="skills/descriptive-feedback/SKILL.md">实验反馈与模型比较</a></p>
+    <p><a href="skills/safe-model-update/SKILL.md">模型更新与迭代验证</a> · <a href="skills/hybrid-am-cause-analysis/SKILL.md">原因分析与参数建议</a> · <a href="skills/polymer-foam-model-refinement/SKILL.md">分级泡沫建模与修正</a></p>
+    <p class="muted">各模块随完整包交付。泡沫模块独立运行，其他模块保留原有工艺和数据限制；通用名称不代表已经支持任意材料。</p>
+  </section>
+
   <section aria-labelledby="research">
-    <h2 id="research">与 Reece 研究的衔接</h2>
-    <p>研究依据是 Sevcenco、Walters、Siviour 与 Oosterbeek 关于发泡熔融沉积成型分级多孔超材料的论文。它把打印形成的宏观孔结构与材料内部的微观泡孔联系起来，建立两级密度与力学性能模型。</p>
+    <h2 id="research">分级泡沫模块：方法基础</h2>
+    <p>分级泡沫计算参考关于发泡熔融沉积成型分级多孔超材料的公开论文。它把打印形成的宏观孔结构与材料内部的微观泡孔联系起来，建立两级密度与力学性能模型。</p>
     <p>本项目在这一研究基础上，加入 LLM 辅助的证据整理、候选机制解释，以及可复算的模型比较和有限修正。这里的 LLM 分析与软件实现属于本项目的扩展。</p>
-    <p><a href="https://eng.ox.ac.uk/people/reece-oosterbeek">Reece 的牛津研究主页</a> · <a href="https://doi.org/10.1063/5.0301777">原始论文</a> · <a href="skills/polymer-foam-model-refinement/references/sources.md">公式与证据对应关系</a></p>
+    <p><a href="https://doi.org/10.1063/5.0301777">原始论文</a> · <a href="skills/polymer-foam-model-refinement/references/sources.md">公式与证据对应关系</a></p>
   </section>
 
   <section aria-labelledby="capabilities">
-    <h2 id="capabilities">这个步骤可以做什么</h2>
+    <h2 id="capabilities">分级泡沫建模与修正</h2>
     <div class="grid">
       <article><h3><i class="fa fa-search" aria-hidden="true"></i> 提取关键因素</h3><p>整理温度、出料倍率、总相对密度、微观孔隙份额及实测几何；核对出处、单位与缺失信息。</p></article>
       <article><h3><i class="fa fa-calculator" aria-hidden="true"></i> 运行简化计算</h3><p>换算微观／宏观相对密度，标定两级幂律；每次分析小应变压缩模量或初始压缩屈服强度中的一种。</p></article>
@@ -95,7 +103,7 @@
   </section>
 
   <footer>
-    <p>本项目围绕公开研究构建，不是牛津大学或 Reece 团队的官方软件。页面与使用入口更新为 v1.1.1，泡沫数值模块仍为 foam-0.1。</p>
+    <p>本工具包依据公开文献与可复算模型构建；使用范围由各模块说明和输入数据决定。页面与使用入口更新为 v1.1.2，泡沫数值模块仍为 foam-0.1。</p>
     <p><a href="https://github.com/yuerway983-create/axiom-research-skill">GitHub 仓库</a> · <a href="LEGACY_VPP_DIW.md">旧 VPP–DIW 模块与历史报告</a> · <a href="THIRD_PARTY_NOTICES.md">第三方说明</a></p>
   </footer>
 </main>
