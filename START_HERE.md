@@ -1,5 +1,7 @@
 # Axiom Research · v1.0：没有真实数据也可以完成软件演示
 
+当前完整发布包为 **v1.1.0**，VPP–DIW 运行流程仍为 v1.0。请从[最新发布](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.0)下载 `axiom-research-skill-v1.1.0.zip`，解压后在 `axiom-research/` 根目录操作。泡沫与原因分析的独立入口见 `HOST_START.md`；旧 v1.0.0 下载不包含后续模块。
+
 ## 1. 先直接看结果
 打开 `reports/campaign-steady/index.html`：完整三轮合成验收。
 打开 `reports/campaign-shifted/index.html`：模型失效时不硬预测，而是继续标定计划。

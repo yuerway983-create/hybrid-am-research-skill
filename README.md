@@ -2,9 +2,17 @@
 
 科研智能建模与实验优化框架：连接科学知识、轻量模型与实验反馈的 LLM 辅助科研工作流。
 
-Skill 调用名：`axiom-research`；界面展示名：**Axiom Research**。原名 Hybrid-AM Research，现有仓库网址保留以兼容旧链接。
+Skill 调用名：`axiom-research`；界面展示名：**Axiom Research**。原名 Hybrid-AM Research，仓库已迁移为 `axiom-research-skill`。
 当前实现仍聚焦混合 VPP–DIW 增材制造与发泡 FDM 分级聚合物泡沫，通用品牌名不代表已支持所有材料或科研领域。
 原 v1.0 工作流、原因分析 v0.2 和 foam-0.1 模块的版本与验证边界保持不变。
+
+## 最新完整下载 · v1.1.0
+
+- [下载完整 Skill 文件包](https://github.com/yuerway983-create/axiom-research-skill/releases/download/v1.1.0/axiom-research-skill-v1.1.0.zip)：解压后根目录为 `axiom-research/`，包含主 Skill、全部子模块、脚本、模板、示例及验证记录。
+- [发布说明及校验文件](https://github.com/yuerway983-create/axiom-research-skill/releases/tag/v1.1.0)。此前 v1.0.0 的下载对应旧提交，不包含后续增加的模块；历史发布保留，不是本次更新包。
+
+发布包版本为 **1.1.0**；VPP–DIW 运行时仍为 **1.0.0**，原因分析为 **0.2.0**，泡沫模块为 **foam-0.1**。根 `MANIFEST.json` 对应当前发布文件，旧版清单另存于 `reports/releases/v1.0.0/MANIFEST.json`。下载包不含虚拟环境、凭据或本地运行目录；解压后使用根目录的脚本，不单独复制泡沫子 Skill。
+
 ## Research Workflow
 ```mermaid
 flowchart TD
@@ -89,7 +97,7 @@ python scripts/foam_model.py run --task examples/foam-refinement-demo/task.json 
 
 优化后的中文报告逐项显示误差和范围检查、不可用原因及优先补充事项；敏感性列出有限扫描方向、实际支持范围、支持点数、端点预测和固定参考。扫描同时检查分级凸包、两级单尺度标定区间和所选修正特征边界；不足两个支持点不被解释为零效应。力学、工艺密度和尺度审核分别报告，不把数值通过当成实物确认。
 
-数据契约及来源见[工作流](skills/polymer-foam-model-refinement/references/workflow.md)、[证据边界](skills/polymer-foam-model-refinement/references/sources.md)。本扩展不覆盖历史 v1.0 报告或更新旧发布清单；当前代码及输入哈希见每次独立运行输出。
+数据契约及来源见[工作流](skills/polymer-foam-model-refinement/references/workflow.md)、[证据边界](skills/polymer-foam-model-refinement/references/sources.md)。历史 v1.0 报告与旧发布清单单独保留；当前发布清单见根 `MANIFEST.json`，每次独立运行另记录实际代码及输入哈希。
 初版与本轮优化的实际测试结果见 [初版记录](reports/foam-0.1-validation.md) 与 [优化验证记录](reports/foam-0.1-optimization-validation.md)。输入先保存为快照，再对快照计算和哈希；执行中原文件的后续变化不会被混入本次模型。
 
 ## What each run means
@@ -119,7 +127,7 @@ the CLI is not a general-purpose OS sandbox. No keys, private data or binaries a
 See THIRD_PARTY_NOTICES.md and registry/reviews/. Upstream workflows were reviewed; actual
 Python adapters are project implementations using separately installed libraries. Public
 repository visibility and the licence for project-owned files remain an owner decision.
-The maintained source is available in [the project GitHub repository](https://github.com/yuerway983-create/hybrid-am-research-skill). Historical demonstration and validation records remain archived rather than being rewritten as new experiment results.
+The maintained source is available in [the project GitHub repository](https://github.com/yuerway983-create/axiom-research-skill). Historical demonstration and validation records remain archived rather than being rewritten as new experiment results.
 
 Historical v0.2–v0.4 reports are preserved as archives. Start NEW v1.0 sessions; do not resume
 old-version sessions against changed code hashes. Legacy input schemas (0.3/0.4) remain supported

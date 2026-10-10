@@ -2,7 +2,8 @@
 name: axiom-research
 description: 通过可追溯证据、轻量数值模型与实验反馈开展 LLM 辅助科研分析、标定和候选实验规划。当前支持混合 VPP–DIW 工作流，并将发泡 FDM 分级聚合物数据路由到独立泡沫模型修正模块；不调用专用仿真软件或控制打印设备。
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
+  runtime-version: "1.0.0"
   implementation-status: "bounded-multi-round-software-prototype"
   foam-extension-version: "foam-0.1"
   compatibility: Python 3.11+ with requirements-agent.txt. A file/terminal-capable LLM host selects CLI tools. Optional OpenAI Responses driver requires explicit network/data-sharing consent and user-configured credentials; live API integration is not certified by local tests.

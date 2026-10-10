@@ -349,7 +349,7 @@ def _execute(session: Path, s: dict, name: str, args: dict) -> dict:
 
 def make_report(session: Path, state: dict) -> dict:
     task=load(session/'input/task.json')
-    lines=['# Hybrid-AM v1.0 执行与回传报告','',f"数据标记：**{state['data_kind']}**；执行来源：`{state['origin']}`。",
+    lines=['# Axiom Research · VPP–DIW v1.0 执行与回传报告','',f"数据标记：**{state['data_kind']}**；执行来源：`{state['origin']}`。",
         f"当前状态：`{state['phase']}`。",'本程序没有打印、没有运行专用模拟软件。来源标记由操作者声明，不是独立真实性认证。','',
         '## 实际完成阶段',json.dumps({k:state[k] for k in ('inspected','evidence_checked','calibrated','planned','feedback_attached','imported','compared','update_prepared')},ensure_ascii=False,indent=2)]
     if state['planned']:
@@ -377,7 +377,7 @@ def make_report(session: Path, state: dict) -> dict:
     lines += ['','## 下一步']+next_actions(state)+['','## 审计','events.jsonl 记录实际请求、响应、调用来源、哈希与错误；calls/保留结构化结果。',
         '程序日志证明代码执行，不证明实验真实性；固定回放不是在线LLM运行。']
     report=session/'report.md';report.write_text('\n'.join(lines)+'\n',encoding='utf-8')
-    title='Hybrid-AM · v1.0'
+    title='Axiom Research · VPP–DIW v1.0'
     body=f"<!doctype html><html lang='zh-CN'><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{title}</title><style>body{{font-family:system-ui,sans-serif;max-width:1000px;margin:36px auto;padding:0 20px;line-height:1.65}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}h1{{font-size:28px}}</style><h1>{title}</h1><p>实际工具执行记录 · {html.escape(state['data_kind'])} · {html.escape(state['origin'])}</p><pre>{html.escape(report.read_text(encoding='utf-8'))}</pre></html>"
     (session/'index.html').write_text(body,encoding='utf-8')
     return {'status':'report_written','phase':state['phase'],'files':['report.md','index.html'],

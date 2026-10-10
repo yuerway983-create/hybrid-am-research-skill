@@ -103,6 +103,8 @@ class RuntimeTests(unittest.TestCase):
     def test_report_is_static(self):
         self.call('inspect_task');self.call('finish_report');page=(self.s/'index.html').read_text(encoding='utf-8')
         self.assertNotIn('<script',page);self.assertIn('synthetic_demo',page)
+        self.assertIn('<title>Axiom Research · VPP–DIW v1.0</title>',page)
+        self.assertIn('# Axiom Research · VPP–DIW v1.0 执行与回传报告',(self.s/'report.md').read_text(encoding='utf-8'))
     def test_sparse_routing(self):
         s=self.root/'sparse';ar.init_session(ROOT/'examples/insufficient-data-demo/task.json',s,protocol_path=PROTO,evidence_path=EVID,origin='test')
         def c(n,a={}):self.i+=1;return ar.dispatch(s,n,a,f's{self.i}',origin='test')
