@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hybrid AM cause analysis 0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "analysis_id", "phase", "task_id", "context_id", "data_kind", "observable", "analysis_goal", "input_refs", "budget", "observations", "hypotheses", "suggestions", "information_gaps", "unsupported_requests", "next_action"],
+  "properties": {
+    "schema_version": {"const": "0.2"},
+    "analysis_id": {"$ref": "#/$defs/text"},
+    "phase": {"enum": ["pre_experiment", "post_feedback"]},
+    "task_id": {"type": ["string", "null"], "minLength": 1},
+    "context_id": {"type": ["string", "null"], "minLength": 1},
+    "data_kind": {"enum": ["synthetic_demo", "measured", "public_measured", "unknown"]},
+    "observable": {"type": ["string", "null"], "minLength": 1},
+    "analysis_goal": {"enum": ["diagnosis", "calibration", "target_seeking"]},
+    "input_refs": {"$ref": "#/$defs/textArray"},
+    "budget": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_trial_slots", "reserved_baseline_slots", "committed_nonbaseline_slots", "remaining_slots", "proposed_new_nonbaseline_slots", "accounting_note"],
+      "properties": {
+        "total_trial_slots": {"$ref": "#/$defs/countOrNull"},
+        "reserved_baseline_slots": {"$ref": "#/$defs/countOrNull"},
+        "committed_nonbaseline_slots": {"$ref": "#/$defs/countOrNull"},
+        "remaining_slots": {"$ref": "#/$defs/countOrNull"},
+        "proposed_new_nonbaseline_slots": {"$ref": "#/$defs/countOrNull"},
+        "accounting_note": {"$ref": "#/$defs/text"}
+      }
+    },
+    "observations": {"$ref": "#/$defs/textArray"},
+    "hypotheses": {"type": "array", "items": {"$ref": "#/$defs/hypothesis"}},
+    "suggestions": {"type": "array", "items": {"$ref": "#/$defs/suggestion"}},
+    "information_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["missing", "blocks", "next_check"],
+        "properties": {
+          "missing": {"$ref": "#/$defs/text"},
+          "blocks": {"$ref": "#/$defs/textArray"},
+          "next_check": {"$ref": "#/$defs/text"}
+        }
+      }
+    },
+    "unsupported_requests": {"$ref": "#/$defs/textArray"},
+    "next_action": {"$ref": "#/$defs/text"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"suggestions": {"contains": {"properties": {"level": {"enum": ["diagnostic_trial", "target_candidate"]}}, "required": ["level"]}}}},
+      "then": {"properties": {
+        "task_id": {"$ref": "#/$defs/text"}, "context_id": {"$ref": "#/$defs/text"},
+        "observable": {"$ref": "#/$defs/text"},
+        "budget": {"properties": {
+          "total_trial_slots": {"type": "integer", "minimum": 0},
+          "reserved_baseline_slots": {"type": "integer", "minimum": 0},
+          "committed_nonbaseline_slots": {"type": "integer", "minimum": 0},
+          "remaining_slots": {"type": "integer", "minimum": 0},
+          "proposed_new_nonbaseline_slots": {"type": "integer", "minimum": 0}
+        }}
+      }}
+    }
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "textArray": {"type": "array", "items": {"$ref": "#/$defs/text"}},
+    "countOrNull": {"type": ["integer", "null"], "minimum": 0},
+    "check": {"enum": ["not_checked", "pass", "fail", "not_applicable"]},
+    "hypothesis": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hypothesis_id", "hypothesis", "support_refs", "contradicting_refs", "evidence_basis", "priority_reason", "alternative_explanations", "missing_information", "discriminating_check"],
+      "properties": {
+        "hypothesis_id": {"$ref": "#/$defs/text"},
+        "hypothesis": {"$ref": "#/$defs/text"},
+        "support_refs": {"$ref": "#/$defs/textArray"},
+        "contradicting_refs": {"$ref": "#/$defs/textArray"},
+        "evidence_basis": {"enum": ["context_observation", "model_diagnostic", "literature_mechanism", "untested_hypothesis"]},
+        "priority_reason": {"$ref": "#/$defs/text"},
+        "alternative_explanations": {"$ref": "#/$defs/textArray"},
+        "missing_information": {"$ref": "#/$defs/textArray"},
+        "discriminating_check": {
+          "type": "object", "additionalProperties": false,
+          "required": ["kind", "comparison", "varied_factor", "held_fixed", "response_to_measure", "supports_if", "weakens_if"],
+          "properties": {
+            "kind": {"enum": ["log_review", "measurement", "controlled_trial"]},
+            "comparison": {"$ref": "#/$defs/text"},
+            "varied_factor": {"type": ["string", "null"], "minLength": 1},
+            "held_fixed": {"$ref": "#/$defs/textArray"},
+            "response_to_measure": {"$ref": "#/$defs/text"},
+            "supports_if": {"$ref": "#/$defs/text"},
+            "weakens_if": {"$ref": "#/$defs/text"}
+          }
+        }
+      }
+    },
+    "suggestion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["suggestion_id", "level", "hypothesis_refs", "factor", "direction", "proposed_value", "candidate_parameters", "unit", "purpose", "relation_to_goal", "trial_role", "independent_trial_slots", "reuses_planned_trial_ids", "handoff_status", "held_fixed", "support_refs", "tradeoffs", "constraint_checks", "prediction_ref", "review_status"],
+      "properties": {
+        "suggestion_id": {"$ref": "#/$defs/text"},
+        "level": {"enum": ["direction_only", "diagnostic_trial", "target_candidate"]},
+        "hypothesis_refs": {"$ref": "#/$defs/textArray"},
+        "factor": {"$ref": "#/$defs/text"},
+        "direction": {"$ref": "#/$defs/text"},
+        "proposed_value": {"type": ["number", "null"]},
+        "candidate_parameters": {"type": ["object", "null"], "minProperties": 1, "additionalProperties": {"type": "number"}},
+        "unit": {"type": ["string", "null"], "minLength": 1},
+        "purpose": {"$ref": "#/$defs/text"},
+        "relation_to_goal": {"$ref": "#/$defs/text"},
+        "trial_role": {"enum": ["direction", "diagnostic", "calibration", "target"]},
+        "independent_trial_slots": {"$ref": "#/$defs/countOrNull"},
+        "reuses_planned_trial_ids": {"$ref": "#/$defs/textArray"},
+        "handoff_status": {"enum": ["report_only", "proposed_for_planner", "mapped_to_existing_plan", "requires_revised_plan", "requires_task_revision"]},
+        "held_fixed": {"$ref": "#/$defs/textArray"},
+        "support_refs": {"$ref": "#/$defs/textArray"},
+        "tradeoffs": {"$ref": "#/$defs/textArray"},
+        "constraint_checks": {
+          "type": "object", "additionalProperties": false,
+          "required": ["bounds", "grid", "fixed_conditions", "budget", "model_domain"],
+          "properties": {
+            "bounds": {"$ref": "#/$defs/check"}, "grid": {"$ref": "#/$defs/check"},
+            "fixed_conditions": {"$ref": "#/$defs/check"}, "budget": {"$ref": "#/$defs/check"},
+            "model_domain": {"$ref": "#/$defs/check"}
+          }
+        },
+        "prediction_ref": {"type": ["string", "null"], "minLength": 1},
+        "review_status": {"const": "needs_review"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"level": {"const": "direction_only"}}},
+          "then": {"properties": {"proposed_value": {"type": "null"}, "candidate_parameters": {"type": "null"}, "independent_trial_slots": {"enum": [0, null]}, "trial_role": {"const": "direction"}, "prediction_ref": {"type": "null"}, "handoff_status": {"enum": ["report_only", "requires_task_revision"]}, "reuses_planned_trial_ids": {"maxItems": 0}}},
+          "else": {"properties": {"proposed_value": {"type": "number"}, "candidate_parameters": {"type": "object"}, "independent_trial_slots": {"type": "integer", "minimum": 1}, "unit": {"$ref": "#/$defs/text"}}}
+        },
+        {
+          "if": {"properties": {"level": {"const": "diagnostic_trial"}}},
+          "then": {"properties": {"trial_role": {"enum": ["diagnostic", "calibration"]}, "prediction_ref": {"type": "null"}, "constraint_checks": {"properties": {"bounds": {"const": "pass"}, "grid": {"const": "pass"}, "fixed_conditions": {"const": "pass"}, "budget": {"const": "pass"}}}}}
+        },
+        {
+          "if": {"properties": {"level": {"const": "target_candidate"}}},
+          "then": {"properties": {"trial_role": {"const": "target"}, "prediction_ref": {"$ref": "#/$defs/text"}, "constraint_checks": {"properties": {"bounds": {"const": "pass"}, "grid": {"const": "pass"}, "fixed_conditions": {"const": "pass"}, "budget": {"const": "pass"}, "model_domain": {"const": "pass"}}}}}
+        },
+        {
+          "if": {"properties": {"handoff_status": {"const": "mapped_to_existing_plan"}}},
+          "then": {"properties": {"reuses_planned_trial_ids": {"minItems": 1}}}
+        }
+      ]
+    }
+  }
+}

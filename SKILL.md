@@ -74,6 +74,19 @@ any feedback is available. Never mutate these snapshots or reduce thresholds to 
 15. Respect the prospectively fixed maximum-round budget. End with finish_report. Updating
     prediction accuracy is not evidence that a printed part became stronger or more reliable.
 
+## LLM 原因分析与参数建议（宿主补充步骤）
+
+研究者需要解释异常、分析模型偏差或获得调参建议时，读取
+[hybrid-am-cause-analysis](skills/hybrid-am-cause-analysis/SKILL.md) 及其参考文件。
+可在步骤6的标定结果可用后、步骤7规划前开展分析；回传后在步骤9完成冻结模型比较后、步骤11更新前开展分析。
+缺模型或目标值时，按子 Skill 的信息缺口规则继续可完成的排查。
+
+此步骤由文件型宿主直接读取执行，未注册为 `find_skills`／`activate_skill` 的 `analysis` 阶段。
+将中文分析和结构化摘要保存到独立的 `outputs/cause-analysis/<session-id>/` 目录，保留输入引用。
+这些补充文件尚未纳入运行时的哈希、审计或 `finish_report`，也不会自动影响规划器排序。
+具体试验建议须核对基准保留、剩余预算及参数约束；原规划器不能接纳的诊断点保留为待接入建议，不改写已冻结计划。
+详见 [接入说明](skills/hybrid-am-cause-analysis/references/integration.md)。
+
 ## Execution and errors
 Use one unique call_id per request. Retrying the same id and identical arguments replays the
 saved result without rerunning. A changed request requires a new id. Tools run serially, with

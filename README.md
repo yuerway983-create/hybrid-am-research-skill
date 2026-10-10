@@ -26,6 +26,7 @@ Real additive-manufacturing experiments are still required to validate actual pr
 - [`START_HERE.md`](START_HERE.md) — local demonstration and setup
 - [`HOST_START.md`](HOST_START.md) — agent-controlled workflow
 - [`SKILL.md`](SKILL.md) — master skill definition
+- [`skills/hybrid-am-cause-analysis/SKILL.md`](skills/hybrid-am-cause-analysis/SKILL.md) — LLM cause analysis and parameter advice (v0.2, host-read supplement)
 - [`reports/`](reports/) — demonstration and validation records
 ## Completed software scope
 
@@ -42,6 +43,16 @@ Real additive-manufacturing experiments are still required to validate actual pr
   round budget. No previous raw data/model/result is overwritten.
 - Host-driven CLI interface; optional Responses loop automatically switches to created child sessions.
 - Separate synthetic environment for repeatable normal and failure-case SOFTWARE tests.
+
+## LLM 原因分析与参数建议 · 子 Skill v0.2
+
+新增的 [hybrid-am-cause-analysis](skills/hybrid-am-cause-analysis/SKILL.md) 将现象、证据、候选原因和区分检查连接起来，给出符合目标与预算的下一步建议。
+它区分方向建议、诊断试验和有数值模型依据的目标候选；缺少模型仍可排查原因，缺少试验名额时继续核查已有记录。
+
+文件型 LLM 宿主可在标定后、规划前，或冻结模型比较后、更新前读取该 Skill。
+具体调用提示见 [HOST_START.md](HOST_START.md#llm-原因分析与参数建议宿主补充步骤)，输入、预算、结构化输出和自动接入设计见 [接入说明](skills/hybrid-am-cause-analysis/references/integration.md)。
+当前以宿主补充分析方式使用：自动运行时仍为 v1.0 的 14 个工具，规划器尚不接收诊断候选，也不会自动将分析写入正式报告或审计。
+子 Skill 的格式、结构约束和合成案例行为已检查；真实工艺效果仍需实验评价。
 
 ## What each run means
 

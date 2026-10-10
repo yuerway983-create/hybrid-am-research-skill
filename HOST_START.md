@@ -30,6 +30,31 @@ python scripts/agent_bridge.py call --session runs/host-1 --origin chat_host --c
 inspect_task → 激活evidence/review_evidence → 激活calibration/calibrate_response → 根据返回选择planning → plan_experiments。
 没有外部结果时finish_report并等待。回传/确认文件不允许由主控模型生成。
 
+## LLM 原因分析与参数建议（宿主补充步骤）
+
+新增 [hybrid-am-cause-analysis v0.2](skills/hybrid-am-cause-analysis/SKILL.md)，由宿主直接读取，在以下位置生成补充分析：
+
+- 实验前：`calibrate_response` 返回后、`plan_experiments` 前；解释现有现象、模型诊断或设计风险。
+- 回传后：`compare_results` 完成后、`prepare_update` 前；依据实际设置与冻结模型偏差提出待验证原因。
+
+可直接给宿主以下指令（从仓库根目录开始；替换会话路径）：
+
+```text
+读取 skills/hybrid-am-cause-analysis/SKILL.md 及其引用的接入说明。
+基于 runs/host-1 中已有的任务、测量、证据和工具报告，分析原因并提出参数建议。
+先对齐任务目标，列出证据、替代解释及区分检查。具体试验候选核对范围、步长、
+固定条件和预算，保留基准名额。缺失文件按信息缺口处理，继续能完成的排查。
+若有回传结果，先完成 compare_results，再解释冻结模型偏差，随后才可更新模型。
+将中文短报告和符合分析 Schema 的摘要保存到 outputs/cause-analysis/host-1/，
+分别使用 llm_analysis_pre 或 llm_analysis_post 作为文件名；已有报告保留并另存新版本。
+输出说明哪些建议仅供阅读、哪些等待规划器接入，以及下一项最有价值的检查。
+```
+
+该模块未注册到自动运行时；不要传入 `stage=analysis` 或调用设计中的 `record_analysis`。
+当前规划器仍按原方法选点，`finish_report` 和审计不会自动收录补充报告。
+宿主可以对照正式计划记录建议的交接状态；需要新诊断点时保留待接入建议，不能用文字报告覆盖冻结的 `plan.json`。
+完整输入约定、输出 Schema 和后续自动接入位置见 [接入说明](skills/hybrid-am-cause-analysis/references/integration.md)。
+
 ## 文献与结果由操作者附加
 无初始文献包时，可由授权宿主检索后：
 ```text
