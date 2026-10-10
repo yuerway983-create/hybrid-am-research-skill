@@ -1,10 +1,11 @@
 ---
 name: hybrid-am-research
-description: Coordinate evidence-grounded hybrid VPP-DIW research through task-specific reviewed skills, real numerical tools, bounded experiment planning and traceable follow-up comparison. No dedicated simulation software or printer control.
-compatibility: Python 3.11+ with requirements-agent.txt. A file/terminal-capable LLM host selects CLI tools. Optional OpenAI Responses driver requires explicit network/data-sharing consent and user-configured credentials; live API integration is not certified by local tests.
+description: Coordinate evidence-grounded hybrid VPP-DIW research through reviewed skills, numerical tools and traceable comparison; route foaming-FDM hierarchical polymer data to the independent foam-model refinement skill. No dedicated simulation software or printer control.
 metadata:
   version: "1.0.0"
   implementation-status: "bounded-multi-round-software-prototype"
+  foam-extension-version: "foam-0.1"
+  compatibility: Python 3.11+ with requirements-agent.txt. A file/terminal-capable LLM host selects CLI tools. Optional OpenAI Responses driver requires explicit network/data-sharing consent and user-configured credentials; live API integration is not certified by local tests.
 ---
 
 # Hybrid-AM Research
@@ -26,6 +27,11 @@ The local campaign_demo is deterministic, not an autonomous LLM demo. The option
 contains a Responses function-calling loop; local transport tests are not a paid API run.
 
 ## Load workflow
+发泡 FDM／分级聚合物泡沫任务，先读取
+[polymer-foam-model-refinement](skills/polymer-foam-model-refinement/SKILL.md)，
+再调用该模块的独立数值入口。不要把泡沫任务送入旧 VPP–DIW 的 14 工具运行时。
+这是宿主路由扩展，不是旧运行时新增工艺支持；完整仓库中的脚本及示例需一并保留。
+
 Read START_HERE.md and HOST_START.md. Use `python scripts/agent_bridge.py tools` for exact
 schemas. A session snapshots task, CSV, predeclared comparison protocol and evidence before
 any feedback is available. Never mutate these snapshots or reduce thresholds to pass gates.

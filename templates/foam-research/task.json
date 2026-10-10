@@ -1,0 +1,69 @@
+{
+  "schema_version": "foam-0.1",
+  "task_id": null,
+  "material_id": null,
+  "context_id": null,
+  "dataset_file": "measurements.csv",
+  "process": "foaming-fdm",
+  "observable": "compression_modulus_MPa",
+  "mode": "research",
+  "data_kind": "measured",
+  "units": {
+    "temperature_C": "degC",
+    "flow_ratio": "1",
+    "total_relative_density": "1",
+    "microscale_porosity_fraction": "1",
+    "wall_thickness_um": "um",
+    "mean_pore_diameter_um": "um",
+    "response_MPa": "MPa"
+  },
+  "fixed_conditions": {},
+  "measurement_definition": {
+    "quantity": "compression_modulus_MPa",
+    "unit": "MPa",
+    "method": null,
+    "source_ref": null
+  },
+  "base_property": {
+    "value": null,
+    "unit": "MPa",
+    "origin": "user_calibration",
+    "source_ref": null
+  },
+  "assumptions": {
+    "two_scale_structure": null,
+    "equivalent_microporous_material": null
+  },
+  "scale_separation": {
+    "min_wall_to_pore_ratio": null,
+    "review_status": "needs_review",
+    "source_ref": null
+  },
+  "allow": {
+    "hardware_commands": false,
+    "dedicated_simulation_software": false
+  },
+  "powerlaw": {
+    "coefficient_bounds": null,
+    "exponent_bounds": null
+  },
+  "process_model": {
+    "degree": 1,
+    "ridge_alpha": null,
+    "max_cv_density_rmse": null,
+    "max_holdout_density_rmse": null
+  },
+  "refinement": {
+    "features": [],
+    "ridge_alpha": null,
+    "rationale": null,
+    "proposal_origin": "host_selected",
+    "source_refs": []
+  },
+  "acceptance": {
+    "max_cv_rmse_MPa": null,
+    "max_holdout_rmse_MPa": null,
+    "max_degradation_MPa": null,
+    "require_beats_baseline": true
+  }
+}

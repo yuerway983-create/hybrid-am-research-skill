@@ -1,0 +1,1 @@
+record_id,sample_id,condition_id,batch_id,material_id,context_id,data_kind,source_ref,partition,scale,temperature_C,flow_ratio,total_relative_density,microscale_porosity_fraction,wall_thickness_um,mean_pore_diameter_um,response_MPa

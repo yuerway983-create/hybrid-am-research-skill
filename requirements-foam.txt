@@ -1,0 +1,3 @@
+# 独立泡沫计算仅需两项；与 requirements-calibration.txt 的既有数值版本一致。
+numpy==2.3.5
+scipy==1.17.0

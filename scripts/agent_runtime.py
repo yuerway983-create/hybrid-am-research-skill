@@ -135,7 +135,7 @@ def init_session(task_path: Path, session: Path, *, protocol_path: Path, origin:
         'feedback_attached': False, 'imported': False, 'compared': False, 'update_prepared': False,
         'artifacts': {}, 'call_ids': {}, 'blocked_calls': 0, 'max_calls': 80,
         'source_hashes': source_hashes(),
-        'input_hashes': {str(p.relative_to(session)): file_hash(p) for p in inp.iterdir()},
+        'input_hashes': {p.relative_to(session).as_posix(): file_hash(p) for p in inp.iterdir()},
         'round_index': 1, 'campaign_id': session.name, 'lineage_ids': {},
         'update_refitted': False, 'confirmation_attached': False, 'update_evaluated': False,
         'next_round_started': False, 'upstream_auto_install': False, 'hardware_execution_allowed': False,
@@ -378,7 +378,7 @@ def make_report(session: Path, state: dict) -> dict:
         '程序日志证明代码执行，不证明实验真实性；固定回放不是在线LLM运行。']
     report=session/'report.md';report.write_text('\n'.join(lines)+'\n',encoding='utf-8')
     title='Hybrid-AM · v1.0'
-    body=f"<!doctype html><html lang='zh-CN'><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{title}</title><style>body{{font-family:system-ui,sans-serif;max-width:1000px;margin:36px auto;padding:0 20px;line-height:1.65}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}h1{{font-size:28px}}</style><h1>{title}</h1><p>实际工具执行记录 · {html.escape(state['data_kind'])} · {html.escape(state['origin'])}</p><pre>{html.escape(report.read_text())}</pre></html>"
+    body=f"<!doctype html><html lang='zh-CN'><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{title}</title><style>body{{font-family:system-ui,sans-serif;max-width:1000px;margin:36px auto;padding:0 20px;line-height:1.65}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}h1{{font-size:28px}}</style><h1>{title}</h1><p>实际工具执行记录 · {html.escape(state['data_kind'])} · {html.escape(state['origin'])}</p><pre>{html.escape(report.read_text(encoding='utf-8'))}</pre></html>"
     (session/'index.html').write_text(body,encoding='utf-8')
     return {'status':'report_written','phase':state['phase'],'files':['report.md','index.html'],
             'report_sha256':file_hash(report),'data_kind':state['data_kind']}

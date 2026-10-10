@@ -101,7 +101,7 @@ class RuntimeTests(unittest.TestCase):
         self.feedback();a=self.call('import_results');self.assertTrue(a['ok'])
     def test_attach_not_model_tool(self):self.assertNotIn('attach_feedback',ar.SCHEMAS)
     def test_report_is_static(self):
-        self.call('inspect_task');self.call('finish_report');page=(self.s/'index.html').read_text()
+        self.call('inspect_task');self.call('finish_report');page=(self.s/'index.html').read_text(encoding='utf-8')
         self.assertNotIn('<script',page);self.assertIn('synthetic_demo',page)
     def test_sparse_routing(self):
         s=self.root/'sparse';ar.init_session(ROOT/'examples/insufficient-data-demo/task.json',s,protocol_path=PROTO,evidence_path=EVID,origin='test')

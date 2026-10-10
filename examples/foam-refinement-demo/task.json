@@ -1,0 +1,74 @@
+{
+  "schema_version": "foam-0.1",
+  "task_id": "foam-synthetic-demo-001",
+  "material_id": "synthetic-foaming-polymer-A",
+  "context_id": "synthetic-fixed-fdm-context",
+  "dataset_file": "measurements.csv",
+  "process": "foaming-fdm",
+  "observable": "compression_modulus_MPa",
+  "mode": "offline_demo",
+  "data_kind": "synthetic_demo",
+  "units": {
+    "temperature_C": "degC",
+    "flow_ratio": "1",
+    "total_relative_density": "1",
+    "microscale_porosity_fraction": "1",
+    "wall_thickness_um": "um",
+    "mean_pore_diameter_um": "um",
+    "response_MPa": "MPa"
+  },
+  "fixed_conditions": {
+    "material": "虚构聚合物，不代表商用 LW-PLA",
+    "macro_topology": "合成固定拓扑，非实测 gyroid",
+    "printer_and_test": "无设备实验；参数仅为软件测试输入",
+    "loading": "合成小应变压缩模量；不定义完整应力应变曲线"
+  },
+  "measurement_definition": {
+    "quantity": "compression_modulus_MPa",
+    "unit": "MPa",
+    "method": "由公开的夹具生成公式构造，不是实验测量",
+    "source_ref": "examples/generate_foam_fixtures.py"
+  },
+  "base_property": {
+    "value": 1000.0,
+    "unit": "MPa",
+    "origin": "synthetic_demo",
+    "source_ref": "虚构基体性能，仅用于数学计算测试"
+  },
+  "assumptions": {
+    "two_scale_structure": true,
+    "equivalent_microporous_material": true
+  },
+  "scale_separation": {
+    "min_wall_to_pore_ratio": 10.0,
+    "review_status": "needs_review",
+    "source_ref": "合成测试预设阈值，不是论文给出的普适连续体判据"
+  },
+  "allow": {
+    "hardware_commands": false,
+    "dedicated_simulation_software": false
+  },
+  "powerlaw": {
+    "coefficient_bounds": [0.05, 5.0],
+    "exponent_bounds": [0.1, 6.0]
+  },
+  "process_model": {
+    "degree": 1,
+    "ridge_alpha": 0.0001,
+    "max_cv_density_rmse": 0.03,
+    "max_holdout_density_rmse": 0.03
+  },
+  "refinement": {
+    "features": ["porosity_partition_interaction"],
+    "ridge_alpha": 0.01,
+    "rationale": "预设微宏孔分配交互项，检验一个可复算的偏差修正；不声称发现真实机理",
+    "proposal_origin": "synthetic_fixture",
+    "source_refs": ["https://doi.org/10.1063/5.0301777 的两级模型及跨尺度耦合局限，仅作建模动机，非该修正公式的实验证据"]
+  },
+  "acceptance": {
+    "max_cv_rmse_MPa": 10.0,
+    "max_holdout_rmse_MPa": 10.0,
+    "max_degradation_MPa": 0.0,
+    "require_beats_baseline": true
+  }
+}
